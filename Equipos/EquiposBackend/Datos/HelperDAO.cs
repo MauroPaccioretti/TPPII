@@ -33,7 +33,7 @@ namespace EquiposBackend.Datos
                 cnn.Close();
         }
 
-        public bool addObject(string nomSp, Dictionary<string, object> parameters)
+        public bool addObject(string nomSp, Dictionary<string, object> parameters = null)
         {
             bool aux = false;
             try
@@ -65,7 +65,7 @@ namespace EquiposBackend.Datos
             }
         }
 
-        public DataTable GetTable(string sp, Dictionary<string, object> parameters = null)
+        public DataTable GetTable(string sp, Dictionary<string, object> parameters = null) 
         {
             DataTable dt = new DataTable();
 
@@ -74,7 +74,7 @@ namespace EquiposBackend.Datos
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand(sp, cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                if (parameters != null)
+                if (parameters != null) 
                 {
                     foreach (KeyValuePair<string, object> p in parameters)
                     {
@@ -89,7 +89,7 @@ namespace EquiposBackend.Datos
             }
             finally
             {
-                CloseConnection(cnn);
+                CloseConnection(cnn); 
             }
 
             return dt;

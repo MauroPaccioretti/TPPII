@@ -15,9 +15,9 @@ namespace EquiposBackend.Dominio
         {
 
         }
-        public Pais(int idPais)
-        {
-            this.IDPais = idPais;
-        }
+        //public Pais(int idPais)
+        //{
+        //    this.IDPais = idPais;
+        //}
     }
 }
