@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace EquiposBackend.Datos
 {
-    class HelperDAO
+    public class HelperDAO
     {
         private static HelperDAO instance;
-
         private SqlConnection cnn;
-
+        
         private HelperDAO()
         {
             cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True;");
@@ -34,32 +33,25 @@ namespace EquiposBackend.Datos
                 cnn.Close();
         }
 
-        public bool addObject(string nomSp, Dictionary<string, Object> parameters)
+        public bool addObject(string nomSp, Dictionary<string, object> parameters)
         {
-
             bool aux = false;
-
             try
             {
                 cnn.Open();
-
                 SqlCommand cmd = new SqlCommand(nomSp, cnn);
-
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                foreach (KeyValuePair<string, object> p in parameters)
+                if(parameters != null)
                 {
-                    cmd.Parameters.AddWithValue(p.Key, p.Value);
+                    foreach (KeyValuePair<string, object> p in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                    }
                 }
 
-                cmd.ExecuteNonQuery();
-
-                cnn.Close();
-
-
-                aux = true;
-
-                return true;
+                aux = cmd.ExecuteNonQuery()==1;                
+                return aux;
 
             }
 
@@ -67,8 +59,40 @@ namespace EquiposBackend.Datos
             {
                 return aux;
             }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+        }
 
+        public DataTable GetTable(string sp, Dictionary<string, object> parameters = null)
+        {
+            DataTable dt = new DataTable();
 
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(sp, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> p in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                    }
+                }
+                dt.Load(cmd.ExecuteReader());
+            }
+            catch
+            {
+                dt = null;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+            return dt;
         }
     }
 }

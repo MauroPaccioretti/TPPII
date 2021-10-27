@@ -1,6 +1,7 @@
 ﻿using EquiposBackend.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,6 @@ namespace EquiposBackend.Datos
 
         public bool CreateEquipoPersona(EquipoPersona detalle, Equipo oEquipo)
         {
-
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
@@ -44,14 +44,10 @@ namespace EquiposBackend.Datos
         }
 
 
-
         public bool CreateJugador(Persona oPersona)
         {
-
             bool aux;
-
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
-
             parameters.Add("@nombre", oPersona.nombre);
             parameters.Add("@apellido", oPersona.apellido);
             parameters.Add("@cod_tipoDoc", oPersona.tipoDoc);
@@ -60,7 +56,6 @@ namespace EquiposBackend.Datos
             parameters.Add("@piernaHabil", oPersona.piernaHabil);
             parameters.Add("@peso", oPersona.peso);
             parameters.Add("@estatura", oPersona.estatura);
-
 
             aux = helper.addObject("SP_INSERTAR_PERSONA", parameters);
 
@@ -73,7 +68,6 @@ namespace EquiposBackend.Datos
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
-
             parameters.Add("@nombre_localidad", nombreLocalidad);
             parameters.Add("@cod_provincia", provincia);
 
@@ -85,7 +79,6 @@ namespace EquiposBackend.Datos
         public bool CreatePais(string nombrePais)
         {
             bool aux;
-
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@nombre_pais", nombrePais);
@@ -135,9 +128,63 @@ namespace EquiposBackend.Datos
             throw new NotImplementedException();
         }
 
+        public List<Localidad> GetLocalidades()
+        {
+            List<Localidad> lst = new List<Localidad>();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_LOCALIDADES");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Localidad oLocalidad = new Localidad();
+                    oLocalidad.IDLocalidad = Convert.ToInt32(row[0].ToString());
+                    oLocalidad.Nombre = row[1].ToString();
+                    oLocalidad.Provincia.IDProvincia = Convert.ToInt32(row[2].ToString());
+                    lst.Add(oLocalidad);
+                }
+            }
+            return lst;
+        }
+
+        public List<Pais> GetPaises()
+        {
+            List<Pais> lst = new List<Pais>();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_PAISES");
+            if(dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Pais oPais = new Pais();
+                    oPais.IDPais = Convert.ToInt32(row[0].ToString());
+                    oPais.Nombre = row[1].ToString();
+                    lst.Add(oPais);
+                }
+            }
+            return lst;
+            
+        }
+
         public List<Persona> GetPersonas()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Provincia> GetProvincias()
+        {
+            List<Provincia> lst = new List<Provincia>();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_PROVINCIAS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Provincia oProvincia = new Provincia();
+                    oProvincia.IDProvincia = Convert.ToInt32(row[0].ToString());
+                    oProvincia.Nombre = row[1].ToString();
+                    oProvincia.Pais.IDPais = Convert.ToInt32(row[2].ToString());
+                    lst.Add(oProvincia);
+                }
+            }
+            return lst;
         }
     }
 }

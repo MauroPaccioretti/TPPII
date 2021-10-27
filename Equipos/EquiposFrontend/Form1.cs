@@ -16,6 +16,5 @@ namespace EquiposFrontend
         {
             InitializeComponent();
         }
-
     }
 }

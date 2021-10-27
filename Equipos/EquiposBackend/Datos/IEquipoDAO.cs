@@ -17,6 +17,9 @@ namespace EquiposBackend.Datos
         bool CreateEquipoPersona(EquipoPersona detalle, Equipo oEquipo);
         List<Persona> GetPersonas();
         List<Equipo> GetEquipos();
+        List<Pais> GetPaises();
+        List<Provincia> GetProvincias();
+        List<Localidad> GetLocalidades();
         bool EditEquipo(Equipo oEquipo, Equipo Equipo2);
         bool EditJugador(Jugador oJugador, Jugador Jugador2);
         bool DeleteJugador(Jugador oJugador);
