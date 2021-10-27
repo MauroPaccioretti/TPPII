@@ -130,6 +130,7 @@ namespace EquiposBackend.Datos
 
         public List<Localidad> GetLocalidades()
         {
+            List<Provincia> lstProvincia = GetProvincias();
             List<Localidad> lst = new List<Localidad>();
             DataTable dt = helper.GetTable("SP_CONSULTAR_LOCALIDADES");
             if (dt != null)
@@ -139,7 +140,8 @@ namespace EquiposBackend.Datos
                     Localidad oLocalidad = new Localidad();
                     oLocalidad.IDLocalidad = Convert.ToInt32(row[0].ToString());
                     oLocalidad.Nombre = row[1].ToString();
-                    oLocalidad.Provincia.IDProvincia = Convert.ToInt32(row[2].ToString());
+                    oLocalidad.Provincia = lstProvincia[Convert.ToInt32(row[2].ToString()) - 1];
+                    //oLocalidad.Provincia.IDProvincia = Convert.ToInt32(row[2].ToString());
                     lst.Add(oLocalidad);
                 }
             }
@@ -172,6 +174,21 @@ namespace EquiposBackend.Datos
         public List<Provincia> GetProvincias()
         {
             List<Provincia> lst = new List<Provincia>();
+
+            List<Pais> lstPaises = new();
+
+            DataTable dtPaises = helper.GetTable("SP_CONSULTAR_PAISES");
+            if (dtPaises != null)
+            {
+                foreach (DataRow row in dtPaises.Rows)
+                {
+                    Pais oPais = new Pais();
+                    oPais.IDPais = Convert.ToInt32(row[0].ToString());
+                    oPais.Nombre = row[1].ToString();
+                    lstPaises.Add(oPais);
+                }
+            }
+
             DataTable dt = helper.GetTable("SP_CONSULTAR_PROVINCIAS");
             if (dt != null)
             {
@@ -180,7 +197,8 @@ namespace EquiposBackend.Datos
                     Provincia oProvincia = new Provincia();
                     oProvincia.IDProvincia = Convert.ToInt32(row[0].ToString());
                     oProvincia.Nombre = row[1].ToString();
-                    oProvincia.Pais.IDPais = Convert.ToInt32(row[2].ToString());
+                    oProvincia.Pais = lstPaises[Convert.ToInt32(row[2].ToString()) - 1];
+                    //oProvincia.Pais.IDPais = Convert.ToInt32(row[2].ToString());
                     lst.Add(oProvincia);
                 }
             }
