@@ -399,3 +399,13 @@ insert into TiposCompromisos (cod_tipoCompromiso, tipo)
 						   (2, 'Partido Liga Nacional'),
 						   (3, 'Partido Liga Internacional')
 
+
+set dateformat dmy;
+insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, cod_piernaHabil, peso, estatura, fechaAlta, fechaBaja)
+	values (1, 'Esteban', 'Quito', 1, 36459685, '16/08/1990', 2, 73.2, 183, '03/10/2021', null),
+		   (2, 'Armando', 'Escandalo', 1, 31847476, '10/06/1986', 3, 83.4, 176, '26/07/2020', null),
+		   (3, 'Igor', 'Dito', 1, 40898776, '29/02/2000', 1, 67.1, 188, '12/11/2020', null),
+		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
+		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
+
+
