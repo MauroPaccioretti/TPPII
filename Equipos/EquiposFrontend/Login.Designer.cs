@@ -49,10 +49,10 @@ namespace EquiposFrontend
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(804, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 47);
+            this.label1.Size = new System.Drawing.Size(308, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome back!";
             // 
@@ -60,10 +60,10 @@ namespace EquiposFrontend
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(868, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 24);
+            this.label2.Size = new System.Drawing.Size(190, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sign in to continue";
             // 
@@ -71,11 +71,11 @@ namespace EquiposFrontend
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl1.ForeColor = System.Drawing.Color.DimGray;
             this.lbl1.Location = new System.Drawing.Point(804, 294);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(165, 19);
+            this.lbl1.Size = new System.Drawing.Size(157, 17);
             this.lbl1.TabIndex = 2;
             this.lbl1.Text = "Please enter Username";
             // 
@@ -85,7 +85,7 @@ namespace EquiposFrontend
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUsername.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxUsername.Location = new System.Drawing.Point(804, 321);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -98,7 +98,7 @@ namespace EquiposFrontend
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword.Location = new System.Drawing.Point(804, 432);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -110,11 +110,11 @@ namespace EquiposFrontend
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl2.ForeColor = System.Drawing.Color.DimGray;
             this.lbl2.Location = new System.Drawing.Point(804, 405);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(160, 19);
+            this.lbl2.Size = new System.Drawing.Size(153, 17);
             this.lbl2.TabIndex = 5;
             this.lbl2.Text = "Please enter Password";
             // 
@@ -122,7 +122,7 @@ namespace EquiposFrontend
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(868, 529);
             this.btnLogin.Name = "btnLogin";
@@ -159,12 +159,12 @@ namespace EquiposFrontend
             this.linklblOlvidoContra.ActiveLinkColor = System.Drawing.Color.Black;
             this.linklblOlvidoContra.AutoSize = true;
             this.linklblOlvidoContra.BackColor = System.Drawing.Color.Transparent;
-            this.linklblOlvidoContra.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linklblOlvidoContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linklblOlvidoContra.ForeColor = System.Drawing.Color.DimGray;
             this.linklblOlvidoContra.LinkColor = System.Drawing.Color.DimGray;
             this.linklblOlvidoContra.Location = new System.Drawing.Point(985, 483);
             this.linklblOlvidoContra.Name = "linklblOlvidoContra";
-            this.linklblOlvidoContra.Size = new System.Drawing.Size(150, 17);
+            this.linklblOlvidoContra.Size = new System.Drawing.Size(137, 16);
             this.linklblOlvidoContra.TabIndex = 9;
             this.linklblOlvidoContra.TabStop = true;
             this.linklblOlvidoContra.Text = "Forgot your pasword?";
@@ -174,7 +174,7 @@ namespace EquiposFrontend
             this.checkBoxRemember.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxRemember.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
             this.checkBoxRemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxRemember.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxRemember.Location = new System.Drawing.Point(804, 486);
             this.checkBoxRemember.Name = "checkBoxRemember";
             this.checkBoxRemember.Size = new System.Drawing.Size(12, 11);
@@ -185,11 +185,11 @@ namespace EquiposFrontend
             // 
             this.lblRemember.AutoSize = true;
             this.lblRemember.BackColor = System.Drawing.Color.Transparent;
-            this.lblRemember.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRemember.ForeColor = System.Drawing.Color.DimGray;
             this.lblRemember.Location = new System.Drawing.Point(822, 483);
             this.lblRemember.Name = "lblRemember";
-            this.lblRemember.Size = new System.Drawing.Size(104, 17);
+            this.lblRemember.Size = new System.Drawing.Size(97, 16);
             this.lblRemember.TabIndex = 11;
             this.lblRemember.Text = "Remember me";
             // 

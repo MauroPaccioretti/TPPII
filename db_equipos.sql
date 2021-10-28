@@ -377,4 +377,25 @@ go
 
 insert into Piernas(cod_piernaHabil, habilidad)
 	 values (1, 'Diestro'),(2, 'Zurdo'), (3, 'Ambidiestro'), (4, 'Inhábil')
-			
+
+
+insert into Paises (cod_pais, nombre_pais)
+	values (1, 'Argentina')
+
+insert into Provincias (cod_provincia, nombre_provincia, cod_pais)
+	values (1, 'Córdoba', 1),
+		   (2, 'Santa Fe', 1)
+
+insert into Localidades (cod_localidad, nombre_localidad, cod_provincia)
+				values (1, 'Córdoba', 1),
+					   (2, 'Rosario', 2)
+
+insert into TiposDocs (cod_tipoDoc, tipo)
+			values (1, 'DNI'),
+				   (2, 'Pasaporte')
+
+insert into TiposCompromisos (cod_tipoCompromiso, tipo)
+					values (1, 'Presentación oficial'),
+						   (2, 'Partido Liga Nacional'),
+						   (3, 'Partido Liga Internacional')
+
