@@ -16,9 +16,9 @@ namespace EquiposBackend.Dominio
         {
             Pais = new Pais();
         }
-        public Provincia(int idPais)
-        {
-            Pais = new Pais(idPais);
-        }
+        //public Provincia(int idPais)
+        //{
+        //    Pais = new Pais(idPais);
+        //}
     }
 }

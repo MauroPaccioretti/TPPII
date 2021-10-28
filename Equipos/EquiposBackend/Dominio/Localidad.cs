@@ -17,10 +17,10 @@ namespace EquiposBackend.Dominio
             Provincia = new Provincia();
         }
 
-        public Localidad(int idProvincia)
-        {
-            Provincia = new Provincia(idProvincia);
-        }
+        //public Localidad(int idProvincia)
+        //{
+        //    Provincia = new Provincia(idProvincia);
+        //}
 
     }
 }
