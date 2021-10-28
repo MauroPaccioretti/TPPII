@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EquiposBackend\EquiposBackend.csproj" />
     <ProjectReference Include="..\EquiposWebAPI\EquiposWebAPI.csproj" />
   </ItemGroup>
 

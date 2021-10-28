@@ -143,6 +143,7 @@ namespace EquiposBackend.Datos
                     oLocalidad.Provincia = lstProvincia.Find(item => item.IDProvincia == Convert.ToInt32(row[2].ToString()));
                     //oLocalidad.Provincia.IDProvincia = Convert.ToInt32(row[2].ToString());
                     lst.Add(oLocalidad);
+                    
                 }
             }
             return lst;
