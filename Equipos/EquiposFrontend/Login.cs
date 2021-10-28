@@ -16,5 +16,10 @@ namespace EquiposFrontend
         {
             InitializeComponent();
         }
+
+        private void btnExitLogin_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace EquiposBackend.Datos
         
         private HelperDAO()
         {
-            cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True;");
+            cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
         }
 
         public static HelperDAO GetInstance()
