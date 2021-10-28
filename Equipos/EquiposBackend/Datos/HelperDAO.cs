@@ -94,5 +94,29 @@ namespace EquiposBackend.Datos
 
             return dt;
         }
+
+        public bool DeleteElement(int idElemento, string spCommand)
+        {
+            bool aux = false;
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(spCommand, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", idElemento);
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                aux = false;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+            return aux;
+        }
+
     }
 }
