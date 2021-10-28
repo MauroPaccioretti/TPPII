@@ -18,7 +18,7 @@ namespace EquiposBackend.Datos
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@nombre", oEquipo.nombre);
+            parameters.Add("@nombre", oEquipo.Nombre);
 
             aux = helper.addObject("SP_INSERTAR_EQUIPO", parameters);
 
@@ -32,7 +32,7 @@ namespace EquiposBackend.Datos
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@cod_persona", detalle.persona.codPersona);
-            parameters.Add("@cod_equipo", oEquipo.codEquipo);
+            parameters.Add("@cod_equipo", oEquipo.CodEquipo);
             parameters.Add("@cod_posicion", detalle.codPosicion);
             parameters.Add("@camiseta", detalle.camiseta);
 
@@ -103,28 +103,52 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
-        public bool DeleteEquipo(Equipo oEquipo)
+        public bool DeleteEquipo(int idEquipo)
+        {
+            return helper.DeleteElement(idEquipo, "SP_ELIMINAR_EQUIPO");
+        }
+
+        public bool DeleteJugador(int idJugador)
+        {
+            return helper.DeleteElement(idJugador, "SP_ELIMINAR_JUGADOR");
+        }
+
+        public bool EditEquipo(int idEquipo, Equipo Equipo2)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteJugador(Jugador oJugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EditEquipo(Equipo oEquipo, Equipo Equipo2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EditJugador(Jugador oJugador, Jugador Jugador2)
+        public bool EditJugador(int idJugador, Jugador Jugador2)
         {
             throw new NotImplementedException();
         }
 
         public List<Equipo> GetEquipos()
         {
+            List<Equipo> lst = new List<Equipo>();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_ACTIVOS");
+            bool bandera = true;
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Equipo oEquipo = new Equipo();
+                    Persona oPersona = new Persona();
+                    EquipoPersona oDetalle = new EquipoPersona();
+                    if (bandera) 
+                    {                    
+                        oEquipo.CodEquipo = Convert.ToInt32(row[0].ToString());
+                        oEquipo.CodLocalidad = Convert.ToInt32(row[1].ToString());
+                        oEquipo.Nombre = row[2].ToString();
+                        oEquipo.FechaAlta = Convert.ToDateTime(row[3].ToString());
+                        
+                        //falta terminar
+                        //hay que pensar cómo hacemos el SP.. si traemos equipos join equiposPersonas join personas, u otra cosa.
+
+                    }
+                }
+            }
+
             throw new NotImplementedException();
         }
 

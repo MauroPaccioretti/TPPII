@@ -20,9 +20,9 @@ namespace EquiposBackend.Datos
         List<Pais> GetPaises();
         List<Provincia> GetProvincias();
         List<Localidad> GetLocalidades();
-        bool EditEquipo(Equipo oEquipo, Equipo Equipo2);
-        bool EditJugador(Jugador oJugador, Jugador Jugador2);
-        bool DeleteJugador(Jugador oJugador);
-        bool DeleteEquipo(Equipo oEquipo);
+        bool EditEquipo(int idEquipo, Equipo Equipo2);
+        bool EditJugador(int idJugador, Jugador Jugador2);
+        bool DeleteJugador(int idJugador);
+        bool DeleteEquipo(int idEquipo);
     }
 }

@@ -8,17 +8,17 @@ namespace EquiposBackend.Dominio
 {
     public class Equipo
     {
-        public int codEquipo { get; set; }
-        public string nombre { get; set; }
-        public int codLocalidad { get; set; }
-        public DateTime fechaAlta { get; set; }
-        public DateTime fechaBaja { get; set; }
+        public int CodEquipo { get; set; }
+        public string Nombre { get; set; }
+        public int CodLocalidad { get; set; }
+        public DateTime FechaAlta { get; set; }
+        public DateTime FechaBaja { get; set; }
 
-        List<EquipoPersona> jugadores;
+        public List<EquipoPersona> Jugadores { get; set; }
 
         public Equipo()
         {
-            jugadores = new List<EquipoPersona>();
+            Jugadores = new List<EquipoPersona>();
         }
 
 

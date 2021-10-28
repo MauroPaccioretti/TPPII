@@ -120,7 +120,11 @@ create proc SP_INSERTAR_PAIS
 as
 begin
 declare @cod_pais int
-set @cod_pais = (SELECT count(cod_pais)+1 FROM Paises)
+if exists (select * from Paises)
+	set @cod_pais = (SELECT max(cod_pais)+1 FROM Paises)
+else
+	set @cod_pais = 1
+
 insert into Paises (cod_pais, nombre_pais)
 	values (@cod_pais, @nombre_pais)
 end
@@ -133,7 +137,12 @@ create proc SP_INSERTAR_PROVINCIA
 as
 begin
 declare @cod_provincia int
-set @cod_provincia = (SELECT count(cod_provincia)+1 FROM Provincias)
+
+if exists (select * from Provincias)
+	set @cod_provincia = (SELECT max(cod_provincia)+1 FROM Provincias)
+else
+	set @cod_provincia = 1
+
 insert into Provincias(cod_provincia, nombre_provincia, cod_pais)
 	values (@cod_provincia, @nombre_provincia, @cod_pais)
 end
@@ -146,7 +155,10 @@ create proc SP_INSERTAR_LOCALIDAD
 as
 begin
 declare @cod_localidad int
-set @cod_localidad = (SELECT count(cod_provincia)+1 FROM Localidades)
+if exists (select * from Localidades)
+	set @cod_localidad = (SELECT max(cod_provincia)+1 FROM Localidades)
+else
+	set @cod_localidad = 1
 insert into Localidades(cod_localidad, nombre_localidad, cod_provincia)
 	values (@cod_localidad, @nombre_localidad, @cod_provincia)
 end
@@ -158,7 +170,10 @@ create proc SP_INSERTAR_TIPO_DOC
 as
 begin
 declare @cod_tipoDoc int
-set @cod_tipoDoc = (SELECT count(cod_tipoDoc)+1 FROM TiposDocs)
+if exists (select * from TiposDocs)
+	set @cod_tipoDoc = (SELECT max(cod_tipoDoc)+1 FROM TiposDocs)
+else
+	set @cod_tipoDoc = 1
 insert into TiposDocs (cod_tipoDoc, tipo)
 	values (@cod_tipoDoc, @tipoDoc)
 end
@@ -169,7 +184,10 @@ create proc SP_INSERTAR_POSICIONES
 as
 begin
 declare @cod_posicion int
-set @cod_posicion = (SELECT count(cod_posicion)+1 FROM Posiciones)
+if exists (select * from Posiciones)
+	set @cod_posicion = (SELECT max(cod_posicion)+1 FROM Posiciones)
+else
+	set @cod_posicion = 1
 insert into TiposDocs (cod_tipoDoc, tipo)
 	values (@cod_posicion, @posicion)
 end
@@ -180,7 +198,10 @@ create proc SP_INSERTAR_TIPO_COMPROMISO
 as
 begin
 declare @cod_tipoCompromiso int
-set @cod_tipoCompromiso = (SELECT count(cod_tipoCompromiso)+1 FROM TiposCompromisos)
+if exists (select * from TiposCompromisos)
+	set @cod_tipoCompromiso = (SELECT max(cod_tipoCompromiso)+1 FROM TiposCompromisos)
+else
+	set @cod_tipoCompromiso = 1
 insert into TiposCompromisos (cod_tipoCompromiso, tipo)
 	values (@cod_tipoCompromiso, @tipo)
 end
@@ -191,7 +212,10 @@ create proc SP_INSERTAR_EQUIPO
 as
 begin
 declare @cod_equipo int
-set  @cod_equipo = (SELECT count(cod_equipo)+1 FROM Equipos)
+if exists (select * from Equipos)
+	set  @cod_equipo = (SELECT max(cod_equipo)+1 FROM Equipos)
+else
+	set @cod_equipo = 1
 
 insert into Equipos (cod_equipo, nombre, fechaAlta, fechaBaja)
 	values (@cod_equipo, @nombre, getdate(), null)
@@ -211,8 +235,10 @@ create proc SP_INSERTAR_PERSONA
 as
 begin
 declare @cod_persona int
-set  @cod_persona = (SELECT count(cod_persona)+1 FROM Personas)
-
+if exists (select * from Personas)
+	set  @cod_persona = (SELECT max(cod_persona)+1 FROM Personas)
+else
+	set @cod_persona = 1
 insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, cod_piernaHabil, peso, estatura, fechaAlta, fechaBaja)
 	values (@cod_persona, @nombre, @apellido, @cod_tipoDoc, @numeroDocumento, @fechaNac, @piernaHabil, @peso, @estatura, getdate(), null)
 end
@@ -228,8 +254,10 @@ create proc SP_INSERTAR_COMPROMISO
 as
 begin
 declare @cod_compromiso int
-set  @cod_compromiso = (SELECT count(cod_compromiso)+1 FROM Compromisos)
-
+if exists (select * from Compromisos)
+	set  @cod_compromiso = (SELECT max(cod_compromiso)+1 FROM Compromisos)
+else
+	set @cod_compromiso = 1
 insert into Compromisos (cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fechaCompromiso, fechaAlta, fechaBaja)
 	values (@cod_compromiso, @cod_equipo, @cod_tipoCompromiso, @comentariosCompromiso, @fechaCompromiso, getdate(), null)
 end
@@ -240,12 +268,14 @@ create proc SP_INSERTAR_EQUIPOS_PERSONAS
 @cod_equipo int,
 @cod_posicion int,
 @camiseta nvarchar (100)
---@fechaNac date
+
 as
 begin
 declare @cod_equipoPersona int
-set  @cod_equipoPersona = (SELECT count(cod_equipoPersona)+1 FROM Equipos_Personas)
-
+if exists (select * from Equipos_Personas)
+	set  @cod_equipoPersona = (SELECT max(cod_equipoPersona)+1 FROM Equipos_Personas)
+else
+	set @cod_equipoPersona = 1
 insert into Equipos_Personas (cod_equipoPersona, cod_persona, cod_equipo,  cod_posicion, camiseta, fechaAlta, fechaBaja)
 					values (@cod_equipoPersona, @cod_persona, @cod_equipo, @cod_posicion, @camiseta, getdate(), null)
 end
@@ -259,7 +289,10 @@ create proc SP_INSERTAR_USUARIO
 as
 begin
 declare @cod_usuario int
-set @cod_usuario = (SELECT count(cod_usuario)+1 FROM Usuarios)
+if exists (select * from Usuarios)
+	set @cod_usuario = (SELECT max(cod_usuario)+1 FROM Usuarios)
+else
+	set @cod_usuario = 1
 insert into Usuarios (cod_usuario, usuario, pass)
 	values (@cod_usuario, @usuario, @pass)
 end
@@ -344,4 +377,35 @@ go
 
 insert into Piernas(cod_piernaHabil, habilidad)
 	 values (1, 'Diestro'),(2, 'Zurdo'), (3, 'Ambidiestro'), (4, 'Inhábil')
-			
+
+
+insert into Paises (cod_pais, nombre_pais)
+	values (1, 'Argentina')
+
+insert into Provincias (cod_provincia, nombre_provincia, cod_pais)
+	values (1, 'Córdoba', 1),
+		   (2, 'Santa Fe', 1)
+
+insert into Localidades (cod_localidad, nombre_localidad, cod_provincia)
+				values (1, 'Córdoba', 1),
+					   (2, 'Rosario', 2)
+
+insert into TiposDocs (cod_tipoDoc, tipo)
+			values (1, 'DNI'),
+				   (2, 'Pasaporte')
+
+insert into TiposCompromisos (cod_tipoCompromiso, tipo)
+					values (1, 'Presentación oficial'),
+						   (2, 'Partido Liga Nacional'),
+						   (3, 'Partido Liga Internacional')
+
+
+set dateformat dmy;
+insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, cod_piernaHabil, peso, estatura, fechaAlta, fechaBaja)
+	values (1, 'Esteban', 'Quito', 1, 36459685, '16/08/1990', 2, 73.2, 183, '03/10/2021', null),
+		   (2, 'Armando', 'Escandalo', 1, 31847476, '10/06/1986', 3, 83.4, 176, '26/07/2020', null),
+		   (3, 'Igor', 'Dito', 1, 40898776, '29/02/2000', 1, 67.1, 188, '12/11/2020', null),
+		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
+		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
+
+
