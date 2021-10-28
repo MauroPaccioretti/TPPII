@@ -408,4 +408,59 @@ insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocument
 		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
 		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
 
+		   
+
+create proc SP_BAJA_PERSONA
+@codigo int
+as
+begin
+update Personas
+set fechaBaja = GETDATE()
+where cod_persona=@codigo
+end
+
+create proc SP_BAJA_EQUIPO
+@codigo int
+as
+begin
+update Equipos
+set fechaBaja = GETDATE()
+where cod_equipo=@codigo
+end
+
+create proc SP_BAJA_COMPROMISO
+@codigo int
+as
+begin
+update Compromisos
+set fechaBaja = GETDATE()
+where cod_compromiso=@codigo
+end
+
+create proc SP_BAJA_EQUIPO_PERSONA_PORDETALLE
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_equipoPersona=@codigo
+end
+
+create proc SP_BAJA_EQUIPO_PERSONA_POREQUIPO
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_equipo=@codigo
+end
+
+create proc SP_BAJA_EQUIPO_PERSONA_PORPERSONA
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_persona=@codigo
+end
 
