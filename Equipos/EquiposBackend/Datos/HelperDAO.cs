@@ -118,5 +118,88 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
+        public bool Login(string user, string pass)
+        {
+            bool aux = false;
+
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cnn;
+                cmd.CommandText = "SP_CONSULTAR_USUARIOS_LOGIN";
+                cmd.Parameters.AddWithValue("@user", user);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    return aux = true;
+                }
+                else
+                {
+                    return aux = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                aux = false;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+            return aux;
+
+        }
+
+
+        public string RecoverPassword(string userRequesting)
+        {
+            string aux = "";
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cnn;
+                cmd.CommandText = "SP_RECOVERY_PASSWORD";
+                cmd.Parameters.AddWithValue("@email", userRequesting);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read() == true)
+                {
+                    string userName = reader.GetString(1);
+                    string userMail = reader.GetString(4);
+                    string accountPass = reader.GetString(2);
+                    var mailService = new MailServices.SystemSupportEmail();
+                    mailService.SendEmail(
+                        subject: "Soporte Soccer: Password recovery request",
+                        body: "Hi, " + userName + "\n You request to recover your password. \n" +
+                        "your current password is : " + accountPass,
+                        recipientMail: new List<string> { userMail }
+                        );
+
+                    aux = "Hi, " + userName + "\nYou requested to recover your password.\n" +
+                        "Please check your email: " + userMail + ", please also check the spam folder.";
+                }
+                else
+                {
+                    aux = "Sorry, you do not have an account with that email";
+                }
+            }
+            catch (Exception)
+            {
+                aux = "Error for send email";
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+            return aux;
+
+        }
+
     }
 }

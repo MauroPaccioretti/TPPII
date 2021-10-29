@@ -28,8 +28,8 @@ namespace EquiposBackend.Negocio
         bool EliminarJugador(Jugador oJugador);
         bool EliminarEquipo(Equipo oEquipo);
 
-
-
+        bool Login(string username, string pass);
+        string RecoverPassword(string userRequesting);
 
 
     }

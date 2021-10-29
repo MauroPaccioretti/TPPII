@@ -11,6 +11,7 @@ namespace EquiposBackend.Negocio
     public class Aplicacion : IAplicacion
     {
         EquipoDAO dao = new EquipoDAO();
+        UsuariosDao usuariosDao = new UsuariosDao();
 
         public List<Equipo> ConsultarEquipos()
         {
@@ -85,6 +86,16 @@ namespace EquiposBackend.Negocio
         public List<Provincia> ConsultarProvincias()
         {
             return dao.GetProvincias();
+        }
+
+        public bool Login(string username, string pass)
+        {
+           return usuariosDao.Login(username, pass);
+        }
+
+        public string RecoverPassword(string userRequesting)
+        {
+            return usuariosDao.RecoverPassword(userRequesting);
         }
     }
 }

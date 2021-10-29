@@ -40,8 +40,9 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExitLogin = new System.Windows.Forms.Button();
             this.linklblOlvidoContra = new System.Windows.Forms.LinkLabel();
-            this.checkBoxRemember = new System.Windows.Forms.CheckBox();
-            this.lblRemember = new System.Windows.Forms.Label();
+            this.lblErrorIncorrect = new System.Windows.Forms.Label();
+            this.lblErrorUsername = new System.Windows.Forms.Label();
+            this.lblErrorPass = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,30 +170,46 @@ namespace EquiposFrontend
             this.linklblOlvidoContra.TabIndex = 9;
             this.linklblOlvidoContra.TabStop = true;
             this.linklblOlvidoContra.Text = "Forgot your pasword?";
+            this.linklblOlvidoContra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblOlvidoContra_LinkClicked);
             // 
-            // checkBoxRemember
+            // lblErrorIncorrect
             // 
-            this.checkBoxRemember.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxRemember.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.checkBoxRemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxRemember.Location = new System.Drawing.Point(804, 486);
-            this.checkBoxRemember.Name = "checkBoxRemember";
-            this.checkBoxRemember.Size = new System.Drawing.Size(12, 11);
-            this.checkBoxRemember.TabIndex = 10;
-            this.checkBoxRemember.UseVisualStyleBackColor = false;
+            this.lblErrorIncorrect.AutoSize = true;
+            this.lblErrorIncorrect.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrorIncorrect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorIncorrect.Location = new System.Drawing.Point(804, 373);
+            this.lblErrorIncorrect.Name = "lblErrorIncorrect";
+            this.lblErrorIncorrect.Size = new System.Drawing.Size(101, 16);
+            this.lblErrorIncorrect.TabIndex = 12;
+            this.lblErrorIncorrect.Text = "*Error Message";
+            this.lblErrorIncorrect.Visible = false;
             // 
-            // lblRemember
+            // lblErrorUsername
             // 
-            this.lblRemember.AutoSize = true;
-            this.lblRemember.BackColor = System.Drawing.Color.Transparent;
-            this.lblRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRemember.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRemember.Location = new System.Drawing.Point(822, 483);
-            this.lblRemember.Name = "lblRemember";
-            this.lblRemember.Size = new System.Drawing.Size(97, 16);
-            this.lblRemember.TabIndex = 11;
-            this.lblRemember.Text = "Remember me";
+            this.lblErrorUsername.AutoSize = true;
+            this.lblErrorUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrorUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorUsername.Location = new System.Drawing.Point(985, 294);
+            this.lblErrorUsername.Name = "lblErrorUsername";
+            this.lblErrorUsername.Size = new System.Drawing.Size(101, 16);
+            this.lblErrorUsername.TabIndex = 13;
+            this.lblErrorUsername.Text = "*Error Message";
+            this.lblErrorUsername.Visible = false;
+            // 
+            // lblErrorPass
+            // 
+            this.lblErrorPass.AutoSize = true;
+            this.lblErrorPass.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrorPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorPass.Location = new System.Drawing.Point(985, 405);
+            this.lblErrorPass.Name = "lblErrorPass";
+            this.lblErrorPass.Size = new System.Drawing.Size(101, 16);
+            this.lblErrorPass.TabIndex = 14;
+            this.lblErrorPass.Text = "*Error Message";
+            this.lblErrorPass.Visible = false;
             // 
             // Login
             // 
@@ -201,8 +218,9 @@ namespace EquiposFrontend
             this.BackgroundImage = global::EquiposFrontend.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1264, 761);
-            this.Controls.Add(this.lblRemember);
-            this.Controls.Add(this.checkBoxRemember);
+            this.Controls.Add(this.lblErrorPass);
+            this.Controls.Add(this.lblErrorUsername);
+            this.Controls.Add(this.lblErrorIncorrect);
             this.Controls.Add(this.linklblOlvidoContra);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
@@ -237,7 +255,8 @@ namespace EquiposFrontend
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExitLogin;
         private System.Windows.Forms.LinkLabel linklblOlvidoContra;
-        private System.Windows.Forms.CheckBox checkBoxRemember;
-        private System.Windows.Forms.Label lblRemember;
+        private System.Windows.Forms.Label lblErrorIncorrect;
+        private System.Windows.Forms.Label lblErrorUsername;
+        private System.Windows.Forms.Label lblErrorPass;
     }
 }

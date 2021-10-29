@@ -8,14 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EquiposBackend.Dominio;
+using EquiposBackend.Negocio;
 
 namespace EquiposFrontend
 {
     public partial class Login : Form
     {
+        private IAplicacion service;
+        Usuario usuario = new Usuario();
+
         public Login()
         {
             InitializeComponent();
+            service = new ImpFactoryAplicacion().CrearService();
         }
 
         private void btnExitLogin_Click(object sender, EventArgs e)
@@ -25,31 +31,84 @@ namespace EquiposFrontend
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection();
-            cnn.Open();
-            if (textBoxPassword.Text != string.Empty || textBoxUsername.Text != string.Empty)
+            
+            if (textBoxUsername.Text != string.Empty )
             {
-                
-                SqlCommand cmd = new SqlCommand("select * from Usuarios where usuario='" + textBoxUsername.Text + "' and pass='" + textBoxPassword.Text + "'", cn);
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
+                usuario.User = textBoxUsername.Text;
+
+                if (textBoxPassword.Text != string.Empty)
                 {
-                    dr.Close();
-                    this.Hide();
-                    Home home = new Home();
-                    home.ShowDialog();
+                    usuario.Pass = textBoxPassword.Text;
+
+                    var validLogin = service.Login(usuario.User, usuario.Pass);
+
+                    if (validLogin == true)
+                    {
+                        Form1 mainMenu = new Form1();
+                        mainMenu.Show();
+                        mainMenu.FormClosed += Logout;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MsgErrorIncorrect("Incorrect Username or Password entered. Please try again.");
+                        MsgErrorUser("");
+                        MsgErrorPass("");
+                        textBoxPassword.Clear();
+                        textBoxUsername.Focus();
+                        
+                    }
+
                 }
                 else
                 {
-                    dr.Close();
-                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    MsgErrorPass("Please enter Password");
 
+                }
             }
             else
             {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MsgErrorUser("Please enter Username");
             }
+
+
+
+        }
+
+        private void MsgErrorUser(string msg)
+        {
+            lblErrorUsername.Text = msg;
+            lblErrorUsername.Visible = true;
+        }
+
+        private void MsgErrorPass(string msg)
+        {
+            lblErrorPass.Text = msg;
+            lblErrorPass.Visible = true;
+        }
+        private void MsgErrorIncorrect(string msg)
+        {
+            lblErrorIncorrect.Text = msg;
+            lblErrorIncorrect.Visible = true;
+        }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            textBoxUsername.Clear();
+            textBoxPassword.Clear();
+            lblErrorIncorrect.Visible = false;
+            lblErrorUsername.Visible = false;
+            lblErrorPass.Visible = false;
+            this.Show();
+            textBoxUsername.Focus();
+
+
+        }
+
+        private void linklblOlvidoContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoverPassword = new RecoverPassword();
+            recoverPassword.ShowDialog();
         }
     }
 }
