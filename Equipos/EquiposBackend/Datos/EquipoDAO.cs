@@ -316,9 +316,26 @@ namespace EquiposBackend.Datos
             throw new NotImplementedException();
         }
 
-        public bool EditJugador(Jugador jugador)
+        public bool EditPersona(Persona oPersona)
         {
-            throw new NotImplementedException();
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oPersona.CodPersona);
+            parametros.Add("@nombre", oPersona.Nombre);
+            parametros.Add("@apellido", oPersona.Apellido);
+            parametros.Add("@cod_tipoDoc", oPersona.TipoDoc);
+            parametros.Add("@numeroDocumento", oPersona.NumeroDoc);
+            parametros.Add("@fechaNac", oPersona.FechaNac);
+            parametros.Add("@piernaHabil", oPersona.PiernaHabil);
+            parametros.Add("@peso", oPersona.Peso);
+            parametros.Add("@estatura", oPersona.Estatura);
+            parametros.Add("@fechaAlta", oPersona.FechaAlta);
+            if (oPersona.GetFechaBajaFormato().Equals(""))
+                parametros.Add("@fechaBaja", DBNull.Value);
+            else
+                parametros.Add("fechaBaja", oPersona.FechaBaja);
+
+            return helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
+
         }
 
 

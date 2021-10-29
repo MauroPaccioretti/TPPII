@@ -31,7 +31,7 @@ namespace EquiposBackend.Negocio
 
         //update
         bool EditarEquipo(Equipo oEquipo);
-        bool EditarJugador(Jugador oJugador);
+        bool EditarPersona(Persona oPersona);
 
         // delete
         bool EliminarJugador(int nroJugador);

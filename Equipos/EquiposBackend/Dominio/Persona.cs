@@ -29,5 +29,11 @@ namespace EquiposBackend.Dominio
         public DateTime FechaAlta { get; set; }
 
         public DateTime FechaBaja { get; set; }
+
+        public string GetFechaBajaFormato()
+        {
+            string aux = FechaBaja.ToString("dd/MM/yyyy");
+            return aux.Equals("01/01/0001") ? "" : aux;
+        }
     }
 }

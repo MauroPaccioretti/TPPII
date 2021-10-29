@@ -137,7 +137,29 @@ namespace EquiposWebAPI.Controllers
                 return Ok("No se puedo grabar!");
         }
 
+        //Put
 
+        [HttpPut("editarPersona")]
+        public IActionResult PutPersona(Persona oPersona)
+        {
+            if (oPersona == null)
+                return BadRequest();
+            if (app.EditarPersona(oPersona))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+        [HttpPut("editarEquipo")]
+        public IActionResult PutEquipo(Equipo oEquipo)
+        {
+            if (oEquipo == null)
+                return BadRequest();
+            if (app.EditarEquipo(oEquipo))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
 
 
         //Delete

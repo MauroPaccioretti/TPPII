@@ -87,9 +87,9 @@ namespace EquiposBackend.Negocio
         {
             return dao.EditEquipo(oEquipo);
         }
-        public bool EditarJugador(Jugador oJugador)
+        public bool EditarPersona(Persona oPersona)
         {
-            return dao.EditJugador(oJugador);
+            return dao.EditPersona(oPersona);
         }
 
         // delete 

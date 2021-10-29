@@ -29,7 +29,7 @@ namespace EquiposBackend.Datos
 
         //update
         bool EditEquipo(Equipo equipo);
-        bool EditJugador(Jugador jugador);
+        bool EditPersona(Persona oPersona);
 
         //delete
         bool DeleteJugador(int idJugador);
