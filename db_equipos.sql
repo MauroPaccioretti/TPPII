@@ -4,6 +4,12 @@ go
 use db_equipos;
 go
 
+
+------------------------------------------------------------------------------
+-----------------Creacion de tablas-------------------------------------------
+------------------------------------------------------------------------------
+
+
 create table TiposDocs (
 	cod_tipoDoc int NOT NULL,
 	tipo nvarchar (50) NULL,
@@ -113,6 +119,47 @@ create table Usuarios(
 	constraint PK_Usuarios primary key (cod_usuario)  
 )
 
+------------------------------------------------------------------------------
+-------Carga datos elementales------------------------------------------------
+------------------------------------------------------------------------------
+
+insert into Piernas(cod_piernaHabil, habilidad)
+	 values (1, 'Diestro'),(2, 'Zurdo'), (3, 'Ambidiestro'), (4, 'Inhábil')
+
+
+insert into Paises (cod_pais, nombre_pais)
+	values (1, 'Argentina')
+
+insert into Provincias (cod_provincia, nombre_provincia, cod_pais)
+	values (1, 'Córdoba', 1),
+		   (2, 'Santa Fe', 1)
+
+insert into Localidades (cod_localidad, nombre_localidad, cod_provincia)
+				values (1, 'Córdoba', 1),
+					   (2, 'Rosario', 2)
+
+insert into TiposDocs (cod_tipoDoc, tipo)
+			values (1, 'DNI'),
+				   (2, 'Pasaporte')
+
+insert into TiposCompromisos (cod_tipoCompromiso, tipo)
+					values (1, 'Presentación oficial'),
+						   (2, 'Partido Liga Nacional'),
+						   (3, 'Partido Liga Internacional')
+
+
+set dateformat dmy;
+insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, cod_piernaHabil, peso, estatura, fechaAlta, fechaBaja)
+	values (1, 'Esteban', 'Quito', 1, 36459685, '16/08/1990', 2, 73.2, 183, '03/10/2021', null),
+		   (2, 'Armando', 'Escandalo', 1, 31847476, '10/06/1986', 3, 83.4, 176, '26/07/2020', null),
+		   (3, 'Igor', 'Dito', 1, 40898776, '29/02/2000', 1, 67.1, 188, '12/11/2020', null),
+		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
+		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
+
+
+------------------------------------------------------------------------------
+----------------SP_INSERTAR---------------------------------------------------
+------------------------------------------------------------------------------
 
 go
 create proc SP_INSERTAR_PAIS
@@ -245,7 +292,6 @@ end
 go
 
 
-
 create proc SP_INSERTAR_COMPROMISO 
 @cod_equipo int,
 @cod_tipoCompromiso int,
@@ -298,6 +344,11 @@ insert into Usuarios (cod_usuario, usuario, pass)
 end
 go
 
+------------------------------------------------------------------------------
+-----------------SP_CONSULTAR-------------------------------------------------
+------------------------------------------------------------------------------
+
+
 go
 create proc SP_CONSULTAR_TIPOS_DOC
 as
@@ -347,10 +398,35 @@ where fechaBaja is null
 go
 
 go
+
+create proc SP_CONSULTAR_EQUIPOS
+as
+select * from Equipos
+go
+
+
+go 
+
+create proc SP_CONSULTAR_EQUIPOS_POR_ID
+@codigo int
+as
+select * 
+from Equipos e 
+	join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
+	join Personas p on ep.cod_persona = p.cod_persona
+where e.cod_equipo = @codigo
+go
+
+go
 create proc SP_CONSULTAR_PERSONAS_ACTIVAS
 as
 select * from Personas
 where fechaBaja is null
+go
+
+create proc SP_CONSULTAR_PERSONAS
+as
+select * from Personas
 go
 
 go
@@ -368,44 +444,196 @@ where fechaBaja is null
 go
 
 go
+create proc SP_CONSULTAR_EQUIPOS_PERSONAS
+as
+select * from Equipos_Personas
+go
+
+go
 create proc SP_CONSULTAR_USUARIOS_ACTIVOS
 as
 select * from Usuarios
 where fechaBaja is null
 go
 
-
-insert into Piernas(cod_piernaHabil, habilidad)
-	 values (1, 'Diestro'),(2, 'Zurdo'), (3, 'Ambidiestro'), (4, 'Inhábil')
-
-
-insert into Paises (cod_pais, nombre_pais)
-	values (1, 'Argentina')
-
-insert into Provincias (cod_provincia, nombre_provincia, cod_pais)
-	values (1, 'Córdoba', 1),
-		   (2, 'Santa Fe', 1)
-
-insert into Localidades (cod_localidad, nombre_localidad, cod_provincia)
-				values (1, 'Córdoba', 1),
-					   (2, 'Rosario', 2)
-
-insert into TiposDocs (cod_tipoDoc, tipo)
-			values (1, 'DNI'),
-				   (2, 'Pasaporte')
-
-insert into TiposCompromisos (cod_tipoCompromiso, tipo)
-					values (1, 'Presentación oficial'),
-						   (2, 'Partido Liga Nacional'),
-						   (3, 'Partido Liga Internacional')
+go
+create proc SP_CONSULTAR_USUARIOS
+as
+select * from Usuarios
+go
+   
+------------------------------------------------------------------------------
+------------SP_BAJA-----------------------------------------------------------
+------------------------------------------------------------------------------
 
 
-set dateformat dmy;
-insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, cod_piernaHabil, peso, estatura, fechaAlta, fechaBaja)
-	values (1, 'Esteban', 'Quito', 1, 36459685, '16/08/1990', 2, 73.2, 183, '03/10/2021', null),
-		   (2, 'Armando', 'Escandalo', 1, 31847476, '10/06/1986', 3, 83.4, 176, '26/07/2020', null),
-		   (3, 'Igor', 'Dito', 1, 40898776, '29/02/2000', 1, 67.1, 188, '12/11/2020', null),
-		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
-		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
+create proc SP_BAJA_PERSONA
+@codigo int
+as
+begin
+update Personas
+set fechaBaja = GETDATE()
+where cod_persona=@codigo
+end
+
+go
+
+create proc SP_BAJA_EQUIPO
+@codigo int
+as
+begin
+update Equipos
+set fechaBaja = GETDATE()
+where cod_equipo=@codigo
+end
+
+go
+
+create proc SP_BAJA_COMPROMISO
+@codigo int
+as
+begin
+update Compromisos
+set fechaBaja = GETDATE()
+where cod_compromiso=@codigo
+end
+
+go
+
+create proc SP_BAJA_EQUIPO_PERSONA_PORDETALLE
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_equipoPersona=@codigo
+end
+
+go
+
+create proc SP_BAJA_EQUIPO_PERSONA_POREQUIPO
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_equipo=@codigo
+end
+
+go
+
+create proc SP_BAJA_EQUIPO_PERSONA_PORPERSONA
+@codigo int
+as
+begin
+update Equipos_Personas
+set fechaBaja = GETDATE()
+where cod_persona=@codigo
+end
+
+------------------------------------------------------------------------------
+------------SP_EDITAR---------------------------------------------------------
+------------------------------------------------------------------------------
+go
+create proc SP_EDITAR_PERSONA
+@codigo int,
+@nombre nvarchar (50),
+@apellido nvarchar (50),
+@cod_tipoDoc int,
+@numeroDocumento int,
+@fechaNac date,
+@piernaHabil int,
+@peso numeric (5,2),
+@estatura numeric (5,2),
+@fechaAlta datetime,
+@fechaBaja datetime
+as
+begin
+update Personas
+set nombre = @nombre, 
+	apellido = @apellido, 
+	cod_tipoDoc = @cod_tipoDoc, 
+	numeroDocumento = @numeroDocumento, 
+	fechaNac = @fechaNac, 
+	cod_piernaHabil = @piernaHabil, 
+	peso = @peso, 
+	estatura = @estatura,
+	fechaAlta = @fechaAlta,
+	fechaBaja = @fechaBaja
+where cod_persona=@codigo
+end
+go
+go
+create proc SP_EDITAR_EQUIPO
+@codigo int, 
+@nombre nvarchar (50), 
+@fechaAlta datetime, 
+@fechaBaja datetime
+as
+begin
+update Equipos
+set nombre = @nombre,
+	fechaAlta = @fechaAlta,
+	fechaBaja = @fechaBaja
+where cod_equipo = @codigo
+end
+go
+create proc SP_EDITAR_COMPROMISO
+@codigo int,
+@cod_equipo int,
+@cod_tipoCompromiso int,
+@comentariosCompromiso nvarchar (250),
+@fechaCompromiso datetime,
+@fechaAlta datetime,
+@fechaBaja datetime
+as
+begin
+update Compromisos
+set cod_equipo = @cod_equipo, 
+	cod_tipoCompromiso = @cod_tipoCompromiso, 
+	comentariosCompromiso = @comentariosCompromiso, 
+	fechaCompromiso = @fechaCompromiso, 
+	fechaAlta = @fechaAlta, 
+	fechaBaja = @fechaBaja
+where cod_compromiso=@codigo
+end
+go
 
 
+create proc SP_EDITAR_EQUIPO_PERSONA_PORDETALLE
+@codigo int,
+@cod_persona int,
+@cod_equipo int,
+@cod_posicion int,
+@camiseta nvarchar (100),
+@fechaAlta datetime,
+@fechaBaja datetime
+as
+begin
+update Equipos_Personas
+set cod_persona = @cod_persona, 
+	cod_equipo = @cod_equipo,  
+	cod_posicion = @cod_posicion, 
+	camiseta = @camiseta, 
+	fechaAlta = @fechaAlta, 
+	fechaBaja = @fechaBaja
+where cod_equipoPersona=@codigo
+end
+
+go
+
+create proc SP_EDITAR_USUARIO
+@codigo int, 
+@nombre nvarchar (100), 
+@pass nvarchar (50),
+@fechaBaja datetime
+as
+begin
+update Usuarios
+set usuario = @nombre,
+	pass = @pass,
+	fechaBaja = @fechaBaja
+where cod_usuario = @codigo
+end
+
+go

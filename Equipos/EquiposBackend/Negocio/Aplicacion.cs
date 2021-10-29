@@ -13,34 +13,21 @@ namespace EquiposBackend.Negocio
         EquipoDAO dao = new EquipoDAO();
         UsuariosDao usuariosDao = new UsuariosDao();
 
-        public List<Equipo> ConsultarEquipos()
-        {
-            throw new NotImplementedException();
-        }
 
-        public List<Persona> ConsultarPersonas()
-        {
-            throw new NotImplementedException();
-        }
-
+        //create
+        
         public bool CrearEquipo(Equipo oEquipo)
         {
-            throw new NotImplementedException();
+            return dao.CreateEquipo(oEquipo);
+        }
+        public bool CrearPersona(Persona oPersona)
+        {
+            return dao.CreatePersona(oPersona);
         }
 
-        public bool CrearEquipoPersona(EquipoPersona detalle, Equipo oEquipo)
+        public bool CrearEquipoPersona(EquipoPersona detalle)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool CrearJugador(Jugador oJugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool CrearLocalidad(string nombreLocalidad, int provincia)
-        {
-            return dao.CreateLocalidad(nombreLocalidad, provincia);
+            return dao.CreateEquipoPersona(detalle);
         }
 
         public bool CrearPais(string nombrePais)
@@ -53,30 +40,13 @@ namespace EquiposBackend.Negocio
             return dao.CreateProvincia(nombreProvincia, pais);
         }
 
-        public bool EditarEquipo(Equipo oEquipo, Equipo Equipo2)
+        public bool CrearLocalidad(string nombreLocalidad, int provincia)
         {
-            throw new NotImplementedException();
+            return dao.CreateLocalidad(nombreLocalidad, provincia);
         }
 
-        public bool EditarJugador(Jugador oJugador, Jugador Jugador2)
-        {
-            throw new NotImplementedException();
-        }
+        //get - read
 
-        public bool EliminarEquipo(Equipo oEquipo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EliminarJugador(Jugador oJugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Localidad> ConsultarLocalidades()
-        {
-            return dao.GetLocalidades();
-        }
 
         public List<Pais> ConsultarPaises()
         {
@@ -88,6 +58,54 @@ namespace EquiposBackend.Negocio
             return dao.GetProvincias();
         }
 
+        public List<Localidad> ConsultarLocalidades()
+        {
+            return dao.GetLocalidades();
+        }
+
+        public List<Persona> ConsultarPersonas()
+        {
+            return dao.GetPersonas();
+        }
+        public List<Equipo> ConsultarEquipos()
+        {
+            return dao.GetEquipos();
+        }
+
+        public List<EquipoPersona> ConsultarEquipoPersona()
+        {
+            return dao.GetEquipoPersona();
+        }
+
+        public Equipo ConsultarEquipoByID(int nro)
+        {
+            return dao.GetEquipoByID(nro);
+        }
+
+        //update
+
+        public bool EditarEquipo(Equipo oEquipo)
+        {
+            return dao.EditEquipo(oEquipo);
+        }
+        public bool EditarPersona(Persona oPersona)
+        {
+            return dao.EditPersona(oPersona);
+        }
+
+        // delete 
+
+        public bool EliminarJugador(int nroJugador)
+        {
+            return dao.DeleteJugador(nroJugador);
+        }
+
+        public bool EliminarEquipo(int nroEquipo)
+        {
+            return dao.DeleteEquipo(nroEquipo);
+        }
+
+<<<<<<< HEAD
         public bool Login(string username, string pass)
         {
            return usuariosDao.Login(username, pass);
@@ -97,5 +115,11 @@ namespace EquiposBackend.Negocio
         {
             return usuariosDao.RecoverPassword(userRequesting);
         }
+=======
+        
+        
+
+        
+>>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
     }
 }

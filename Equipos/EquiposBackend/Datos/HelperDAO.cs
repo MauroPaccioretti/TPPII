@@ -118,6 +118,7 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
+<<<<<<< HEAD
         public bool Login(string user, string pass)
         {
             bool aux = false;
@@ -191,6 +192,39 @@ namespace EquiposBackend.Datos
             catch (Exception)
             {
                 aux = "Error for send email";
+=======
+        public bool AlterOneElement( string spCommand, Dictionary<string , object> parametros = null )
+        {
+            bool aux = false;
+            try
+            {
+                SqlTransaction t = null;
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(spCommand, cnn, t);
+                cnn.BeginTransaction();
+                cmd.CommandType = CommandType.StoredProcedure;
+                if(parametros != null)
+                    foreach(KeyValuePair<string, object> p in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                    }
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    t.Commit();
+                    aux = true;
+                }
+                else
+                {
+                    t.Rollback();
+                    aux = false;
+                }
+                
+            }
+            catch
+            {
+                aux = false;
+>>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
             }
             finally
             {
@@ -198,7 +232,11 @@ namespace EquiposBackend.Datos
             }
 
             return aux;
+<<<<<<< HEAD
 
+=======
+                      
+>>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
         }
 
     }

@@ -21,7 +21,15 @@ namespace EquiposBackend.Dominio
             Jugadores = new List<EquipoPersona>();
         }
 
+        public void AgregarJugador(EquipoPersona jugador)
+        {
+            Jugadores.Add(jugador);
+        }
 
+        public void QuitarJugador(int nroJugador)
+        {
+            Jugadores.RemoveAt(nroJugador);
+        }
 
         /*
 

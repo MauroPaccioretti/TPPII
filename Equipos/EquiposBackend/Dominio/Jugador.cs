@@ -8,6 +8,6 @@ namespace EquiposBackend.Dominio
 {
     public class Jugador : Persona
     {
-        public int codPosicion { get; set; }
+        public int CodPosicion { get; set; }
     }
 }
