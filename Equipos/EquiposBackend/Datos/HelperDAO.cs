@@ -118,5 +118,46 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
+        public bool AlterOneElement( string spCommand, Dictionary<string , object> parametros = null )
+        {
+            bool aux = false;
+            try
+            {
+                SqlTransaction t = null;
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(spCommand, cnn, t);
+                cnn.BeginTransaction();
+                cmd.CommandType = CommandType.StoredProcedure;
+                if(parametros != null)
+                    foreach(KeyValuePair<string, object> p in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                    }
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    t.Commit();
+                    aux = true;
+                }
+                else
+                {
+                    t.Rollback();
+                    aux = false;
+                }
+                
+            }
+            catch
+            {
+                aux = false;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+            return aux;
+                      
+        }
+
     }
 }

@@ -12,6 +12,8 @@ namespace EquiposBackend.Datos
     {
         HelperDAO helper = HelperDAO.GetInstance();
 
+        //create
+
         public bool CreateEquipo(Equipo oEquipo)
         {
             bool aux;
@@ -25,14 +27,32 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
-        public bool CreateEquipoPersona(EquipoPersona detalle, Equipo oEquipo)
+        public bool CreatePersona(Persona oPersona)
+        {
+            bool aux;
+            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            parameters.Add("@nombre", oPersona.Nombre);
+            parameters.Add("@apellido", oPersona.Apellido);
+            parameters.Add("@cod_tipoDoc", oPersona.TipoDoc);
+            parameters.Add("@numeroDocumento", oPersona.NumeroDoc);
+            parameters.Add("@fechaNac", oPersona.FechaNac);
+            parameters.Add("@piernaHabil", oPersona.PiernaHabil);
+            parameters.Add("@peso", oPersona.Peso);
+            parameters.Add("@estatura", oPersona.Estatura);
+
+            aux = helper.addObject("SP_INSERTAR_PERSONA", parameters);
+
+            return aux;
+        }
+
+        public bool CreateEquipoPersona(EquipoPersona detalle)
         {
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@cod_persona", detalle.Persona.codPersona);
-            parameters.Add("@cod_equipo", oEquipo.CodEquipo);
+            parameters.Add("@cod_persona", detalle.Persona.CodPersona);
+            parameters.Add("@cod_equipo", detalle.CodEquipo);
             parameters.Add("@cod_posicion", detalle.CodPosicion);
             parameters.Add("@camiseta", detalle.Camiseta);
 
@@ -42,27 +62,6 @@ namespace EquiposBackend.Datos
             return aux;
 
         }
-
-
-        public bool CreateJugador(Persona oPersona)
-        {
-            bool aux;
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
-            parameters.Add("@nombre", oPersona.nombre);
-            parameters.Add("@apellido", oPersona.apellido);
-            parameters.Add("@cod_tipoDoc", oPersona.tipoDoc);
-            parameters.Add("@numeroDocumento", oPersona.numeroDoc);
-            parameters.Add("@fechaNac", oPersona.fechaNac);
-            parameters.Add("@piernaHabil", oPersona.piernaHabil);
-            parameters.Add("@peso", oPersona.peso);
-            parameters.Add("@estatura", oPersona.estatura);
-
-            aux = helper.addObject("SP_INSERTAR_PERSONA", parameters);
-
-            return aux;
-        }
-
-        
 
         public bool CreatePais(string nombrePais)
         {
@@ -105,25 +104,9 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
-        public bool DeleteEquipo(int idEquipo)
-        {
-            return helper.DeleteElement(idEquipo, "SP_BAJA_EQUIPO");
-        }
 
-        public bool DeleteJugador(int idJugador) // cuando damos de baja a una persona, tenemos que darlo de baja también de EquipoPerosna. Hay q hacerlo via transact!!
-        {
-            return helper.DeleteElement(idJugador, "SP_BAJA_JUGADOR");
-        }
 
-        public bool EditEquipo(Equipo equipo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EditJugador(Jugador jugador)
-        {
-            throw new NotImplementedException();
-        }
+        ////get - read
 
         public List<Persona> GetPersonas()
         {
@@ -131,21 +114,21 @@ namespace EquiposBackend.Datos
             DataTable dt = helper.GetTable("SP_CONSULTAR_PERSONAS");
             if (dt != null)
             {
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
                     Persona oPersona = new Persona();
-                    oPersona.codPersona = Convert.ToInt32(row[0].ToString());
-                    oPersona.nombre = row[1].ToString();
-                    oPersona.apellido = row[2].ToString();
-                    oPersona.tipoDoc = Convert.ToInt32(row[3].ToString());
-                    oPersona.numeroDoc = Convert.ToInt32(row[4].ToString());
-                    oPersona.fechaNac = Convert.ToDateTime(row[5].ToString());
-                    oPersona.piernaHabil = Convert.ToInt32(row[6].ToString());
-                    oPersona.peso = Convert.ToDouble(row[7].ToString());
-                    oPersona.estatura = Convert.ToDouble(row[8].ToString());
-                    oPersona.fechaAlta = Convert.ToDateTime(row[9].ToString());
+                    oPersona.CodPersona = Convert.ToInt32(row[0].ToString());
+                    oPersona.Nombre = row[1].ToString();
+                    oPersona.Apellido = row[2].ToString();
+                    oPersona.TipoDoc = Convert.ToInt32(row[3].ToString());
+                    oPersona.NumeroDoc = Convert.ToInt32(row[4].ToString());
+                    oPersona.FechaNac = Convert.ToDateTime(row[5].ToString());
+                    oPersona.PiernaHabil = Convert.ToInt32(row[6].ToString());
+                    oPersona.Peso = Convert.ToDouble(row[7].ToString());
+                    oPersona.Estatura = Convert.ToDouble(row[8].ToString());
+                    oPersona.FechaAlta = Convert.ToDateTime(row[9].ToString());
                     if (!row[10].Equals(DBNull.Value))
-                        oPersona.fechaBaja = Convert.ToDateTime(row[10].ToString()); 
+                        oPersona.FechaBaja = Convert.ToDateTime(row[10].ToString());
 
                     lst.Add(oPersona);
 
@@ -161,13 +144,13 @@ namespace EquiposBackend.Datos
             List<EquipoPersona> lst = new List<EquipoPersona>();
             List<Persona> lstPersonas = GetPersonas();
             DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_PERSONAS");
-            if(dt != null)
+            if (dt != null)
             {
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
                     EquipoPersona oEP = new EquipoPersona();
                     oEP.CodEP = Convert.ToInt32(row[0].ToString());
-                    oEP.Persona = lstPersonas.Find(item => item.codPersona == Convert.ToInt32(row[1].ToString()));
+                    oEP.Persona = lstPersonas.Find(item => item.CodPersona == Convert.ToInt32(row[1].ToString()));
                     oEP.CodEquipo = Convert.ToInt32(row[2].ToString());
                     oEP.CodPosicion = Convert.ToInt32(row[3].ToString());
                     oEP.Camiseta = row[4].ToString();
@@ -176,7 +159,6 @@ namespace EquiposBackend.Datos
                         oEP.FechaBaja = Convert.ToDateTime(row[6].ToString());
                 }
             }
-
             return lst;
         }
 
@@ -190,37 +172,84 @@ namespace EquiposBackend.Datos
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    Equipo oEquipo = new Equipo();            
+                    Equipo oEquipo = new Equipo();
                     oEquipo.CodEquipo = Convert.ToInt32(row[0].ToString());
                     oEquipo.CodLocalidad = Convert.ToInt32(row[1].ToString());
                     oEquipo.Nombre = row[2].ToString();
                     oEquipo.FechaAlta = Convert.ToDateTime(row[3].ToString());
                     if (!row[4].Equals(DBNull.Value))
                         oEquipo.FechaBaja = Convert.ToDateTime(row[4].ToString());
-                    if(lstEP.Count > 0)
-                        foreach(EquipoPersona oEP in lstEP)
+                    if (lstEP.Count > 0)
+                        foreach (EquipoPersona oEP in lstEP)
                         {
                             if (oEP.CodEquipo == oEquipo.CodEquipo)
                                 oEquipo.AgregarJugador(oEP);
                         }
 
                     lst.Add(oEquipo);
-                       
                 }
-                return lst;
             }
-            
-
-            throw new NotImplementedException();
+            return lst;
         }
 
-        
+        public Equipo GetEquipoByID(int nro)
+        {
+            Equipo oEquipo = new Equipo();
+
+            DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_POR_ID", new Dictionary<string, object> { { "@codigo", nro } });
+            bool bandera = true;
+            if (dt != null)
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (bandera)
+                    {
+                        oEquipo.CodEquipo = Convert.ToInt32(row[0].ToString());
+                        oEquipo.CodLocalidad = Convert.ToInt32(row[1].ToString());
+                        oEquipo.Nombre = row[2].ToString();
+                        oEquipo.FechaAlta = Convert.ToDateTime(row[3].ToString());
+                        if (!row[4].Equals(DBNull.Value))
+                            oEquipo.FechaBaja = Convert.ToDateTime(row[4].ToString());
+                        bandera = false;
+                    }
+
+                    EquipoPersona oEP = new EquipoPersona();
+                    Persona oPersona = new Persona();
+
+                    oEP.CodEP = Convert.ToInt32(row[5].ToString());
+                    oEP.CodPosicion = Convert.ToInt32(row[8].ToString());
+                    oEP.Camiseta = row[9].ToString();
+                    oEP.FechaAlta = Convert.ToDateTime(row[10]);
+                    if (!row[11].Equals(DBNull.Value))
+                        oEP.FechaBaja = Convert.ToDateTime(row[11].ToString());
+
+                    oPersona.CodPersona = Convert.ToInt32(row[12].ToString());
+                    oPersona.Nombre = row[13].ToString();
+                    oPersona.Apellido = row[14].ToString();
+                    oPersona.TipoDoc = Convert.ToInt32(row[15].ToString());
+                    oPersona.NumeroDoc = Convert.ToInt32(row[16].ToString());
+                    oPersona.FechaNac = Convert.ToDateTime(row[17].ToString());
+                    oPersona.PiernaHabil = Convert.ToInt32(row[18].ToString());
+                    oPersona.Peso = Convert.ToDouble(row[19].ToString());
+                    oPersona.Estatura = Convert.ToDouble(row[20].ToString());
+                    oPersona.FechaAlta = Convert.ToDateTime(row[21].ToString());
+                    if (!row[22].Equals(DBNull.Value))
+                        oPersona.FechaBaja = Convert.ToDateTime(row[22].ToString());
+
+                    oEP.Persona = oPersona;
+
+                    oEquipo.AgregarJugador(oEP);
+                }
+
+            return oEquipo;
+        }
+
+
 
         public List<Pais> GetPaises()
         {
             List<Pais> lst = new List<Pais>();
             DataTable dt = helper.GetTable("SP_CONSULTAR_PAISES");
-            if(dt != null)
+            if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
                 {
@@ -231,10 +260,10 @@ namespace EquiposBackend.Datos
                 }
             }
             return lst;
-            
+
         }
 
-        
+
         public List<Provincia> GetProvincias()
         {
             List<Provincia> lst = new List<Provincia>();
@@ -277,5 +306,36 @@ namespace EquiposBackend.Datos
             }
             return lst;
         }
+
+
+
+        ////update
+
+        public bool EditEquipo(Equipo equipo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EditJugador(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        ////delete
+
+        public bool DeleteJugador(int idJugador) // cuando damos de baja a una persona, tenemos que darlo de baja también de EquipoPerosna. Hay q hacerlo via transact!!
+        {
+            return helper.DeleteElement(idJugador, "SP_BAJA_JUGADOR");
+        }
+
+
+        public bool DeleteEquipo(int idEquipo)
+        {
+            return helper.DeleteElement(idEquipo, "SP_BAJA_EQUIPO");
+        }
+
+
+        
     }
 }

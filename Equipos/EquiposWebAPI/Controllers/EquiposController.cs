@@ -1,4 +1,5 @@
-﻿using EquiposBackend.Negocio;
+﻿using EquiposBackend.Dominio;
+using EquiposBackend.Negocio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,6 +20,8 @@ namespace EquiposWebAPI.Controllers
             app = new ImpFactoryAplicacion().CrearService();
         }
 
+        //get
+
         [HttpGet("paises")]
         public IActionResult GetPaises()
         {
@@ -36,6 +39,36 @@ namespace EquiposWebAPI.Controllers
         {
             return Ok(app.ConsultarLocalidades());
         }
+
+        [HttpGet("equipos")]
+        public IActionResult GetEquipos()
+        {
+            return Ok(app.ConsultarEquipos());
+        }
+
+        [HttpGet("equipos/{id}")]
+        public IActionResult GetEquipoByID(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.ConsultarEquipoByID(id));
+        }
+
+
+        [HttpGet("personas")]
+        public IActionResult GetPersonas()
+        {
+            return Ok(app.ConsultarPersonas());
+        }
+
+        [HttpGet("equiposPersonas")]
+        public IActionResult GetEquiposPersonas()
+        {
+            return Ok(app.ConsultarEquipoPersona());
+        }
+
+
+        //post
 
         [HttpPost("insertarPais")]
         public IActionResult PostPais(string nombre)
@@ -70,5 +103,61 @@ namespace EquiposWebAPI.Controllers
             else
                 return Ok("No se puedo grabar!");
         }
+
+        [HttpPost("insertarPersona")]
+        public IActionResult PostPersona(Persona oPersona)
+        {
+            if (oPersona == null)
+                return BadRequest();
+            if (app.CrearPersona(oPersona))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+        [HttpPost("insertarEquipo")]
+        public IActionResult PostEquipo(Equipo oEquipo)
+        {
+            if (oEquipo == null)
+                return BadRequest();
+            if (app.CrearEquipo(oEquipo))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+        [HttpPost("insertarEquipoPersona")]
+        public IActionResult PostEquipoPersona(EquipoPersona oEP)
+        {
+            if (oEP == null)
+                return BadRequest();
+            if (app.CrearEquipoPersona(oEP))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+
+
+
+        //Delete
+
+        [HttpDelete("jugador/{id}")]
+        public IActionResult DeleteJugador(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.EliminarJugador(id));
+        }
+
+        [HttpDelete("equipo/{id}")]
+        public IActionResult DeleteEquipo(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.EliminarEquipo(id));
+        }
+
+
     }
 }

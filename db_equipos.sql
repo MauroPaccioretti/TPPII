@@ -398,10 +398,23 @@ where fechaBaja is null
 go
 
 go
+
 create proc SP_CONSULTAR_EQUIPOS
 as
 select * from Equipos
+go
 
+
+go 
+
+create proc SP_CONSULTAR_EQUIPOS_POR_ID
+@codigo int
+as
+select * 
+from Equipos e 
+	join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
+	join Personas p on ep.cod_persona = p.cod_persona
+where e.cod_equipo = @codigo
 go
 
 go
@@ -448,8 +461,7 @@ create proc SP_CONSULTAR_USUARIOS
 as
 select * from Usuarios
 go
-
-		   
+   
 ------------------------------------------------------------------------------
 ------------SP_BAJA-----------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -464,6 +476,8 @@ set fechaBaja = GETDATE()
 where cod_persona=@codigo
 end
 
+go
+
 create proc SP_BAJA_EQUIPO
 @codigo int
 as
@@ -472,6 +486,8 @@ update Equipos
 set fechaBaja = GETDATE()
 where cod_equipo=@codigo
 end
+
+go
 
 create proc SP_BAJA_COMPROMISO
 @codigo int
@@ -482,6 +498,8 @@ set fechaBaja = GETDATE()
 where cod_compromiso=@codigo
 end
 
+go
+
 create proc SP_BAJA_EQUIPO_PERSONA_PORDETALLE
 @codigo int
 as
@@ -491,6 +509,8 @@ set fechaBaja = GETDATE()
 where cod_equipoPersona=@codigo
 end
 
+go
+
 create proc SP_BAJA_EQUIPO_PERSONA_POREQUIPO
 @codigo int
 as
@@ -499,6 +519,8 @@ update Equipos_Personas
 set fechaBaja = GETDATE()
 where cod_equipo=@codigo
 end
+
+go
 
 create proc SP_BAJA_EQUIPO_PERSONA_PORPERSONA
 @codigo int
@@ -512,7 +534,7 @@ end
 ------------------------------------------------------------------------------
 ------------SP_EDITAR---------------------------------------------------------
 ------------------------------------------------------------------------------
-
+go
 create proc SP_EDITAR_PERSONA
 @codigo int,
 @nombre nvarchar (50),
@@ -522,7 +544,7 @@ create proc SP_EDITAR_PERSONA
 @fechaNac date,
 @piernaHabil int,
 @peso numeric (5,2),
-@estatura numeric (5,2)
+@estatura numeric (5,2),
 @fechaAlta datetime,
 @fechaBaja datetime
 as
@@ -540,13 +562,13 @@ set nombre = @nombre,
 	fechaBaja = @fechaBaja
 where cod_persona=@codigo
 end
-
-
+go
+go
 create proc SP_EDITAR_EQUIPO
 @codigo int, 
 @nombre nvarchar (50), 
-fechaAlta datetime, 
-fechaBaja datetime
+@fechaAlta datetime, 
+@fechaBaja datetime
 as
 begin
 update Equipos
@@ -555,7 +577,7 @@ set nombre = @nombre,
 	fechaBaja = @fechaBaja
 where cod_equipo = @codigo
 end
-
+go
 create proc SP_EDITAR_COMPROMISO
 @codigo int,
 @cod_equipo int,
@@ -575,6 +597,7 @@ set cod_equipo = @cod_equipo,
 	fechaBaja = @fechaBaja
 where cod_compromiso=@codigo
 end
+go
 
 
 create proc SP_EDITAR_EQUIPO_PERSONA_PORDETALLE
@@ -597,7 +620,7 @@ set cod_persona = @cod_persona,
 where cod_equipoPersona=@codigo
 end
 
-
+go
 
 create proc SP_EDITAR_USUARIO
 @codigo int, 
@@ -612,3 +635,5 @@ set usuario = @nombre,
 	fechaBaja = @fechaBaja
 where cod_usuario = @codigo
 end
+
+go
