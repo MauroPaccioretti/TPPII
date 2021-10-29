@@ -118,7 +118,7 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
-<<<<<<< HEAD
+
         public bool Login(string user, string pass)
         {
             bool aux = false;
@@ -192,7 +192,10 @@ namespace EquiposBackend.Datos
             catch (Exception)
             {
                 aux = "Error for send email";
-=======
+            }
+            return aux;
+        }
+
         public bool AlterOneElement( string spCommand, Dictionary<string , object> parametros = null )
         {
             bool aux = false;
@@ -224,7 +227,7 @@ namespace EquiposBackend.Datos
             catch
             {
                 aux = false;
->>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
+
             }
             finally
             {
@@ -232,11 +235,7 @@ namespace EquiposBackend.Datos
             }
 
             return aux;
-<<<<<<< HEAD
 
-=======
-                      
->>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
         }
 
     }

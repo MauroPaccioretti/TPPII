@@ -105,7 +105,11 @@ namespace EquiposBackend.Negocio
             return dao.DeleteEquipo(nroEquipo);
         }
 
-<<<<<<< HEAD
+
+
+
+        // LOGIN
+
         public bool Login(string username, string pass)
         {
            return usuariosDao.Login(username, pass);
@@ -115,11 +119,6 @@ namespace EquiposBackend.Negocio
         {
             return usuariosDao.RecoverPassword(userRequesting);
         }
-=======
-        
-        
 
-        
->>>>>>> d4ef33bf10f4454cb64b63df2cd3de766d421e69
     }
 }
