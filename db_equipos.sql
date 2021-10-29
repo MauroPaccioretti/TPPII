@@ -637,3 +637,16 @@ where cod_usuario = @codigo
 end
 
 go
+create proc [dbo].[SP_CONSULTAR_USUARIOS_LOGIN]
+@user nvarchar(100),
+@pass nvarchar(50)
+as
+select * from Usuarios
+where usuario = @user and pass = @pass
+
+GO
+create proc [dbo].[SP_RECOVERY_PASSWORD]
+@email nvarchar(50)
+as
+select * from Usuarios
+where email = @email
