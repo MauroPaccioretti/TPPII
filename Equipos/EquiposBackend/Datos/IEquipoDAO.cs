@@ -16,12 +16,13 @@ namespace EquiposBackend.Datos
         bool CreateLocalidad(string nombreLocalidad, int provincia);
         bool CreateEquipoPersona(EquipoPersona detalle, Equipo oEquipo);
         List<Persona> GetPersonas();
+        List<EquipoPersona> GetEquipoPersona();
         List<Equipo> GetEquipos();
         List<Pais> GetPaises();
         List<Provincia> GetProvincias();
         List<Localidad> GetLocalidades();
-        bool EditEquipo(int idEquipo, Equipo Equipo2);
-        bool EditJugador(int idJugador, Jugador Jugador2);
+        bool EditEquipo(Equipo equipo);
+        bool EditJugador(Jugador jugador);
         bool DeleteJugador(int idJugador);
         bool DeleteEquipo(int idEquipo);
     }

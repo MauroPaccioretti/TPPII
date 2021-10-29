@@ -8,10 +8,13 @@ namespace EquiposBackend.Dominio
 {
     public class EquipoPersona
     {
-        public Persona persona { get; set; }
-        public int codPosicion { get; set; }
-        public int camiseta { get; set; }
-        public DateTime fechaAlta { get; set; }
-        public DateTime fechaBaja { get; set; }
+        public int CodEP { get; set; }
+        public int CodEquipo { get; set; }
+
+        public Persona Persona { get; set; }
+        public int CodPosicion { get; set; }
+        public string Camiseta { get; set; }
+        public DateTime FechaAlta { get; set; }
+        public DateTime FechaBaja { get; set; }
     }
 }
