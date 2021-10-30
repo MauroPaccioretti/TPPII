@@ -10,18 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
+using EquiposFrontend.Cliente;
+using Newtonsoft.Json;
 
 namespace EquiposFrontend
 {
     public partial class Login : Form
     {
-        private IAplicacion service;
-        Usuario usuario = new Usuario();
+        //private IAplicacion service;
+        //Usuario usuario = new Usuario();
 
         public Login()
         {
             InitializeComponent();
-            service = new ImpFactoryAplicacion().CrearService();
+            //service = new ImpFactoryAplicacion().CrearService();
+            
         }
 
         private void btnExitLogin_Click(object sender, EventArgs e)
@@ -29,20 +32,33 @@ namespace EquiposFrontend
             Close();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_ClickAsync(object sender, EventArgs e)
         {
-            
+            List<string> lst = new();
+
             if (textBoxUsername.Text != string.Empty )
             {
-                usuario.User = textBoxUsername.Text;
+                //usuario.User = textBoxUsername.Text;
+                lst.Add(textBoxUsername.Text);
 
                 if (textBoxPassword.Text != string.Empty)
                 {
-                    usuario.Pass = textBoxPassword.Text;
+                    //usuario.Pass = textBoxPassword.Text;
+                    lst.Add(textBoxPassword.Text);
+                    
+                    
 
-                    var validLogin = service.Login(usuario.User, usuario.Pass);
+                    string filtrosJSON = JsonConvert.SerializeObject(lst);
+                    string url = "https://localhost:44381/api/Usuarios/login";
 
-                    if (validLogin == true)
+                    var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, filtrosJSON);
+
+                    bool validLogIn = JsonConvert.DeserializeObject<bool>(resultado);
+                    
+
+                    //var validLogin = service.Login(usuario.User, usuario.Pass);
+                    
+                    if (validLogIn == true)
                     {
                         Form1 mainMenu = new Form1();
                         mainMenu.Show();

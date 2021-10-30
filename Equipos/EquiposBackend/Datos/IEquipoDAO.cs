@@ -26,13 +26,20 @@ namespace EquiposBackend.Datos
         List<Pais> GetPaises();
         List<Provincia> GetProvincias();
         List<Localidad> GetLocalidades();
+        List<TiposDocumentos> GetTiposDocumentos();
+        List<PiernaHabil> GetPiernaHabil();
+        List<TipoCompromisos> GetTiposCompromisos();
+        List<Compromiso> GetCompromisos();
+        List<Compromiso> GetProximosCompromisos();
+
 
         //update
         bool EditEquipo(Equipo equipo);
         bool EditPersona(Persona oPersona);
 
         //delete
-        bool DeleteJugador(int idJugador);
+        bool DeletePersona(int idPersona);
         bool DeleteEquipo(int idEquipo);
+        bool RemoveJugadorDelEquipo(int idJugador);
     }
 }

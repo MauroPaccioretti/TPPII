@@ -12,7 +12,7 @@ namespace EquiposBackend.Dominio
         public string Nombre { get; set; }
         public int CodLocalidad { get; set; }
         public DateTime FechaAlta { get; set; }
-        public DateTime FechaBaja { get; set; }
+        public DateTime ?  FechaBaja { get; set; }
 
         public List<EquipoPersona> Jugadores { get; set; }
 

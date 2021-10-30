@@ -307,13 +307,131 @@ namespace EquiposBackend.Datos
             return lst;
         }
 
+        public List<TiposDocumentos> GetTiposDocumentos()
+        {
+            List<TiposDocumentos> lst = new();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_TIPOS_DOC");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    TiposDocumentos oTdD = new TiposDocumentos();
+                    oTdD.CodTipoDoc = Convert.ToInt32(row[0].ToString());
+                    oTdD.TipoDoc = row[1].ToString();
+                    
+                    lst.Add(oTdD);
+
+                }
+            }
+            return lst;
+        }
+
+        public List<PiernaHabil> GetPiernaHabil()
+        {
+            List<PiernaHabil> lst = new();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_PIERNAS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    PiernaHabil oPH = new PiernaHabil();
+                    oPH.codPierna = Convert.ToInt32(row[0].ToString());
+                    oPH.Habilidad = row[1].ToString();
+
+                    lst.Add(oPH);
+                }
+            }
+            return lst;
+        }
+
+
+        public List<TipoCompromisos> GetTiposCompromisos()
+        {
+            List<TipoCompromisos> lst = new();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_PIERNAS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    TipoCompromisos oTC = new TipoCompromisos();
+                    oTC.CodCompromiso = Convert.ToInt32(row[0].ToString());
+                    oTC.NombreCompromiso = row[1].ToString();
+
+                    lst.Add(oTC);
+                }
+            }
+            return lst;
+
+        }
+
+
+        public List<Compromiso> GetCompromisos()
+        {
+            List<Compromiso> lst = new();
+            List<TipoCompromisos> lstTiposComp = GetTiposCompromisos();
+
+            DataTable dt = helper.GetTable("SP_CONSULTAR_COMPROMISOS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Compromiso oCompromiso = new Compromiso();
+                    oCompromiso.CodCompromiso = Convert.ToInt32(row[0].ToString());
+                    oCompromiso.CodEquipo = Convert.ToInt32(row[1].ToString());
+                    oCompromiso.TipoCompromiso = lstTiposComp.Find(item => item.CodCompromiso == Convert.ToInt32(row[2].ToString()));
+                    oCompromiso.ComentariosCompromiso = row[3].ToString();
+                    oCompromiso.FechaCompromiso = Convert.ToDateTime(row[4].ToString());
+                    oCompromiso.FechaAlta = Convert.ToDateTime(row[5].ToString());
+                    if (!row[6].Equals(DBNull.Value))
+                        oCompromiso.FechaBaja = Convert.ToDateTime(row[6].ToString());
+                    lst.Add(oCompromiso);
+                }
+            }
+            return lst;
+        }
+
+        public List<Compromiso> GetProximosCompromisos()
+        {
+            List<Compromiso> lst = new();
+            List<TipoCompromisos> lstTiposComp = GetTiposCompromisos();
+
+            DataTable dt = helper.GetTable("SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Compromiso oCompromiso = new Compromiso();
+                    oCompromiso.CodCompromiso = Convert.ToInt32(row[0].ToString());
+                    oCompromiso.CodEquipo = Convert.ToInt32(row[1].ToString());
+                    oCompromiso.TipoCompromiso = lstTiposComp.Find(item => item.CodCompromiso == Convert.ToInt32(row[2].ToString()));
+                    oCompromiso.ComentariosCompromiso = row[3].ToString();
+                    oCompromiso.FechaCompromiso = Convert.ToDateTime(row[4].ToString());
+                    oCompromiso.FechaAlta = Convert.ToDateTime(row[5].ToString());
+                    if (!row[6].Equals(DBNull.Value))
+                        oCompromiso.FechaBaja = Convert.ToDateTime(row[6].ToString());
+                    lst.Add(oCompromiso);
+                }
+            }
+            return lst;
+
+        }
 
 
         ////update
 
-        public bool EditEquipo(Equipo equipo)
+        public bool EditEquipo(Equipo oEquipo)
         {
-            throw new NotImplementedException();
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oEquipo.CodEquipo);
+            parametros.Add("@nombre", oEquipo.Nombre);
+            parametros.Add("@fechaAlta", oEquipo.FechaAlta);
+            if (!oEquipo.FechaBaja.HasValue)
+                parametros.Add("@fechaBaja", DBNull.Value);
+            else
+                parametros.Add("fechaBaja", oEquipo.FechaBaja);
+
+            return helper.AlterOneElement("SP_EDITAR_EQUIPO", parametros);
+
         }
 
         public bool EditPersona(Persona oPersona)
@@ -329,7 +447,7 @@ namespace EquiposBackend.Datos
             parametros.Add("@peso", oPersona.Peso);
             parametros.Add("@estatura", oPersona.Estatura);
             parametros.Add("@fechaAlta", oPersona.FechaAlta);
-            if (oPersona.GetFechaBajaFormato().Equals(""))
+            if (!oPersona.FechaBaja.HasValue)
                 parametros.Add("@fechaBaja", DBNull.Value);
             else
                 parametros.Add("fechaBaja", oPersona.FechaBaja);
@@ -341,18 +459,21 @@ namespace EquiposBackend.Datos
 
         ////delete
 
-        public bool DeleteJugador(int idJugador) // cuando damos de baja a una persona, tenemos que darlo de baja también de EquipoPerosna. Hay q hacerlo via transact!!
-        {
-            return helper.DeleteElement(idJugador, "SP_BAJA_JUGADOR");
+        public bool DeletePersona(int idPersona)
+        {            
+            return helper.DeleteElementsIn2Tables(idPersona, "SP_BAJA_JUGADOR" , "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
         }
 
 
         public bool DeleteEquipo(int idEquipo)
         {
-            return helper.DeleteElement(idEquipo, "SP_BAJA_EQUIPO");
+            return helper.DeleteElementsIn2Tables(idEquipo, "SP_BAJA_EQUIPO", "SP_BAJA_EQUIPO_PERSONA_POREQUIPO");
         }
 
+        public bool RemoveJugadorDelEquipo(int idJugador)
+        {
+            return helper.DeleteElement(idJugador, "SP_BAJA_EQUIPO_PERSONA_PORDETALLE");
+        }
 
-        
     }
 }
