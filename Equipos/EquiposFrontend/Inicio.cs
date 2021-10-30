@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EquiposBackend.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,16 @@ using System.Windows.Forms;
 
 namespace EquiposFrontend
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        Usuario oUsuario;
+        public Inicio(Usuario usuario)
         {
             InitializeComponent();
+            oUsuario = usuario; 
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -23,6 +28,20 @@ namespace EquiposFrontend
             {
                 this.Close();
             }
+        }
+
+
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
+                        
+        }
+
+        private void Principal_FormClosing(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thank you for using this service.", "Goodbye.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

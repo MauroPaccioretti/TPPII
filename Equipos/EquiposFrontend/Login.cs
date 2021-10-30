@@ -18,8 +18,8 @@ namespace EquiposFrontend
     public partial class Login : Form
     {
         //private IAplicacion service;
-        //Usuario usuario = new Usuario();
-
+        Usuario usuario = new Usuario();
+        bool forcedLogin = false;
         public Login()
         {
             InitializeComponent();
@@ -32,35 +32,38 @@ namespace EquiposFrontend
             Close();
         }
 
+
+
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
         {
-            List<string> lst = new();
+            List<string> lstDatos = new();
 
             if (textBoxUsername.Text != string.Empty )
             {
-                //usuario.User = textBoxUsername.Text;
-                lst.Add(textBoxUsername.Text);
+                usuario.User = textBoxUsername.Text;
+                lstDatos.Add(textBoxUsername.Text);
 
                 if (textBoxPassword.Text != string.Empty)
                 {
-                    //usuario.Pass = textBoxPassword.Text;
-                    lst.Add(textBoxPassword.Text);
-                    
-                    
+                    usuario.Pass = textBoxPassword.Text;
+                    lstDatos.Add(textBoxPassword.Text);
 
-                    string filtrosJSON = JsonConvert.SerializeObject(lst);
+                    string datosJSON = JsonConvert.SerializeObject(lstDatos);
                     string url = "https://localhost:44381/api/Usuarios/login";
 
-                    var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, filtrosJSON);
+                    var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 
                     bool validLogIn = JsonConvert.DeserializeObject<bool>(resultado);
-                    
+
+                    if (textBoxUsername.Text == "123") //inicio hardCodeado
+                        forcedLogin = true;
+
 
                     //var validLogin = service.Login(usuario.User, usuario.Pass);
-                    
-                    if (validLogIn == true)
-                    {
-                        Form1 mainMenu = new Form1();
+
+                    if (validLogIn == true || forcedLogin)
+                    {                        
+                        Inicio mainMenu = new Inicio(usuario);
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
                         this.Hide();

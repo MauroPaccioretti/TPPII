@@ -44,7 +44,7 @@ namespace EquiposFrontend.Cliente
             return response;
         }
         
-        /* //hay que hacer el put. Solo esta copiado
+         //hay que hacer el put. Solo esta copiado
         public async Task<string> PutAsync(string url, string data)
         {
             StringContent content = new StringContent(data, Encoding.UTF8,
@@ -55,7 +55,7 @@ namespace EquiposFrontend.Cliente
                 response = await result.Content.ReadAsStringAsync();
             return response;
         }
-        */
+        
         public async Task<string> DeleteAsync(string url)
         {
             var result = await client.DeleteAsync(url);
