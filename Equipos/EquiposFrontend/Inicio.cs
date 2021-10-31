@@ -34,40 +34,70 @@ namespace EquiposFrontend
 
         private void editarNombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Modificar_PPL_Frm frmModificarPais = new Modificar_PPL_Frm(PPL.pais);
-            frmModificarPais.Show();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.paises, Accion.Modificar);
+            frmTablasSoporte.Show();
         }
 
         private void cambiarNombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Modificar_PPL_Frm frmModificarPais = new Modificar_PPL_Frm(PPL.provincia);
-            frmModificarPais.Show();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.provincias, Accion.Modificar);
+            frmTablasSoporte.Show();
         }
 
         private void cambiarNombreToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Modificar_PPL_Frm frmModificarPais = new Modificar_PPL_Frm(PPL.localidad);
-            frmModificarPais.Show();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Modificar);
+            frmTablasSoporte.Show();
         }
 
         private void cambiarNombreToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Modificar_PPL_Frm frmModificarPais = new Modificar_PPL_Frm(PPL.tipoDocumentos);
-            frmModificarPais.Show();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Modificar);
+            frmTablasSoporte.Show();
         }
 
         private void modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Modificar_PPL_Frm frmModificarPais = new Modificar_PPL_Frm(PPL.tipoCompromisos);
-            frmModificarPais.Show();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Modificar);
+            frmTablasSoporte.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to close the application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure to Log Out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
             }
+        }
+
+        private void agregarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.paises, Accion.Agregar);
+            frmTablasSoporte.Show();
+        }
+
+        private void agregarNuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.provincias, Accion.Agregar);
+            frmTablasSoporte.Show();
+        }
+
+        private void agregarNuevaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Agregar);
+            frmTablasSoporte.Show();
+        }
+
+        private void agregarNuevoTipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
+            frmTablasSoporte.Show();
+        }
+
+        private void agregarTipoDeCompromisoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Agregar);
+            frmTablasSoporte.Show();
         }
     }
 }

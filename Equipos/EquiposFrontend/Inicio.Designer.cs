@@ -88,8 +88,8 @@ namespace EquiposFrontend
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.salirToolStripMenuItem.Text = "LogOut";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // soporteToolStripMenuItem
@@ -116,13 +116,14 @@ namespace EquiposFrontend
             // agregarNuevoToolStripMenuItem
             // 
             this.agregarNuevoToolStripMenuItem.Name = "agregarNuevoToolStripMenuItem";
-            this.agregarNuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarNuevoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.agregarNuevoToolStripMenuItem.Text = "Agregar Nuevo Pais";
+            this.agregarNuevoToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevoToolStripMenuItem_Click);
             // 
             // editarNombreToolStripMenuItem
             // 
             this.editarNombreToolStripMenuItem.Name = "editarNombreToolStripMenuItem";
-            this.editarNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarNombreToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.editarNombreToolStripMenuItem.Text = "Editar Nombre";
             this.editarNombreToolStripMenuItem.Click += new System.EventHandler(this.editarNombreToolStripMenuItem_Click);
             // 
@@ -140,6 +141,7 @@ namespace EquiposFrontend
             this.agregarNuevaToolStripMenuItem.Name = "agregarNuevaToolStripMenuItem";
             this.agregarNuevaToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.agregarNuevaToolStripMenuItem.Text = "Agregar Nueva Provincia";
+            this.agregarNuevaToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevaToolStripMenuItem_Click);
             // 
             // cambiarNombreToolStripMenuItem
             // 
@@ -162,6 +164,7 @@ namespace EquiposFrontend
             this.agregarNuevaToolStripMenuItem1.Name = "agregarNuevaToolStripMenuItem1";
             this.agregarNuevaToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.agregarNuevaToolStripMenuItem1.Text = "Agregar Nueva Localidad";
+            this.agregarNuevaToolStripMenuItem1.Click += new System.EventHandler(this.agregarNuevaToolStripMenuItem1_Click);
             // 
             // cambiarNombreToolStripMenuItem1
             // 
@@ -184,6 +187,7 @@ namespace EquiposFrontend
             this.agregarNuevoTipoToolStripMenuItem.Name = "agregarNuevoTipoToolStripMenuItem";
             this.agregarNuevoTipoToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.agregarNuevoTipoToolStripMenuItem.Text = "Agregar Nuevo Tipo de Documento";
+            this.agregarNuevoTipoToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevoTipoToolStripMenuItem_Click);
             // 
             // cambiarNombreToolStripMenuItem2
             // 
@@ -206,6 +210,7 @@ namespace EquiposFrontend
             this.agregarTipoDeCompromisoToolStripMenuItem.Name = "agregarTipoDeCompromisoToolStripMenuItem";
             this.agregarTipoDeCompromisoToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
             this.agregarTipoDeCompromisoToolStripMenuItem.Text = "Agregar Nuevo Tipo de Compromiso";
+            this.agregarTipoDeCompromisoToolStripMenuItem.Click += new System.EventHandler(this.agregarTipoDeCompromisoToolStripMenuItem_Click);
             // 
             // modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem
             // 
