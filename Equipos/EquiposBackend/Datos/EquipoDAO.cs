@@ -348,7 +348,7 @@ namespace EquiposBackend.Datos
         public List<TipoCompromisos> GetTiposCompromisos()
         {
             List<TipoCompromisos> lst = new();
-            DataTable dt = helper.GetTable("SP_CONSULTAR_PIERNAS");
+            DataTable dt = helper.GetTable("SP_CONSULTAR_TIPOS_COMPROMISOS");
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)

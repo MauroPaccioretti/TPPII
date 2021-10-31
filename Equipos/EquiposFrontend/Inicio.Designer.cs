@@ -30,7 +30,6 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,16 +65,6 @@ namespace EquiposFrontend
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(73, 473);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 49);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -101,6 +90,7 @@ namespace EquiposFrontend
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // soporteToolStripMenuItem
             // 
@@ -126,14 +116,15 @@ namespace EquiposFrontend
             // agregarNuevoToolStripMenuItem
             // 
             this.agregarNuevoToolStripMenuItem.Name = "agregarNuevoToolStripMenuItem";
-            this.agregarNuevoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.agregarNuevoToolStripMenuItem.Text = "Agregar Nuevo";
+            this.agregarNuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarNuevoToolStripMenuItem.Text = "Agregar Nuevo Pais";
             // 
             // editarNombreToolStripMenuItem
             // 
             this.editarNombreToolStripMenuItem.Name = "editarNombreToolStripMenuItem";
-            this.editarNombreToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editarNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarNombreToolStripMenuItem.Text = "Editar Nombre";
+            this.editarNombreToolStripMenuItem.Click += new System.EventHandler(this.editarNombreToolStripMenuItem_Click);
             // 
             // provinciasToolStripMenuItem
             // 
@@ -147,14 +138,15 @@ namespace EquiposFrontend
             // agregarNuevaToolStripMenuItem
             // 
             this.agregarNuevaToolStripMenuItem.Name = "agregarNuevaToolStripMenuItem";
-            this.agregarNuevaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.agregarNuevaToolStripMenuItem.Text = "Agregar Nueva";
+            this.agregarNuevaToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.agregarNuevaToolStripMenuItem.Text = "Agregar Nueva Provincia";
             // 
             // cambiarNombreToolStripMenuItem
             // 
             this.cambiarNombreToolStripMenuItem.Name = "cambiarNombreToolStripMenuItem";
-            this.cambiarNombreToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.cambiarNombreToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.cambiarNombreToolStripMenuItem.Text = "Editar Nombre";
+            this.cambiarNombreToolStripMenuItem.Click += new System.EventHandler(this.cambiarNombreToolStripMenuItem_Click);
             // 
             // localidadesToolStripMenuItem
             // 
@@ -168,14 +160,15 @@ namespace EquiposFrontend
             // agregarNuevaToolStripMenuItem1
             // 
             this.agregarNuevaToolStripMenuItem1.Name = "agregarNuevaToolStripMenuItem1";
-            this.agregarNuevaToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
-            this.agregarNuevaToolStripMenuItem1.Text = "Agregar Nueva";
+            this.agregarNuevaToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
+            this.agregarNuevaToolStripMenuItem1.Text = "Agregar Nueva Localidad";
             // 
             // cambiarNombreToolStripMenuItem1
             // 
             this.cambiarNombreToolStripMenuItem1.Name = "cambiarNombreToolStripMenuItem1";
-            this.cambiarNombreToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.cambiarNombreToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.cambiarNombreToolStripMenuItem1.Text = "Editar Nombre";
+            this.cambiarNombreToolStripMenuItem1.Click += new System.EventHandler(this.cambiarNombreToolStripMenuItem1_Click);
             // 
             // tiposDeDocumentosToolStripMenuItem
             // 
@@ -190,13 +183,14 @@ namespace EquiposFrontend
             // 
             this.agregarNuevoTipoToolStripMenuItem.Name = "agregarNuevoTipoToolStripMenuItem";
             this.agregarNuevoTipoToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.agregarNuevoTipoToolStripMenuItem.Text = "Nuevo Tipo de Documento";
+            this.agregarNuevoTipoToolStripMenuItem.Text = "Agregar Nuevo Tipo de Documento";
             // 
             // cambiarNombreToolStripMenuItem2
             // 
             this.cambiarNombreToolStripMenuItem2.Name = "cambiarNombreToolStripMenuItem2";
             this.cambiarNombreToolStripMenuItem2.Size = new System.Drawing.Size(275, 22);
             this.cambiarNombreToolStripMenuItem2.Text = "Editar Nombre de Tipo de Documento";
+            this.cambiarNombreToolStripMenuItem2.Click += new System.EventHandler(this.cambiarNombreToolStripMenuItem2_Click);
             // 
             // tiposDeCompromisosToolStripMenuItem
             // 
@@ -211,13 +205,14 @@ namespace EquiposFrontend
             // 
             this.agregarTipoDeCompromisoToolStripMenuItem.Name = "agregarTipoDeCompromisoToolStripMenuItem";
             this.agregarTipoDeCompromisoToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
-            this.agregarTipoDeCompromisoToolStripMenuItem.Text = "Tipo de Compromiso Nuevo";
+            this.agregarTipoDeCompromisoToolStripMenuItem.Text = "Agregar Nuevo Tipo de Compromiso";
             // 
             // modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem
             // 
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Name = "modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem";
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Text = "Editar el Nombre de un Tipo de Compromiso";
+            this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Click += new System.EventHandler(this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -308,7 +303,6 @@ namespace EquiposFrontend
             this.ClientSize = new System.Drawing.Size(1217, 612);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Inicio";
@@ -328,7 +322,6 @@ namespace EquiposFrontend
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;

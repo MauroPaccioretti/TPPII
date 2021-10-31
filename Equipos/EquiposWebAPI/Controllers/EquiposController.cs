@@ -79,7 +79,7 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.ConsultarPiernaHabil());
         }
 
-        [HttpGet("tiposCompromisos")]
+        [HttpGet("tipoCompromisos")]
         public IActionResult GetTiposCompromisos()
         {
             return Ok(app.ConsultarTiposCompromisos());
