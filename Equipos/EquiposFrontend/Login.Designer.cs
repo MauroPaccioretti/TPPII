@@ -45,6 +45,8 @@ namespace EquiposFrontend
             this.lblErrorPass = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+
+
             // 
             // label1
             // 
@@ -131,7 +133,7 @@ namespace EquiposFrontend
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
             // 
             // panel1
             // 
@@ -258,5 +260,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.Label lblErrorIncorrect;
         private System.Windows.Forms.Label lblErrorUsername;
         private System.Windows.Forms.Label lblErrorPass;
+
     }
 }

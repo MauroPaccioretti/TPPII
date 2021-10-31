@@ -15,6 +15,6 @@ namespace EquiposBackend.Dominio
         public int CodPosicion { get; set; }
         public string Camiseta { get; set; }
         public DateTime FechaAlta { get; set; }
-        public DateTime FechaBaja { get; set; }
+        public DateTime ? FechaBaja { get; set; }
     }
 }

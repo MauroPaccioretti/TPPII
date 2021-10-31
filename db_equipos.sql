@@ -110,12 +110,14 @@ create table Equipos_Personas (
 	constraint FK_Equipos_Personas_Posiciones foreign key (cod_posicion) references Posiciones (cod_posicion)
 	)
 
+	
 
 create table Usuarios(  
 	cod_usuario int NOT NULL,  
 	usuario nvarchar(100) NULL,  
-	pass nvarchar(50) NULL,  
+	pass nvarchar(50) NULL, 	
 	fechaBaja datetime NULL,
+	email nvarchar (50) NULL,
 	constraint PK_Usuarios primary key (cod_usuario)  
 )
 
@@ -155,7 +157,6 @@ insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocument
 		   (3, 'Igor', 'Dito', 1, 40898776, '29/02/2000', 1, 67.1, 188, '12/11/2020', null),
 		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
 		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
-
 
 ------------------------------------------------------------------------------
 ----------------SP_INSERTAR---------------------------------------------------
@@ -436,6 +437,10 @@ select * from Compromisos
 where fechaBaja is null and fechaCompromiso >= getdate()
 go
 
+create proc SP_CONSULTAR_COMPROMISOS
+as
+select * from Compromisos
+
 go
 create proc SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOS
 as
@@ -474,6 +479,8 @@ begin
 update Personas
 set fechaBaja = GETDATE()
 where cod_persona=@codigo
+
+
 end
 
 go
@@ -485,6 +492,7 @@ begin
 update Equipos
 set fechaBaja = GETDATE()
 where cod_equipo=@codigo
+
 end
 
 go
@@ -635,6 +643,12 @@ set usuario = @nombre,
 	fechaBaja = @fechaBaja
 where cod_usuario = @codigo
 end
+
+------------------------------------------------------------------------------
+------------LogIn---------------------------------------------------------
+------------------------------------------------------------------------------
+
+
 
 go
 create proc [dbo].[SP_CONSULTAR_USUARIOS_LOGIN]

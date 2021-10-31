@@ -82,6 +82,28 @@ namespace EquiposBackend.Negocio
             return dao.GetEquipoByID(nro);
         }
 
+        public List<TiposDocumentos> ConsultarTipoDocumentos()
+        {
+            return dao.GetTiposDocumentos();
+        }
+        public List<PiernaHabil> ConsultarPiernaHabil()
+        {
+            return dao.GetPiernaHabil();
+        }
+        public List<TipoCompromisos> ConsultarTiposCompromisos()
+        {
+            return dao.GetTiposCompromisos();
+        }
+        public List<Compromiso> ConsultarCompromisos()
+        {
+            return dao.GetCompromisos();
+        }
+        public List<Compromiso> ConsultarProximosCompromisos()
+        {
+            return dao.GetProximosCompromisos();
+        }
+
+
         //update
 
         public bool EditarEquipo(Equipo oEquipo)
@@ -95,9 +117,9 @@ namespace EquiposBackend.Negocio
 
         // delete 
 
-        public bool EliminarJugador(int nroJugador)
+        public bool EliminarPersona(int nroPersona)
         {
-            return dao.DeleteJugador(nroJugador);
+            return dao.DeletePersona(nroPersona);
         }
 
         public bool EliminarEquipo(int nroEquipo)
@@ -105,7 +127,10 @@ namespace EquiposBackend.Negocio
             return dao.DeleteEquipo(nroEquipo);
         }
 
-
+        public bool QuitarJugadorDelEquipo(int codJugador)
+        {
+            return dao.RemoveJugadorDelEquipo(codJugador);
+        }
 
 
         // LOGIN

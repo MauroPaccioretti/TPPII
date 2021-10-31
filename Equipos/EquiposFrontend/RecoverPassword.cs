@@ -10,30 +10,37 @@ using System.Windows.Forms;
 using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
 using System.Text.RegularExpressions;
+using EquiposFrontend.Cliente;
+using Newtonsoft.Json;
 
 namespace EquiposFrontend
 {
     public partial class RecoverPassword : Form
     {
-        private IAplicacion service;
-        Usuario user = new Usuario();
+        //private IAplicacion service;
+        //Usuario user = new Usuario();
 
         public RecoverPassword()
         {
             InitializeComponent();
-            service = new ImpFactoryAplicacion().CrearService();
+            //service = new ImpFactoryAplicacion().CrearService();
             lblResultado.Text = "";
         }
 
-        private void btnSendEmailRecover_Click(object sender, EventArgs e)
+        private async void btnSendEmailRecover_Click(object sender, EventArgs e)
         {
             if (ValidateEmail())
             {
                 lblResultado.Text = "";
-                user.Email = textBoxUserRequest.Text;
-                var result = service.RecoverPassword(user.Email);
-                lblResultado.Text = result;
+                //user.Email = textBoxUserRequest.Text;
+                string url = "https://localhost:44381/api/Usuarios/recoverPass?userRequesting=" + textBoxUserRequest.Text;
+                var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+                string mensaje = JsonConvert.DeserializeObject<string>(resultado);
 
+                //var result = service.RecoverPassword(user.Email);
+
+                //lblResultado.Text = result;
+                lblResultado.Text = mensaje;
             }
             else
             {

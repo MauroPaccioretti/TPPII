@@ -67,6 +67,36 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.ConsultarEquipoPersona());
         }
 
+        [HttpGet("tipoDocumentos")]
+        public IActionResult GetTipoDocumentos()
+        {
+            return Ok(app.ConsultarTipoDocumentos());
+        }
+
+        [HttpGet("piernaHabil")]
+        public IActionResult GetPiernaHabil()
+        {
+            return Ok(app.ConsultarPiernaHabil());
+        }
+
+        [HttpGet("tipoCompromisos")]
+        public IActionResult GetTiposCompromisos()
+        {
+            return Ok(app.ConsultarTiposCompromisos());
+        }
+
+        [HttpGet("compromisos")]
+        public IActionResult GetCompromisos()
+        {
+            return Ok(app.ConsultarCompromisos());
+        }
+
+        [HttpGet("proximosCompromisos")]
+        public IActionResult GetProximosCompromisos()
+        {
+            return Ok(app.ConsultarProximosCompromisos());
+        }
+
 
         //post
 
@@ -164,12 +194,12 @@ namespace EquiposWebAPI.Controllers
 
         //Delete
 
-        [HttpDelete("jugador/{id}")]
-        public IActionResult DeleteJugador(int id)
+        [HttpDelete("persona/{id}")]
+        public IActionResult DeletePersona(int id)
         {
             if (id == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.EliminarJugador(id));
+            return Ok(app.EliminarPersona(id));
         }
 
         [HttpDelete("equipo/{id}")]
@@ -180,6 +210,13 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.EliminarEquipo(id));
         }
 
+        [HttpDelete("jugador/{id}")]
+        public IActionResult DeleteJugador(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.QuitarJugadorDelEquipo(id));
+        }
 
     }
 }

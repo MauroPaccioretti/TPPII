@@ -14,7 +14,7 @@ namespace EquiposBackend.Dominio
 
         public string Pass { get; set; }
 
-        public DateTime FechaBaja { get; set; }
+        public DateTime ? FechaBaja { get; set; }
 
         public string Email { get; set; }
     }

@@ -12,11 +12,14 @@ namespace EquiposBackend.Datos
     {
         private static HelperDAO instance;
         private SqlConnection cnn;
+
         
         private HelperDAO()
         {
             cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+            
         }
+
 
         public static HelperDAO GetInstance()
         {
@@ -105,10 +108,46 @@ namespace EquiposBackend.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@codigo", idElemento);
                 cmd.ExecuteNonQuery();
+                aux = true;
             }
             catch
             {
                 aux = false;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+            return aux;
+        }
+
+        public bool DeleteElementsIn2Tables(int idElemento, string spCommand1, string spCommand2)
+        {
+            bool aux = false;
+            SqlTransaction t = null;
+            try
+            {
+                
+                cnn.Open();
+                cnn.BeginTransaction();
+                SqlCommand cmd1 = new SqlCommand(spCommand1, cnn, t);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@codigo", idElemento);
+                cmd1.ExecuteNonQuery();
+
+                SqlCommand cmd2 = new SqlCommand(spCommand2, cnn, t);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@codigo", idElemento);
+                cmd2.ExecuteNonQuery();
+                t.Commit();
+                aux = true;
+
+            }
+            catch
+            {
+                aux = false;
+                t.Rollback();
             }
             finally
             {
@@ -144,7 +183,6 @@ namespace EquiposBackend.Datos
             }
             catch (Exception)
             {
-
                 aux = false;
             }
             finally
@@ -176,8 +214,8 @@ namespace EquiposBackend.Datos
                     var mailService = new MailServices.SystemSupportEmail();
                     mailService.SendEmail(
                         subject: "Soporte Soccer: Password recovery request",
-                        body: "Hi, " + userName + "\n You request to recover your password. \n" +
-                        "your current password is : " + accountPass,
+                        body: "Hi, " + userName + "\nYou request to recover your password. \n" +
+                        "Your current password is : " + accountPass,
                         recipientMail: new List<string> { userMail }
                         );
 
