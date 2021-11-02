@@ -1,4 +1,5 @@
 ﻿using EquiposBackend.Dominio;
+using EquiposFrontend.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,6 +109,13 @@ namespace EquiposFrontend
                 Application.Exit();
             }
            
+        }
+
+        private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteTablasPosiciones reporte1 = new ReporteTablasPosiciones();
+            reporte1.ShowDialog();
+            
         }
     }
 }

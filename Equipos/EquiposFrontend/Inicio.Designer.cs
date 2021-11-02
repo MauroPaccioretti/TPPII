@@ -33,6 +33,7 @@ namespace EquiposFrontend
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarPaísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +50,6 @@ namespace EquiposFrontend
             this.tiposDeCompromisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,7 +57,10 @@ namespace EquiposFrontend
             this.btnEditarEquipo = new System.Windows.Forms.Button();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tablaDePosicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,6 +73,7 @@ namespace EquiposFrontend
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aToolStripMenuItem,
             this.soporteToolStripMenuItem,
+            this.reportesToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -93,6 +96,13 @@ namespace EquiposFrontend
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "LogOut";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
             // soporteToolStripMenuItem
             // 
@@ -221,20 +231,6 @@ namespace EquiposFrontend
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Text = "Editar el Nombre de un Tipo de Compromiso";
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Click += new System.EventHandler(this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem_Click);
             // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informaciónGeneralToolStripMenuItem});
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
-            // 
-            // informaciónGeneralToolStripMenuItem
-            // 
-            this.informaciónGeneralToolStripMenuItem.Name = "informaciónGeneralToolStripMenuItem";
-            this.informaciónGeneralToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.informaciónGeneralToolStripMenuItem.Text = "Información general";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -303,12 +299,34 @@ namespace EquiposFrontend
             this.dataGridView2.Size = new System.Drawing.Size(706, 230);
             this.dataGridView2.TabIndex = 0;
             // 
-            // salirToolStripMenuItem1
+            // reportesToolStripMenuItem
             // 
-            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem1.Text = "Salir";
-            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tablaDePosicionesToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informaciónGeneralToolStripMenuItem});
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            // 
+            // informaciónGeneralToolStripMenuItem
+            // 
+            this.informaciónGeneralToolStripMenuItem.Name = "informaciónGeneralToolStripMenuItem";
+            this.informaciónGeneralToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.informaciónGeneralToolStripMenuItem.Text = "Información general";
+            // 
+            // tablaDePosicionesToolStripMenuItem
+            // 
+            this.tablaDePosicionesToolStripMenuItem.Name = "tablaDePosicionesToolStripMenuItem";
+            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
+            this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -356,8 +374,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.ToolStripMenuItem tiposDeCompromisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarTipoDeCompromisoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -366,5 +382,9 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tablaDePosicionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
     }
 }
