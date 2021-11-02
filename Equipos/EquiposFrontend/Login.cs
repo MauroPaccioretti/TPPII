@@ -129,5 +129,11 @@ namespace EquiposFrontend
             var recoverPassword = new RecoverPassword();
             recoverPassword.ShowDialog();
         }
+
+        private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.ShowDialog();
+        }
     }
 }

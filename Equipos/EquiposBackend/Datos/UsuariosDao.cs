@@ -12,11 +12,6 @@ namespace EquiposBackend.Datos
     {
         HelperDAO helper = HelperDAO.GetInstance();
 
-        public bool CreateUsuario(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Login(string username, string password)
         {
             
@@ -33,6 +28,19 @@ namespace EquiposBackend.Datos
         public string RecoverPassword(string userRequesting)
         {
             return helper.RecoverPassword(userRequesting);
+        }
+
+        public bool CreateUsuario(Usuario usuario)
+        {
+            bool aux;
+            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            parameters.Add("@usuario", usuario.User);
+            parameters.Add("@pass", usuario.Pass);
+            parameters.Add("@email", usuario.Email);
+
+            aux = helper.addObject("SP_INSERTAR_USUARIO", parameters);
+
+            return aux;
         }
     }
 }

@@ -45,6 +45,8 @@ namespace EquiposBackend.Negocio
 
         bool Login(string username, string pass);
         string RecoverPassword(string userRequesting);
+        bool CreateUsuario(Usuario usuario);
+
 
 
     }

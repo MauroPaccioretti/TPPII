@@ -43,10 +43,10 @@ namespace EquiposFrontend
             this.lblErrorIncorrect = new System.Windows.Forms.Label();
             this.lblErrorUsername = new System.Windows.Forms.Label();
             this.lblErrorPass = new System.Windows.Forms.Label();
+            this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-
-
             // 
             // label1
             // 
@@ -127,9 +127,9 @@ namespace EquiposFrontend
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(868, 529);
+            this.btnLogin.Location = new System.Drawing.Point(891, 515);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(196, 48);
+            this.btnLogin.Size = new System.Drawing.Size(157, 48);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -213,6 +213,34 @@ namespace EquiposFrontend
             this.lblErrorPass.Text = "*Error Message";
             this.lblErrorPass.Visible = false;
             // 
+            // linkLabelRegister
+            // 
+            this.linkLabelRegister.ActiveLinkColor = System.Drawing.Color.Black;
+            this.linkLabelRegister.AutoSize = true;
+            this.linkLabelRegister.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelRegister.ForeColor = System.Drawing.Color.Green;
+            this.linkLabelRegister.LinkColor = System.Drawing.Color.Green;
+            this.linkLabelRegister.Location = new System.Drawing.Point(1083, 735);
+            this.linkLabelRegister.Name = "linkLabelRegister";
+            this.linkLabelRegister.Size = new System.Drawing.Size(52, 16);
+            this.linkLabelRegister.TabIndex = 16;
+            this.linkLabelRegister.TabStop = true;
+            this.linkLabelRegister.Text = "Sign up";
+            this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(919, 735);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 17);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Don\'t have an account?";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -220,6 +248,8 @@ namespace EquiposFrontend
             this.BackgroundImage = global::EquiposFrontend.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.linkLabelRegister);
             this.Controls.Add(this.lblErrorPass);
             this.Controls.Add(this.lblErrorUsername);
             this.Controls.Add(this.lblErrorIncorrect);
@@ -260,6 +290,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Label lblErrorIncorrect;
         private System.Windows.Forms.Label lblErrorUsername;
         private System.Windows.Forms.Label lblErrorPass;
-
+        private System.Windows.Forms.LinkLabel linkLabelRegister;
+        private System.Windows.Forms.Label label3;
     }
 }

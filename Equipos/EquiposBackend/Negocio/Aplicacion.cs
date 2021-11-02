@@ -145,5 +145,9 @@ namespace EquiposBackend.Negocio
             return usuariosDao.RecoverPassword(userRequesting);
         }
 
+        public bool CreateUsuario(Usuario usuario)
+        {
+            return usuariosDao.CreateUsuario(usuario);
+        }
     }
 }
