@@ -204,7 +204,7 @@ as
 begin
 declare @cod_localidad int
 if exists (select * from Localidades)
-	set @cod_localidad = (SELECT max(cod_provincia)+1 FROM Localidades)
+	set @cod_localidad = (SELECT max(cod_localidad)+1 FROM Localidades)
 else
 	set @cod_localidad = 1
 insert into Localidades(cod_localidad, nombre_localidad, cod_provincia)
@@ -256,7 +256,8 @@ end
 
 go
 create proc SP_INSERTAR_EQUIPO
-@nombre nvarchar (50)
+@nombre nvarchar (50),
+@localidad int
 as
 begin
 declare @cod_equipo int
@@ -265,8 +266,8 @@ if exists (select * from Equipos)
 else
 	set @cod_equipo = 1
 
-insert into Equipos (cod_equipo, nombre, fechaAlta, fechaBaja)
-	values (@cod_equipo, @nombre, getdate(), null)
+insert into Equipos (cod_equipo, nombre, cod_localidad, fechaAlta, fechaBaja)
+	values (@cod_equipo, @nombre, @localidad, getdate(), null)
 end
 
 
@@ -643,6 +644,77 @@ set usuario = @nombre,
 	fechaBaja = @fechaBaja
 where cod_usuario = @codigo
 end
+
+go
+create proc SP_EDITAR_PAIS
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update Paises
+set nombre_paies = @nombre
+where cod_pais = @codigo
+
+
+
+go
+create proc SP_EDITAR_PROVINCIA
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update Provincias
+set nombre_provincia = @nombre
+where cod_provincia = @codigo
+
+
+
+go
+create proc SP_EDITAR_LOCALIDAD
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update Localidades 
+set nombre_localidad = @nombre
+where cod_localidad = @codigo
+
+
+
+go
+create proc SP_EDITAR_TIPO_COMPROMISO
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update TiposCompromisos 
+set tipo = @nombre
+where cod_tipoCompromiso = @codigo
+
+
+
+go
+create proc SP_EDITAR_TIPO_DOCUMENTOS
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update TiposDocs 
+set tipo = @nombre
+where cod_tipoDoc = @codigo
+
+
+
+go
+create proc SP_EDITAR_POSICION
+@codigo int,
+@nombre nvarchar (50)
+as
+begin
+update Posiciones 
+set posicion = @nombre
+where cod_posicion = @codigo
+go
 
 ------------------------------------------------------------------------------
 ------------LogIn---------------------------------------------------------

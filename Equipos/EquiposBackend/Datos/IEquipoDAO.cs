@@ -36,6 +36,12 @@ namespace EquiposBackend.Datos
         //update
         bool EditEquipo(Equipo equipo);
         bool EditPersona(Persona oPersona);
+        bool EditPais(Pais oPais);
+        bool EditProvincia(Provincia oProvincia);
+        bool EditLocalidad(Localidad oLocalidad);
+        bool EditTipoDocumento(TiposDocumentos oTipoDoc);
+        bool EditTipoCompromiso(TipoCompromisos oTC);
+        //bool EditPosicion(Posicion oPosicion);
 
         //delete
         bool DeletePersona(int idPersona);
