@@ -29,8 +29,19 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.Login(usser, password));
         }
 
-        [HttpPost("register")]
-        public IActionResult PostEquipo(Usuario usuario)
+        //[HttpPost("register")]
+        //public IActionResult PostEquipo(Usuario usuario)
+        //{
+        //    if (usuario == null)
+        //        return BadRequest();
+        //    if (app.CreateUsuario(usuario))
+        //        return Ok("Se registró exitosamente!");
+        //    else
+        //        return Ok("No se puedo grabar!");
+        //}
+
+        [HttpPut("register")]
+        public IActionResult PutUsuario(Usuario usuario)
         {
             if (usuario == null)
                 return BadRequest();
