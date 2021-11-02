@@ -204,7 +204,7 @@ as
 begin
 declare @cod_localidad int
 if exists (select * from Localidades)
-	set @cod_localidad = (SELECT max(cod_provincia)+1 FROM Localidades)
+	set @cod_localidad = (SELECT max(cod_localidad)+1 FROM Localidades)
 else
 	set @cod_localidad = 1
 insert into Localidades(cod_localidad, nombre_localidad, cod_provincia)
@@ -256,7 +256,8 @@ end
 
 go
 create proc SP_INSERTAR_EQUIPO
-@nombre nvarchar (50)
+@nombre nvarchar (50),
+@localidad int
 as
 begin
 declare @cod_equipo int
@@ -265,8 +266,8 @@ if exists (select * from Equipos)
 else
 	set @cod_equipo = 1
 
-insert into Equipos (cod_equipo, nombre, fechaAlta, fechaBaja)
-	values (@cod_equipo, @nombre, getdate(), null)
+insert into Equipos (cod_equipo, nombre, cod_localidad, fechaAlta, fechaBaja)
+	values (@cod_equipo, @nombre, @localidad, getdate(), null)
 end
 
 
