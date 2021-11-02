@@ -58,6 +58,7 @@ namespace EquiposFrontend
             this.btnEditarEquipo = new System.Windows.Forms.Button();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,7 +81,8 @@ namespace EquiposFrontend
             // aToolStripMenuItem
             // 
             this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.salirToolStripMenuItem1});
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
             this.aToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.aToolStripMenuItem.Text = "Archivo";
@@ -88,7 +90,7 @@ namespace EquiposFrontend
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "LogOut";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -301,6 +303,13 @@ namespace EquiposFrontend
             this.dataGridView2.Size = new System.Drawing.Size(706, 230);
             this.dataGridView2.TabIndex = 0;
             // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -355,7 +364,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button btnEditarEquipo;
         private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.DataGridView dataGridView2;
-
-                    
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
     }
 }

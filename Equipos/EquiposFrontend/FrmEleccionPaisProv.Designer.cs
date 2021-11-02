@@ -1,7 +1,7 @@
 ﻿
 namespace EquiposFrontend
 {
-    partial class FrmTablasSoporte
+    partial class FrmEleccionPaisProv
     {
         /// <summary>
         /// Required designer variable.
@@ -29,54 +29,26 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbPPL = new System.Windows.Forms.ComboBox();
-            this.lblEleccion = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cbxPaises = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblEleccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cmbPPL
+            // cbxPaises
             // 
-            this.cmbPPL.FormattingEnabled = true;
-            this.cmbPPL.Location = new System.Drawing.Point(19, 27);
-            this.cmbPPL.Name = "cmbPPL";
-            this.cmbPPL.Size = new System.Drawing.Size(300, 23);
-            this.cmbPPL.TabIndex = 0;
-            this.cmbPPL.SelectedIndexChanged += new System.EventHandler(this.cmbPPL_SelectedIndexChanged);
-            // 
-            // lblEleccion
-            // 
-            this.lblEleccion.AutoSize = true;
-            this.lblEleccion.Location = new System.Drawing.Point(19, 9);
-            this.lblEleccion.Name = "lblEleccion";
-            this.lblEleccion.Size = new System.Drawing.Size(144, 15);
-            this.lblEleccion.TabIndex = 1;
-            this.lblEleccion.Text = "Elija elemento a modificar";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(19, 70);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(126, 15);
-            this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Inserte nuevo nombre:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(19, 88);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 23);
-            this.txtNombre.TabIndex = 3;
+            this.cbxPaises.FormattingEnabled = true;
+            this.cbxPaises.Location = new System.Drawing.Point(43, 77);
+            this.cbxPaises.Name = "cbxPaises";
+            this.cbxPaises.Size = new System.Drawing.Size(255, 23);
+            this.cbxPaises.TabIndex = 0;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(137, 141);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 33);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -86,24 +58,35 @@ namespace EquiposFrontend
             this.btnCancelar.Location = new System.Drawing.Point(243, 141);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 33);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FrmTablasSoporte
+            // lblEleccion
+            // 
+            this.lblEleccion.AutoSize = true;
+            this.lblEleccion.Location = new System.Drawing.Point(43, 47);
+            this.lblEleccion.Name = "lblEleccion";
+            this.lblEleccion.Size = new System.Drawing.Size(255, 15);
+            this.lblEleccion.TabIndex = 2;
+            this.lblEleccion.Text = "Elija a que país corresponde la provincia nueva:";
+            // 
+            // FrmEleccionPaisProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 186);
+            this.Controls.Add(this.lblEleccion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblEleccion);
-            this.Controls.Add(this.cmbPPL);
-            this.Name = "FrmTablasSoporte";
-            this.Text = "ABM_PPL_Frm";
-            this.Load += new System.EventHandler(this.Modificar_PPL_Frm_Load);
+            this.Controls.Add(this.cbxPaises);
+            this.MaximumSize = new System.Drawing.Size(371, 225);
+            this.MinimumSize = new System.Drawing.Size(371, 225);
+            this.Name = "FrmEleccionPaisProv";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmEleccionPais";
+            this.Load += new System.EventHandler(this.FrmEleccionPais_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,11 +94,9 @@ namespace EquiposFrontend
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbPPL;
-        private System.Windows.Forms.Label lblEleccion;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ComboBox cbxPaises;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblEleccion;
     }
 }

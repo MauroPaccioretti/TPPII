@@ -16,6 +16,12 @@ namespace EquiposBackend.Dominio
         {
             Pais = new Pais();
         }
+
+
+        public override string ToString()
+        {
+            return "Pais: " + Pais.Nombre +" - " + "Provincia: " + Nombre;
+        }
         //public Provincia(int idPais)
         //{
         //    Pais = new Pais(idPais);

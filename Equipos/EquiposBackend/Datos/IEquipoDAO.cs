@@ -13,9 +13,9 @@ namespace EquiposBackend.Datos
         bool CreateEquipo(Equipo oEquipo);
         bool CreatePersona(Persona oPersona);
         bool CreateEquipoPersona(EquipoPersona detalle);
-        bool CreatePais(string nombrePais);
-        bool CreateProvincia(string nombreProvincia, int pais);
-        bool CreateLocalidad(string nombreLocalidad, int provincia);
+        bool CreatePais(Pais oPais);
+        bool CreateProvincia(Provincia oProvincia);
+        bool CreateLocalidad(Localidad oLocalidad);
 
 
         //get - read

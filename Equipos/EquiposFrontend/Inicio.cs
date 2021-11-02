@@ -99,5 +99,14 @@ namespace EquiposFrontend
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Agregar);
             frmTablasSoporte.Show();
         }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to Exit application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
+        }
     }
 }
