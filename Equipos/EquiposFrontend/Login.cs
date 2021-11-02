@@ -50,6 +50,7 @@ namespace EquiposFrontend
 
                     string datosJSON = JsonConvert.SerializeObject(lstDatos);
                     string url = "https://localhost:44381/api/Usuarios/login";
+                    
 
                     var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 

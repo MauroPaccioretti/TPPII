@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EquiposBackend.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace EquiposFrontend
 {
     public partial class Principal : Form
     {
+        Usuario usuario;
         public Principal()
         {
             InitializeComponent();
@@ -21,5 +23,7 @@ namespace EquiposFrontend
         {
             this.Close();
         }
+
+        
     }
 }
