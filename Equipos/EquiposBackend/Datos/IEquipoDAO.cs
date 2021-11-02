@@ -13,9 +13,9 @@ namespace EquiposBackend.Datos
         bool CreateEquipo(Equipo oEquipo);
         bool CreatePersona(Persona oPersona);
         bool CreateEquipoPersona(EquipoPersona detalle);
-        bool CreatePais(string nombrePais);
-        bool CreateProvincia(string nombreProvincia, int pais);
-        bool CreateLocalidad(string nombreLocalidad, int provincia);
+        bool CreatePais(Pais oPais);
+        bool CreateProvincia(Provincia oProvincia);
+        bool CreateLocalidad(Localidad oLocalidad);
 
 
         //get - read
@@ -36,6 +36,12 @@ namespace EquiposBackend.Datos
         //update
         bool EditEquipo(Equipo equipo);
         bool EditPersona(Persona oPersona);
+        bool EditPais(Pais oPais);
+        bool EditProvincia(Provincia oProvincia);
+        bool EditLocalidad(Localidad oLocalidad);
+        bool EditTipoDocumento(TiposDocumentos oTipoDoc);
+        bool EditTipoCompromiso(TipoCompromisos oTC);
+        //bool EditPosicion(Posicion oPosicion);
 
         //delete
         bool DeletePersona(int idPersona);

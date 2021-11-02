@@ -15,6 +15,11 @@ namespace EquiposBackend.Dominio
         {
 
         }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
         //public Pais(int idPais)
         //{
         //    this.IDPais = idPais;

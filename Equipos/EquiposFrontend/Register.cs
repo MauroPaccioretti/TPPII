@@ -45,6 +45,11 @@ namespace EquiposFrontend
         }
 
 
+        private void btnBack_ClickAsync(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
         private async void btnRegister_ClickAsync(object sender, EventArgs e)
         {
             List<string> lstDatos = new();
@@ -66,7 +71,7 @@ namespace EquiposFrontend
                         string datosJSON = JsonConvert.SerializeObject(lstDatos);
                         string url = "https://localhost:44381/api/Usuarios/register";
 
-                        var resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
+                        var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 
                         bool validLogIn = JsonConvert.DeserializeObject<bool>(resultado);
 
@@ -87,17 +92,20 @@ namespace EquiposFrontend
                     else
                     {
                         MsgErrorEmail("Please enter Email");
+                        textBoxEmail.Focus();
                     }
                 }
                 else
                 {
                     MsgErrorPass("Please enter Password");
+                    textBoxPass.Focus();
 
                 }
             }
             else
             {
                 MsgErrorUser("Please enter Username");
+                textBoxUsername.Focus();
             }
         }
     }

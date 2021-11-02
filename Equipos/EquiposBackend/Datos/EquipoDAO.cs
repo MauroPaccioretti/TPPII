@@ -63,12 +63,12 @@ namespace EquiposBackend.Datos
 
         }
 
-        public bool CreatePais(string nombrePais)
+        public bool CreatePais(Pais oPais)
         {
             bool aux;
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@nombre_pais", nombrePais);
+            parameters.Add("@nombre_pais", oPais.Nombre);
 
             aux = helper.addObject("SP_INSERTAR_PAIS", parameters);
 
@@ -76,28 +76,28 @@ namespace EquiposBackend.Datos
 
         }
 
-        public bool CreateProvincia(string nombreProvincia, int pais)
+        public bool CreateProvincia(Provincia oProvincia)
         {
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@nombre_provincia", nombreProvincia);
-            parameters.Add("@cod_pais", pais);
+            parameters.Add("@nombre_provincia", oProvincia.Nombre);
+            parameters.Add("@cod_pais", oProvincia.Pais.IDPais);
 
             aux = helper.addObject("SP_INSERTAR_PROVINCIA", parameters);
 
             return aux;
         }
 
-        public bool CreateLocalidad(string nombreLocalidad, int provincia)
+        public bool CreateLocalidad(Localidad oLocalidad)
         {
 
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
-            parameters.Add("@nombre_localidad", nombreLocalidad);
-            parameters.Add("@cod_provincia", provincia);
+            parameters.Add("@nombre_localidad", oLocalidad.Nombre);
+            parameters.Add("@cod_provincia", oLocalidad.Provincia.IDProvincia);
 
             aux = helper.addObject("SP_INSERTAR_LOCALIDAD", parameters);
 
@@ -453,6 +453,65 @@ namespace EquiposBackend.Datos
                 parametros.Add("fechaBaja", oPersona.FechaBaja);
 
             return helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
+
+        }
+
+        public bool EditPais(Pais oPais)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oPais.IDPais);
+            parametros.Add("@nombre", oPais.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_PAIS", parametros);
+
+        }
+
+
+        public bool EditProvincia(Provincia oProvincia)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oProvincia.IDProvincia);
+            parametros.Add("@nombre", oProvincia.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_PROVINCIA", parametros);
+
+        }
+
+
+        public bool EditLocalidad(Localidad oLocalidad)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oLocalidad.IDLocalidad);
+            parametros.Add("@nombre", oLocalidad.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_LOCALIDAD", parametros);
+
+        }
+
+
+        public bool EditTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oTipoDoc.CodTipoDoc);
+            parametros.Add("@nombre", oTipoDoc.TipoDoc);
+
+
+            return helper.AlterOneElement("SP_EDITAR_TIPO_DOCUMENTOS", parametros);
+
+        }
+
+
+        public bool EditTipoCompromisos(TipoCompromisos oTC)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oTC.CodCompromiso);
+            parametros.Add("@nombre", oTC.NombreCompromiso);
+
+
+            return helper.AlterOneElement("SP_EDITAR_TIPO_COMPROMISO", parametros);
 
         }
 

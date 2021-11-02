@@ -1,4 +1,5 @@
 ﻿using EquiposBackend.Dominio;
+using EquiposFrontend.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace EquiposFrontend
             oUsuario = usuario; 
         }
 
+        
 
         private void Inicio_Load(object sender, EventArgs e)
         {
@@ -98,6 +100,22 @@ namespace EquiposFrontend
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Agregar);
             frmTablasSoporte.Show();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to Exit application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
+        }
+
+        private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteTablasPosiciones reporte1 = new ReporteTablasPosiciones();
+            reporte1.ShowDialog();
+            
         }
     }
 }
