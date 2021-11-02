@@ -63,12 +63,12 @@ namespace EquiposBackend.Datos
 
         }
 
-        public bool CreatePais(string nombrePais)
+        public bool CreatePais(Pais oPais)
         {
             bool aux;
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@nombre_pais", nombrePais);
+            parameters.Add("@nombre_pais", oPais.Nombre);
 
             aux = helper.addObject("SP_INSERTAR_PAIS", parameters);
 
@@ -76,28 +76,28 @@ namespace EquiposBackend.Datos
 
         }
 
-        public bool CreateProvincia(string nombreProvincia, int pais)
+        public bool CreateProvincia(Provincia oProvincia)
         {
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
 
-            parameters.Add("@nombre_provincia", nombreProvincia);
-            parameters.Add("@cod_pais", pais);
+            parameters.Add("@nombre_provincia", oProvincia.Nombre);
+            parameters.Add("@cod_pais", oProvincia.Pais.IDPais);
 
             aux = helper.addObject("SP_INSERTAR_PROVINCIA", parameters);
 
             return aux;
         }
 
-        public bool CreateLocalidad(string nombreLocalidad, int provincia)
+        public bool CreateLocalidad(Localidad oLocalidad)
         {
 
             bool aux;
 
             Dictionary<string, Object> parameters = new Dictionary<string, object>();
-            parameters.Add("@nombre_localidad", nombreLocalidad);
-            parameters.Add("@cod_provincia", provincia);
+            parameters.Add("@nombre_localidad", oLocalidad.Nombre);
+            parameters.Add("@cod_provincia", oLocalidad.Provincia.IDProvincia);
 
             aux = helper.addObject("SP_INSERTAR_LOCALIDAD", parameters);
 

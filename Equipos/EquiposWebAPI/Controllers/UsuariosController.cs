@@ -37,7 +37,7 @@ namespace EquiposWebAPI.Controllers
             if (app.CreateUsuario(usuario))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpGet("recoverPass")]

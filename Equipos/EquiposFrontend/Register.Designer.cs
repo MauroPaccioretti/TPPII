@@ -44,6 +44,7 @@ namespace EquiposFrontend
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.lblErrorEmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,6 +221,20 @@ namespace EquiposFrontend
             this.label4.TabIndex = 27;
             this.label4.Text = "Please enter Email";
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(197, 622);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(196, 48);
+            this.btnBack.TabIndex = 20;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_ClickAsync);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,6 +249,7 @@ namespace EquiposFrontend
             this.Controls.Add(this.lblErrorPass);
             this.Controls.Add(this.lblErrorUsername);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
@@ -265,5 +281,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label lblErrorEmail;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBack;
     }
 }

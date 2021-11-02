@@ -30,19 +30,19 @@ namespace EquiposBackend.Negocio
             return dao.CreateEquipoPersona(detalle);
         }
 
-        public bool CrearPais(string nombrePais)
+        public bool CrearPais(Pais oPais)
         {
-            return dao.CreatePais(nombrePais);
+            return dao.CreatePais(oPais);
         }
 
-        public bool CrearProvincia(string nombreProvincia, int pais)
+        public bool CrearProvincia(Provincia oProvincia)
         {
-            return dao.CreateProvincia(nombreProvincia, pais);
+            return dao.CreateProvincia(oProvincia);
         }
 
-        public bool CrearLocalidad(string nombreLocalidad, int provincia)
+        public bool CrearLocalidad(Localidad oLocalidad)
         {
-            return dao.CreateLocalidad(nombreLocalidad, provincia);
+            return dao.CreateLocalidad(oLocalidad);
         }
 
         //get - read

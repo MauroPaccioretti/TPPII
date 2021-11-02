@@ -101,37 +101,37 @@ namespace EquiposWebAPI.Controllers
         //post
 
         [HttpPost("insertarPais")]
-        public IActionResult PostPais(string nombre)
+        public IActionResult PostPais(Pais oPais)
         {
-            if (nombre == null)
+            if (oPais == null)
                 return BadRequest();
-            if (app.CrearPais(nombre))
+            if (app.CrearPais(oPais))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
         [HttpPost("insertarProvincia")]
-        public IActionResult PostProvincia(string nombre, int idPais)
+        public IActionResult PostProvincia(Provincia oProvincia)
         {
-            if (nombre == null || idPais < 1)
+            if (oProvincia == null)
                 return BadRequest();
-            if (app.CrearProvincia(nombre, idPais))
+            if (app.CrearProvincia(oProvincia))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPost("insertarLocalidad")]
-        public IActionResult PostLocalidad(string nombre, int idProvincia)
+        public IActionResult PostLocalidad(Localidad oLocalidad)
         {
-            if (nombre == null || idProvincia < 1)
+            if (oLocalidad == null )
                 return BadRequest();
-            if (app.CrearLocalidad(nombre, idProvincia))
+            if (app.CrearLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPost("insertarPersona")]
@@ -142,7 +142,7 @@ namespace EquiposWebAPI.Controllers
             if (app.CrearPersona(oPersona))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPost("insertarEquipo")]
@@ -153,7 +153,7 @@ namespace EquiposWebAPI.Controllers
             if (app.CrearEquipo(oEquipo))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPost("insertarEquipoPersona")]
@@ -164,7 +164,7 @@ namespace EquiposWebAPI.Controllers
             if (app.CrearEquipoPersona(oEP))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         //Put
@@ -177,7 +177,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarPersona(oPersona))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPut("editarEquipo")]
@@ -188,7 +188,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarEquipo(oEquipo))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
