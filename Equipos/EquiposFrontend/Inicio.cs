@@ -18,7 +18,8 @@ namespace EquiposFrontend
         public Inicio(Usuario usuario)
         {
             InitializeComponent();
-            oUsuario = usuario; 
+            oUsuario = usuario;
+            lblTitulo.Text = "Bienvenido " + usuario.User;
         }
 
         
@@ -131,6 +132,11 @@ namespace EquiposFrontend
             {
                 this.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

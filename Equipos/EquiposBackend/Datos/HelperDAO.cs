@@ -213,23 +213,23 @@ namespace EquiposBackend.Datos
                     string accountPass = reader.GetString(2);
                     var mailService = new MailServices.SystemSupportEmail();
                     mailService.SendEmail(
-                        subject: "Soporte Soccer: Password recovery request",
-                        body: "Hi, " + userName + "\nYou request to recover your password. \n" +
-                        "Your current password is : " + accountPass,
+                        subject: "Soporte Soccer: Solicitud de recupero de contraseña",
+                        body: "Hola, " + userName + "\nUsted solicito recuperar su contraseña. \n" +
+                        "Su contraseña actual es: " + accountPass,
                         recipientMail: new List<string> { userMail }
                         );
 
-                    aux = "Hi, " + userName + "\nYou requested to recover your password.\n" +
-                        "Please check your email: " + userMail + ", please also check the spam folder.";
+                    aux = "Hola, " + userName + "\nUsted solicito recuperar su contraseña.\n" +
+                        "Porfavor verifique en su email: " + userMail + ", porfavor tambien verifique en la casilla Spam.";
                 }
                 else
                 {
-                    aux = "Sorry, you do not have an account with that email";
+                    aux = "Usted no tiene una cuenta asociada con ese email";
                 }
             }
             catch (Exception)
             {
-                aux = "Error for send email";
+                aux = "Error al enviar";
             }
             return aux;
         }

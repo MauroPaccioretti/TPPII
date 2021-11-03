@@ -107,7 +107,7 @@ namespace EquiposFrontend
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(196, 48);
             this.btnRegister.TabIndex = 20;
-            this.btnRegister.Text = "SIGN UP";
+            this.btnRegister.Text = "REGISTRAR";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_ClickAsync);
             // 
@@ -119,9 +119,9 @@ namespace EquiposFrontend
             this.lbl2.ForeColor = System.Drawing.Color.DimGray;
             this.lbl2.Location = new System.Drawing.Point(132, 357);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(153, 17);
+            this.lbl2.Size = new System.Drawing.Size(160, 17);
             this.lbl2.TabIndex = 18;
-            this.lbl2.Text = "Please enter Password";
+            this.lbl2.Text = "Ingrese una Contraseña";
             // 
             // lbl1
             // 
@@ -131,20 +131,20 @@ namespace EquiposFrontend
             this.lbl1.ForeColor = System.Drawing.Color.DimGray;
             this.lbl1.Location = new System.Drawing.Point(132, 264);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(157, 17);
+            this.lbl1.Size = new System.Drawing.Size(128, 17);
             this.lbl1.TabIndex = 17;
-            this.lbl1.Text = "Please enter Username";
+            this.lbl1.Text = "Ingrese un Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(196, 181);
+            this.label2.Location = new System.Drawing.Point(150, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 25);
+            this.label2.Size = new System.Drawing.Size(243, 25);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Sign up to continue";
+            this.label2.Text = "Registrar para continuar";
             // 
             // label1
             // 
@@ -153,9 +153,9 @@ namespace EquiposFrontend
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(132, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 46);
+            this.label1.Size = new System.Drawing.Size(270, 46);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Create Account";
+            this.label1.Text = "Crear Cuenta";
             // 
             // textBoxUsername
             // 
@@ -218,9 +218,9 @@ namespace EquiposFrontend
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(132, 450);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 17);
+            this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Please enter Email";
+            this.label4.Text = "Ingrese un Email";
             // 
             // btnBack
             // 
@@ -232,7 +232,7 @@ namespace EquiposFrontend
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(196, 48);
             this.btnBack.TabIndex = 20;
-            this.btnBack.Text = "BACK";
+            this.btnBack.Text = "ATRAS";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_ClickAsync);
             // 

@@ -70,12 +70,15 @@ namespace EquiposFrontend
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNvaPersona = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,6 +87,7 @@ namespace EquiposFrontend
             this.groupBox3.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -102,7 +106,7 @@ namespace EquiposFrontend
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(213, 477);
+            this.menuStrip1.Size = new System.Drawing.Size(213, 502);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -521,6 +525,20 @@ namespace EquiposFrontend
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion de Personas";
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Gainsboro;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.button7.Location = new System.Drawing.Point(470, 31);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(217, 38);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Baja de una Persona";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
@@ -555,7 +573,7 @@ namespace EquiposFrontend
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(1397, 7);
+            this.button6.Location = new System.Drawing.Point(1187, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(26, 22);
             this.button6.TabIndex = 14;
@@ -569,7 +587,7 @@ namespace EquiposFrontend
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btnCerrarSesion);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(213, 477);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(213, 502);
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(213, 502);
@@ -591,19 +609,43 @@ namespace EquiposFrontend
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // button7
+            // lblTitulo
             // 
-            this.button7.BackColor = System.Drawing.Color.Gainsboro;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button7.Location = new System.Drawing.Point(470, 31);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(217, 38);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Baja de una Persona";
-            this.button7.UseVisualStyleBackColor = false;
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(493, 3);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(70, 25);
+            this.lblTitulo.TabIndex = 16;
+            this.lblTitulo.Text = "label1";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Location = new System.Drawing.Point(213, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1216, 30);
+            this.panel1.TabIndex = 18;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1399, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(26, 22);
+            this.button2.TabIndex = 15;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Inicio
             // 
@@ -612,7 +654,7 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1428, 501);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -635,6 +677,8 @@ namespace EquiposFrontend
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -688,5 +732,8 @@ namespace EquiposFrontend
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }
