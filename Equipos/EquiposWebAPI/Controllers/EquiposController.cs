@@ -61,6 +61,7 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.ConsultarPersonas());
         }
 
+
         [HttpGet("equiposPersonas")]
         public IActionResult GetEquiposPersonas()
         {
@@ -78,6 +79,13 @@ namespace EquiposWebAPI.Controllers
         {
             return Ok(app.ConsultarPiernaHabil());
         }
+
+        [HttpGet("posiciones")]
+        public IActionResult GetPosiciones()
+        {
+            return Ok(app.ConsultarPosiciones());
+        }
+
 
         [HttpGet("tipoCompromisos")]
         public IActionResult GetTiposCompromisos()
@@ -99,6 +107,26 @@ namespace EquiposWebAPI.Controllers
 
 
         //post
+
+        [HttpPost("crearEquipoFull")]
+        public IActionResult PostEquipoFull(Equipo oEquipo)
+        {
+            if (oEquipo == null)
+                return BadRequest();
+            if (app.CrearEquipoFull(oEquipo))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+
+        }
+
+        [HttpPost("consultarPersonasConFiltro")]
+        public IActionResult PostGetPersonasFiltradas(Dictionary<string,object> filtros)
+        {
+            return Ok(app.ConsultarPersonasFiltradas(filtros));
+            
+        }
+
 
         [HttpPost("insertarPais")]
         public IActionResult PostPais(Pais oPais)
@@ -133,6 +161,29 @@ namespace EquiposWebAPI.Controllers
             else
                 return Ok("No se pudo grabar!");
         }
+
+        [HttpPost("insertarTipoDocumento")]
+        public IActionResult PostTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            if (oTipoDoc == null)
+                return BadRequest();
+            if (app.CrearTipoDocumento(oTipoDoc))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+        }
+
+        [HttpPost("insertarTipoCompromiso")]
+        public IActionResult PostTipoCompromiso(TipoCompromisos oTipoComp)
+        {
+            if (oTipoComp == null)
+                return BadRequest();
+            if (app.CrearTipoCompromiso(oTipoComp))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+        }
+
 
         [HttpPost("insertarPersona")]
         public IActionResult PostPersona(Persona oPersona)
@@ -199,7 +250,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarPais(oPais))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPut("editarProvincia")]
@@ -210,7 +261,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarProvincia(oProvincia))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -222,7 +273,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -234,7 +285,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarTipoDocumento(oTipoDoc))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -246,7 +297,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarTipoCompromiso(oTC))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 

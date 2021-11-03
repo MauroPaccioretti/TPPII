@@ -10,5 +10,10 @@ namespace EquiposBackend.Dominio
     {
         public int CodCompromiso { get; set; }
         public string NombreCompromiso { get; set; }
+
+        public override string ToString()
+        {
+            return NombreCompromiso;
+        }
     }
 }

@@ -12,22 +12,11 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
+
 namespace EquiposFrontend
 {
 
-    public enum TablasSoporte {
-        paises,
-        provincias,
-        localidades,
-        tipoDocumentos,
-        tipoCompromisos
-    }
 
-    public enum Accion
-    {
-        Agregar,
-        Modificar
-    }
 
     public partial class FrmTablasSoporte : Form
     {
@@ -179,16 +168,16 @@ namespace EquiposFrontend
                         switch (tabla)
                         {
                             case TablasSoporte.paises:
-                                //"https://localhost:44381/api/Equipos/insertarPais?nombre=Chile"
+
                                 url += "insertarPais";
                                 Pais oPais = new Pais();
                                 oPais.Nombre = txtNombre.Text;
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oPais));
                                 //aux = JsonConvert.DeserializeObject<bool>(resultado);
-                                MessageBox.Show(resultado);
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
                             case TablasSoporte.provincias:
-                                //"https://localhost:44381/api/Equipos/insertarProvincia?nombre=Buenos%20Aires&idPais=1" 
+
                                 url += "insertarProvincia" ;
 
                                 Provincia oProvincia = new Provincia();
@@ -199,12 +188,12 @@ namespace EquiposFrontend
                                 datosJSON = JsonConvert.SerializeObject(oProvincia);
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
                                 //aux = JsonConvert.DeserializeObject<bool>(resultado);
-                                MessageBox.Show(resultado);
+                                MessageBox.Show(resultado, "Resultado");
 
                                 break;
 
                             case TablasSoporte.localidades:
-                                //"https://localhost:44381/api/Equipos/insertarLocalidad?nombre=R%C3%ADo%20Cuarto&idProvincia=1"
+
                                 url += "insertarLocalidad";
 
                                 Localidad oLoc = new Localidad();
@@ -216,16 +205,32 @@ namespace EquiposFrontend
                                 datosJSON = JsonConvert.SerializeObject(oLoc);
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 
-                                MessageBox.Show(resultado);
+                                MessageBox.Show(resultado, "Resultado");
                                 //aux = JsonConvert.DeserializeObject<bool>(resultado);
 
 
                                 break;
                             case TablasSoporte.tipoDocumentos:
-                                
+                                url += "insertarTipoDocumento";
+
+                                TiposDocumentos oTdoc = new TiposDocumentos();
+                                oTdoc.TipoDoc = txtNombre.Text;
+                                datosJSON = JsonConvert.SerializeObject(oTdoc);
+                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
+
+                                MessageBox.Show(resultado, "Resultado");
+
                                 break;
                             case TablasSoporte.tipoCompromisos:
-                                
+
+                                url += "insertarTipoCompromiso";
+
+                                TipoCompromisos oTC = new TipoCompromisos();
+                                oTC.NombreCompromiso = txtNombre.Text;
+                                datosJSON = JsonConvert.SerializeObject(oTC);
+                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
+
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
 
                         }
@@ -258,6 +263,12 @@ namespace EquiposFrontend
             }
         }
 
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea salir?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+        }
     }
 }

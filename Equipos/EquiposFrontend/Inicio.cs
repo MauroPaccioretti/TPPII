@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EquiposFrontend
 {
     public partial class Inicio : Form
@@ -115,9 +116,6 @@ namespace EquiposFrontend
         }
 
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
 
         private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -125,6 +123,62 @@ namespace EquiposFrontend
             reporte1.ShowDialog();
             
 
+        }
+
+
+
+
+        private void btnNvoEquipo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Agregar);
+            frmNvoEquipo.ShowDialog();
+            this.Show();
+            
+        }
+
+        private void btnEditarEquipo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar);
+            frmNvoEquipo.ShowDialog();
+            this.Show();
+        }
+
+        private void btnBajaEquipo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Eliminar);
+            frmNvoEquipo.ShowDialog();
+            this.Show();
+        }
+
+
+        
+
+        private void btnNvaPersona_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmABM_Persona frmNvaPersona = new FrmABM_Persona(Accion.Agregar);
+            frmNvaPersona.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEditarPersona_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
+            frmListarPersonas.ShowDialog();
+            this.Show();
+        }
+
+        private void btnBajaPersona_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
+            frmListarPersonas.ShowDialog();
+
+            this.Show();
         }
     }
 }

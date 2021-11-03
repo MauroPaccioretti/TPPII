@@ -16,10 +16,14 @@ namespace EquiposBackend.Datos
         bool CreatePais(Pais oPais);
         bool CreateProvincia(Provincia oProvincia);
         bool CreateLocalidad(Localidad oLocalidad);
+        bool CreateTipoDocumento(TiposDocumentos oTipoDoc);
+        bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso);
+        bool CreateEquipoFull(Equipo oEquipo);
 
 
         //get - read
         List<Persona> GetPersonas();
+        List<Persona> GetPersonasFiltered(Dictionary<string, object> filtros);
         List<EquipoPersona> GetEquipoPersona();
         List<Equipo> GetEquipos();
         Equipo GetEquipoByID(int nro);
@@ -31,6 +35,7 @@ namespace EquiposBackend.Datos
         List<TipoCompromisos> GetTiposCompromisos();
         List<Compromiso> GetCompromisos();
         List<Compromiso> GetProximosCompromisos();
+        List<Posicion> GetPosiciones();
 
 
         //update

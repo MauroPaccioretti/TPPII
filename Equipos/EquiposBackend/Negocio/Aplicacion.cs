@@ -45,6 +45,23 @@ namespace EquiposBackend.Negocio
             return dao.CreateLocalidad(oLocalidad);
         }
 
+
+        public bool CrearTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            return dao.CreateTipoDocumento(oTipoDoc);
+        }
+        public bool CrearTipoCompromiso(TipoCompromisos oTipoCompromiso)
+        {
+            return dao.CreateTipoCompromiso(oTipoCompromiso);
+        }
+
+        public bool CrearEquipoFull(Equipo oEquipo)
+        {
+            return dao.CreateEquipoFull(oEquipo);
+        }
+
+
+
         //get - read
 
 
@@ -66,6 +83,11 @@ namespace EquiposBackend.Negocio
         public List<Persona> ConsultarPersonas()
         {
             return dao.GetPersonas();
+        }
+
+        public List<Persona> ConsultarPersonasFiltradas(Dictionary<string, object> filtros)
+        {
+            return dao.GetPersonasFiltered(filtros);
         }
         public List<Equipo> ConsultarEquipos()
         {
@@ -103,7 +125,10 @@ namespace EquiposBackend.Negocio
             return dao.GetProximosCompromisos();
         }
 
-
+        public List<Posicion> ConsultarPosiciones()
+        {
+            return dao.GetPosiciones();
+        }
         //update
 
         public bool EditarEquipo(Equipo oEquipo)

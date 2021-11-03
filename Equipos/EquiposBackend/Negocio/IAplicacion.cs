@@ -16,7 +16,9 @@ namespace EquiposBackend.Negocio
         bool CrearPais(Pais oPais);
         bool CrearProvincia(Provincia oProvincia);
         bool CrearLocalidad(Localidad oLocalidad);
-       
+        bool CrearTipoDocumento(TiposDocumentos oTipoDoc);
+        bool CrearTipoCompromiso(TipoCompromisos oTipoCompromiso);
+        bool CrearEquipoFull(Equipo oEquipo);
 
         //get - read
 
@@ -24,6 +26,7 @@ namespace EquiposBackend.Negocio
         List<Provincia> ConsultarProvincias();
         List<Localidad> ConsultarLocalidades();
         List<Persona> ConsultarPersonas();
+        List<Persona> ConsultarPersonasFiltradas(Dictionary<string, object> filtros);
         List<Equipo> ConsultarEquipos();
         List<EquipoPersona> ConsultarEquipoPersona();
         Equipo ConsultarEquipoByID(int nro);
@@ -32,6 +35,8 @@ namespace EquiposBackend.Negocio
         List<TipoCompromisos> ConsultarTiposCompromisos();
         List<Compromiso> ConsultarCompromisos();
         List<Compromiso> ConsultarProximosCompromisos();
+        List<Posicion> ConsultarPosiciones();
+
 
 
         //update

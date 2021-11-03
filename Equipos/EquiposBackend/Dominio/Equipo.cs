@@ -13,12 +13,14 @@ namespace EquiposBackend.Dominio
         public int CodLocalidad { get; set; }
         public DateTime FechaAlta { get; set; }
         public DateTime ?  FechaBaja { get; set; }
-
         public List<EquipoPersona> Jugadores { get; set; }
+        public List<Compromiso> Compromisos { get; set; }
+
 
         public Equipo()
         {
             Jugadores = new List<EquipoPersona>();
+            Compromisos = new List<Compromiso>();
         }
 
         public void AgregarJugador(EquipoPersona jugador)
@@ -30,6 +32,17 @@ namespace EquiposBackend.Dominio
         {
             Jugadores.RemoveAt(nroJugador);
         }
+
+        public void AgregarCompromiso(Compromiso oCompromiso)
+        {
+            Compromisos.Add(oCompromiso);
+        }
+
+        public void QuitarCompromiso(int codCompromiso)
+        {
+            Compromisos.RemoveAt(codCompromiso);
+        }
+
 
         /*
 

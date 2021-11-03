@@ -18,7 +18,7 @@ namespace EquiposBackend.Datos
         {
             bool aux;
 
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@nombre", oEquipo.Nombre);
 
@@ -27,10 +27,15 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
+        public bool CreateEquipoFull(Equipo oEquipo)
+        {
+            return helper.CrearEquipo(oEquipo);
+        }
+
         public bool CreatePersona(Persona oPersona)
         {
             bool aux;
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@nombre", oPersona.Nombre);
             parameters.Add("@apellido", oPersona.Apellido);
             parameters.Add("@cod_tipoDoc", oPersona.TipoDoc);
@@ -49,7 +54,7 @@ namespace EquiposBackend.Datos
         {
             bool aux;
 
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@cod_persona", detalle.Persona.CodPersona);
             parameters.Add("@cod_equipo", detalle.CodEquipo);
@@ -66,7 +71,7 @@ namespace EquiposBackend.Datos
         public bool CreatePais(Pais oPais)
         {
             bool aux;
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@nombre_pais", oPais.Nombre);
 
@@ -80,7 +85,7 @@ namespace EquiposBackend.Datos
         {
             bool aux;
 
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@nombre_provincia", oProvincia.Nombre);
             parameters.Add("@cod_pais", oProvincia.Pais.IDPais);
@@ -95,7 +100,7 @@ namespace EquiposBackend.Datos
 
             bool aux;
 
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@nombre_localidad", oLocalidad.Nombre);
             parameters.Add("@cod_provincia", oLocalidad.Provincia.IDProvincia);
 
@@ -103,6 +108,33 @@ namespace EquiposBackend.Datos
 
             return aux;
         }
+
+        public bool CreateTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            bool aux;
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@tipoDoc", oTipoDoc.TipoDoc);
+            
+
+            aux = helper.addObject("SP_INSERTAR_TIPO_DOC", parameters);
+
+            return aux;
+
+        }
+        public bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso)
+        {
+            bool aux;
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@tipo", oTipoCompromiso.NombreCompromiso);
+
+
+            aux = helper.addObject("SP_INSERTAR_TIPO_COMPROMISO", parameters);
+
+            return aux;
+        }
+
 
 
 
@@ -112,6 +144,38 @@ namespace EquiposBackend.Datos
         {
             List<Persona> lst = new List<Persona>();
             DataTable dt = helper.GetTable("SP_CONSULTAR_PERSONAS");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Persona oPersona = new Persona();
+                    oPersona.CodPersona = Convert.ToInt32(row[0].ToString());
+                    oPersona.Nombre = row[1].ToString();
+                    oPersona.Apellido = row[2].ToString();
+                    oPersona.TipoDoc = Convert.ToInt32(row[3].ToString());
+                    oPersona.NumeroDoc = Convert.ToInt32(row[4].ToString());
+                    oPersona.FechaNac = Convert.ToDateTime(row[5].ToString());
+                    oPersona.PiernaHabil = Convert.ToInt32(row[6].ToString());
+                    oPersona.Peso = Convert.ToDouble(row[7].ToString());
+                    oPersona.Estatura = Convert.ToDouble(row[8].ToString());
+                    oPersona.FechaAlta = Convert.ToDateTime(row[9].ToString());
+                    if (!row[10].Equals(DBNull.Value))
+                        oPersona.FechaBaja = Convert.ToDateTime(row[10].ToString());
+
+                    lst.Add(oPersona);
+
+                }
+
+            }
+
+            return lst;
+        }
+
+
+        public List<Persona> GetPersonasFiltered(Dictionary<string, object> filtros)
+        {
+            List<Persona> lst = new List<Persona>();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_PERSONAS_CONFILTRO", filtros);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -168,6 +232,7 @@ namespace EquiposBackend.Datos
             List<Equipo> lst = new List<Equipo>();
             DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS");
             List<EquipoPersona> lstEP = GetEquipoPersona();
+            List<Compromiso> lstCompromiso = GetCompromisos();
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -179,15 +244,25 @@ namespace EquiposBackend.Datos
                     oEquipo.FechaAlta = Convert.ToDateTime(row[3].ToString());
                     if (!row[4].Equals(DBNull.Value))
                         oEquipo.FechaBaja = Convert.ToDateTime(row[4].ToString());
-                    if (lstEP.Count > 0)
+                    if (lstEP != null)
                         foreach (EquipoPersona oEP in lstEP)
                         {
                             if (oEP.CodEquipo == oEquipo.CodEquipo)
                                 oEquipo.AgregarJugador(oEP);
                         }
+                    if(lstCompromiso != null)
+                    {
+                        foreach(Compromiso oComp in lstCompromiso)
+                        {
+                            if (oComp.CodEquipo == oEquipo.CodEquipo)
+                                oEquipo.AgregarCompromiso(oComp);
+                        }
+                    }
 
                     lst.Add(oEquipo);
                 }
+
+
             }
             return lst;
         }
@@ -363,6 +438,24 @@ namespace EquiposBackend.Datos
             return lst;
 
         }
+        public List<Posicion> GetPosiciones()
+        {
+            List<Posicion> lst = new();
+            DataTable dt = helper.GetTable("SP_CONSULTAR_POSICIONES");
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Posicion oPosicion = new Posicion();
+                    oPosicion.codPosicion = Convert.ToInt32(row[0].ToString());
+                    oPosicion.NombrePosicion = row[1].ToString();
+
+                    lst.Add(oPosicion);
+                }
+            }
+            return lst;
+
+        }
 
 
         public List<Compromiso> GetCompromisos()
@@ -520,13 +613,13 @@ namespace EquiposBackend.Datos
 
         public bool DeletePersona(int idPersona)
         {            
-            return helper.DeleteElementsIn2Tables(idPersona, "SP_BAJA_JUGADOR" , "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
+            return helper.DeleteElementsIn3Tables(idPersona, "SP_BAJA_JUGADOR" , "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
         }
 
 
         public bool DeleteEquipo(int idEquipo)
         {
-            return helper.DeleteElementsIn2Tables(idEquipo, "SP_BAJA_EQUIPO", "SP_BAJA_EQUIPO_PERSONA_POREQUIPO");
+            return helper.DeleteElementsIn3Tables(idEquipo, "SP_BAJA_EQUIPO", "SP_BAJA_EQUIPO_PERSONA_POREQUIPO", "SP_BAJA_COMPROMISO_POREQUIPO");
         }
 
         public bool RemoveJugadorDelEquipo(int idJugador)

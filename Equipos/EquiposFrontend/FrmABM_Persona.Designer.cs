@@ -41,12 +41,13 @@ namespace EquiposFrontend
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoDni = new System.Windows.Forms.ComboBox();
-            this.NroDoc = new System.Windows.Forms.TextBox();
+            this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.txtEstatura = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.cmbPierna = new System.Windows.Forms.ComboBox();
-            this.btnAgregarPersona = new System.Windows.Forms.Button();
+            this.btnConfirmarAccion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregarTipoDni = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -126,7 +127,7 @@ namespace EquiposFrontend
             this.txtNombre.Location = new System.Drawing.Point(165, 21);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(249, 23);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
@@ -147,29 +148,29 @@ namespace EquiposFrontend
             this.cmbTipoDni.FormattingEnabled = true;
             this.cmbTipoDni.Location = new System.Drawing.Point(165, 108);
             this.cmbTipoDni.Name = "cmbTipoDni";
-            this.cmbTipoDni.Size = new System.Drawing.Size(248, 23);
+            this.cmbTipoDni.Size = new System.Drawing.Size(221, 23);
             this.cmbTipoDni.TabIndex = 3;
             // 
-            // NroDoc
+            // txtNroDoc
             // 
-            this.NroDoc.Location = new System.Drawing.Point(164, 137);
-            this.NroDoc.Name = "NroDoc";
-            this.NroDoc.Size = new System.Drawing.Size(249, 23);
-            this.NroDoc.TabIndex = 1;
+            this.txtNroDoc.Location = new System.Drawing.Point(164, 137);
+            this.txtNroDoc.Name = "txtNroDoc";
+            this.txtNroDoc.Size = new System.Drawing.Size(249, 23);
+            this.txtNroDoc.TabIndex = 4;
             // 
             // txtEstatura
             // 
             this.txtEstatura.Location = new System.Drawing.Point(164, 166);
             this.txtEstatura.Name = "txtEstatura";
             this.txtEstatura.Size = new System.Drawing.Size(249, 23);
-            this.txtEstatura.TabIndex = 1;
+            this.txtEstatura.TabIndex = 5;
             // 
             // txtPeso
             // 
             this.txtPeso.Location = new System.Drawing.Point(164, 195);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(249, 23);
-            this.txtPeso.TabIndex = 1;
+            this.txtPeso.TabIndex = 6;
             // 
             // cmbPierna
             // 
@@ -177,40 +178,53 @@ namespace EquiposFrontend
             this.cmbPierna.Location = new System.Drawing.Point(164, 224);
             this.cmbPierna.Name = "cmbPierna";
             this.cmbPierna.Size = new System.Drawing.Size(248, 23);
-            this.cmbPierna.TabIndex = 3;
+            this.cmbPierna.TabIndex = 7;
             // 
-            // btnAgregarPersona
+            // btnConfirmarAccion
             // 
-            this.btnAgregarPersona.Location = new System.Drawing.Point(58, 271);
-            this.btnAgregarPersona.Name = "btnAgregarPersona";
-            this.btnAgregarPersona.Size = new System.Drawing.Size(155, 50);
-            this.btnAgregarPersona.TabIndex = 4;
-            this.btnAgregarPersona.Text = "Agregar Persona";
-            this.btnAgregarPersona.UseVisualStyleBackColor = true;
+            this.btnConfirmarAccion.Location = new System.Drawing.Point(58, 271);
+            this.btnConfirmarAccion.Name = "btnConfirmarAccion";
+            this.btnConfirmarAccion.Size = new System.Drawing.Size(155, 50);
+            this.btnConfirmarAccion.TabIndex = 8;
+            this.btnConfirmarAccion.Text = "Agregar Persona";
+            this.btnConfirmarAccion.UseVisualStyleBackColor = true;
+            this.btnConfirmarAccion.Click += new System.EventHandler(this.btnConfirmarAccion_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(219, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(155, 50);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAgregarTipoDni
+            // 
+            this.btnAgregarTipoDni.Location = new System.Drawing.Point(392, 108);
+            this.btnAgregarTipoDni.Name = "btnAgregarTipoDni";
+            this.btnAgregarTipoDni.Size = new System.Drawing.Size(22, 23);
+            this.btnAgregarTipoDni.TabIndex = 10;
+            this.btnAgregarTipoDni.Text = "+";
+            this.btnAgregarTipoDni.UseVisualStyleBackColor = true;
+            this.btnAgregarTipoDni.Click += new System.EventHandler(this.btnAgregarTipoDni_Click);
             // 
             // FrmABM_Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 351);
+            this.Controls.Add(this.btnAgregarTipoDni);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregarPersona);
+            this.Controls.Add(this.btnConfirmarAccion);
             this.Controls.Add(this.cmbPierna);
             this.Controls.Add(this.cmbTipoDni);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.txtEstatura);
-            this.Controls.Add(this.NroDoc);
+            this.Controls.Add(this.txtNroDoc);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -222,6 +236,7 @@ namespace EquiposFrontend
             this.Controls.Add(this.label1);
             this.Name = "FrmABM_Persona";
             this.Text = "Agregar Persona";
+            this.Load += new System.EventHandler(this.FrmABM_Persona_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,11 +256,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.ComboBox cmbTipoDni;
-        private System.Windows.Forms.TextBox NroDoc;
+        private System.Windows.Forms.TextBox txtNroDoc;
         private System.Windows.Forms.TextBox txtEstatura;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.ComboBox cmbPierna;
-        private System.Windows.Forms.Button btnAgregarPersona;
+        private System.Windows.Forms.Button btnConfirmarAccion;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregarTipoDni;
     }
 }
