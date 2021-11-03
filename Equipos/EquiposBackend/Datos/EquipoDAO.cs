@@ -456,6 +456,65 @@ namespace EquiposBackend.Datos
 
         }
 
+        public bool EditPais(Pais oPais)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oPais.IDPais);
+            parametros.Add("@nombre", oPais.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_PAIS", parametros);
+
+        }
+
+
+        public bool EditProvincia(Provincia oProvincia)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oProvincia.IDProvincia);
+            parametros.Add("@nombre", oProvincia.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_PROVINCIA", parametros);
+
+        }
+
+
+        public bool EditLocalidad(Localidad oLocalidad)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oLocalidad.IDLocalidad);
+            parametros.Add("@nombre", oLocalidad.Nombre);
+
+
+            return helper.AlterOneElement("SP_EDITAR_LOCALIDAD", parametros);
+
+        }
+
+
+        public bool EditTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oTipoDoc.CodTipoDoc);
+            parametros.Add("@nombre", oTipoDoc.TipoDoc);
+
+
+            return helper.AlterOneElement("SP_EDITAR_TIPO_DOCUMENTOS", parametros);
+
+        }
+
+
+        public bool EditTipoCompromisos(TipoCompromisos oTC)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oTC.CodCompromiso);
+            parametros.Add("@nombre", oTC.NombreCompromiso);
+
+
+            return helper.AlterOneElement("SP_EDITAR_TIPO_COMPROMISO", parametros);
+
+        }
+
 
         ////delete
 

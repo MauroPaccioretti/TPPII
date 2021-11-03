@@ -50,6 +50,8 @@ namespace EquiposFrontend
             this.tiposDeCompromisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tablaDePosicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -59,19 +61,19 @@ namespace EquiposFrontend
             this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnNvaPersona = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnNvaPersona = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,10 +87,11 @@ namespace EquiposFrontend
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aToolStripMenuItem,
             this.soporteToolStripMenuItem,
+            this.reportesToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1198, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1201, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -242,6 +245,21 @@ namespace EquiposFrontend
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Text = "Editar el Nombre de un Tipo de Compromiso";
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem.Click += new System.EventHandler(this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tablaDePosicionesToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // tablaDePosicionesToolStripMenuItem
+            // 
+            this.tablaDePosicionesToolStripMenuItem.Name = "tablaDePosicionesToolStripMenuItem";
+            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
+            this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
+            // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -323,6 +341,24 @@ namespace EquiposFrontend
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Equipos Inscriptos";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(470, 269);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(217, 38);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Baja de un Equipo Inscripto";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(247, 269);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(217, 38);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Editar Datos de un Equipo";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -375,6 +411,15 @@ namespace EquiposFrontend
             this.fechaAlta.Name = "fechaAlta";
             this.fechaAlta.ReadOnly = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(24, 269);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(217, 38);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Inscribir Nuevo Equipo";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
@@ -387,14 +432,14 @@ namespace EquiposFrontend
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion de Personas";
             // 
-            // btnNvaPersona
+            // button2
             // 
-            this.btnNvaPersona.Location = new System.Drawing.Point(24, 31);
-            this.btnNvaPersona.Name = "btnNvaPersona";
-            this.btnNvaPersona.Size = new System.Drawing.Size(217, 38);
-            this.btnNvaPersona.TabIndex = 1;
-            this.btnNvaPersona.Text = "Inscribir Nueva Persona";
-            this.btnNvaPersona.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(470, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(217, 38);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Baja de una Persona Inscripta";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -405,51 +450,25 @@ namespace EquiposFrontend
             this.button1.Text = "Editar Datos de una Persona";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnNvaPersona
             // 
-            this.button2.Location = new System.Drawing.Point(470, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Baja de una Persona Inscripta";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(24, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 38);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Inscribir Nuevo Equipo";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(247, 269);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(217, 38);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Editar Datos de un Equipo";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(470, 269);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(217, 38);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Baja de un Equipo Inscripto";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnNvaPersona.Location = new System.Drawing.Point(24, 31);
+            this.btnNvaPersona.Name = "btnNvaPersona";
+            this.btnNvaPersona.Size = new System.Drawing.Size(217, 38);
+            this.btnNvaPersona.TabIndex = 1;
+            this.btnNvaPersona.Text = "Inscribir Nueva Persona";
+            this.btnNvaPersona.UseVisualStyleBackColor = true;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 451);
+            this.ClientSize = new System.Drawing.Size(1201, 464);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Location = new System.Drawing.Point(220, 35);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -488,13 +507,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.ToolStripMenuItem tiposDeCompromisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarTipoDeCompromisoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
@@ -511,5 +529,11 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNvaPersona;
+
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tablaDePosicionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
+
     }
 }

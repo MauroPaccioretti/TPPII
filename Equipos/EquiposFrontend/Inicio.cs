@@ -1,4 +1,5 @@
 ﻿using EquiposBackend.Dominio;
+using EquiposFrontend.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace EquiposFrontend
             oUsuario = usuario; 
         }
 
+        
 
         private void Inicio_Load(object sender, EventArgs e)
         {
@@ -112,8 +114,16 @@ namespace EquiposFrontend
            
         }
 
+
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteTablasPosiciones reporte1 = new ReporteTablasPosiciones();
+            reporte1.ShowDialog();
+            
 
         }
     }
