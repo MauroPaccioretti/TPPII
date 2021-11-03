@@ -180,6 +180,7 @@ namespace EquiposFrontend
             this.textBoxPass.Location = new System.Drawing.Point(132, 387);
             this.textBoxPass.Multiline = true;
             this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.PasswordChar = '●';
             this.textBoxPass.Size = new System.Drawing.Size(331, 38);
             this.textBoxPass.TabIndex = 26;
             // 

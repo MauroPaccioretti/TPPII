@@ -22,14 +22,16 @@ namespace EquiposFrontend
         bool forcedLogin = false;
         public Login()
         {
+
             InitializeComponent();
             //service = new ImpFactoryAplicacion().CrearService();
             
+
         }
 
         private void btnExitLogin_Click(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
 
 
@@ -127,8 +129,10 @@ namespace EquiposFrontend
 
         private void linklblOlvidoContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //this.Opacity = 0.5;
             var recoverPassword = new RecoverPassword();
             recoverPassword.ShowDialog();
+            
         }
 
         private void linkLabelRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -136,5 +140,6 @@ namespace EquiposFrontend
             Register register = new Register();
             register.ShowDialog();
         }
+
     }
 }

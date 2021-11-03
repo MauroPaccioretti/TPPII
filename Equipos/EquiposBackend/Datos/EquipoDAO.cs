@@ -534,5 +534,9 @@ namespace EquiposBackend.Datos
             return helper.DeleteElement(idJugador, "SP_BAJA_EQUIPO_PERSONA_PORDETALLE");
         }
 
+        public bool EditTipoCompromiso(TipoCompromisos oTC)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

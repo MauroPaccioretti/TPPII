@@ -41,7 +41,7 @@ namespace EquiposBackend.Datos.MailServices
                 mailMessage.Subject = subject;
                 mailMessage.Body = body;
                 mailMessage.Priority = MailPriority.Normal;
-                SmtpClient.Send(mailMessage);
+                SmtpClient.Send(mailMessage);               
             }
             catch (Exception ex)
             {

@@ -105,7 +105,7 @@ namespace EquiposFrontend
             this.textBoxPassword.Location = new System.Drawing.Point(804, 432);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.PasswordChar = '●';
             this.textBoxPassword.Size = new System.Drawing.Size(331, 38);
             this.textBoxPassword.TabIndex = 6;
             // 

@@ -35,12 +35,12 @@ namespace EquiposFrontend
                 //user.Email = textBoxUserRequest.Text;
                 string url = "https://localhost:44381/api/Usuarios/recoverPass?userRequesting=" + textBoxUserRequest.Text;
                 var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-                string mensaje = JsonConvert.DeserializeObject<string>(resultado);
+                //string mensaje = JsonConvert.DeserializeObject<string>(resultado);
 
                 //var result = service.RecoverPassword(user.Email);
 
                 //lblResultado.Text = result;
-                lblResultado.Text = mensaje;
+                lblResultado.Text = resultado;
             }
             else
             {
@@ -61,7 +61,8 @@ namespace EquiposFrontend
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Dispose();
+            return;
         }
 
         private bool ValidateEmail()
@@ -76,5 +77,11 @@ namespace EquiposFrontend
                 
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            return;            
+            
+        }
     }
 }

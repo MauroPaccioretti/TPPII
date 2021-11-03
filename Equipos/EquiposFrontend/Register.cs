@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,7 +16,6 @@ namespace EquiposFrontend
 {
     public partial class Register : Form
     {
-        Usuario usuario = new Usuario();
 
         public Register()
         {
@@ -52,46 +52,46 @@ namespace EquiposFrontend
 
         private async void btnRegister_ClickAsync(object sender, EventArgs e)
         {
-            List<string> lstDatos = new();
+            Usuario usuario = new Usuario();
+            List<Usuario> usuarios = new();
+            
             if (textBoxUsername.Text != string.Empty)
             {
-                usuario.User = textBoxUsername.Text;
-                lstDatos.Add(usuario.User);
+                usuario.User = textBoxUsername.Text;                
 
                 if (textBoxPass.Text != string.Empty)
                 {
                     usuario.Pass = textBoxPass.Text;
-                    lstDatos.Add(usuario.Pass);
+                    
 
-                    if (textBoxEmail.Text != string.Empty)
+                    if (textBoxEmail.Text != string.Empty && ValidateEmail())
                     {
                         usuario.Email = textBoxEmail.Text;
-                        lstDatos.Add(usuario.Email);
 
-                        string datosJSON = JsonConvert.SerializeObject(lstDatos);
+                        usuarios.Add(usuario);
+
+                        string datosJSON = JsonConvert.SerializeObject(usuarios);
                         string url = "https://localhost:44381/api/Usuarios/register";
+                        await ClienteSingleton.GetInstancia().PutAsync(url,datosJSON);
 
-                        var resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
-
-                        bool validLogIn = JsonConvert.DeserializeObject<bool>(resultado);
-
-                        if (validLogIn)
+                        if (usuarios.Count > 0)
                         {
-                            MessageBox.Show("se registro");
+                            DialogResult result = MessageBox.Show("Registered with username: " + usuario.User.ToString());
+                            if (result == DialogResult.OK)
+                            {
+                                Hide();
+                            }
                         }
                         else
                         {
-                            MsgErrorEmail("Incorrect Username or Password entered. Please try again.");
-                            MsgErrorUser("");
-                            MsgErrorPass("");
-                            textBoxPass.Clear();
-                            textBoxUsername.Focus();
-
+                            MessageBox.Show("Failed to register");
+                            return;
                         }
+                        
                     }
                     else
                     {
-                        MsgErrorEmail("Please enter Email");
+                        MsgErrorEmail("Please enter a Email Address Valid");
                         textBoxEmail.Focus();
                     }
                 }
@@ -107,6 +107,18 @@ namespace EquiposFrontend
                 MsgErrorUser("Please enter Username");
                 textBoxUsername.Focus();
             }
+        }
+
+        private bool ValidateEmail()
+        {
+            string email = textBoxEmail.Text;
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (match.Success)
+                return true;
+            else
+                return false;
+
         }
     }
 }
