@@ -37,6 +37,13 @@ namespace EquiposBackend.Negocio
         //update
         bool EditarEquipo(Equipo oEquipo);
         bool EditarPersona(Persona oPersona);
+        bool EditarPais(Pais oPais);
+        bool EditarProvincia(Provincia oProvincia);
+        bool EditarLocalidad(Localidad oLocalidad);
+        bool EditarTipoDocumento(TiposDocumentos oTipoDoc);
+        bool EditarTipoCompromiso(TipoCompromisos oTC);
+        //bool EditarPosicion(Posicion oPosicion);
+
 
         // delete
         bool EliminarPersona(int nroPersona);
@@ -46,6 +53,7 @@ namespace EquiposBackend.Negocio
         bool Login(string username, string pass);
         string RecoverPassword(string userRequesting);
         bool CreateUsuario(Usuario usuario);
+
 
 
 

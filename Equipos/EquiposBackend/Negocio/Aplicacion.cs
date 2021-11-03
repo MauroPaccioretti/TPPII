@@ -114,6 +114,29 @@ namespace EquiposBackend.Negocio
         {
             return dao.EditPersona(oPersona);
         }
+        public bool EditarPais(Pais oPais)
+        {
+            return dao.EditPais(oPais);
+        }
+        public bool EditarProvincia(Provincia oProvincia)
+        {
+            return dao.EditProvincia(oProvincia);
+        }
+
+        public bool EditarLocalidad(Localidad oLocalidad)
+        {
+            return dao.EditLocalidad(oLocalidad);
+        }
+
+        public bool EditarTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            return dao.EditTipoDocumento(oTipoDoc);
+        }
+
+        public bool EditarTipoCompromiso(TipoCompromisos oTC)
+        {
+            return dao.EditTipoCompromiso(oTC);
+        }
 
         // delete 
 
