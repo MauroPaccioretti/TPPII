@@ -30,6 +30,17 @@ namespace EquiposFrontend
         private void InitializeComponent()
         {
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
+            this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piernaHabil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbPierna = new System.Windows.Forms.ComboBox();
             this.cmbTipoDni = new System.Windows.Forms.ComboBox();
             this.dtpFechaNacimientoDesde = new System.Windows.Forms.DateTimePicker();
@@ -57,13 +68,8 @@ namespace EquiposFrontend
             this.txtPesoHasta = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.btnBajaPersona = new System.Windows.Forms.Button();
             this.btnEditarPersona = new System.Windows.Forms.Button();
-=======
-            this.btnBaja = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chbPierna = new System.Windows.Forms.CheckBox();
             this.chbTipoDoc = new System.Windows.Forms.CheckBox();
@@ -71,28 +77,13 @@ namespace EquiposFrontend
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
-            this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.piernaHabil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
-=======
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -118,21 +109,12 @@ namespace EquiposFrontend
             this.estatura,
             this.fechaAlta,
             this.fechaBaja});
-<<<<<<< HEAD
-            this.dgvPersonas.Location = new System.Drawing.Point(12, 13);
+            this.dgvPersonas.Location = new System.Drawing.Point(7, 16);
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.ReadOnly = true;
             this.dgvPersonas.RowTemplate.Height = 25;
-            this.dgvPersonas.Size = new System.Drawing.Size(1222, 350);
+            this.dgvPersonas.Size = new System.Drawing.Size(1571, 462);
             this.dgvPersonas.TabIndex = 0;
-=======
-            this.dataGridView1.Location = new System.Drawing.Point(7, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1570, 466);
-            this.dataGridView1.TabIndex = 0;
             // 
             // idPersona
             // 
@@ -141,17 +123,17 @@ namespace EquiposFrontend
             this.idPersona.ReadOnly = true;
             this.idPersona.Visible = false;
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // tipoDoc
             // 
@@ -200,111 +182,66 @@ namespace EquiposFrontend
             this.fechaBaja.HeaderText = "Fecha Baja";
             this.fechaBaja.Name = "fechaBaja";
             this.fechaBaja.ReadOnly = true;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // cmbPierna
             // 
             this.cmbPierna.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.cmbPierna.Location = new System.Drawing.Point(698, 141);
-            this.cmbPierna.Name = "cmbPierna";
-            this.cmbPierna.Size = new System.Drawing.Size(163, 23);
-=======
             this.cmbPierna.Location = new System.Drawing.Point(724, 186);
-            this.cmbPierna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPierna.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPierna.Name = "cmbPierna";
             this.cmbPierna.Size = new System.Drawing.Size(318, 28);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.cmbPierna.TabIndex = 18;
             // 
             // cmbTipoDni
             // 
             this.cmbTipoDni.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.cmbTipoDni.Location = new System.Drawing.Point(260, 141);
-            this.cmbTipoDni.Name = "cmbTipoDni";
-            this.cmbTipoDni.Size = new System.Drawing.Size(187, 23);
-=======
             this.cmbTipoDni.Location = new System.Drawing.Point(194, 189);
-            this.cmbTipoDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoDni.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoDni.Name = "cmbTipoDni";
             this.cmbTipoDni.Size = new System.Drawing.Size(318, 28);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.cmbTipoDni.TabIndex = 19;
             // 
             // dtpFechaNacimientoDesde
             // 
-<<<<<<< HEAD
             this.dtpFechaNacimientoDesde.Location = new System.Drawing.Point(198, 80);
             this.dtpFechaNacimientoDesde.Name = "dtpFechaNacimientoDesde";
-            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(249, 23);
+            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(249, 26);
             this.dtpFechaNacimientoDesde.TabIndex = 17;
             this.dtpFechaNacimientoDesde.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
-=======
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(254, 106);
-            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(319, 26);
-            this.dtpFechaNacimiento.TabIndex = 17;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(194, 69);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Location = new System.Drawing.Point(86, 68);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(319, 26);
             this.txtApellido.TabIndex = 12;
             // 
             // txtPesoDesde
             // 
-<<<<<<< HEAD
             this.txtPesoDesde.Location = new System.Drawing.Point(612, 83);
             this.txtPesoDesde.Name = "txtPesoDesde";
-            this.txtPesoDesde.Size = new System.Drawing.Size(249, 23);
+            this.txtPesoDesde.Size = new System.Drawing.Size(249, 26);
             this.txtPesoDesde.TabIndex = 13;
-=======
-            this.txtPeso.Location = new System.Drawing.Point(788, 111);
-            this.txtPeso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(319, 26);
-            this.txtPeso.TabIndex = 13;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // txtEstaturaDesde
             // 
-<<<<<<< HEAD
             this.txtEstaturaDesde.Location = new System.Drawing.Point(611, 26);
             this.txtEstaturaDesde.Name = "txtEstaturaDesde";
-            this.txtEstaturaDesde.Size = new System.Drawing.Size(249, 23);
+            this.txtEstaturaDesde.Size = new System.Drawing.Size(249, 26);
             this.txtEstaturaDesde.TabIndex = 14;
-=======
-            this.txtEstatura.Location = new System.Drawing.Point(785, 35);
-            this.txtEstatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEstatura.Name = "txtEstatura";
-            this.txtEstatura.Size = new System.Drawing.Size(319, 26);
-            this.txtEstatura.TabIndex = 14;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // txtNroDoc
             // 
-<<<<<<< HEAD
             this.txtNroDoc.Location = new System.Drawing.Point(150, 170);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(249, 23);
+            this.txtNroDoc.Size = new System.Drawing.Size(249, 26);
             this.txtNroDoc.TabIndex = 15;
-=======
-            this.NroDoc.Location = new System.Drawing.Point(194, 226);
-            this.NroDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NroDoc.Name = "NroDoc";
-            this.NroDoc.Size = new System.Drawing.Size(319, 26);
-            this.NroDoc.TabIndex = 15;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(194, 29);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(86, 33);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(319, 26);
             this.txtNombre.TabIndex = 16;
@@ -411,18 +348,10 @@ namespace EquiposFrontend
             // 
             // dtpFechaNacimientoHasta
             // 
-<<<<<<< HEAD
             this.dtpFechaNacimientoHasta.Location = new System.Drawing.Point(198, 109);
             this.dtpFechaNacimientoHasta.Name = "dtpFechaNacimientoHasta";
-            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(249, 23);
+            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(249, 26);
             this.dtpFechaNacimientoHasta.TabIndex = 17;
-=======
-            this.dateTimePicker1.Location = new System.Drawing.Point(254, 145);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(319, 26);
-            this.dateTimePicker1.TabIndex = 17;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // label11
             // 
@@ -436,18 +365,10 @@ namespace EquiposFrontend
             // 
             // txtEstaturaHasta
             // 
-<<<<<<< HEAD
             this.txtEstaturaHasta.Location = new System.Drawing.Point(612, 54);
             this.txtEstaturaHasta.Name = "txtEstaturaHasta";
-            this.txtEstaturaHasta.Size = new System.Drawing.Size(249, 23);
+            this.txtEstaturaHasta.Size = new System.Drawing.Size(249, 26);
             this.txtEstaturaHasta.TabIndex = 14;
-=======
-            this.textBox1.Location = new System.Drawing.Point(788, 71);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(319, 26);
-            this.textBox1.TabIndex = 14;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // label12
             // 
@@ -481,21 +402,10 @@ namespace EquiposFrontend
             // 
             // txtPesoHasta
             // 
-<<<<<<< HEAD
             this.txtPesoHasta.Location = new System.Drawing.Point(612, 111);
             this.txtPesoHasta.Name = "txtPesoHasta";
-            this.txtPesoHasta.Size = new System.Drawing.Size(249, 23);
+            this.txtPesoHasta.Size = new System.Drawing.Size(249, 26);
             this.txtPesoHasta.TabIndex = 14;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(477, 204);
-=======
-            this.textBox2.Location = new System.Drawing.Point(788, 149);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(319, 26);
-            this.textBox2.TabIndex = 14;
             // 
             // btnBuscar
             // 
@@ -505,45 +415,32 @@ namespace EquiposFrontend
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnBuscar.Location = new System.Drawing.Point(613, 231);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(335, 49);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.Text = "Buscar";
-<<<<<<< HEAD
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRegistrarNuevaPersona);
             this.groupBox1.Controls.Add(this.btnBajaPersona);
             this.groupBox1.Controls.Add(this.btnEditarPersona);
-            this.groupBox1.Location = new System.Drawing.Point(918, 370);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(316, 128);
-=======
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnBaja);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox1.Location = new System.Drawing.Point(1175, 538);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(406, 196);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones sobre una Persona seleccionada";
             // 
-<<<<<<< HEAD
             // btnBajaPersona
             // 
-            this.btnBajaPersona.Location = new System.Drawing.Point(34, 74);
+            this.btnBajaPersona.Location = new System.Drawing.Point(34, 77);
             this.btnBajaPersona.Name = "btnBajaPersona";
             this.btnBajaPersona.Size = new System.Drawing.Size(261, 46);
             this.btnBajaPersona.TabIndex = 21;
@@ -560,37 +457,6 @@ namespace EquiposFrontend
             this.btnEditarPersona.Text = "Editar";
             this.btnEditarPersona.UseVisualStyleBackColor = true;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
-=======
-            // btnBaja
-            // 
-            this.btnBaja.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnBaja.FlatAppearance.BorderSize = 0;
-            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBaja.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnBaja.Location = new System.Drawing.Point(44, 109);
-            this.btnBaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(335, 71);
-            this.btnBaja.TabIndex = 21;
-            this.btnBaja.Text = "Dar de Baja";
-            this.btnBaja.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnEditar.Location = new System.Drawing.Point(44, 29);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(335, 71);
-            this.btnEditar.TabIndex = 21;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // groupBox2
             // 
@@ -627,14 +493,10 @@ namespace EquiposFrontend
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox2.Location = new System.Drawing.Point(13, 535);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-<<<<<<< HEAD
-            this.groupBox2.Size = new System.Drawing.Size(889, 246);
-=======
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1143, 295);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Personas";
@@ -644,7 +506,7 @@ namespace EquiposFrontend
             this.chbPierna.AutoSize = true;
             this.chbPierna.Location = new System.Drawing.Point(557, 142);
             this.chbPierna.Name = "chbPierna";
-            this.chbPierna.Size = new System.Drawing.Size(135, 19);
+            this.chbPierna.Size = new System.Drawing.Size(176, 24);
             this.chbPierna.TabIndex = 23;
             this.chbPierna.Text = "Incluir en búsqueda?";
             this.chbPierna.UseVisualStyleBackColor = true;
@@ -654,7 +516,7 @@ namespace EquiposFrontend
             this.chbTipoDoc.AutoSize = true;
             this.chbTipoDoc.Location = new System.Drawing.Point(119, 143);
             this.chbTipoDoc.Name = "chbTipoDoc";
-            this.chbTipoDoc.Size = new System.Drawing.Size(135, 19);
+            this.chbTipoDoc.Size = new System.Drawing.Size(176, 24);
             this.chbTipoDoc.TabIndex = 23;
             this.chbTipoDoc.Text = "Incluir en búsqueda?";
             this.chbTipoDoc.UseVisualStyleBackColor = true;
@@ -670,17 +532,13 @@ namespace EquiposFrontend
             // 
             // btnLimpiar
             // 
-<<<<<<< HEAD
-            this.btnLimpiar.Location = new System.Drawing.Point(744, 204);
-=======
             this.btnLimpiar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLimpiar.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnLimpiar.Location = new System.Drawing.Point(956, 231);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(179, 49);
             this.btnLimpiar.TabIndex = 21;
@@ -692,24 +550,29 @@ namespace EquiposFrontend
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(476, 173);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 15);
+            this.label15.Size = new System.Drawing.Size(177, 20);
             this.label15.TabIndex = 4;
             this.label15.Text = "Persona dada de baja?:";
             // 
             // btnSalir
             // 
-<<<<<<< HEAD
-            this.btnSalir.Location = new System.Drawing.Point(952, 568);
+            this.btnSalir.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnSalir.Location = new System.Drawing.Point(1374, 766);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(261, 46);
+            this.btnSalir.Size = new System.Drawing.Size(196, 49);
             this.btnSalir.TabIndex = 24;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegistrarNuevaPersona
             // 
-            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(952, 511);
+            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(34, 135);
             this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
             this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(261, 46);
             this.btnRegistrarNuevaPersona.TabIndex = 24;
@@ -717,95 +580,15 @@ namespace EquiposFrontend
             this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
             this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
             // 
-            // idPersona
+            // button1
             // 
-            this.idPersona.HeaderText = "idPersona";
-            this.idPersona.Name = "idPersona";
-            this.idPersona.ReadOnly = true;
-            this.idPersona.Visible = false;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // tipoDoc
-            // 
-            this.tipoDoc.HeaderText = "Tipo Documento";
-            this.tipoDoc.Name = "tipoDoc";
-            this.tipoDoc.ReadOnly = true;
-            // 
-            // nroDocumento
-            // 
-            this.nroDocumento.HeaderText = "Número Documento";
-            this.nroDocumento.Name = "nroDocumento";
-            this.nroDocumento.ReadOnly = true;
-            // 
-            // fechaNac
-            // 
-            this.fechaNac.HeaderText = "Fecha Nacimiento";
-            this.fechaNac.Name = "fechaNac";
-            this.fechaNac.ReadOnly = true;
-            // 
-            // piernaHabil
-            // 
-            this.piernaHabil.HeaderText = "Pierna Hábil";
-            this.piernaHabil.Name = "piernaHabil";
-            this.piernaHabil.ReadOnly = true;
-            // 
-            // peso
-            // 
-            this.peso.HeaderText = "Peso";
-            this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
-            // 
-            // estatura
-            // 
-            this.estatura.HeaderText = "Estatura";
-            this.estatura.Name = "estatura";
-            this.estatura.ReadOnly = true;
-=======
-            this.btnSalir.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalir.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnSalir.Location = new System.Drawing.Point(1374, 766);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(196, 49);
-            this.btnSalir.TabIndex = 24;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "FechaAlta";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
-            // 
-<<<<<<< HEAD
-            // fechaBaja
-            // 
-            this.fechaBaja.HeaderText = "Fecha Baja";
-            this.fechaBaja.Name = "fechaBaja";
-            this.fechaBaja.ReadOnly = true;
-=======
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.button1.Location = new System.Drawing.Point(1164, 766);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 49);
             this.button1.TabIndex = 24;
@@ -814,7 +597,7 @@ namespace EquiposFrontend
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dgvPersonas);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(6, 44);
@@ -835,7 +618,6 @@ namespace EquiposFrontend
             this.button6.Size = new System.Drawing.Size(26, 22);
             this.button6.TabIndex = 15;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
             // 
@@ -859,20 +641,11 @@ namespace EquiposFrontend
             this.lblTitulo.Size = new System.Drawing.Size(138, 17);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "Listado de Personas";
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // FrmListarPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1246, 627);
-            this.Controls.Add(this.btnRegistrarNuevaPersona);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvPersonas);
-=======
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1602, 843);
             this.Controls.Add(this.panel1);
@@ -883,8 +656,7 @@ namespace EquiposFrontend
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListarPersonas";
             this.Text = "Listado de Personas";
             this.Load += new System.EventHandler(this.FrmListarPersonas_Load);
@@ -934,7 +706,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Button btnRegistrarNuevaPersona;
         private System.Windows.Forms.CheckBox chbBaja;
         private System.Windows.Forms.Label label15;
@@ -951,12 +723,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn estatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
-=======
+
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+
     }
 }

@@ -70,50 +70,28 @@ namespace EquiposFrontend
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.btnBajaPersona = new System.Windows.Forms.Button();
             this.btnEditarPersona = new System.Windows.Forms.Button();
-=======
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.btnNvaPersona = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem,
-            this.soporteToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(213, 502);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(200, 24);
+            this.menuStrip1.TabIndex = 0;
             // 
             // aToolStripMenuItem
             // 
@@ -350,41 +328,22 @@ namespace EquiposFrontend
             // 
             // dgvCompromisos
             // 
-<<<<<<< HEAD
             this.dgvCompromisos.AllowUserToAddRows = false;
             this.dgvCompromisos.AllowUserToDeleteRows = false;
             this.dgvCompromisos.AllowUserToResizeRows = false;
             this.dgvCompromisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompromisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompromisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-=======
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.tipoCompromiso,
             this.fechaCompromiso});
-<<<<<<< HEAD
             this.dgvCompromisos.Location = new System.Drawing.Point(6, 22);
             this.dgvCompromisos.Name = "dgvCompromisos";
             this.dgvCompromisos.ReadOnly = true;
             this.dgvCompromisos.RowTemplate.Height = 25;
             this.dgvCompromisos.Size = new System.Drawing.Size(441, 382);
             this.dgvCompromisos.TabIndex = 3;
-=======
-            this.dataGridView1.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 390);
-            this.dataGridView1.TabIndex = 3;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -413,14 +372,8 @@ namespace EquiposFrontend
             // 
             // groupBox1
             // 
-<<<<<<< HEAD
             this.groupBox1.Controls.Add(this.dgvCompromisos);
-            this.groupBox1.Location = new System.Drawing.Point(736, 27);
-=======
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(960, 66);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.groupBox1.Location = new System.Drawing.Point(938, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 418);
             this.groupBox1.TabIndex = 4;
@@ -429,29 +382,17 @@ namespace EquiposFrontend
             // 
             // groupBox2
             // 
-<<<<<<< HEAD
             this.groupBox2.Controls.Add(this.btnBajaEquipo);
             this.groupBox2.Controls.Add(this.btnEditarEquipo);
             this.groupBox2.Controls.Add(this.dgvEquipos);
             this.groupBox2.Controls.Add(this.btnNvoEquipo);
-            this.groupBox2.Location = new System.Drawing.Point(12, 27);
-=======
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(236, 66);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.groupBox2.Location = new System.Drawing.Point(214, 43);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(718, 313);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Equipos Inscriptos";
             // 
-<<<<<<< HEAD
             // btnBajaEquipo
             // 
             this.btnBajaEquipo.Location = new System.Drawing.Point(470, 269);
@@ -480,51 +421,12 @@ namespace EquiposFrontend
             this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-=======
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Gainsboro;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button5.Location = new System.Drawing.Point(470, 269);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(217, 38);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Baja de un Equipo Inscripto";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gainsboro;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button4.Location = new System.Drawing.Point(247, 269);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(217, 38);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Editar Datos de un Equipo";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.idEquipo,
             this.nombreEquipo,
             this.nombreEntrenador,
             this.cantidadJugadores,
             this.fechaAlta});
-            this.dgvEquipos.Location = new System.Drawing.Point(6, 22);
+            this.dgvEquipos.Location = new System.Drawing.Point(-19, 33);
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.ReadOnly = true;
             this.dgvEquipos.RowTemplate.Height = 25;
@@ -564,7 +466,6 @@ namespace EquiposFrontend
             // 
             // btnNvoEquipo
             // 
-<<<<<<< HEAD
             this.btnNvoEquipo.Location = new System.Drawing.Point(24, 269);
             this.btnNvoEquipo.Name = "btnNvoEquipo";
             this.btnNvoEquipo.Size = new System.Drawing.Size(217, 38);
@@ -577,36 +478,16 @@ namespace EquiposFrontend
             // 
             this.groupBox3.Controls.Add(this.btnBajaPersona);
             this.groupBox3.Controls.Add(this.btnEditarPersona);
-=======
-            this.button3.BackColor = System.Drawing.Color.Gainsboro;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button3.Location = new System.Drawing.Point(24, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 38);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Inscribir Nuevo Equipo";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.button1);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             this.groupBox3.Controls.Add(this.btnNvaPersona);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(236, 393);
+            this.groupBox3.Location = new System.Drawing.Point(214, 362);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(718, 91);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion de Personas";
             // 
-<<<<<<< HEAD
             // btnBajaPersona
             // 
             this.btnBajaPersona.Location = new System.Drawing.Point(470, 31);
@@ -616,25 +497,9 @@ namespace EquiposFrontend
             this.btnBajaPersona.Text = "Baja de una Persona Inscripta";
             this.btnBajaPersona.UseVisualStyleBackColor = true;
             this.btnBajaPersona.Click += new System.EventHandler(this.btnBajaPersona_Click);
-=======
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Gainsboro;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button7.Location = new System.Drawing.Point(470, 31);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(217, 38);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Baja de una Persona";
-            this.button7.UseVisualStyleBackColor = false;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // btnEditarPersona
             // 
-<<<<<<< HEAD
             this.btnEditarPersona.Location = new System.Drawing.Point(247, 31);
             this.btnEditarPersona.Name = "btnEditarPersona";
             this.btnEditarPersona.Size = new System.Drawing.Size(217, 38);
@@ -642,19 +507,6 @@ namespace EquiposFrontend
             this.btnEditarPersona.Text = "Editar Datos de una Persona";
             this.btnEditarPersona.UseVisualStyleBackColor = true;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
-=======
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.Location = new System.Drawing.Point(247, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Editar Datos de una Persona";
-            this.button1.UseVisualStyleBackColor = false;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
             // 
             // btnNvaPersona
             // 
@@ -668,92 +520,55 @@ namespace EquiposFrontend
             this.btnNvaPersona.Size = new System.Drawing.Size(217, 38);
             this.btnNvaPersona.TabIndex = 1;
             this.btnNvaPersona.Text = "Inscribir Nueva Persona";
-<<<<<<< HEAD
             this.btnNvaPersona.UseVisualStyleBackColor = true;
             this.btnNvaPersona.Click += new System.EventHandler(this.btnNvaPersona_Click);
-=======
-            this.btnNvaPersona.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            this.button6.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(1187, 3);
+            this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 22);
-            this.button6.TabIndex = 14;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btnCerrarSesion);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(213, 502);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(213, 502);
-            this.toolStripContainer1.TabIndex = 16;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 0;
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(2, 429);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 0);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(208, 45);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarSesion.TabIndex = 0;
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(493, 3);
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(70, 25);
-            this.lblTitulo.TabIndex = 16;
-            this.lblTitulo.Text = "label1";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(213, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1216, 30);
-            this.panel1.TabIndex = 18;
+            this.lblTitulo.Size = new System.Drawing.Size(100, 23);
+            this.lblTitulo.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1399, 2);
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(26, 22);
-            this.button2.TabIndex = 15;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem,
+            this.soporteToolStripMenuItem,
+            this.reportesToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
+            this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip2.Size = new System.Drawing.Size(211, 484);
+            this.menuStrip2.TabIndex = 2;
+            this.menuStrip2.Text = "menuStrip1";
             // 
             // Inicio
             // 
@@ -761,12 +576,11 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1428, 501);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1400, 484);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.menuStrip2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(220, 35);
             this.MainMenuStrip = this.menuStrip1;
@@ -775,19 +589,15 @@ namespace EquiposFrontend
             this.Text = "Inicio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Inicio_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -829,12 +639,9 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button btnEditarEquipo;
         private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.GroupBox groupBox3;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnBajaPersona;
         private System.Windows.Forms.Button btnEditarPersona;
-=======
         private System.Windows.Forms.Button button1;
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
         private System.Windows.Forms.Button btnNvaPersona;
 
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
@@ -842,11 +649,10 @@ namespace EquiposFrontend
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MenuStrip menuStrip2;
     }
 }

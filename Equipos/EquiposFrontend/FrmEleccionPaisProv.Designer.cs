@@ -56,7 +56,7 @@ namespace EquiposFrontend
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAceptar.Location = new System.Drawing.Point(51, 180);
+            this.btnAceptar.Location = new System.Drawing.Point(46, 166);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(123, 38);
             this.btnAceptar.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace EquiposFrontend
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCancelar.Location = new System.Drawing.Point(180, 180);
+            this.btnCancelar.Location = new System.Drawing.Point(175, 166);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 38);
             this.btnCancelar.TabIndex = 1;
