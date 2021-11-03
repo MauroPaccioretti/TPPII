@@ -1,11 +1,7 @@
 ﻿using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EquiposWebAPI.Controllers
 {
@@ -20,10 +16,10 @@ namespace EquiposWebAPI.Controllers
             app = new ImpFactoryAplicacion().CrearService();
         }
 
-       
+
         [HttpPost("login")]
-        public IActionResult GetLogin(List <string> lst )
-        {            
+        public IActionResult GetLogin(List<string> lst)
+        {
             string usser = lst[0];
             string password = lst[1];
             return Ok(app.Login(usser, password));

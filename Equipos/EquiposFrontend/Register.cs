@@ -76,7 +76,7 @@ namespace EquiposFrontend
 
                         if (usuarios.Count > 0)
                         {
-                            DialogResult result = MessageBox.Show("Registered with username: " + usuario.User.ToString());
+                            DialogResult result = MessageBox.Show("Registrado con nombre de usuario: " + usuario.User.ToString());
                             if (result == DialogResult.OK)
                             {
                                 Hide();
@@ -84,27 +84,27 @@ namespace EquiposFrontend
                         }
                         else
                         {
-                            MessageBox.Show("Failed to register");
+                            MessageBox.Show("Error al registrar");
                             return;
                         }
                         
                     }
                     else
                     {
-                        MsgErrorEmail("Please enter a Email Address Valid");
+                        MsgErrorEmail("Porfavor ingrese un email valido");
                         textBoxEmail.Focus();
                     }
                 }
                 else
                 {
-                    MsgErrorPass("Please enter Password");
+                    MsgErrorPass("Porfavor ingrese una contraseña");
                     textBoxPass.Focus();
 
                 }
             }
             else
             {
-                MsgErrorUser("Please enter Username");
+                MsgErrorUser("Porfavor ingrese un Usuario");
                 textBoxUsername.Focus();
             }
         }

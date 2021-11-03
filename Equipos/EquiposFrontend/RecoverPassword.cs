@@ -46,11 +46,11 @@ namespace EquiposFrontend
             {
                 if (textBoxUserRequest.Text != string.Empty)
                 {
-                    lblResultado.Text = "Please enter a Email Address Valid";
+                    lblResultado.Text = "Porfavor ingrese un email valido";
                 }
                 else
                 {
-                    lblResultado.Text = "Please enter a email";
+                    lblResultado.Text = "Porfavor ingrese un email";
                 }
                 
             }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EquiposBackend.Dominio
+﻿namespace EquiposBackend.Dominio
 {
     public class Provincia
     {
@@ -20,7 +14,7 @@ namespace EquiposBackend.Dominio
 
         public override string ToString()
         {
-            return "Pais: " + Pais.Nombre +" - " + "Provincia: " + Nombre;
+            return "Pais: " + Pais.Nombre + " - " + "Provincia: " + Nombre;
         }
         //public Provincia(int idPais)
         //{

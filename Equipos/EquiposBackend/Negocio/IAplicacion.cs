@@ -1,9 +1,5 @@
 ﻿using EquiposBackend.Dominio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EquiposBackend.Negocio
 {
@@ -16,9 +12,13 @@ namespace EquiposBackend.Negocio
         bool CrearPais(Pais oPais);
         bool CrearProvincia(Provincia oProvincia);
         bool CrearLocalidad(Localidad oLocalidad);
+<<<<<<< HEAD
         bool CrearTipoDocumento(TiposDocumentos oTipoDoc);
         bool CrearTipoCompromiso(TipoCompromisos oTipoCompromiso);
         bool CrearEquipoFull(Equipo oEquipo);
+=======
+
+>>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
 
         //get - read
 

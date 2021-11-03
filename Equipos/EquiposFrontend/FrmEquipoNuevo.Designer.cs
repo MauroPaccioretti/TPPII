@@ -68,15 +68,15 @@ namespace EquiposFrontend
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
+            this.btnConfirmarAccion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregarLocalidad = new System.Windows.Forms.Button();
             this.idCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quitarComp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConfirmarAccion = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregarLocalidad = new System.Windows.Forms.Button();
+            this.quitarComp = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -449,6 +449,35 @@ namespace EquiposFrontend
             this.dgvCompromisos.TabIndex = 0;
             this.dgvCompromisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompromisos_CellContentClick);
             // 
+            // btnConfirmarAccion
+            // 
+            this.btnConfirmarAccion.Location = new System.Drawing.Point(728, 566);
+            this.btnConfirmarAccion.Name = "btnConfirmarAccion";
+            this.btnConfirmarAccion.Size = new System.Drawing.Size(192, 32);
+            this.btnConfirmarAccion.TabIndex = 12;
+            this.btnConfirmarAccion.Text = "Registrar Equipo";
+            this.btnConfirmarAccion.UseVisualStyleBackColor = true;
+            this.btnConfirmarAccion.Click += new System.EventHandler(this.btnConfirmarAccion_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(934, 566);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(192, 32);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAgregarLocalidad
+            // 
+            this.btnAgregarLocalidad.Location = new System.Drawing.Point(988, 15);
+            this.btnAgregarLocalidad.Name = "btnAgregarLocalidad";
+            this.btnAgregarLocalidad.Size = new System.Drawing.Size(138, 23);
+            this.btnAgregarLocalidad.TabIndex = 2;
+            this.btnAgregarLocalidad.Text = "Nueva Localidad";
+            this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
+            // 
             // idCompromiso
             // 
             this.idCompromiso.HeaderText = "idCompromiso";
@@ -486,35 +515,8 @@ namespace EquiposFrontend
             this.quitarComp.HeaderText = "Quitar";
             this.quitarComp.Name = "quitarComp";
             this.quitarComp.ReadOnly = true;
-            // 
-            // btnConfirmarAccion
-            // 
-            this.btnConfirmarAccion.Location = new System.Drawing.Point(728, 566);
-            this.btnConfirmarAccion.Name = "btnConfirmarAccion";
-            this.btnConfirmarAccion.Size = new System.Drawing.Size(192, 32);
-            this.btnConfirmarAccion.TabIndex = 12;
-            this.btnConfirmarAccion.Text = "Registrar Equipo";
-            this.btnConfirmarAccion.UseVisualStyleBackColor = true;
-            this.btnConfirmarAccion.Click += new System.EventHandler(this.btnConfirmarAccion_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(934, 566);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(192, 32);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAgregarLocalidad
-            // 
-            this.btnAgregarLocalidad.Location = new System.Drawing.Point(988, 15);
-            this.btnAgregarLocalidad.Name = "btnAgregarLocalidad";
-            this.btnAgregarLocalidad.Size = new System.Drawing.Size(138, 23);
-            this.btnAgregarLocalidad.TabIndex = 2;
-            this.btnAgregarLocalidad.Text = "Nueva Localidad";
-            this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
+            this.quitarComp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.quitarComp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmEquipoNuevo
             // 
@@ -599,6 +601,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quitarComp;
+        private System.Windows.Forms.DataGridViewButtonColumn quitarComp;
     }
 }

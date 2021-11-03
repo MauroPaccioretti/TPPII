@@ -93,5 +93,10 @@ namespace EquiposFrontend
         {
             this.Dispose();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

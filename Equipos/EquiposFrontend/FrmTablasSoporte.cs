@@ -30,8 +30,10 @@ namespace EquiposFrontend
             this.tabla = tabla;
             this.accion = accion;
             this.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
+            lblTitulo.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
             modoString = EnumATexto(tabla);
             btnAceptar.Text = accion.ToString();
+            
             
         }
 
@@ -263,12 +265,18 @@ namespace EquiposFrontend
             }
         }
 
+<<<<<<< HEAD
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea salir?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Dispose();
             }
+=======
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Dispose();
+>>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
         }
     }
 }
