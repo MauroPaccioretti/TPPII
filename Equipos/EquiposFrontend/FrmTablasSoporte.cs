@@ -265,17 +265,23 @@ namespace EquiposFrontend
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea salir?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Dispose();
             }
+<<<<<<< HEAD
         }
         private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
         }
     }
 }

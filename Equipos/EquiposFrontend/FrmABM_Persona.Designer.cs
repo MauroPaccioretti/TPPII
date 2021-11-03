@@ -49,10 +49,13 @@ namespace EquiposFrontend
             this.btnConfirmarAccion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregarTipoDni = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.SuspendLayout();
             // 
             // label1
@@ -187,7 +190,11 @@ namespace EquiposFrontend
             // 
             // txtNroDoc
             // 
+<<<<<<< HEAD
             this.txtNroDoc.Location = new System.Drawing.Point(250, 242);
+=======
+            this.txtNroDoc.Location = new System.Drawing.Point(164, 137);
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(249, 29);
             this.txtNroDoc.TabIndex = 4;
@@ -219,10 +226,14 @@ namespace EquiposFrontend
             // 
             // btnConfirmarAccion
             // 
+<<<<<<< HEAD
             this.btnConfirmarAccion.BackColor = System.Drawing.Color.Gainsboro;
             this.btnConfirmarAccion.FlatAppearance.BorderSize = 0;
             this.btnConfirmarAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarAccion.Location = new System.Drawing.Point(181, 434);
+=======
+            this.btnConfirmarAccion.Location = new System.Drawing.Point(58, 271);
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.btnConfirmarAccion.Name = "btnConfirmarAccion";
             this.btnConfirmarAccion.Size = new System.Drawing.Size(155, 50);
             this.btnConfirmarAccion.TabIndex = 8;
@@ -253,6 +264,7 @@ namespace EquiposFrontend
             this.btnAgregarTipoDni.Text = "+";
             this.btnAgregarTipoDni.UseVisualStyleBackColor = true;
             this.btnAgregarTipoDni.Click += new System.EventHandler(this.btnAgregarTipoDni_Click);
+<<<<<<< HEAD
             // 
             // button6
             // 
@@ -290,14 +302,20 @@ namespace EquiposFrontend
             this.lblTitulo.Size = new System.Drawing.Size(116, 17);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "Agregar Persona";
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             // 
             // FrmABM_Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(688, 514);
             this.Controls.Add(this.panel1);
+=======
+            this.ClientSize = new System.Drawing.Size(435, 351);
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.Controls.Add(this.btnAgregarTipoDni);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarAccion);
@@ -325,8 +343,11 @@ namespace EquiposFrontend
             this.Name = "FrmABM_Persona";
             this.Text = "Agregar Persona";
             this.Load += new System.EventHandler(this.FrmABM_Persona_Load);
+<<<<<<< HEAD
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,6 +373,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.ComboBox cmbPierna;
         private System.Windows.Forms.Button btnConfirmarAccion;
         private System.Windows.Forms.Button btnCancelar;
+<<<<<<< HEAD
 
         private System.Windows.Forms.Button btnAgregarTipoDni;
         private System.Windows.Forms.Button button6;
@@ -362,5 +384,8 @@ namespace EquiposFrontend
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
 
+=======
+        private System.Windows.Forms.Button btnAgregarTipoDni;
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
     }
 }

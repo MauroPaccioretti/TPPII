@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
 ﻿using EquiposBackend.Dominio;
 using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
@@ -11,7 +14,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
 
 namespace EquiposFrontend
 

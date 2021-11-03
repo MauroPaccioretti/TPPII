@@ -373,7 +373,11 @@ namespace EquiposFrontend
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCompromisos);
+<<<<<<< HEAD
             this.groupBox1.Location = new System.Drawing.Point(938, 43);
+=======
+            this.groupBox1.Location = new System.Drawing.Point(736, 27);
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 418);
             this.groupBox1.TabIndex = 4;
@@ -386,7 +390,11 @@ namespace EquiposFrontend
             this.groupBox2.Controls.Add(this.btnEditarEquipo);
             this.groupBox2.Controls.Add(this.dgvEquipos);
             this.groupBox2.Controls.Add(this.btnNvoEquipo);
+<<<<<<< HEAD
             this.groupBox2.Location = new System.Drawing.Point(214, 43);
+=======
+            this.groupBox2.Location = new System.Drawing.Point(12, 27);
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(718, 313);
             this.groupBox2.TabIndex = 5;
@@ -522,6 +530,7 @@ namespace EquiposFrontend
             this.btnNvaPersona.Text = "Inscribir Nueva Persona";
             this.btnNvaPersona.UseVisualStyleBackColor = true;
             this.btnNvaPersona.Click += new System.EventHandler(this.btnNvaPersona_Click);
+<<<<<<< HEAD
             // 
             // button6
             // 
@@ -569,6 +578,8 @@ namespace EquiposFrontend
             this.menuStrip2.Size = new System.Drawing.Size(211, 484);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip1";
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             // 
             // Inicio
             // 
@@ -641,7 +652,10 @@ namespace EquiposFrontend
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBajaPersona;
         private System.Windows.Forms.Button btnEditarPersona;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
+=======
+>>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
         private System.Windows.Forms.Button btnNvaPersona;
 
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;

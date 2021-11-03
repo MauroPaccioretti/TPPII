@@ -1,6 +1,7 @@
 ﻿using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace EquiposWebAPI.Controllers
 {

@@ -119,7 +119,6 @@ namespace EquiposFrontend
 
         }
 
-<<<<<<< HEAD
 
 
 
@@ -174,24 +173,6 @@ namespace EquiposFrontend
             frmListarPersonas.ShowDialog();
 
             this.Show();
-=======
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure to Log Out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Dispose();
->>>>>>> 32d0c3ddea2ad565df79d1fc5868c47ecbd40f56
         }
     }
 }
