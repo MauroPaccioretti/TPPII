@@ -67,13 +67,6 @@ namespace EquiposFrontend
             frmTablasSoporte.Show();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure to Log Out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
         private void agregarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -125,6 +118,19 @@ namespace EquiposFrontend
             reporte1.ShowDialog();
             
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to Log Out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

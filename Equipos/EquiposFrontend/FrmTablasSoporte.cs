@@ -41,8 +41,10 @@ namespace EquiposFrontend
             this.tabla = tabla;
             this.accion = accion;
             this.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
+            lblTitulo.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
             modoString = EnumATexto(tabla);
             btnAceptar.Text = accion.ToString();
+            
             
         }
 
@@ -258,6 +260,9 @@ namespace EquiposFrontend
             }
         }
 
-
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }
