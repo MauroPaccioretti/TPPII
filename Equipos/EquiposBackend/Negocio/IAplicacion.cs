@@ -1,9 +1,5 @@
 ﻿using EquiposBackend.Dominio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EquiposBackend.Negocio
 {
@@ -16,7 +12,7 @@ namespace EquiposBackend.Negocio
         bool CrearPais(Pais oPais);
         bool CrearProvincia(Provincia oProvincia);
         bool CrearLocalidad(Localidad oLocalidad);
-       
+
 
         //get - read
 

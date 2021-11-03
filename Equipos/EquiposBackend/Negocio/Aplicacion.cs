@@ -1,10 +1,6 @@
 ﻿using EquiposBackend.Datos;
 using EquiposBackend.Dominio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EquiposBackend.Negocio
 {
@@ -15,7 +11,7 @@ namespace EquiposBackend.Negocio
 
 
         //create
-        
+
         public bool CrearEquipo(Equipo oEquipo)
         {
             return dao.CreateEquipo(oEquipo);
@@ -160,7 +156,7 @@ namespace EquiposBackend.Negocio
 
         public bool Login(string username, string pass)
         {
-           return usuariosDao.Login(username, pass);
+            return usuariosDao.Login(username, pass);
         }
 
         public string RecoverPassword(string userRequesting)

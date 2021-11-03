@@ -1,11 +1,6 @@
 ﻿using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EquiposWebAPI.Controllers
 {
@@ -126,7 +121,7 @@ namespace EquiposWebAPI.Controllers
         [HttpPost("insertarLocalidad")]
         public IActionResult PostLocalidad(Localidad oLocalidad)
         {
-            if (oLocalidad == null )
+            if (oLocalidad == null)
                 return BadRequest();
             if (app.CrearLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
