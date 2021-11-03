@@ -191,6 +191,64 @@ namespace EquiposWebAPI.Controllers
                 return Ok("No se pudo grabar!");
         }
 
+        [HttpPut("editarPais")]
+        public IActionResult PutPais(Pais oPais)
+        {
+            if (oPais == null)
+                return BadRequest();
+            if (app.EditarPais(oPais))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+        [HttpPut("editarProvincia")]
+        public IActionResult PutProvincia(Provincia oProvincia)
+        {
+            if (oProvincia == null)
+                return BadRequest();
+            if (app.EditarProvincia(oProvincia))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+
+        [HttpPut("editarLocalidad")]
+        public IActionResult PutLocalidad(Localidad oLocalidad)
+        {
+            if (oLocalidad == null)
+                return BadRequest();
+            if (app.EditarLocalidad(oLocalidad))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+
+        [HttpPut("editarTipoDocumento")]
+        public IActionResult PutTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            if (oTipoDoc == null)
+                return BadRequest();
+            if (app.EditarTipoDocumento(oTipoDoc))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
+
+        [HttpPut("editarTipoCompromisos")]
+        public IActionResult PutTipoCompromisos(TipoCompromisos oTC)
+        {
+            if (oTC == null)
+                return BadRequest();
+            if (app.EditarTipoCompromiso(oTC))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se puedo grabar!");
+        }
+
 
         //Delete
 

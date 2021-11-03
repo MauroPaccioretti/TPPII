@@ -170,7 +170,7 @@ namespace EquiposFrontend
                 bool aux = false;
                 string resultado;
                 //object objetoLocacion;
-                //string datosJSON = JsonConvert.SerializeObject(objetoLocacion);
+                string datosJSON;
 
                 //bool aux = false;
                 switch (accion)
@@ -184,8 +184,8 @@ namespace EquiposFrontend
                                 Pais oPais = new Pais();
                                 oPais.Nombre = txtNombre.Text;
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oPais));
-                                aux = JsonConvert.DeserializeObject<bool>(resultado);
-
+                                //aux = JsonConvert.DeserializeObject<bool>(resultado);
+                                MessageBox.Show(resultado);
                                 break;
                             case TablasSoporte.provincias:
                                 //"https://localhost:44381/api/Equipos/insertarProvincia?nombre=Buenos%20Aires&idPais=1" 
@@ -193,12 +193,13 @@ namespace EquiposFrontend
 
                                 Provincia oProvincia = new Provincia();
                                 oProvincia.Nombre = txtNombre.Text;
-                                FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(tabla);
+                                FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
                                 frmPais.ShowDialog();
                                 oProvincia.Pais.IDPais = frmPais.IdEleccion;
-                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oProvincia));
-                                aux = JsonConvert.DeserializeObject<bool>(resultado);
-                                                        
+                                datosJSON = JsonConvert.SerializeObject(oProvincia);
+                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
+                                //aux = JsonConvert.DeserializeObject<bool>(resultado);
+                                MessageBox.Show(resultado);
 
                                 break;
 
@@ -209,10 +210,12 @@ namespace EquiposFrontend
                                 Localidad oLoc = new Localidad();
                                 oLoc.Nombre = txtNombre.Text;
 
-                                FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(tabla);
+                                FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
                                 frmProv.ShowDialog();
                                 oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
-                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oLoc));
+                                datosJSON = JsonConvert.SerializeObject(oLoc);
+                                resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
+
                                 MessageBox.Show(resultado);
                                 //aux = JsonConvert.DeserializeObject<bool>(resultado);
 
