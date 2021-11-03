@@ -17,17 +17,23 @@ namespace EquiposFrontend
     {
         public int IdEleccion { get; set; }
         TablasSoporte tabla;
+
         public FrmEleccionPaisProv(TablasSoporte tabla)
         {
             InitializeComponent();
+            this.tabla = tabla;
 
             if (tabla == TablasSoporte.provincias) 
-            { 
+            {
+              
+                
                 this.Text = "Elija a que Pais corresponde su Provincia";
                 lblEleccion.Text = "Elija a que Pais corresponde su Provincia:"; 
+
             }
             if (tabla == TablasSoporte.localidades)
             {
+            
                 this.Text = "Elija a que Provincia corresponde su Localidad";
                 lblEleccion.Text = "Elija a que Provincia corresponde su Localidad:";
             }
@@ -44,6 +50,7 @@ namespace EquiposFrontend
                 cbxPaises.DataSource = lstP;
                 cbxPaises.DisplayMember = "Nombre";
                 cbxPaises.ValueMember = "IdPais";
+
             }
             if(tabla == TablasSoporte.localidades)
             {
@@ -51,7 +58,7 @@ namespace EquiposFrontend
                 var resultado = await ClienteSingleton.GetInstancia().GetAsync(url1);
                 List<Provincia> lstP = JsonConvert.DeserializeObject<List<Provincia>>(resultado);
                 cbxPaises.DataSource = lstP;
-                cbxPaises.DisplayMember = lstP.ToString();
+                cbxPaises.DisplayMember = lstP.ToString();                
                 
             }
 
@@ -77,6 +84,7 @@ namespace EquiposFrontend
                 IdEleccion = oProv.IDProvincia;
 
             }
+            this.Close();
 
         }
 

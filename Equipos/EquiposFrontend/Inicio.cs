@@ -23,6 +23,9 @@ namespace EquiposFrontend
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+
+
+
                         
         }
 
@@ -107,6 +110,11 @@ namespace EquiposFrontend
                 Application.Exit();
             }
            
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

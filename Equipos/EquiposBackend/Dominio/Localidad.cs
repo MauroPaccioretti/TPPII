@@ -17,6 +17,10 @@ namespace EquiposBackend.Dominio
             Provincia = new Provincia();
         }
 
+        public override string ToString()
+        {
+            return "Provincia: " + Provincia.Nombre + "Localidad: " + Nombre;
+        }
         //public Localidad(int idProvincia)
         //{
         //    Provincia = new Provincia(idProvincia);

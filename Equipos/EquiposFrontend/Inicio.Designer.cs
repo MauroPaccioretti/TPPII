@@ -33,6 +33,7 @@ namespace EquiposFrontend
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarPaísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,18 +53,31 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnEliminarEquipo = new System.Windows.Forms.Button();
-            this.btnEditarEquipo = new System.Windows.Forms.Button();
-            this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnNvaPersona = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -74,7 +88,7 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1217, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1198, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,9 +104,16 @@ namespace EquiposFrontend
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.salirToolStripMenuItem.Text = "LogOut";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
             // soporteToolStripMenuItem
             // 
@@ -237,84 +258,195 @@ namespace EquiposFrontend
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.tipoCompromiso,
+            this.fechaCompromiso});
             this.dataGridView1.Location = new System.Drawing.Point(6, 22);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(411, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(441, 382);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "idEquipo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre del Equipo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tipoCompromiso
+            // 
+            this.tipoCompromiso.HeaderText = "Compromiso";
+            this.tipoCompromiso.Name = "tipoCompromiso";
+            this.tipoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(782, 49);
+            this.groupBox1.Location = new System.Drawing.Point(736, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 459);
+            this.groupBox1.Size = new System.Drawing.Size(453, 410);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Próximos Compromisos";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnEliminarEquipo);
-            this.groupBox2.Controls.Add(this.btnEditarEquipo);
-            this.groupBox2.Controls.Add(this.btnNvoEquipo);
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(28, 45);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Location = new System.Drawing.Point(12, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(718, 313);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Equipos Inscriptos";
             // 
-            // btnEliminarEquipo
-            // 
-            this.btnEliminarEquipo.Location = new System.Drawing.Point(231, 263);
-            this.btnEliminarEquipo.Name = "btnEliminarEquipo";
-            this.btnEliminarEquipo.Size = new System.Drawing.Size(100, 38);
-            this.btnEliminarEquipo.TabIndex = 1;
-            this.btnEliminarEquipo.Text = "Eliminar";
-            this.btnEliminarEquipo.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarEquipo
-            // 
-            this.btnEditarEquipo.Location = new System.Drawing.Point(125, 263);
-            this.btnEditarEquipo.Name = "btnEditarEquipo";
-            this.btnEditarEquipo.Size = new System.Drawing.Size(100, 38);
-            this.btnEditarEquipo.TabIndex = 1;
-            this.btnEditarEquipo.Text = "Editar";
-            this.btnEditarEquipo.UseVisualStyleBackColor = true;
-            // 
-            // btnNvoEquipo
-            // 
-            this.btnNvoEquipo.Location = new System.Drawing.Point(19, 263);
-            this.btnNvoEquipo.Name = "btnNvoEquipo";
-            this.btnNvoEquipo.Size = new System.Drawing.Size(100, 38);
-            this.btnNvoEquipo.TabIndex = 1;
-            this.btnNvoEquipo.Text = "Nuevo";
-            this.btnNvoEquipo.UseVisualStyleBackColor = true;
-            // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEquipo,
+            this.nombreEquipo,
+            this.nombreEntrenador,
+            this.cantidadJugadores,
+            this.fechaAlta});
             this.dataGridView2.Location = new System.Drawing.Point(6, 22);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(706, 230);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // salirToolStripMenuItem1
+            // idEquipo
             // 
-            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem1.Text = "Salir";
-            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            this.idEquipo.HeaderText = "idEquipo";
+            this.idEquipo.Name = "idEquipo";
+            this.idEquipo.ReadOnly = true;
+            this.idEquipo.Visible = false;
+            // 
+            // nombreEquipo
+            // 
+            this.nombreEquipo.HeaderText = "Nombre del Equipo";
+            this.nombreEquipo.Name = "nombreEquipo";
+            this.nombreEquipo.ReadOnly = true;
+            // 
+            // nombreEntrenador
+            // 
+            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
+            this.nombreEntrenador.Name = "nombreEntrenador";
+            this.nombreEntrenador.ReadOnly = true;
+            // 
+            // cantidadJugadores
+            // 
+            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
+            this.cantidadJugadores.Name = "cantidadJugadores";
+            this.cantidadJugadores.ReadOnly = true;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha de Alta";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnNvaPersona);
+            this.groupBox3.Location = new System.Drawing.Point(12, 346);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(718, 91);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Gestion de Personas";
+            // 
+            // btnNvaPersona
+            // 
+            this.btnNvaPersona.Location = new System.Drawing.Point(24, 31);
+            this.btnNvaPersona.Name = "btnNvaPersona";
+            this.btnNvaPersona.Size = new System.Drawing.Size(217, 38);
+            this.btnNvaPersona.TabIndex = 1;
+            this.btnNvaPersona.Text = "Inscribir Nueva Persona";
+            this.btnNvaPersona.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(247, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(217, 38);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Editar Datos de una Persona";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(470, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(217, 38);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Baja de una Persona Inscripta";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(24, 269);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(217, 38);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Inscribir Nuevo Equipo";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(247, 269);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(217, 38);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Editar Datos de un Equipo";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(470, 269);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(217, 38);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Baja de un Equipo Inscripto";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 612);
+            this.ClientSize = new System.Drawing.Size(1198, 451);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -330,6 +462,7 @@ namespace EquiposFrontend
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,10 +493,23 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnEliminarEquipo;
-        private System.Windows.Forms.Button btnEditarEquipo;
-        private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEntrenador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadJugadores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNvaPersona;
     }
 }
