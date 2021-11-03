@@ -158,6 +158,30 @@ insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocument
 		   (4, 'Aquiles', 'Traigo', 1, 41244863, '02/04/1999', 4, 75.8, 163, '02/02/2021', null),
 		   (5, 'Mario', 'Neta', 1, 43976375, '05/03/1997', 3, 81.5, 182, '20/07/2020', '27/07/2020')
 
+
+
+exec SP_INSERTAR_EQUIPO 'Altos del aire', 1
+
+
+exec SP_INSERTAR_POSICIONES 'Arquero'
+exec SP_INSERTAR_POSICIONES 'Defensor Central'
+exec SP_INSERTAR_POSICIONES 'Defensor Lateral Izquierda'
+exec SP_INSERTAR_POSICIONES 'Defensor Lateral Derecha'
+exec SP_INSERTAR_POSICIONES 'Defensor Central'
+exec SP_INSERTAR_POSICIONES 'Mediocampista 1'
+exec SP_INSERTAR_POSICIONES 'Mediocampista 2'
+exec SP_INSERTAR_POSICIONES 'Mediapunta 1'
+exec SP_INSERTAR_POSICIONES 'Mediapunta 2'
+exec SP_INSERTAR_POSICIONES 'Delantero 1'
+exec SP_INSERTAR_POSICIONES 'Delantero 2'
+exec SP_INSERTAR_POSICIONES 'Entrenador'
+
+
+
+exec SP_INSERTAR_EQUIPOS_PERSONAS  1, 1, 12, 'Entrenador'
+
+
+
 ------------------------------------------------------------------------------
 ----------------SP_INSERTAR---------------------------------------------------
 ------------------------------------------------------------------------------
@@ -236,7 +260,7 @@ if exists (select * from Posiciones)
 	set @cod_posicion = (SELECT max(cod_posicion)+1 FROM Posiciones)
 else
 	set @cod_posicion = 1
-insert into TiposDocs (cod_tipoDoc, tipo)
+insert into TiposDocs (cod_posicion, posicion)
 	values (@cod_posicion, @posicion)
 end
 
@@ -349,7 +373,31 @@ go
 ------------------------------------------------------------------------------
 -----------------SP_CONSULTAR-------------------------------------------------
 ------------------------------------------------------------------------------
+go
+create proc SP_CONSULTAR_EQUIPOS_CON_COLUMNAS
+as
+select e.nombre 'Nombre del Equipo',
+	p.nombre + ' ' + p.apellido as 'Nombre Entrenador',
+	count(*) 'Cantidad de Jugadores',
+	convert(date,e.fechaAlta) 'Fecha de Alta' 
+from Equipos e join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
+join Personas p on p.cod_persona = ep.cod_persona
+where ep.cod_posicion = 12 and 
+	e.fechaBaja is null
+group by e.nombre ,p.nombre + ' ' + p.apellido , e.fechaAlta, e.cod_equipo
+go
 
+create proc SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS
+as
+select e.nombre 'Nombre del Equipo',
+	tc.tipo 'Tipo de compromiso',
+	c.fechaCompromiso 'Fecha del compromiso'
+from Compromisos c
+join TiposCompromisos tc on c.cod_tipoCompromiso = tc.cod_tipoCompromiso
+join Equipos e on e.cod_equipo = c.cod_equipo
+where c.fechaBaja is null and
+	c.fechaCompromiso > getdate()
+go
 
 go
 create proc SP_CONSULTAR_TIPOS_DOC
