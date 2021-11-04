@@ -18,6 +18,20 @@ namespace EquiposWebAPI.Controllers
 
         //get
 
+
+        [HttpGet("equiposForDisplay")]
+        public IActionResult GetEquiposForDisplay(bool full)
+        {
+            return Ok(app.ConsultarEquiposForDisplay(full));
+        }
+
+        [HttpGet("compromisosForDisplay")]
+        public IActionResult GetCompromisosForDisplay(bool full)
+        {
+            return Ok(app.ConsultarCompromisosForDisplay(full));
+        }
+
+
         [HttpGet("paises")]
         public IActionResult GetPaises()
         {

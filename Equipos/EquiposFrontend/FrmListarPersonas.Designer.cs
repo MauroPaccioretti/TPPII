@@ -73,13 +73,14 @@ namespace EquiposFrontend
             this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chbPierna = new System.Windows.Forms.CheckBox();
+            this.chbFechaNac = new System.Windows.Forms.CheckBox();
             this.chbTipoDoc = new System.Windows.Forms.CheckBox();
             this.chbBaja = new System.Windows.Forms.CheckBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCruz = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
@@ -112,6 +113,7 @@ namespace EquiposFrontend
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.ReadOnly = true;
             this.dgvPersonas.RowTemplate.Height = 25;
+            this.dgvPersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonas.Size = new System.Drawing.Size(1571, 462);
             this.dgvPersonas.TabIndex = 19;
             // 
@@ -202,9 +204,10 @@ namespace EquiposFrontend
             // 
             // dtpFechaNacimientoDesde
             // 
-            this.dtpFechaNacimientoDesde.Location = new System.Drawing.Point(249, 94);
+            this.dtpFechaNacimientoDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimientoDesde.Location = new System.Drawing.Point(433, 94);
             this.dtpFechaNacimientoDesde.Name = "dtpFechaNacimientoDesde";
-            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(309, 26);
+            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(125, 26);
             this.dtpFechaNacimientoDesde.TabIndex = 2;
             this.dtpFechaNacimientoDesde.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             // 
@@ -320,7 +323,7 @@ namespace EquiposFrontend
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(183, 99);
+            this.label9.Location = new System.Drawing.Point(367, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 10;
@@ -329,7 +332,7 @@ namespace EquiposFrontend
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(187, 131);
+            this.label10.Location = new System.Drawing.Point(367, 131);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 10;
@@ -337,9 +340,10 @@ namespace EquiposFrontend
             // 
             // dtpFechaNacimientoHasta
             // 
-            this.dtpFechaNacimientoHasta.Location = new System.Drawing.Point(249, 126);
+            this.dtpFechaNacimientoHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimientoHasta.Location = new System.Drawing.Point(433, 126);
             this.dtpFechaNacimientoHasta.Name = "dtpFechaNacimientoHasta";
-            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(309, 26);
+            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(125, 26);
             this.dtpFechaNacimientoHasta.TabIndex = 3;
             // 
             // label11
@@ -458,6 +462,7 @@ namespace EquiposFrontend
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.chbPierna);
+            this.groupBox2.Controls.Add(this.chbFechaNac);
             this.groupBox2.Controls.Add(this.chbTipoDoc);
             this.groupBox2.Controls.Add(this.chbBaja);
             this.groupBox2.Controls.Add(this.btnLimpiar);
@@ -509,6 +514,18 @@ namespace EquiposFrontend
             this.chbPierna.TabIndex = 10;
             this.chbPierna.Text = "Incluir en búsqueda?";
             this.chbPierna.UseVisualStyleBackColor = true;
+            // 
+            // chbFechaNac
+            // 
+            this.chbFechaNac.AutoSize = true;
+            this.chbFechaNac.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbFechaNac.Location = new System.Drawing.Point(173, 98);
+            this.chbFechaNac.Margin = new System.Windows.Forms.Padding(2);
+            this.chbFechaNac.Name = "chbFechaNac";
+            this.chbFechaNac.Size = new System.Drawing.Size(176, 24);
+            this.chbFechaNac.TabIndex = 4;
+            this.chbFechaNac.Text = "Incluir en búsqueda?";
+            this.chbFechaNac.UseVisualStyleBackColor = true;
             // 
             // chbTipoDoc
             // 
@@ -585,24 +602,25 @@ namespace EquiposFrontend
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             // 
-            // button6
+            // btnCruz
             // 
-            this.button6.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1576, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 22);
-            this.button6.TabIndex = 15;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnCruz.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.btnCruz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCruz.FlatAppearance.BorderSize = 0;
+            this.btnCruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCruz.ForeColor = System.Drawing.Color.White;
+            this.btnCruz.Location = new System.Drawing.Point(1576, 3);
+            this.btnCruz.Name = "btnCruz";
+            this.btnCruz.Size = new System.Drawing.Size(26, 22);
+            this.btnCruz.TabIndex = 15;
+            this.btnCruz.UseVisualStyleBackColor = true;
+            this.btnCruz.Click += new System.EventHandler(this.btnCruz_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnCruz);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -703,9 +721,9 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCruz;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-
+        private System.Windows.Forms.CheckBox chbFechaNac;
     }
 }

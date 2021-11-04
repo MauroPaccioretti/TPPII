@@ -1,5 +1,6 @@
 ﻿using EquiposBackend.Dominio;
 using System.Collections.Generic;
+using System.Data;
 
 namespace EquiposBackend.Datos
 {
@@ -18,6 +19,8 @@ namespace EquiposBackend.Datos
 
 
         //get - read
+        DataTable GetEquiposForDisplay(bool full);
+        DataTable GetCompromisosForDisplay(bool full);
         List<Persona> GetPersonas();
         List<Persona> GetPersonasFiltered(Dictionary<string, object> filtros);
         List<EquipoPersona> GetEquipoPersona();

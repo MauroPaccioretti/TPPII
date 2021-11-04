@@ -48,6 +48,11 @@ namespace EquiposFrontend
         {
             if (dgvPersonas.SelectedRows.Count == 1)
             {
+                if(dgvPersonas.CurrentRow.Cells["fechaBaja"].Value.ToString() != "Activo")
+                {
+                    MessageBox.Show("Persona ya dada de baja!.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
                 FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Eliminar, nroPersona);
                 frmPersonaABM.ShowDialog();
@@ -133,8 +138,8 @@ namespace EquiposFrontend
 
             filtros.Add("@nombre", txtNombre.Text.Equals("") ? DBNull.Value : txtNombre.Text);
             filtros.Add("@apellido", txtApellido.Text.Equals("") ? DBNull.Value : txtApellido.Text);
-            filtros.Add("@fechaDesde", dtpFechaNacimientoDesde.Value.ToShortDateString());
-            filtros.Add("@fechaHasta", dtpFechaNacimientoHasta.Value.ToShortDateString());
+            filtros.Add("@fechaDesde", chbFechaNac.Checked ? dtpFechaNacimientoDesde.Value.ToShortDateString() : DBNull.Value);
+            filtros.Add("@fechaHasta", chbFechaNac.Checked ? dtpFechaNacimientoHasta.Value.ToShortDateString() : DBNull.Value);
             filtros.Add("@tipoDoc", chbTipoDoc.Checked ? cmbTipoDni.SelectedValue : DBNull.Value);
             filtros.Add("@estaturaDesde", txtEstaturaDesde.Text.Equals("") ? DBNull.Value : txtEstaturaDesde.Text);
             filtros.Add("@estaturaHasta", txtEstaturaHasta.Text.Equals("") ? DBNull.Value : txtEstaturaHasta.Text);
@@ -180,6 +185,8 @@ namespace EquiposFrontend
 
         private async void FrmListarPersonas_Load(object sender, EventArgs e)
         {
+            
+
             string url = "https://localhost:44381/api/Equipos/tipoDocumentos";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             List<TiposDocumentos> lstTipoDNI = JsonConvert.DeserializeObject<List<TiposDocumentos>>(resultado);
@@ -187,6 +194,7 @@ namespace EquiposFrontend
             cmbTipoDni.DataSource = lstTipoDNI;
             cmbTipoDni.DisplayMember = "TipoDoc";
             cmbTipoDni.ValueMember = "CodTipoDoc";
+            cmbTipoDni.SelectedIndex = -1;
 
             string url2 = "https://localhost:44381/api/Equipos/piernaHabil";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(url2);
@@ -195,6 +203,7 @@ namespace EquiposFrontend
             cmbPierna.DataSource = lstPiernas;
             cmbPierna.DisplayMember = "Habilidad";
             cmbPierna.ValueMember = "CodPierna";
+            cmbPierna.SelectedIndex = -1;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -208,6 +217,7 @@ namespace EquiposFrontend
             txtApellido.Text = "";
             dtpFechaNacimientoDesde.Value = Convert.ToDateTime("01/01/1980");
             dtpFechaNacimientoHasta.Value = DateTime.Today;
+            chbFechaNac.Checked = false;
             cmbTipoDni.SelectedIndex = -1;
             chbTipoDoc.Checked = false;
             txtPesoDesde.Text = "";
@@ -215,9 +225,14 @@ namespace EquiposFrontend
             txtEstaturaDesde.Text = "";
             txtEstaturaHasta.Text = "";
             chbPierna.Checked = false;
-            cmbPierna.SelectedValue = -1;
+            cmbPierna.SelectedIndex = -1;
             chbBaja.Checked = false;
             dgvPersonas.Rows.Clear();
+        }
+
+        private void btnCruz_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

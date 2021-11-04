@@ -1,5 +1,7 @@
 ﻿using EquiposBackend.Dominio;
+using EquiposFrontend.Cliente;
 using EquiposFrontend.Reportes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +29,34 @@ namespace EquiposFrontend
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            CargarDgvEquiposAsync();
 
-
-
-                        
         }
+
+        private async void CargarDgvEquiposAsync()
+        {
+            string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
+            string resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
+            List<Equipo> lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
+
+            dgvEquipos.Rows.Clear();
+            if (lstEquipos != null)
+                foreach (Equipo oEquipo in lstEquipos)
+                {
+                    dgvEquipos.Rows.Add(new object[] 
+                    {
+                        oEquipo.CodEquipo,
+                        oEquipo.Nombre,
+                        oEquipo.Jugadores.Exists(item => item.CodPosicion ==12)?
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Apellido + ", " + 
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Nombre : "Sin entrenador",
+                        oEquipo.Jugadores == null? "Equipo sin Jugadores": oEquipo.Jugadores.Count(),
+                        oEquipo.FechaAlta.ToString("dd/MM/yyyy"),
+                        oEquipo.FechaBaja.HasValue? oEquipo.FechaBaja.Value.ToString("dd/MM/yyyy"): "Activo" 
+                    });
+                }
+        }
+
 
         private void Principal_FormClosing(object sender, EventArgs e)
         {
@@ -128,6 +153,7 @@ namespace EquiposFrontend
             FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Agregar);
             frmNvoEquipo.ShowDialog();
             this.Show();
+            CargarDgvEquiposAsync();
             
         }
 
@@ -137,6 +163,7 @@ namespace EquiposFrontend
             FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar);
             frmNvoEquipo.ShowDialog();
             this.Show();
+            CargarDgvEquiposAsync();
         }
 
         private void btnBajaEquipo_Click(object sender, EventArgs e)
@@ -145,6 +172,7 @@ namespace EquiposFrontend
             FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Eliminar);
             frmNvoEquipo.ShowDialog();
             this.Show();
+            CargarDgvEquiposAsync();
         }
 
 

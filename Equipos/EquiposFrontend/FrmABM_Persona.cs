@@ -57,6 +57,7 @@ namespace EquiposFrontend
             cmbTipoDni.DataSource = lstTipoDNI;
             cmbTipoDni.DisplayMember = "TipoDoc";
             cmbTipoDni.ValueMember = "CodTipoDoc";
+            cmbTipoDni.SelectedIndex = -1;
 
             string url2 = "https://localhost:44381/api/Equipos/piernaHabil";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(url2);
@@ -64,6 +65,7 @@ namespace EquiposFrontend
             cmbPierna.DataSource = lstPiernas;
             cmbPierna.DisplayMember = "Habilidad";
             cmbPierna.ValueMember = "CodPierna";
+            cmbPierna.SelectedIndex = -1;
 
             switch (modo)
             {
@@ -227,9 +229,9 @@ namespace EquiposFrontend
 
             oPersona.Nombre = txtNombre.Text;
             oPersona.Apellido = txtApellido.Text;
-            TiposDocumentos oTC = (TiposDocumentos)cmbTipoDni.SelectedValue;
+            TiposDocumentos oTC = (TiposDocumentos)cmbTipoDni.SelectedItem;
             oPersona.TipoDoc = oTC.CodTipoDoc;
-            PiernaHabil oPH = (PiernaHabil)cmbPierna.SelectedValue;
+            PiernaHabil oPH = (PiernaHabil)cmbPierna.SelectedItem;
             oPersona.PiernaHabil = oPH.codPierna;
             oPersona.FechaNac = dtpFechaNacimiento.Value;
 

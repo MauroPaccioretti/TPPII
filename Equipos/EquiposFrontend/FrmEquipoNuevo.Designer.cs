@@ -122,12 +122,12 @@ namespace EquiposFrontend
             this.Peso,
             this.Estatura,
             this.fechaNacimiento});
-            this.dgvPersonasDispo.Location = new System.Drawing.Point(6, 21);
+            this.dgvPersonasDispo.Location = new System.Drawing.Point(6, 15);
             this.dgvPersonasDispo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPersonasDispo.Name = "dgvPersonasDispo";
             this.dgvPersonasDispo.ReadOnly = true;
             this.dgvPersonasDispo.RowTemplate.Height = 25;
-            this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 217);
+            this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 223);
             this.dgvPersonasDispo.TabIndex = 3;
             // 
             // idPersona
@@ -187,12 +187,12 @@ namespace EquiposFrontend
             this.camiseta,
             this.fechaAlta,
             this.quitarJugador});
-            this.dgvPersonasEquipo.Location = new System.Drawing.Point(6, 16);
+            this.dgvPersonasEquipo.Location = new System.Drawing.Point(6, 10);
             this.dgvPersonasEquipo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPersonasEquipo.Name = "dgvPersonasEquipo";
             this.dgvPersonasEquipo.ReadOnly = true;
             this.dgvPersonasEquipo.RowTemplate.Height = 25;
-            this.dgvPersonasEquipo.Size = new System.Drawing.Size(823, 225);
+            this.dgvPersonasEquipo.Size = new System.Drawing.Size(823, 231);
             this.dgvPersonasEquipo.TabIndex = 1;
             this.dgvPersonasEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonasEquipo_CellContentClick);
             // 
@@ -263,9 +263,9 @@ namespace EquiposFrontend
             // 
             this.groupBox7.Controls.Add(this.dgvPersonasEquipo);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox7.Location = new System.Drawing.Point(8, 17);
+            this.groupBox7.Location = new System.Drawing.Point(8, 26);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(836, 252);
+            this.groupBox7.Size = new System.Drawing.Size(836, 243);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             // 
@@ -292,9 +292,9 @@ namespace EquiposFrontend
             // 
             this.groupBox5.Controls.Add(this.dgvPersonasDispo);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox5.Location = new System.Drawing.Point(8, 16);
+            this.groupBox5.Location = new System.Drawing.Point(8, 24);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(836, 251);
+            this.groupBox5.Size = new System.Drawing.Size(836, 243);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             // 

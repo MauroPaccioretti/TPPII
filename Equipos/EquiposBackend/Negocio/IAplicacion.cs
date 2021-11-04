@@ -1,5 +1,6 @@
 ﻿using EquiposBackend.Dominio;
 using System.Collections.Generic;
+using System.Data;
 
 namespace EquiposBackend.Negocio
 {
@@ -18,6 +19,8 @@ namespace EquiposBackend.Negocio
 
         //get - read
 
+        DataTable ConsultarEquiposForDisplay(bool full);
+        DataTable ConsultarCompromisosForDisplay(bool full);
         List<Pais> ConsultarPaises();
         List<Provincia> ConsultarProvincias();
         List<Localidad> ConsultarLocalidades();

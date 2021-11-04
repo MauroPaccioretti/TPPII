@@ -140,6 +140,30 @@ namespace EquiposBackend.Datos
 
         ////get - read
 
+
+        public DataTable GetEquiposForDisplay(bool full)
+        {
+            DataTable dt = new DataTable();
+            if (!full)
+                dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_CON_COLUMNAS");
+            if (full)
+                dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_CON_COLUMNAS_SINFILTROS");
+            return dt;
+        }
+
+
+        public DataTable GetCompromisosForDisplay(bool full)
+        {
+            DataTable dt = new DataTable();
+            if (!full)
+                dt = helper.GetTable("SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS");
+            if (full)
+                dt = helper.GetTable("SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS_SINFILTRO");
+            return dt;
+        }
+
+
+
         public List<Persona> GetPersonas()
         {
             List<Persona> lst = new List<Persona>();
@@ -207,7 +231,7 @@ namespace EquiposBackend.Datos
         {
             List<EquipoPersona> lst = new List<EquipoPersona>();
             List<Persona> lstPersonas = GetPersonas();
-            DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_PERSONAS");
+            DataTable dt = helper.GetTable("SP_CONSULTAR_EQUIPOS_PERSONAS"); 
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -221,6 +245,7 @@ namespace EquiposBackend.Datos
                     oEP.FechaAlta = Convert.ToDateTime(row[5].ToString());
                     if (!row[6].Equals(DBNull.Value))
                         oEP.FechaBaja = Convert.ToDateTime(row[6].ToString());
+                    lst.Add(oEP);
                 }
             }
             return lst;

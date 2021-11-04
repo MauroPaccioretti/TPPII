@@ -54,20 +54,11 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
             this.btnEditarEquipo = new System.Windows.Forms.Button();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
-            this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBajaPersona = new System.Windows.Forms.Button();
@@ -80,6 +71,18 @@ namespace EquiposFrontend
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -337,10 +340,12 @@ namespace EquiposFrontend
             this.dgvCompromisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompromisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompromisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.idEquipoCompromiso,
+            this.codCompromiso,
+            this.nombreEquipoCompromiso,
             this.tipoCompromiso,
-            this.fechaCompromiso});
+            this.fechaCompromiso,
+            this.fechaBajaCompromiso});
             this.dgvCompromisos.Location = new System.Drawing.Point(8, 23);
             this.dgvCompromisos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvCompromisos.Name = "dgvCompromisos";
@@ -348,31 +353,6 @@ namespace EquiposFrontend
             this.dgvCompromisos.RowTemplate.Height = 25;
             this.dgvCompromisos.Size = new System.Drawing.Size(567, 407);
             this.dgvCompromisos.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "idEquipo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre del Equipo";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // tipoCompromiso
-            // 
-            this.tipoCompromiso.HeaderText = "Compromiso";
-            this.tipoCompromiso.Name = "tipoCompromiso";
-            this.tipoCompromiso.ReadOnly = true;
-            // 
-            // fechaCompromiso
-            // 
-            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
-            this.fechaCompromiso.Name = "fechaCompromiso";
-            this.fechaCompromiso.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -435,7 +415,8 @@ namespace EquiposFrontend
             this.nombreEquipo,
             this.nombreEntrenador,
             this.cantidadJugadores,
-            this.fechaAlta});
+            this.fechaAlta,
+            this.fechaBajaEquipo});
             this.dgvEquipos.Location = new System.Drawing.Point(8, 22);
             this.dgvEquipos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvEquipos.Name = "dgvEquipos";
@@ -443,37 +424,6 @@ namespace EquiposFrontend
             this.dgvEquipos.RowTemplate.Height = 25;
             this.dgvEquipos.Size = new System.Drawing.Size(907, 258);
             this.dgvEquipos.TabIndex = 0;
-            // 
-            // idEquipo
-            // 
-            this.idEquipo.HeaderText = "idEquipo";
-            this.idEquipo.Name = "idEquipo";
-            this.idEquipo.ReadOnly = true;
-            this.idEquipo.Visible = false;
-            // 
-            // nombreEquipo
-            // 
-            this.nombreEquipo.HeaderText = "Nombre del Equipo";
-            this.nombreEquipo.Name = "nombreEquipo";
-            this.nombreEquipo.ReadOnly = true;
-            // 
-            // nombreEntrenador
-            // 
-            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
-            this.nombreEntrenador.Name = "nombreEntrenador";
-            this.nombreEntrenador.ReadOnly = true;
-            // 
-            // cantidadJugadores
-            // 
-            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
-            this.cantidadJugadores.Name = "cantidadJugadores";
-            this.cantidadJugadores.ReadOnly = true;
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "Fecha de Alta";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
             // 
             // btnNvoEquipo
             // 
@@ -617,6 +567,81 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
+            // idEquipo
+            // 
+            this.idEquipo.HeaderText = "idEquipo";
+            this.idEquipo.Name = "idEquipo";
+            this.idEquipo.ReadOnly = true;
+            this.idEquipo.Visible = false;
+            // 
+            // nombreEquipo
+            // 
+            this.nombreEquipo.HeaderText = "Nombre del Equipo";
+            this.nombreEquipo.Name = "nombreEquipo";
+            this.nombreEquipo.ReadOnly = true;
+            // 
+            // nombreEntrenador
+            // 
+            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
+            this.nombreEntrenador.Name = "nombreEntrenador";
+            this.nombreEntrenador.ReadOnly = true;
+            // 
+            // cantidadJugadores
+            // 
+            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
+            this.cantidadJugadores.Name = "cantidadJugadores";
+            this.cantidadJugadores.ReadOnly = true;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha de Alta";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            // 
+            // fechaBajaEquipo
+            // 
+            this.fechaBajaEquipo.HeaderText = "Fecha de Baja";
+            this.fechaBajaEquipo.Name = "fechaBajaEquipo";
+            this.fechaBajaEquipo.ReadOnly = true;
+            // 
+            // idEquipoCompromiso
+            // 
+            this.idEquipoCompromiso.HeaderText = "idEquipo";
+            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
+            this.idEquipoCompromiso.ReadOnly = true;
+            this.idEquipoCompromiso.Visible = false;
+            // 
+            // codCompromiso
+            // 
+            this.codCompromiso.HeaderText = "codCompromiso";
+            this.codCompromiso.Name = "codCompromiso";
+            this.codCompromiso.ReadOnly = true;
+            this.codCompromiso.Visible = false;
+            // 
+            // nombreEquipoCompromiso
+            // 
+            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
+            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
+            this.nombreEquipoCompromiso.ReadOnly = true;
+            // 
+            // tipoCompromiso
+            // 
+            this.tipoCompromiso.HeaderText = "Compromiso";
+            this.tipoCompromiso.Name = "tipoCompromiso";
+            this.tipoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
+            // 
+            // fechaBajaCompromiso
+            // 
+            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
+            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
+            this.fechaBajaCompromiso.ReadOnly = true;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -707,5 +732,10 @@ namespace EquiposFrontend
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
     }
 }
