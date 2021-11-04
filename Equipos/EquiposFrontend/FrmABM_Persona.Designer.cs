@@ -51,7 +51,8 @@ namespace EquiposFrontend
             this.lblTitulo = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnAgregarTipoDni = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace EquiposFrontend
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(26, 59);
+            this.label1.Location = new System.Drawing.Point(26, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 24);
@@ -72,7 +73,7 @@ namespace EquiposFrontend
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.Location = new System.Drawing.Point(26, 106);
+            this.label2.Location = new System.Drawing.Point(26, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 24);
@@ -84,7 +85,7 @@ namespace EquiposFrontend
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label3.Location = new System.Drawing.Point(26, 157);
+            this.label3.Location = new System.Drawing.Point(26, 161);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 24);
@@ -96,7 +97,7 @@ namespace EquiposFrontend
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label4.Location = new System.Drawing.Point(26, 199);
+            this.label4.Location = new System.Drawing.Point(26, 203);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 24);
@@ -108,7 +109,7 @@ namespace EquiposFrontend
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(26, 245);
+            this.label5.Location = new System.Drawing.Point(26, 248);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(214, 24);
@@ -120,7 +121,7 @@ namespace EquiposFrontend
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label6.Location = new System.Drawing.Point(26, 291);
+            this.label6.Location = new System.Drawing.Point(26, 290);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 24);
@@ -132,7 +133,7 @@ namespace EquiposFrontend
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label7.Location = new System.Drawing.Point(26, 338);
+            this.label7.Location = new System.Drawing.Point(26, 336);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 24);
@@ -144,7 +145,7 @@ namespace EquiposFrontend
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label8.Location = new System.Drawing.Point(26, 384);
+            this.label8.Location = new System.Drawing.Point(26, 382);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 24);
@@ -156,7 +157,7 @@ namespace EquiposFrontend
             this.txtNombre.Location = new System.Drawing.Point(249, 59);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(249, 29);
+            this.txtNombre.Size = new System.Drawing.Size(389, 29);
             this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
@@ -182,14 +183,14 @@ namespace EquiposFrontend
             this.cmbTipoDni.Location = new System.Drawing.Point(249, 199);
             this.cmbTipoDni.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTipoDni.Name = "cmbTipoDni";
-            this.cmbTipoDni.Size = new System.Drawing.Size(221, 32);
+            this.cmbTipoDni.Size = new System.Drawing.Size(340, 32);
             this.cmbTipoDni.TabIndex = 3;
             // 
             // txtNroDoc
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(249, 245);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(249, 29);
+            this.txtNroDoc.Size = new System.Drawing.Size(389, 29);
             this.txtNroDoc.TabIndex = 4;
             // 
             // txtEstatura
@@ -197,7 +198,7 @@ namespace EquiposFrontend
             this.txtEstatura.Location = new System.Drawing.Point(249, 287);
             this.txtEstatura.Margin = new System.Windows.Forms.Padding(5);
             this.txtEstatura.Name = "txtEstatura";
-            this.txtEstatura.Size = new System.Drawing.Size(249, 29);
+            this.txtEstatura.Size = new System.Drawing.Size(389, 29);
             this.txtEstatura.TabIndex = 5;
             // 
             // txtPeso
@@ -205,7 +206,7 @@ namespace EquiposFrontend
             this.txtPeso.Location = new System.Drawing.Point(249, 333);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(5);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(249, 29);
+            this.txtPeso.Size = new System.Drawing.Size(389, 29);
             this.txtPeso.TabIndex = 6;
             // 
             // cmbPierna
@@ -214,7 +215,7 @@ namespace EquiposFrontend
             this.cmbPierna.Location = new System.Drawing.Point(249, 379);
             this.cmbPierna.Margin = new System.Windows.Forms.Padding(5);
             this.cmbPierna.Name = "cmbPierna";
-            this.cmbPierna.Size = new System.Drawing.Size(248, 32);
+            this.cmbPierna.Size = new System.Drawing.Size(389, 32);
             this.cmbPierna.TabIndex = 7;
             // 
             // btnConfirmarAccion
@@ -272,7 +273,7 @@ namespace EquiposFrontend
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -281,19 +282,32 @@ namespace EquiposFrontend
             this.panel1.Size = new System.Drawing.Size(658, 30);
             this.panel1.TabIndex = 26;
             // 
-            // button1
+            // btnCerrar
             // 
-            this.button1.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(629, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 22);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrar.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(629, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(26, 22);
+            this.btnCerrar.TabIndex = 18;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAgregarTipoDni
+            // 
+            this.btnAgregarTipoDni.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAgregarTipoDni.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTipoDni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTipoDni.Location = new System.Drawing.Point(597, 199);
+            this.btnAgregarTipoDni.Name = "btnAgregarTipoDni";
+            this.btnAgregarTipoDni.Size = new System.Drawing.Size(41, 32);
+            this.btnAgregarTipoDni.TabIndex = 27;
+            this.btnAgregarTipoDni.Text = "+";
+            this.btnAgregarTipoDni.UseVisualStyleBackColor = false;
+            this.btnAgregarTipoDni.Click += new System.EventHandler(this.btnAgregarTipoDni_Click_1);
             // 
             // FrmABM_Persona
             // 
@@ -301,6 +315,7 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(658, 520);
+            this.Controls.Add(this.btnAgregarTipoDni);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarAccion);
@@ -361,7 +376,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrar;
 
         //private System.Windows.Forms.Button button6;
         //private System.Windows.Forms.Panel panel1;
