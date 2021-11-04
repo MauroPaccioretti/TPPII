@@ -29,9 +29,7 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbPPL = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -39,40 +37,18 @@ namespace EquiposFrontend
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cmbPPL = new System.Windows.Forms.ComboBox();
             this.lblEleccion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cmbPPL
-            // 
-            this.cmbPPL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbPPL.FormattingEnabled = true;
-            this.cmbPPL.Location = new System.Drawing.Point(18, 42);
-            this.cmbPPL.Name = "cmbPPL";
-            this.cmbPPL.Size = new System.Drawing.Size(300, 25);
-            this.cmbPPL.TabIndex = 0;
-            this.cmbPPL.SelectedIndexChanged += new System.EventHandler(this.cmbPPL_SelectedIndexChanged);
-            // 
             // lblNombre
             // 
-            //this.lblNombre.AutoSize = true;
-            //this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            //this.lblNombre.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            //this.lblNombre.Location = new System.Drawing.Point(18, 76);
-            //this.lblNombre.Name = "lblNombre";
-            //this.lblNombre.Size = new System.Drawing.Size(200, 24);
-            //this.lblNombre.TabIndex = 2;
-            //this.lblNombre.Text = "Inserte nuevo nombre:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(18, 103);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 23);
-            this.txtNombre.TabIndex = 3;
+            this.lblNombre.Location = new System.Drawing.Point(0, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(100, 23);
+            this.lblNombre.TabIndex = 0;
             // 
             // btnAceptar
             // 
@@ -81,7 +57,7 @@ namespace EquiposFrontend
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAceptar.Location = new System.Drawing.Point(225, 190);
+            this.btnAceptar.Location = new System.Drawing.Point(87, 199);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(123, 38);
             this.btnAceptar.TabIndex = 1;
@@ -96,7 +72,7 @@ namespace EquiposFrontend
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCancelar.Location = new System.Drawing.Point(354, 190);
+            this.btnCancelar.Location = new System.Drawing.Point(216, 199);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 38);
             this.btnCancelar.TabIndex = 1;
@@ -130,7 +106,7 @@ namespace EquiposFrontend
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(703, 3);
+            this.button1.Location = new System.Drawing.Point(542, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 22);
             this.button1.TabIndex = 15;
@@ -145,36 +121,37 @@ namespace EquiposFrontend
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 29);
+            this.panel1.Size = new System.Drawing.Size(572, 29);
             this.panel1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 127);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
-        
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.Name = "lblNombre";
+            this.label2.Location = new System.Drawing.Point(68, 127);
+            this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 24);
+            this.label2.TabIndex = 3;
             this.label2.Text = "Inserte nuevo nombre:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(68, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(68, 157);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(300, 23);
+            this.txtNombre.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbPPL
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 5;
+            this.cmbPPL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbPPL.FormattingEnabled = true;
+            this.cmbPPL.Location = new System.Drawing.Point(68, 88);
+            this.cmbPPL.Name = "cmbPPL";
+            this.cmbPPL.Size = new System.Drawing.Size(300, 24);
+            this.cmbPPL.TabIndex = 5;
+            this.cmbPPL.SelectedIndexChanged += new System.EventHandler(this.cmbPPL_SelectedIndexChanged);
             // 
             // lblEleccion
             // 
@@ -192,10 +169,10 @@ namespace EquiposFrontend
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(732, 263);
+            this.ClientSize = new System.Drawing.Size(572, 263);
             this.Controls.Add(this.lblEleccion);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbPPL);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
@@ -214,10 +191,8 @@ namespace EquiposFrontend
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbPPL;
         //private System.Windows.Forms.Label lblEleccion;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button6;
@@ -226,8 +201,8 @@ namespace EquiposFrontend
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ComboBox cmbPPL;
         private System.Windows.Forms.Label lblEleccion;
     }
 }
