@@ -27,7 +27,8 @@ namespace EquiposBackend.Dominio
 
         public void QuitarJugador(int nroJugador)
         {
-            Jugadores.RemoveAt(nroJugador);
+            
+            Jugadores.RemoveAt(Jugadores.FindIndex(item => item.Persona.CodPersona == nroJugador));
         }
 
         public void AgregarCompromiso(Compromiso oCompromiso)

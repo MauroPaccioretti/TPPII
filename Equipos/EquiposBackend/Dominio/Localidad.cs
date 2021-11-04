@@ -13,7 +13,7 @@
 
         public override string ToString()
         {
-            return "Provincia: " + Provincia.Nombre + "Localidad: " + Nombre;
+            return "Provincia: " + Provincia.Nombre + " - Localidad: " + Nombre;
         }
         //public Localidad(int idProvincia)
         //{

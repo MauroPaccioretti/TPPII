@@ -159,20 +159,41 @@ namespace EquiposFrontend
 
         private void btnEditarEquipo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar);
-            frmNvoEquipo.ShowDialog();
-            this.Show();
-            CargarDgvEquiposAsync();
+
+
+            if (dgvEquipos.SelectedRows.Count == 1)
+            {
+                int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                this.Hide();
+                FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar, nroEquipo);
+                frmNvoEquipo.ShowDialog();
+                this.Show();
+                CargarDgvEquiposAsync();
+
+            }
+
         }
 
         private void btnBajaEquipo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Eliminar);
-            frmNvoEquipo.ShowDialog();
-            this.Show();
-            CargarDgvEquiposAsync();
+
+            if (dgvEquipos.SelectedRows.Count == 1)
+            {
+                if (dgvEquipos.CurrentRow.Cells["fechaBajaEquipo"].Value.ToString() != "Activo")
+                {
+                    MessageBox.Show("Equipo ya dado de baja!.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                this.Hide();
+                FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Eliminar, nroEquipo);
+                frmNvoEquipo.ShowDialog();
+                this.Show();
+                CargarDgvEquiposAsync();
+
+            }
+
+            
         }
 
 
@@ -201,6 +222,11 @@ namespace EquiposFrontend
             frmListarPersonas.ShowDialog();
 
             this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

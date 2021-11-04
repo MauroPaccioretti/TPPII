@@ -124,9 +124,11 @@ namespace EquiposFrontend
             this.fechaNacimiento});
             this.dgvPersonasDispo.Location = new System.Drawing.Point(6, 15);
             this.dgvPersonasDispo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPersonasDispo.MultiSelect = false;
             this.dgvPersonasDispo.Name = "dgvPersonasDispo";
             this.dgvPersonasDispo.ReadOnly = true;
             this.dgvPersonasDispo.RowTemplate.Height = 25;
+            this.dgvPersonasDispo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 223);
             this.dgvPersonasDispo.TabIndex = 3;
             // 
