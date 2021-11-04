@@ -223,9 +223,9 @@ namespace EquiposFrontend
             this.btnConfirmarAccion.BackColor = System.Drawing.Color.Gainsboro;
             this.btnConfirmarAccion.FlatAppearance.BorderSize = 0;
             this.btnConfirmarAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarAccion.Location = new System.Drawing.Point(181, 434);
+            this.btnConfirmarAccion.Location = new System.Drawing.Point(49, 437);
             this.btnConfirmarAccion.Name = "btnConfirmarAccion";
-            this.btnConfirmarAccion.Size = new System.Drawing.Size(155, 50);
+            this.btnConfirmarAccion.Size = new System.Drawing.Size(271, 50);
             this.btnConfirmarAccion.TabIndex = 8;
             this.btnConfirmarAccion.Text = "Agregar";
             this.btnConfirmarAccion.UseVisualStyleBackColor = false;
@@ -236,10 +236,10 @@ namespace EquiposFrontend
             this.btnCancelar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(344, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(328, 437);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(155, 50);
+            this.btnCancelar.Size = new System.Drawing.Size(271, 50);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -341,6 +341,7 @@ namespace EquiposFrontend
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmABM_Persona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Persona";
             this.Load += new System.EventHandler(this.FrmABM_Persona_Load);
             this.panel1.ResumeLayout(false);
