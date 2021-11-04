@@ -30,15 +30,15 @@ namespace EquiposFrontend
             switch (modo)
             {
                 case Accion.Agregar:
-                    this.Text = "Registrar Persona";
+                    lblTitulo.Text = "Registrar Persona";
                     btnConfirmarAccion.Text = "Registrar Persona";
                     break;
                 case Accion.Modificar:
-                    this.Text = "Editar datos de una Persona";
+                    lblTitulo.Text = "Editar datos de una Persona";
                     btnConfirmarAccion.Text = "Editar Persona";
                     break;
                 case Accion.Eliminar:
-                    this.Text = "Dar de baja a una Persona";
+                    lblTitulo.Text = "Dar de baja a una Persona";
                     btnConfirmarAccion.Text = "Dar de baja a la Persona";
                     break;
                 default:
@@ -288,21 +288,17 @@ namespace EquiposFrontend
                     break;
             }
 
-
-
-
-
-        }
-
-        private void btnAgregarTipoDni_Click(object sender, EventArgs e)
-        {
-            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
-            frmTablasSoporte.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void btnAgregarTipoDni_Click_1(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
+            frmTablasSoporte.Show();
         }
     }
 }
