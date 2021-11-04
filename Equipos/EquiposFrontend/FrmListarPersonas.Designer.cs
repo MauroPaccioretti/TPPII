@@ -68,9 +68,9 @@ namespace EquiposFrontend
             this.txtPesoHasta = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
             this.btnBajaPersona = new System.Windows.Forms.Button();
             this.btnEditarPersona = new System.Windows.Forms.Button();
+            this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chbPierna = new System.Windows.Forms.CheckBox();
             this.chbTipoDoc = new System.Windows.Forms.CheckBox();
@@ -423,16 +423,6 @@ namespace EquiposFrontend
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones sobre una Persona seleccionada";
             // 
-            // btnRegistrarNuevaPersona
-            // 
-            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(1175, 691);
-            this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
-            this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(261, 46);
-            this.btnRegistrarNuevaPersona.TabIndex = 24;
-            this.btnRegistrarNuevaPersona.Text = "Registrar Nueva Persona";
-            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
-            this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
-            // 
             // btnBajaPersona
             // 
             this.btnBajaPersona.Location = new System.Drawing.Point(34, 74);
@@ -454,6 +444,16 @@ namespace EquiposFrontend
             this.btnEditarPersona.Text = "Editar";
             this.btnEditarPersona.UseVisualStyleBackColor = true;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
+            // 
+            // btnRegistrarNuevaPersona
+            // 
+            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(1175, 691);
+            this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
+            this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(261, 46);
+            this.btnRegistrarNuevaPersona.TabIndex = 24;
+            this.btnRegistrarNuevaPersona.Text = "Registrar Nueva Persona";
+            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
+            this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
             // 
             // groupBox2
             // 
@@ -580,10 +580,10 @@ namespace EquiposFrontend
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.Location = new System.Drawing.Point(1164, 766);
+            this.button1.Location = new System.Drawing.Point(1164, 744);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 49);
+            this.button1.Size = new System.Drawing.Size(202, 71);
             this.button1.TabIndex = 24;
             this.button1.Text = "Registrar Nueva Persona";
             this.button1.UseVisualStyleBackColor = false;

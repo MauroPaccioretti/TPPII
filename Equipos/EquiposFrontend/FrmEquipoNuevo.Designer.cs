@@ -29,6 +29,7 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEquipoNuevo));
             this.cmbPosiciones = new System.Windows.Forms.ComboBox();
             this.dgvPersonasDispo = new System.Windows.Forms.DataGridView();
             this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,15 +69,22 @@ namespace EquiposFrontend
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
-            this.btnConfirmarAccion = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregarLocalidad = new System.Windows.Forms.Button();
             this.idCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quitarComp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnConfirmarAccion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregarLocalidad = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,14 +92,19 @@ namespace EquiposFrontend
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbPosiciones
             // 
             this.cmbPosiciones.FormattingEnabled = true;
-            this.cmbPosiciones.Location = new System.Drawing.Point(88, 210);
+            this.cmbPosiciones.Location = new System.Drawing.Point(8, 305);
+            this.cmbPosiciones.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPosiciones.Name = "cmbPosiciones";
-            this.cmbPosiciones.Size = new System.Drawing.Size(239, 23);
+            this.cmbPosiciones.Size = new System.Drawing.Size(306, 28);
             this.cmbPosiciones.TabIndex = 7;
             // 
             // dgvPersonasDispo
@@ -109,11 +122,12 @@ namespace EquiposFrontend
             this.Peso,
             this.Estatura,
             this.fechaNacimiento});
-            this.dgvPersonasDispo.Location = new System.Drawing.Point(6, 22);
+            this.dgvPersonasDispo.Location = new System.Drawing.Point(6, 21);
+            this.dgvPersonasDispo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPersonasDispo.Name = "dgvPersonasDispo";
             this.dgvPersonasDispo.ReadOnly = true;
             this.dgvPersonasDispo.RowTemplate.Height = 25;
-            this.dgvPersonasDispo.Size = new System.Drawing.Size(640, 163);
+            this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 217);
             this.dgvPersonasDispo.TabIndex = 3;
             // 
             // idPersona
@@ -172,11 +186,12 @@ namespace EquiposFrontend
             this.camiseta,
             this.fechaAlta,
             this.quitarJugador});
-            this.dgvPersonasEquipo.Location = new System.Drawing.Point(6, 22);
+            this.dgvPersonasEquipo.Location = new System.Drawing.Point(6, 16);
+            this.dgvPersonasEquipo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPersonasEquipo.Name = "dgvPersonasEquipo";
             this.dgvPersonasEquipo.ReadOnly = true;
             this.dgvPersonasEquipo.RowTemplate.Height = 25;
-            this.dgvPersonasEquipo.Size = new System.Drawing.Size(634, 169);
+            this.dgvPersonasEquipo.Size = new System.Drawing.Size(823, 225);
             this.dgvPersonasEquipo.TabIndex = 1;
             this.dgvPersonasEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonasEquipo_CellContentClick);
             // 
@@ -231,88 +246,110 @@ namespace EquiposFrontend
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvPersonasEquipo);
-            this.groupBox1.Location = new System.Drawing.Point(18, 400);
+            this.groupBox1.Controls.Add(this.groupBox7);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.groupBox1.Location = new System.Drawing.Point(15, 591);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(646, 207);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(851, 276);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personas en el Equipo";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.btnNuevaPosicion);
             this.groupBox2.Controls.Add(this.txtCamiseta);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dgvPersonasDispo);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnAgregarPersona);
             this.groupBox2.Controls.Add(this.cmbPosiciones);
-            this.groupBox2.Location = new System.Drawing.Point(12, 59);
+            this.groupBox2.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.groupBox2.Location = new System.Drawing.Point(15, 113);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(652, 335);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(851, 470);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personas Disponibles";
             // 
             // btnNuevaPosicion
             // 
-            this.btnNuevaPosicion.Location = new System.Drawing.Point(364, 209);
+            this.btnNuevaPosicion.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNuevaPosicion.FlatAppearance.BorderSize = 0;
+            this.btnNuevaPosicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNuevaPosicion.Location = new System.Drawing.Point(322, 297);
+            this.btnNuevaPosicion.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevaPosicion.Name = "btnNuevaPosicion";
-            this.btnNuevaPosicion.Size = new System.Drawing.Size(153, 23);
+            this.btnNuevaPosicion.Size = new System.Drawing.Size(197, 40);
             this.btnNuevaPosicion.TabIndex = 8;
             this.btnNuevaPosicion.Text = "Agregar Nueva Posicion";
-            this.btnNuevaPosicion.UseVisualStyleBackColor = true;
+            this.btnNuevaPosicion.UseVisualStyleBackColor = false;
             // 
             // txtCamiseta
             // 
-            this.txtCamiseta.Location = new System.Drawing.Point(88, 259);
+            this.txtCamiseta.Location = new System.Drawing.Point(8, 370);
+            this.txtCamiseta.Margin = new System.Windows.Forms.Padding(4);
             this.txtCamiseta.Name = "txtCamiseta";
-            this.txtCamiseta.Size = new System.Drawing.Size(468, 23);
+            this.txtCamiseta.Size = new System.Drawing.Size(306, 26);
             this.txtCamiseta.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 236);
+            this.label6.Location = new System.Drawing.Point(8, 340);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 15);
+            this.label6.Size = new System.Drawing.Size(80, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Camiseta:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 192);
+            this.label1.Location = new System.Drawing.Point(8, 281);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 15);
+            this.label1.Size = new System.Drawing.Size(269, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Posicion para participar en el Equipo:";
             // 
             // btnAgregarPersona
             // 
-            this.btnAgregarPersona.Location = new System.Drawing.Point(6, 288);
+            this.btnAgregarPersona.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAgregarPersona.FlatAppearance.BorderSize = 0;
+            this.btnAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarPersona.Location = new System.Drawing.Point(8, 407);
+            this.btnAgregarPersona.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarPersona.Name = "btnAgregarPersona";
-            this.btnAgregarPersona.Size = new System.Drawing.Size(640, 41);
+            this.btnAgregarPersona.Size = new System.Drawing.Size(601, 55);
             this.btnAgregarPersona.TabIndex = 10;
             this.btnAgregarPersona.Text = "Agregar Persona al Equipo";
-            this.btnAgregarPersona.UseVisualStyleBackColor = true;
+            this.btnAgregarPersona.UseVisualStyleBackColor = false;
             this.btnAgregarPersona.Click += new System.EventHandler(this.btnAgregarPersona_Click);
             // 
             // cmbTipoCompromiso
             // 
             this.cmbTipoCompromiso.FormattingEnabled = true;
-            this.cmbTipoCompromiso.Location = new System.Drawing.Point(6, 37);
+            this.cmbTipoCompromiso.Location = new System.Drawing.Point(8, 49);
+            this.cmbTipoCompromiso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoCompromiso.Name = "cmbTipoCompromiso";
-            this.cmbTipoCompromiso.Size = new System.Drawing.Size(319, 23);
+            this.cmbTipoCompromiso.Size = new System.Drawing.Size(409, 28);
             this.cmbTipoCompromiso.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Location = new System.Drawing.Point(8, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 15);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tipo de Compromiso:";
             // 
@@ -326,104 +363,129 @@ namespace EquiposFrontend
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.cmbTipoCompromiso);
-            this.groupBox3.Location = new System.Drawing.Point(670, 56);
+            this.groupBox3.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.groupBox3.Location = new System.Drawing.Point(899, 112);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(511, 254);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(657, 339);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Compromisos del Equipo";
             // 
             // dtpCompromiso
             // 
-            this.dtpCompromiso.Location = new System.Drawing.Point(145, 74);
+            this.dtpCompromiso.Location = new System.Drawing.Point(192, 102);
+            this.dtpCompromiso.Margin = new System.Windows.Forms.Padding(4);
             this.dtpCompromiso.Name = "dtpCompromiso";
-            this.dtpCompromiso.Size = new System.Drawing.Size(238, 23);
+            this.dtpCompromiso.Size = new System.Drawing.Size(305, 26);
             this.dtpCompromiso.TabIndex = 12;
             // 
             // btnNuevoCompromiso
             // 
-            this.btnNuevoCompromiso.Location = new System.Drawing.Point(330, 37);
+            this.btnNuevoCompromiso.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNuevoCompromiso.FlatAppearance.BorderSize = 0;
+            this.btnNuevoCompromiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoCompromiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNuevoCompromiso.Location = new System.Drawing.Point(424, 27);
+            this.btnNuevoCompromiso.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevoCompromiso.Name = "btnNuevoCompromiso";
-            this.btnNuevoCompromiso.Size = new System.Drawing.Size(175, 23);
+            this.btnNuevoCompromiso.Size = new System.Drawing.Size(225, 67);
             this.btnNuevoCompromiso.TabIndex = 5;
             this.btnNuevoCompromiso.Text = "Nuevo Tipo de Compromiso";
-            this.btnNuevoCompromiso.UseVisualStyleBackColor = true;
+            this.btnNuevoCompromiso.UseVisualStyleBackColor = false;
             // 
             // btnAgregarCompromiso
             // 
-            this.btnAgregarCompromiso.Location = new System.Drawing.Point(7, 212);
+            this.btnAgregarCompromiso.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAgregarCompromiso.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCompromiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCompromiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarCompromiso.Location = new System.Drawing.Point(9, 283);
+            this.btnAgregarCompromiso.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarCompromiso.Name = "btnAgregarCompromiso";
-            this.btnAgregarCompromiso.Size = new System.Drawing.Size(498, 35);
+            this.btnAgregarCompromiso.Size = new System.Drawing.Size(640, 47);
             this.btnAgregarCompromiso.TabIndex = 11;
             this.btnAgregarCompromiso.Text = "Agregar Compromiso al Equipo";
-            this.btnAgregarCompromiso.UseVisualStyleBackColor = true;
+            this.btnAgregarCompromiso.UseVisualStyleBackColor = false;
             this.btnAgregarCompromiso.Click += new System.EventHandler(this.btnAgregarCompromiso_Click);
             // 
             // txtCompromiso
             // 
-            this.txtCompromiso.Location = new System.Drawing.Point(7, 127);
+            this.txtCompromiso.Location = new System.Drawing.Point(9, 169);
+            this.txtCompromiso.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompromiso.Multiline = true;
             this.txtCompromiso.Name = "txtCompromiso";
-            this.txtCompromiso.Size = new System.Drawing.Size(498, 79);
+            this.txtCompromiso.Size = new System.Drawing.Size(639, 104);
             this.txtCompromiso.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 80);
+            this.label7.Location = new System.Drawing.Point(8, 107);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 15);
+            this.label7.Size = new System.Drawing.Size(176, 20);
             this.label7.TabIndex = 4;
             this.label7.Text = "Fecha del Compromiso:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 109);
+            this.label3.Location = new System.Drawing.Point(8, 145);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 15);
+            this.label3.Size = new System.Drawing.Size(189, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Detalles del Compromiso:";
             // 
             // txtNombreEquipo
             // 
-            this.txtNombreEquipo.Location = new System.Drawing.Point(131, 18);
+            this.txtNombreEquipo.Location = new System.Drawing.Point(168, 58);
+            this.txtNombreEquipo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreEquipo.Name = "txtNombreEquipo";
-            this.txtNombreEquipo.Size = new System.Drawing.Size(285, 23);
+            this.txtNombreEquipo.Size = new System.Drawing.Size(365, 26);
             this.txtNombreEquipo.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Location = new System.Drawing.Point(15, 62);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 15);
+            this.label4.Size = new System.Drawing.Size(146, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Nombre del equipo:";
             // 
             // cmbLocalidad
             // 
             this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(728, 15);
+            this.cmbLocalidad.Location = new System.Drawing.Point(1045, 54);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLocalidad.Name = "cmbLocalidad";
-            this.cmbLocalidad.Size = new System.Drawing.Size(251, 23);
+            this.cmbLocalidad.Size = new System.Drawing.Size(322, 28);
             this.cmbLocalidad.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(602, 18);
+            this.label5.Location = new System.Drawing.Point(883, 58);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 15);
+            this.label5.Size = new System.Drawing.Size(158, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Localidad del equipo:";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dgvCompromisos);
-            this.groupBox4.Location = new System.Drawing.Point(670, 310);
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.groupBox4.Location = new System.Drawing.Point(892, 460);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(511, 250);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(668, 356);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Compromisos Actuales";
@@ -441,42 +503,14 @@ namespace EquiposFrontend
             this.comentarios,
             this.fechaCompromiso,
             this.quitarComp});
-            this.dgvCompromisos.Location = new System.Drawing.Point(7, 22);
+            this.dgvCompromisos.Location = new System.Drawing.Point(7, 20);
+            this.dgvCompromisos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCompromisos.Name = "dgvCompromisos";
             this.dgvCompromisos.ReadOnly = true;
             this.dgvCompromisos.RowTemplate.Height = 25;
-            this.dgvCompromisos.Size = new System.Drawing.Size(498, 222);
+            this.dgvCompromisos.Size = new System.Drawing.Size(640, 296);
             this.dgvCompromisos.TabIndex = 0;
             this.dgvCompromisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompromisos_CellContentClick);
-            // 
-            // btnConfirmarAccion
-            // 
-            this.btnConfirmarAccion.Location = new System.Drawing.Point(728, 566);
-            this.btnConfirmarAccion.Name = "btnConfirmarAccion";
-            this.btnConfirmarAccion.Size = new System.Drawing.Size(192, 32);
-            this.btnConfirmarAccion.TabIndex = 12;
-            this.btnConfirmarAccion.Text = "Registrar Equipo";
-            this.btnConfirmarAccion.UseVisualStyleBackColor = true;
-            this.btnConfirmarAccion.Click += new System.EventHandler(this.btnConfirmarAccion_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(934, 566);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(192, 32);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAgregarLocalidad
-            // 
-            this.btnAgregarLocalidad.Location = new System.Drawing.Point(988, 15);
-            this.btnAgregarLocalidad.Name = "btnAgregarLocalidad";
-            this.btnAgregarLocalidad.Size = new System.Drawing.Size(138, 23);
-            this.btnAgregarLocalidad.TabIndex = 2;
-            this.btnAgregarLocalidad.Text = "Nueva Localidad";
-            this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
             // 
             // idCompromiso
             // 
@@ -518,11 +552,138 @@ namespace EquiposFrontend
             this.quitarComp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.quitarComp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // btnConfirmarAccion
+            // 
+            this.btnConfirmarAccion.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnConfirmarAccion.FlatAppearance.BorderSize = 0;
+            this.btnConfirmarAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmarAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmarAccion.Location = new System.Drawing.Point(944, 824);
+            this.btnConfirmarAccion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirmarAccion.Name = "btnConfirmarAccion";
+            this.btnConfirmarAccion.Size = new System.Drawing.Size(247, 43);
+            this.btnConfirmarAccion.TabIndex = 12;
+            this.btnConfirmarAccion.Text = "Registrar Equipo";
+            this.btnConfirmarAccion.UseVisualStyleBackColor = false;
+            this.btnConfirmarAccion.Click += new System.EventHandler(this.btnConfirmarAccion_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.Location = new System.Drawing.Point(1209, 824);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(247, 43);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAgregarLocalidad
+            // 
+            this.btnAgregarLocalidad.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAgregarLocalidad.FlatAppearance.BorderSize = 0;
+            this.btnAgregarLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarLocalidad.Location = new System.Drawing.Point(1379, 50);
+            this.btnAgregarLocalidad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarLocalidad.Name = "btnAgregarLocalidad";
+            this.btnAgregarLocalidad.Size = new System.Drawing.Size(177, 40);
+            this.btnAgregarLocalidad.TabIndex = 2;
+            this.btnAgregarLocalidad.Text = "Nueva Localidad";
+            this.btnAgregarLocalidad.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1573, 30);
+            this.panel1.TabIndex = 26;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1505, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 22);
+            this.button1.TabIndex = 18;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 8);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(152, 17);
+            this.lblTitulo.TabIndex = 17;
+            this.lblTitulo.Text = "Agregar Nuevo Equipo";
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(1576, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(26, 22);
+            this.button6.TabIndex = 15;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgvPersonasDispo);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.Location = new System.Drawing.Point(8, 16);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(836, 251);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.dgvCompromisos);
+            this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Location = new System.Drawing.Point(9, 26);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(652, 323);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.dgvPersonasEquipo);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox7.Location = new System.Drawing.Point(8, 17);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(836, 252);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            // 
             // FrmEquipoNuevo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 620);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(1573, 880);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAgregarLocalidad);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.cmbLocalidad);
@@ -534,6 +695,11 @@ namespace EquiposFrontend
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmEquipoNuevo";
             this.Text = "Nuevo Equipo";
             this.Load += new System.EventHandler(this.FrmEquipoNuevo_Load);
@@ -546,6 +712,11 @@ namespace EquiposFrontend
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +773,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewButtonColumn quitarComp;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
