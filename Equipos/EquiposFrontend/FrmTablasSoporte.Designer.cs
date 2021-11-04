@@ -49,7 +49,7 @@ namespace EquiposFrontend
             this.cmbPPL.FormattingEnabled = true;
             this.cmbPPL.Location = new System.Drawing.Point(18, 42);
             this.cmbPPL.Name = "cmbPPL";
-            this.cmbPPL.Size = new System.Drawing.Size(300, 24);
+            this.cmbPPL.Size = new System.Drawing.Size(300, 25);
             this.cmbPPL.TabIndex = 0;
             this.cmbPPL.SelectedIndexChanged += new System.EventHandler(this.cmbPPL_SelectedIndexChanged);
             // 
@@ -119,7 +119,6 @@ namespace EquiposFrontend
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 0;
-<<<<<<< HEAD
             // 
             // lblTitulo
             // 
@@ -161,36 +160,16 @@ namespace EquiposFrontend
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-=======
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblEleccion);
-            this.panel1.Controls.Add(this.cmbPPL);
-            this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 143);
+            this.panel1.Size = new System.Drawing.Size(728, 62);
             this.panel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
-=======
-            // lblTitulo
-            // 
-            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(100, 23);
-            this.lblTitulo.TabIndex = 0;
-            // 
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
             // FrmTablasSoporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(356, 214);
+            this.ClientSize = new System.Drawing.Size(728, 503);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

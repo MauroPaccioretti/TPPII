@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
 ﻿using EquiposBackend.Dominio;
 using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
@@ -14,10 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 
-=======
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
 
 namespace EquiposFrontend
 
@@ -306,9 +299,8 @@ namespace EquiposFrontend
             frmTablasSoporte.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
     }
 }

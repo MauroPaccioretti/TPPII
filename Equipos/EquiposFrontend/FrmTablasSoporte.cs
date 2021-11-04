@@ -3,13 +3,6 @@ using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
 
@@ -33,8 +26,8 @@ namespace EquiposFrontend
             lblTitulo.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
             modoString = EnumATexto(tabla);
             btnAceptar.Text = accion.ToString();
-            
-            
+
+
         }
 
         public static string EnumATexto(TablasSoporte e)
@@ -62,7 +55,7 @@ namespace EquiposFrontend
             switch (accion)
             {
                 case Accion.Agregar:
-                    lblEleccion.Text = "Verifique que el elemento no se encuentre en la lista:" ;
+                    lblEleccion.Text = "Verifique que el elemento no se encuentre en la lista:";
                     break;
                 case Accion.Modificar:
                     lblEleccion.Text = "Elija elemento a modificar:";
@@ -121,8 +114,8 @@ namespace EquiposFrontend
                     cmbPPL.DataSource = lista;
                     cmbPPL.DisplayMember = "NombreCompromiso";
                     cmbPPL.ValueMember = "CodCompromiso";
-                    break;                
-            }                      
+                    break;
+            }
 
         }
 
@@ -136,7 +129,7 @@ namespace EquiposFrontend
         {
             if (txtNombre.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Por favor inserte un nombre para " + accion.ToString().ToLower() + ".", "Inserte un nombre.",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor inserte un nombre para " + accion.ToString().ToLower() + ".", "Inserte un nombre.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNombre.Focus();
                 return;
             }
@@ -180,7 +173,7 @@ namespace EquiposFrontend
                                 break;
                             case TablasSoporte.provincias:
 
-                                url += "insertarProvincia" ;
+                                url += "insertarProvincia";
 
                                 Provincia oProvincia = new Provincia();
                                 oProvincia.Nombre = txtNombre.Text;
