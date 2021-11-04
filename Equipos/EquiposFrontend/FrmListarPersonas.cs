@@ -31,13 +31,7 @@ namespace EquiposFrontend
             }
         }
 
-        private void btnNvoEquipo_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmABM_Persona frmNvaPersona = new FrmABM_Persona(Accion.Agregar);
-            frmNvaPersona.ShowDialog();
-            
-        }
+
 
         private void btnEditarPersona_Click(object sender, EventArgs e)
         {
@@ -203,6 +197,27 @@ namespace EquiposFrontend
             cmbPierna.ValueMember = "CodPierna";
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
 
+        private void LimpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            dtpFechaNacimientoDesde.Value = Convert.ToDateTime("01/01/1980");
+            dtpFechaNacimientoHasta.Value = DateTime.Today;
+            cmbTipoDni.SelectedIndex = -1;
+            chbTipoDoc.Checked = false;
+            txtPesoDesde.Text = "";
+            txtPesoHasta.Text = "";
+            txtEstaturaDesde.Text = "";
+            txtEstaturaHasta.Text = "";
+            chbPierna.Checked = false;
+            cmbPierna.SelectedValue = -1;
+            chbBaja.Checked = false;
+            dgvPersonas.Rows.Clear();
+        }
     }
 }

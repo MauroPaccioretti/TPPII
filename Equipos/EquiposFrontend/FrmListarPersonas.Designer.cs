@@ -68,9 +68,9 @@ namespace EquiposFrontend
             this.txtPesoHasta = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
             this.btnBajaPersona = new System.Windows.Forms.Button();
             this.btnEditarPersona = new System.Windows.Forms.Button();
+            this.btnRegistrarNuevaPersona = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chbPierna = new System.Windows.Forms.CheckBox();
             this.chbTipoDoc = new System.Windows.Forms.CheckBox();
@@ -78,7 +78,6 @@ namespace EquiposFrontend
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -114,7 +113,7 @@ namespace EquiposFrontend
             this.dgvPersonas.ReadOnly = true;
             this.dgvPersonas.RowTemplate.Height = 25;
             this.dgvPersonas.Size = new System.Drawing.Size(1571, 462);
-            this.dgvPersonas.TabIndex = 0;
+            this.dgvPersonas.TabIndex = 19;
             // 
             // idPersona
             // 
@@ -186,70 +185,70 @@ namespace EquiposFrontend
             // cmbPierna
             // 
             this.cmbPierna.FormattingEnabled = true;
-            this.cmbPierna.Location = new System.Drawing.Point(980, 150);
+            this.cmbPierna.Location = new System.Drawing.Point(867, 159);
             this.cmbPierna.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPierna.Name = "cmbPierna";
-            this.cmbPierna.Size = new System.Drawing.Size(155, 28);
-            this.cmbPierna.TabIndex = 18;
+            this.cmbPierna.Size = new System.Drawing.Size(236, 28);
+            this.cmbPierna.TabIndex = 11;
             // 
             // cmbTipoDni
             // 
             this.cmbTipoDni.FormattingEnabled = true;
-            this.cmbTipoDni.Location = new System.Drawing.Point(355, 195);
+            this.cmbTipoDni.Location = new System.Drawing.Point(355, 159);
             this.cmbTipoDni.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoDni.Name = "cmbTipoDni";
-            this.cmbTipoDni.Size = new System.Drawing.Size(130, 28);
-            this.cmbTipoDni.TabIndex = 19;
+            this.cmbTipoDni.Size = new System.Drawing.Size(203, 28);
+            this.cmbTipoDni.TabIndex = 5;
             // 
             // dtpFechaNacimientoDesde
             // 
-            this.dtpFechaNacimientoDesde.Location = new System.Drawing.Point(249, 109);
+            this.dtpFechaNacimientoDesde.Location = new System.Drawing.Point(249, 94);
             this.dtpFechaNacimientoDesde.Name = "dtpFechaNacimientoDesde";
-            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(249, 26);
-            this.dtpFechaNacimientoDesde.TabIndex = 17;
+            this.dtpFechaNacimientoDesde.Size = new System.Drawing.Size(309, 26);
+            this.dtpFechaNacimientoDesde.TabIndex = 2;
             this.dtpFechaNacimientoDesde.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(96, 75);
+            this.txtApellido.Location = new System.Drawing.Point(249, 61);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(249, 26);
-            this.txtApellido.TabIndex = 12;
+            this.txtApellido.Size = new System.Drawing.Size(309, 26);
+            this.txtApellido.TabIndex = 1;
             // 
             // txtPesoDesde
             // 
-            this.txtPesoDesde.Location = new System.Drawing.Point(887, 81);
+            this.txtPesoDesde.Location = new System.Drawing.Point(764, 91);
             this.txtPesoDesde.Name = "txtPesoDesde";
-            this.txtPesoDesde.Size = new System.Drawing.Size(249, 26);
-            this.txtPesoDesde.TabIndex = 13;
+            this.txtPesoDesde.Size = new System.Drawing.Size(339, 26);
+            this.txtPesoDesde.TabIndex = 8;
             // 
             // txtEstaturaDesde
             // 
-            this.txtEstaturaDesde.Location = new System.Drawing.Point(886, 24);
+            this.txtEstaturaDesde.Location = new System.Drawing.Point(764, 27);
             this.txtEstaturaDesde.Name = "txtEstaturaDesde";
-            this.txtEstaturaDesde.Size = new System.Drawing.Size(249, 26);
-            this.txtEstaturaDesde.TabIndex = 14;
+            this.txtEstaturaDesde.Size = new System.Drawing.Size(339, 26);
+            this.txtEstaturaDesde.TabIndex = 6;
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(202, 249);
+            this.txtNroDoc.Location = new System.Drawing.Point(249, 192);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(249, 26);
+            this.txtNroDoc.Size = new System.Drawing.Size(309, 26);
             this.txtNroDoc.TabIndex = 15;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(96, 40);
+            this.txtNombre.Location = new System.Drawing.Point(249, 27);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(249, 26);
-            this.txtNombre.TabIndex = 16;
+            this.txtNombre.Size = new System.Drawing.Size(309, 26);
+            this.txtNombre.TabIndex = 0;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(676, 156);
+            this.label8.Location = new System.Drawing.Point(582, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 20);
             this.label8.TabIndex = 4;
@@ -258,7 +257,7 @@ namespace EquiposFrontend
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(676, 84);
+            this.label7.Location = new System.Drawing.Point(582, 94);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 20);
             this.label7.TabIndex = 5;
@@ -267,7 +266,7 @@ namespace EquiposFrontend
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(676, 27);
+            this.label6.Location = new System.Drawing.Point(582, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 20);
             this.label6.TabIndex = 6;
@@ -276,7 +275,7 @@ namespace EquiposFrontend
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 252);
+            this.label5.Location = new System.Drawing.Point(12, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(178, 20);
             this.label5.TabIndex = 7;
@@ -285,7 +284,7 @@ namespace EquiposFrontend
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 200);
+            this.label4.Location = new System.Drawing.Point(12, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 20);
             this.label4.TabIndex = 8;
@@ -294,7 +293,7 @@ namespace EquiposFrontend
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 112);
+            this.label3.Location = new System.Drawing.Point(12, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 20);
             this.label3.TabIndex = 9;
@@ -303,7 +302,7 @@ namespace EquiposFrontend
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 70);
+            this.label2.Location = new System.Drawing.Point(12, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 10;
@@ -312,7 +311,7 @@ namespace EquiposFrontend
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 40);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 11;
@@ -321,7 +320,7 @@ namespace EquiposFrontend
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(179, 115);
+            this.label9.Location = new System.Drawing.Point(183, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 10;
@@ -330,7 +329,7 @@ namespace EquiposFrontend
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(179, 145);
+            this.label10.Location = new System.Drawing.Point(187, 131);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 10;
@@ -338,15 +337,15 @@ namespace EquiposFrontend
             // 
             // dtpFechaNacimientoHasta
             // 
-            this.dtpFechaNacimientoHasta.Location = new System.Drawing.Point(249, 138);
+            this.dtpFechaNacimientoHasta.Location = new System.Drawing.Point(249, 126);
             this.dtpFechaNacimientoHasta.Name = "dtpFechaNacimientoHasta";
-            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(249, 26);
-            this.dtpFechaNacimientoHasta.TabIndex = 17;
+            this.dtpFechaNacimientoHasta.Size = new System.Drawing.Size(309, 26);
+            this.dtpFechaNacimientoHasta.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(820, 26);
+            this.label11.Location = new System.Drawing.Point(697, 30);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 20);
             this.label11.TabIndex = 20;
@@ -354,15 +353,15 @@ namespace EquiposFrontend
             // 
             // txtEstaturaHasta
             // 
-            this.txtEstaturaHasta.Location = new System.Drawing.Point(887, 52);
+            this.txtEstaturaHasta.Location = new System.Drawing.Point(764, 59);
             this.txtEstaturaHasta.Name = "txtEstaturaHasta";
-            this.txtEstaturaHasta.Size = new System.Drawing.Size(249, 26);
-            this.txtEstaturaHasta.TabIndex = 14;
+            this.txtEstaturaHasta.Size = new System.Drawing.Size(339, 26);
+            this.txtEstaturaHasta.TabIndex = 7;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(821, 55);
+            this.label12.Location = new System.Drawing.Point(697, 62);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 20);
             this.label12.TabIndex = 20;
@@ -371,7 +370,7 @@ namespace EquiposFrontend
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(821, 81);
+            this.label13.Location = new System.Drawing.Point(697, 94);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 20);
             this.label13.TabIndex = 20;
@@ -380,7 +379,7 @@ namespace EquiposFrontend
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(825, 109);
+            this.label14.Location = new System.Drawing.Point(697, 126);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 20);
             this.label14.TabIndex = 20;
@@ -388,10 +387,10 @@ namespace EquiposFrontend
             // 
             // txtPesoHasta
             // 
-            this.txtPesoHasta.Location = new System.Drawing.Point(887, 109);
+            this.txtPesoHasta.Location = new System.Drawing.Point(764, 123);
             this.txtPesoHasta.Name = "txtPesoHasta";
-            this.txtPesoHasta.Size = new System.Drawing.Size(249, 26);
-            this.txtPesoHasta.TabIndex = 14;
+            this.txtPesoHasta.Size = new System.Drawing.Size(339, 26);
+            this.txtPesoHasta.TabIndex = 9;
             // 
             // btnBuscar
             // 
@@ -400,11 +399,11 @@ namespace EquiposFrontend
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnBuscar.Location = new System.Drawing.Point(613, 231);
+            this.btnBuscar.Location = new System.Drawing.Point(697, 234);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(261, 37);
-            this.btnBuscar.TabIndex = 21;
+            this.btnBuscar.Size = new System.Drawing.Size(278, 53);
+            this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -418,27 +417,17 @@ namespace EquiposFrontend
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(406, 126);
+            this.groupBox1.Size = new System.Drawing.Size(409, 149);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acciones sobre una Persona seleccionada";
             // 
-            // btnRegistrarNuevaPersona
-            // 
-            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(1175, 691);
-            this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
-            this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(261, 46);
-            this.btnRegistrarNuevaPersona.TabIndex = 24;
-            this.btnRegistrarNuevaPersona.Text = "Registrar Nueva Persona";
-            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
-            this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
-            // 
             // btnBajaPersona
             // 
-            this.btnBajaPersona.Location = new System.Drawing.Point(34, 74);
+            this.btnBajaPersona.Location = new System.Drawing.Point(34, 88);
             this.btnBajaPersona.Name = "btnBajaPersona";
-            this.btnBajaPersona.Size = new System.Drawing.Size(203, 34);
-            this.btnBajaPersona.TabIndex = 21;
+            this.btnBajaPersona.Size = new System.Drawing.Size(353, 53);
+            this.btnBajaPersona.TabIndex = 16;
             this.btnBajaPersona.Text = "Dar de Baja";
             this.btnBajaPersona.UseVisualStyleBackColor = true;
             this.btnBajaPersona.Click += new System.EventHandler(this.btnBajaPersona_Click);
@@ -449,11 +438,22 @@ namespace EquiposFrontend
             this.btnEditarPersona.Location = new System.Drawing.Point(34, 30);
             this.btnEditarPersona.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarPersona.Name = "btnEditarPersona";
-            this.btnEditarPersona.Size = new System.Drawing.Size(203, 34);
-            this.btnEditarPersona.TabIndex = 21;
+            this.btnEditarPersona.Size = new System.Drawing.Size(353, 53);
+            this.btnEditarPersona.TabIndex = 15;
             this.btnEditarPersona.Text = "Editar";
             this.btnEditarPersona.UseVisualStyleBackColor = true;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
+            // 
+            // btnRegistrarNuevaPersona
+            // 
+            this.btnRegistrarNuevaPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(1209, 700);
+            this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
+            this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(353, 53);
+            this.btnRegistrarNuevaPersona.TabIndex = 17;
+            this.btnRegistrarNuevaPersona.Text = "Registrar Nueva Persona";
+            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
+            this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
             // 
             // groupBox2
             // 
@@ -502,11 +502,11 @@ namespace EquiposFrontend
             // 
             this.chbPierna.AutoSize = true;
             this.chbPierna.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbPierna.Location = new System.Drawing.Point(798, 152);
+            this.chbPierna.Location = new System.Drawing.Point(685, 161);
             this.chbPierna.Margin = new System.Windows.Forms.Padding(2);
             this.chbPierna.Name = "chbPierna";
             this.chbPierna.Size = new System.Drawing.Size(176, 24);
-            this.chbPierna.TabIndex = 23;
+            this.chbPierna.TabIndex = 10;
             this.chbPierna.Text = "Incluir en búsqueda?";
             this.chbPierna.UseVisualStyleBackColor = true;
             // 
@@ -514,22 +514,22 @@ namespace EquiposFrontend
             // 
             this.chbTipoDoc.AutoSize = true;
             this.chbTipoDoc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbTipoDoc.Location = new System.Drawing.Point(169, 199);
+            this.chbTipoDoc.Location = new System.Drawing.Point(173, 161);
             this.chbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.chbTipoDoc.Name = "chbTipoDoc";
             this.chbTipoDoc.Size = new System.Drawing.Size(176, 24);
-            this.chbTipoDoc.TabIndex = 23;
+            this.chbTipoDoc.TabIndex = 4;
             this.chbTipoDoc.Text = "Incluir en búsqueda?";
             this.chbTipoDoc.UseVisualStyleBackColor = true;
             // 
             // chbBaja
             // 
             this.chbBaja.AutoSize = true;
-            this.chbBaja.Location = new System.Drawing.Point(859, 199);
+            this.chbBaja.Location = new System.Drawing.Point(846, 199);
             this.chbBaja.Margin = new System.Windows.Forms.Padding(2);
             this.chbBaja.Name = "chbBaja";
             this.chbBaja.Size = new System.Drawing.Size(15, 14);
-            this.chbBaja.TabIndex = 22;
+            this.chbBaja.TabIndex = 12;
             this.chbBaja.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
@@ -539,18 +539,19 @@ namespace EquiposFrontend
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLimpiar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnLimpiar.Location = new System.Drawing.Point(956, 231);
+            this.btnLimpiar.Location = new System.Drawing.Point(983, 234);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(139, 37);
-            this.btnLimpiar.TabIndex = 21;
+            this.btnLimpiar.Size = new System.Drawing.Size(152, 53);
+            this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(678, 195);
+            this.label15.Location = new System.Drawing.Point(582, 195);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(177, 20);
@@ -564,29 +565,14 @@ namespace EquiposFrontend
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnSalir.Location = new System.Drawing.Point(1374, 766);
+            this.btnSalir.Location = new System.Drawing.Point(1209, 769);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(196, 49);
-            this.btnSalir.TabIndex = 24;
+            this.btnSalir.Size = new System.Drawing.Size(353, 53);
+            this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.Location = new System.Drawing.Point(1164, 766);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 49);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Registrar Nueva Persona";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox3
             // 
@@ -644,7 +630,6 @@ namespace EquiposFrontend
             this.Controls.Add(this.btnRegistrarNuevaPersona);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -717,8 +702,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn estatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
