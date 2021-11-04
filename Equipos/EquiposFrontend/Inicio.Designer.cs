@@ -436,12 +436,12 @@ namespace EquiposFrontend
             this.nombreEntrenador,
             this.cantidadJugadores,
             this.fechaAlta});
-            this.dgvEquipos.Location = new System.Drawing.Point(-24, 35);
+            this.dgvEquipos.Location = new System.Drawing.Point(8, 22);
             this.dgvEquipos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.ReadOnly = true;
             this.dgvEquipos.RowTemplate.Height = 25;
-            this.dgvEquipos.Size = new System.Drawing.Size(908, 245);
+            this.dgvEquipos.Size = new System.Drawing.Size(907, 258);
             this.dgvEquipos.TabIndex = 0;
             // 
             // idEquipo

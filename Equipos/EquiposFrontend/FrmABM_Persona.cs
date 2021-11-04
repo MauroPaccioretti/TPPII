@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace EquiposFrontend
 
-    
+
 {
     public partial class FrmABM_Persona : Form
     {
@@ -50,7 +50,7 @@ namespace EquiposFrontend
 
         private async void FrmABM_Persona_Load(object sender, EventArgs e)
         {
-                        
+
             string url = "https://localhost:44381/api/Equipos/tipoDocumentos";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             List<TiposDocumentos> lstTipoDNI = JsonConvert.DeserializeObject<List<TiposDocumentos>>(resultado);
@@ -98,7 +98,7 @@ namespace EquiposFrontend
         {
             string url = "https://localhost:44381/api/Equipos/personas";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-            List<Persona> lst= JsonConvert.DeserializeObject<List<Persona>>(resultado);
+            List<Persona> lst = JsonConvert.DeserializeObject<List<Persona>>(resultado);
             oPersona = lst.Find(item => item.CodPersona == idPersona);
 
             txtNombre.Text = oPersona.Nombre;
@@ -125,112 +125,113 @@ namespace EquiposFrontend
 
         private async void btnConfirmarAccion_Click(object sender, EventArgs e)
         {
-           
-                if (txtNombre.Text.Trim().Equals(""))
-                {
-                    MessageBox.Show("Por favor ingrese un Nombre.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNombre.Focus();
-                    return;
 
-                }
+            if (txtNombre.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Por favor ingrese un Nombre.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNombre.Focus();
+                return;
 
-                if (txtApellido.Text.Trim().Equals(""))
-                {
-                    MessageBox.Show("Por favor ingrese un Apellido.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtApellido.Focus();
-                    return;
+            }
 
-                }
+            if (txtApellido.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Por favor ingrese un Apellido.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtApellido.Focus();
+                return;
 
-                if (cmbTipoDni.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Por favor ingrese un Tipo de Documento.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cmbTipoDni.Focus();
-                    return;
-                }
+            }
 
-                if (txtNroDoc.Text.Trim().Equals(""))
-                {
-                    MessageBox.Show("Por favor ingrese un número de Documento.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNroDoc.Focus();
-                    return;
-                }
+            if (cmbTipoDni.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor ingrese un Tipo de Documento.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbTipoDni.Focus();
+                return;
+            }
 
-                try
-                {
-                    oPersona.NumeroDoc = Convert.ToInt32(txtNroDoc.Text);
-                } catch
-                {
-                    MessageBox.Show("Por favor ingrese un Documento Numérico.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNroDoc.Focus();
-                    return;
-                }
+            if (txtNroDoc.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Por favor ingrese un número de Documento.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNroDoc.Focus();
+                return;
+            }
+
+            try
+            {
+                oPersona.NumeroDoc = Convert.ToInt32(txtNroDoc.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese un Documento Numérico.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNroDoc.Focus();
+                return;
+            }
 
 
-                if (txtEstatura.Text.Trim().Equals(""))
-                {
-                    MessageBox.Show("Por favor ingrese una estatura.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEstatura.Focus();
-                    return;
-                }
+            if (txtEstatura.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Por favor ingrese una estatura.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEstatura.Focus();
+                return;
+            }
 
-                try
-                {
-                    oPersona.Estatura = Convert.ToInt32(txtEstatura.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Por favor ingrese una estatura numérica.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEstatura.Focus();
-                    return;
-                }
+            try
+            {
+                oPersona.Estatura = Convert.ToInt32(txtEstatura.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese una estatura numérica.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEstatura.Focus();
+                return;
+            }
 
-                if (txtPeso.Text.Trim().Equals(""))
-                {
-                    MessageBox.Show("Por favor ingrese un peso.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPeso.Focus();
-                    return;
-                }
+            if (txtPeso.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Por favor ingrese un peso.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPeso.Focus();
+                return;
+            }
 
-                try
-                {
-                    oPersona.Peso = Convert.ToDouble(txtPeso.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Por favor ingrese una peso numérico.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPeso.Focus();
-                    return;
-                }
+            try
+            {
+                oPersona.Peso = Convert.ToDouble(txtPeso.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Por favor ingrese una peso numérico.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPeso.Focus();
+                return;
+            }
 
-                if (cmbPierna.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Por favor ingrese una Pierna Hábil.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cmbPierna.Focus();
-                    return;
-                }
+            if (cmbPierna.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor ingrese una Pierna Hábil.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbPierna.Focus();
+                return;
+            }
 
-                if(oPersona.Estatura > 350 || oPersona.Estatura < 30)
-                {
-                    MessageBox.Show("Por favor verifique que la estatura sea en centímetros.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEstatura.Focus();
-                    return;
-                }
+            if (oPersona.Estatura > 350 || oPersona.Estatura < 30)
+            {
+                MessageBox.Show("Por favor verifique que la estatura sea en centímetros.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEstatura.Focus();
+                return;
+            }
 
-                if (dtpFechaNacimiento.Value.Equals(DateTime.Today))
-                {
-                    MessageBox.Show("Por favor ingrese una fecha de nacimiento válida.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dtpFechaNacimiento.Focus();
-                    return;
-                }
+            if (dtpFechaNacimiento.Value.Equals(DateTime.Today))
+            {
+                MessageBox.Show("Por favor ingrese una fecha de nacimiento válida.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFechaNacimiento.Focus();
+                return;
+            }
 
-                oPersona.Nombre = txtNombre.Text;
-                oPersona.Apellido = txtApellido.Text;
-                TiposDocumentos oTC = (TiposDocumentos)cmbTipoDni.SelectedValue;
-                oPersona.TipoDoc = oTC.CodTipoDoc;
-                PiernaHabil oPH = (PiernaHabil)cmbPierna.SelectedValue;
-                oPersona.PiernaHabil = oPH.codPierna;
-                oPersona.FechaNac = dtpFechaNacimiento.Value;
+            oPersona.Nombre = txtNombre.Text;
+            oPersona.Apellido = txtApellido.Text;
+            TiposDocumentos oTC = (TiposDocumentos)cmbTipoDni.SelectedValue;
+            oPersona.TipoDoc = oTC.CodTipoDoc;
+            PiernaHabil oPH = (PiernaHabil)cmbPierna.SelectedValue;
+            oPersona.PiernaHabil = oPH.codPierna;
+            oPersona.FechaNac = dtpFechaNacimiento.Value;
 
             string datosJSON = JsonConvert.SerializeObject(oPersona);
             switch (modo)
@@ -238,14 +239,14 @@ namespace EquiposFrontend
                 case Accion.Agregar:
                     try
                     {
-                        
+
                         string url = "https://localhost:44381/api/Equipos/insertarPersona";
                         string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
                         MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
                     }
                     catch
                     {
-                        MessageBox.Show("Error al Registrar","Resultado", MessageBoxButtons.OK);
+                        MessageBox.Show("Error al Registrar", "Resultado", MessageBoxButtons.OK);
                         return;
                     }
 
@@ -283,14 +284,14 @@ namespace EquiposFrontend
                             return;
                         }
                     }
-                    
+
                     break;
             }
 
 
 
 
-            
+
         }
 
         private void btnAgregarTipoDni_Click(object sender, EventArgs e)
@@ -302,5 +303,6 @@ namespace EquiposFrontend
         private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
     }
 }
