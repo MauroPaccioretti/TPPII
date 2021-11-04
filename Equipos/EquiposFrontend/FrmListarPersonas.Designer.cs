@@ -700,10 +700,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;
-<<<<<<< HEAD
 
-=======
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
         private System.Windows.Forms.Button btnRegistrarNuevaPersona;
         private System.Windows.Forms.CheckBox chbBaja;
         private System.Windows.Forms.Label label15;
@@ -720,7 +717,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn estatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
-<<<<<<< HEAD
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -728,7 +724,5 @@ namespace EquiposFrontend
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
 
-=======
->>>>>>> 6f08aba79bf85f0285ee13a80876d6b374abde83
     }
 }

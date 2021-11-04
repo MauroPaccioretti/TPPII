@@ -264,7 +264,10 @@ namespace EquiposFrontend
             {
                 this.Dispose();
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7153bd4856331fffe1c1a91d78de7ffa8f0a55c7
         }
         private void button1_Click(object sender, EventArgs e)
         {
