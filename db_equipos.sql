@@ -373,80 +373,82 @@ go
 ------------------------------------------------------------------------------
 -----------------SP_CONSULTAR-------------------------------------------------
 ------------------------------------------------------------------------------
-go
-alter proc SP_CONSULTAR_EQUIPOS_CON_COLUMNAS
-as
-select e.cod_equipo 'codEquipo',
-	e.nombre 'Nombre del Equipo',
-	p.nombre + ' ' + p.apellido as 'Nombre Entrenador',
-	count(*) 'Cantidad de Jugadores',
-	e.fechaAlta 'Fecha de Alta',
-	e.fechaBaja 'Fecha de Baja'
-from Equipos e join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
-join Personas p on p.cod_persona = ep.cod_persona
-where ep.cod_posicion = 12 and 
-	e.fechaBaja is null
-group by e.nombre ,p.nombre + ' ' + p.apellido , e.fechaAlta, e.cod_equipo, e.fechaBaja
-order by 1
-go
+
+--go
+--alter proc SP_CONSULTAR_EQUIPOS_CON_COLUMNAS
+--as
+--select e.cod_equipo 'codEquipo',
+--	e.nombre 'Nombre del Equipo',
+--	p.nombre + ' ' + p.apellido as 'Nombre Entrenador',
+--	count(*) 'Cantidad de Jugadores',
+--	e.fechaAlta 'Fecha de Alta',
+--	e.fechaBaja 'Fecha de Baja'
+--from Equipos e join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
+--join Personas p on p.cod_persona = ep.cod_persona
+--where ep.cod_posicion = 12 and 
+--	e.fechaBaja is null
+--group by e.nombre ,p.nombre + ' ' + p.apellido , e.fechaAlta, e.cod_equipo, e.fechaBaja
+--order by 1
+--go
 
 
-create proc SP_CONSULTAR_EQUIPOS_CON_COLUMNAS_SINFILTROS
-as
-select e.cod_equipo 'codEquipo',
-	e.nombre 'Nombre del Equipo',
-	p.nombre + ' ' + p.apellido as 'Nombre Entrenador',
-	count(*) 'Cantidad de Jugadores',
-	e.fechaAlta 'Fecha de Alta',
-	e.fechaBaja 'Fecha de Baja'
-from Equipos e join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
-join Personas p on p.cod_persona = ep.cod_persona
-where ep.cod_posicion = 12	
-group by e.nombre ,p.nombre + ' ' + p.apellido , e.fechaAlta, e.cod_equipo, e.fechaBaja
-order by 1
-go
-
-
-
-create or alter proc SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS
-as
-select e.cod_equipo 'codEquipo',
-	c.cod_compromiso 'codCompromiso',
-	e.nombre 'Nombre del Equipo',
-	tc.tipo 'Tipo de compromiso',
-	c.fechaCompromiso 'Fecha del compromiso',
-	c.fechaBaja 'fechaBaja'
-from Compromisos c
-join TiposCompromisos tc on c.cod_tipoCompromiso = tc.cod_tipoCompromiso
-join Equipos e on e.cod_equipo = c.cod_equipo
-where c.fechaBaja is null and
-	c.fechaCompromiso > getdate()
-order by 5
-go
-
-
-create or alter proc SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS_SINFILTRO
-as
-select e.cod_equipo 'codEquipo',
-	c.cod_compromiso 'codCompromiso',
-	e.nombre 'Nombre del Equipo',
-	tc.tipo 'Tipo de compromiso',
-	c.fechaCompromiso 'Fecha del compromiso',
-	c.fechaBaja 'fechaBaja'
-from Compromisos c
-join TiposCompromisos tc on c.cod_tipoCompromiso = tc.cod_tipoCompromiso
-join Equipos e on e.cod_equipo = c.cod_equipo
-order by 5
-go
+--create proc SP_CONSULTAR_EQUIPOS_CON_COLUMNAS_SINFILTROS
+--as
+--select e.cod_equipo 'codEquipo',
+--	e.nombre 'Nombre del Equipo',
+--	p.nombre + ' ' + p.apellido as 'Nombre Entrenador',
+--	count(*) 'Cantidad de Jugadores',
+--	e.fechaAlta 'Fecha de Alta',
+--	e.fechaBaja 'Fecha de Baja'
+--from Equipos e join Equipos_Personas ep on e.cod_equipo = ep.cod_equipo
+--join Personas p on p.cod_persona = ep.cod_persona
+--where ep.cod_posicion = 12	
+--group by e.nombre ,p.nombre + ' ' + p.apellido , e.fechaAlta, e.cod_equipo, e.fechaBaja
+--order by 1
+--go
 
 
 
-alter proc SP_CONSULTAR_PERSONAS_CONFILTRO
+--create or alter proc SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS
+--as
+--select e.cod_equipo 'codEquipo',
+--	c.cod_compromiso 'codCompromiso',
+--	e.nombre 'Nombre del Equipo',
+--	tc.tipo 'Tipo de compromiso',
+--	c.fechaCompromiso 'Fecha del compromiso',
+--	c.fechaBaja 'fechaBaja'
+--from Compromisos c
+--join TiposCompromisos tc on c.cod_tipoCompromiso = tc.cod_tipoCompromiso
+--join Equipos e on e.cod_equipo = c.cod_equipo
+--where c.fechaBaja is null and
+--	c.fechaCompromiso > getdate()
+--order by 5
+--go
+
+
+--create or alter proc SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS_SINFILTRO
+--as
+--select e.cod_equipo 'codEquipo',
+--	c.cod_compromiso 'codCompromiso',
+--	e.nombre 'Nombre del Equipo',
+--	tc.tipo 'Tipo de compromiso',
+--	c.fechaCompromiso 'Fecha del compromiso',
+--	c.fechaBaja 'fechaBaja'
+--from Compromisos c
+--join TiposCompromisos tc on c.cod_tipoCompromiso = tc.cod_tipoCompromiso
+--join Equipos e on e.cod_equipo = c.cod_equipo
+--order by 5
+--go
+
+
+
+create or alter proc SP_CONSULTAR_PERSONAS_CONFILTRO
 @nombre nvarchar(50) = NULL,
 @apellido nvarchar(50) = NULL,
 @fechaDesde datetime = NULL,
 @fechaHasta datetime = NULL,
 @tipoDoc int = NULL,
+@nroDoc int = NULL,
 @estaturaDesde numeric(6,2) = NULL,
 @estaturaHasta numeric(6,2) = NULL,
 @pesoDesde numeric (5,2) = NULL,
@@ -462,6 +464,7 @@ where
 	 AND(@nombre is null OR (nombre like '%' + @nombre + '%'))
 	 AND(@apellido is null OR (apellido like '%' + @apellido + '%'))
 	 AND (@tipoDoc is null OR (cod_tipoDoc = @tipoDoc))
+	 AND (@nroDoc is null OR (numeroDocumento = @nroDoc))
 	 AND (@estaturaDesde is null OR (estatura >= @estaturaDesde))
  	 AND (@estaturaHasta is null OR (estatura <= @estaturaHasta))
 	 AND (@pesoDesde is null OR (peso >= @pesoDesde))
@@ -470,10 +473,6 @@ where
 	 AND (@baja is null OR (@baja = 0 and fechaBaja IS NULL) OR (@baja = 1 and fechaBaja IS NOT NULL OR fechaBaja IS NULL))
 end
 go
-
-
-
-
 
 
 

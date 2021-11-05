@@ -38,7 +38,7 @@ namespace EquiposBackend.Dominio
 
         public void QuitarCompromiso(int codCompromiso)
         {
-            Compromisos.RemoveAt(codCompromiso);
+            Compromisos.RemoveAt(Compromisos.FindIndex(item => item.CodCompromiso == codCompromiso));
         }
 
 

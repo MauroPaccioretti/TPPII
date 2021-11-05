@@ -122,6 +122,7 @@ namespace EquiposBackend.Datos
             return aux;
 
         }
+
         public bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso)
         {
             bool aux;
@@ -151,7 +152,6 @@ namespace EquiposBackend.Datos
             return dt;
         }
 
-
         public DataTable GetCompromisosForDisplay(bool full)
         {
             DataTable dt = new DataTable();
@@ -161,8 +161,6 @@ namespace EquiposBackend.Datos
                 dt = helper.GetTable("SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS_SINFILTRO");
             return dt;
         }
-
-
 
         public List<Persona> GetPersonas()
         {
@@ -194,7 +192,6 @@ namespace EquiposBackend.Datos
 
             return lst;
         }
-
 
         public List<Persona> GetPersonasFiltered(Dictionary<string, object> filtros)
         {
@@ -250,7 +247,6 @@ namespace EquiposBackend.Datos
             }
             return lst;
         }
-
 
         public List<Equipo> GetEquipos()
         {
@@ -343,8 +339,6 @@ namespace EquiposBackend.Datos
             return oEquipo;
         }
 
-
-
         public List<Pais> GetPaises()
         {
             List<Pais> lst = new List<Pais>();
@@ -362,7 +356,6 @@ namespace EquiposBackend.Datos
             return lst;
 
         }
-
 
         public List<Provincia> GetProvincias()
         {
@@ -444,7 +437,6 @@ namespace EquiposBackend.Datos
             return lst;
         }
 
-
         public List<TipoCompromisos> GetTiposCompromisos()
         {
             List<TipoCompromisos> lst = new();
@@ -481,7 +473,6 @@ namespace EquiposBackend.Datos
             return lst;
 
         }
-
 
         public List<Compromiso> GetCompromisos()
         {
@@ -542,6 +533,7 @@ namespace EquiposBackend.Datos
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@codigo", oEquipo.CodEquipo);
             parametros.Add("@nombre", oEquipo.Nombre);
+            parametros.Add("@loc", oEquipo.CodLocalidad);
             parametros.Add("@fechaAlta", oEquipo.FechaAlta);
             if (!oEquipo.FechaBaja.HasValue)
                 parametros.Add("@fechaBaja", DBNull.Value);
@@ -622,7 +614,7 @@ namespace EquiposBackend.Datos
         }
 
 
-        public bool EditTipoCompromisos(TipoCompromisos oTC)
+        public bool EditTipoCompromiso(TipoCompromisos oTC)
         {
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@codigo", oTC.CodCompromiso);
@@ -641,7 +633,6 @@ namespace EquiposBackend.Datos
             return helper.DeleteElementsIn3Tables(idPersona, "SP_BAJA_JUGADOR" , "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
         }
 
-
         public bool DeleteEquipo(int idEquipo)
         {
             return helper.DeleteElementsIn3Tables(idEquipo, "SP_BAJA_EQUIPO", "SP_BAJA_EQUIPO_PERSONA_POREQUIPO", "SP_BAJA_COMPROMISO_POREQUIPO");
@@ -652,9 +643,5 @@ namespace EquiposBackend.Datos
             return helper.DeleteElement(idJugador, "SP_BAJA_EQUIPO_PERSONA_PORDETALLE");
         }
 
-        public bool EditTipoCompromiso(TipoCompromisos oTC)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

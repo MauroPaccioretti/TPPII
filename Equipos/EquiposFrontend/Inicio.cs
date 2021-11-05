@@ -201,7 +201,7 @@ namespace EquiposFrontend
 
         private void btnNvaPersona_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             FrmABM_Persona frmNvaPersona = new FrmABM_Persona(Accion.Agregar);
             frmNvaPersona.ShowDialog();
             this.Show();
@@ -209,20 +209,13 @@ namespace EquiposFrontend
 
         private void btnEditarPersona_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           // this.Hide();
             FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
             frmListarPersonas.ShowDialog();
             this.Show();
         }
 
-        private void btnBajaPersona_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
-            frmListarPersonas.ShowDialog();
 
-            this.Show();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

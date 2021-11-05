@@ -326,7 +326,10 @@ namespace EquiposWebAPI.Controllers
         {
             if (id == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.EliminarEquipo(id));
+            if (app.EliminarEquipo(id))
+                return Ok("El equipo se dio de baja satisfactoriamente!");
+            else
+                return Ok("Algo falló en la baja del equipo.");
         }
 
         [HttpDelete("jugador/{id}")]

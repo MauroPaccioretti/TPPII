@@ -73,7 +73,6 @@ namespace EquiposFrontend
             this.fechaBajaEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnBajaPersona = new System.Windows.Forms.Button();
             this.btnEditarPersona = new System.Windows.Forms.Button();
             this.btnNvaPersona = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -514,7 +513,6 @@ namespace EquiposFrontend
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnBajaPersona);
             this.groupBox3.Controls.Add(this.btnEditarPersona);
             this.groupBox3.Controls.Add(this.btnNvaPersona);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -528,25 +526,14 @@ namespace EquiposFrontend
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gestion de Personas";
             // 
-            // btnBajaPersona
-            // 
-            this.btnBajaPersona.Location = new System.Drawing.Point(604, 33);
-            this.btnBajaPersona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBajaPersona.Name = "btnBajaPersona";
-            this.btnBajaPersona.Size = new System.Drawing.Size(279, 41);
-            this.btnBajaPersona.TabIndex = 1;
-            this.btnBajaPersona.Text = "Baja de una Persona Inscripta";
-            this.btnBajaPersona.UseVisualStyleBackColor = true;
-            this.btnBajaPersona.Click += new System.EventHandler(this.btnBajaPersona_Click);
-            // 
             // btnEditarPersona
             // 
             this.btnEditarPersona.Location = new System.Drawing.Point(318, 33);
             this.btnEditarPersona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarPersona.Name = "btnEditarPersona";
-            this.btnEditarPersona.Size = new System.Drawing.Size(279, 41);
+            this.btnEditarPersona.Size = new System.Drawing.Size(565, 41);
             this.btnEditarPersona.TabIndex = 1;
-            this.btnEditarPersona.Text = "Editar Datos de una Persona";
+            this.btnEditarPersona.Text = "Listar Datos de una Persona / Buscar Personas";
             this.btnEditarPersona.UseVisualStyleBackColor = true;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
             // 
@@ -718,7 +705,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button btnEditarEquipo;
         private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnBajaPersona;
         private System.Windows.Forms.Button btnEditarPersona;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNvaPersona;

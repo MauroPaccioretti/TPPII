@@ -17,15 +17,23 @@ namespace EquiposFrontend
     {
         Accion modo;
         List<PiernaHabil> lstHabilidad;
-        List<Posicion> lstPosi;
+        List<Posicion> lstPosiciones;
         List<Localidad> lstLoc;
-        List<TipoCompromisos> lstTC;
+        List<TipoCompromisos> lstTipoCompromiso;
         List<Persona> lstPersonas;
         List<Compromiso> lstCompromisos;
         List<Equipo> lstEquipos;
         Equipo oEquipo;
         int idEquipo;
         Compromiso oCompromiso;
+        List<Compromiso> lstCompromisosOriginales;
+        List<Persona> lstPersonasOriginales;
+        List<Compromiso> lstCompromisosAgregados;
+        List<Compromiso> lstCompromisosEliminados;
+        List<Persona> lstJugadoresAgregados;
+        List<Persona> lstJugadoresEliminados;
+
+
 
 
         public FrmEquipoNuevo(Accion modo, int idEquipo = 0)
@@ -53,8 +61,7 @@ namespace EquiposFrontend
                     this.btnConfirmarAccion.Text = "Eliminar Equipo";
 
                     break;
-                default:
-                    break;
+                
             }
 
         }
@@ -87,9 +94,8 @@ namespace EquiposFrontend
 
             string urlposiciones = "https://localhost:44381/api/Equipos/posiciones";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlposiciones);
-            List<Posicion> lstPosiciones = JsonConvert.DeserializeObject<List<Posicion>>(resultado);
-
-            lstPosi = lstPosiciones;
+            lstPosiciones = JsonConvert.DeserializeObject<List<Posicion>>(resultado);
+         
             cmbPosiciones.DataSource = lstPosiciones;
             cmbPosiciones.DisplayMember = "NombrePosicion";
             cmbPosiciones.ValueMember = "CodPosicion";
@@ -98,7 +104,7 @@ namespace EquiposFrontend
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
             List<Localidad> lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
-            lstLoc = lstLocalidades;
+            
 
             //cmbLocalidad.Items.AddRange(lstLocalidades.ToArray());
             cmbLocalidad.DataSource = lstLocalidades;
@@ -110,7 +116,7 @@ namespace EquiposFrontend
             string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
             string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
             List<TipoCompromisos> lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);
-            lstTC = lstTipoCompromiso;
+            
             cmbTipoCompromiso.DataSource = lstTipoCompromiso;
             cmbTipoCompromiso.DisplayMember = "NombreCompromiso";
             cmbTipoCompromiso.ValueMember = "CodCompromiso";
@@ -126,11 +132,18 @@ namespace EquiposFrontend
             {
                 case Accion.Agregar:
 
-                    oEquipo.CodEquipo = lstEquipos == null ? 1 : lstEquipos.Max(t => t.CodEquipo) + 1;
-                    if (lstCompromisos.Count() == 0)
+                    if (lstEquipos.Count == 0)
+                        oEquipo.CodEquipo = 1;
+                    else
+                        oEquipo.CodEquipo = lstEquipos.Max(t => t.CodEquipo) + 1;
+                    
+                    if (lstCompromisos.Count == 0)
                         oCompromiso.CodCompromiso = 1;
                     else
                         oCompromiso.CodCompromiso = lstCompromisos.Max(t => t.CodCompromiso) + 1;
+
+                    oEquipo.FechaAlta = DateTime.Today;
+                    
                     CargarDGVPersonasDisponibles();
 
                     break;
@@ -142,8 +155,7 @@ namespace EquiposFrontend
                     CargarEquipo();
                     
                     break;
-                default:
-                    break;
+
 
 
             }
@@ -151,7 +163,6 @@ namespace EquiposFrontend
             
 
         }
-
 
         private void CargarEquipo()
         {
@@ -161,7 +172,8 @@ namespace EquiposFrontend
             CargarDGVCompromisos();
             cmbLocalidad.SelectedValue = oEquipo.CodLocalidad;
             txtNombreEquipo.Text = oEquipo.Nombre;
-
+            lstCompromisosOriginales = lstCompromisos;
+            lstPersonasOriginales = lstPersonas;
         }
 
         private void CargarDGVPersonasDisponibles()
@@ -185,20 +197,26 @@ namespace EquiposFrontend
             //    });
 
             //    }
-            List<Persona> lstPersonasFiltrada = lstPersonas;
-            if (oEquipo.Jugadores.Count() != 0)
+            List<Persona> lstPersonasDisponibles = new List<Persona>();
+            lstPersonasDisponibles.AddRange(lstPersonas);
+            
+            if (oEquipo.Jugadores.Count != 0)
             {
                 foreach (EquipoPersona oEP in oEquipo.Jugadores)
                 {
-                    lstPersonasFiltrada.Remove(oEP.Persona);
+                    lstPersonasDisponibles.Remove(oEP.Persona);
 
                 }
             }
 
+            lstPersonasDisponibles.RemoveAll(item => item.FechaBaja.HasValue);
+
+
+
             dgvPersonasDispo.Rows.Clear();
 
-            if (lstPersonasFiltrada.Count() != 0)
-                foreach (Persona oPersona in lstPersonasFiltrada)
+            if (lstPersonasDisponibles.Count != 0)
+                foreach (Persona oPersona in lstPersonasDisponibles)
                 {
 
                     dgvPersonasDispo.Rows.Add(new object[] {
@@ -224,8 +242,7 @@ namespace EquiposFrontend
             if (oEquipo.Jugadores != null)
                 foreach (EquipoPersona oEP in oEquipo.Jugadores)
                 {
-                    
-                    if (!oEP.FechaAlta.ToString("dd/MM/yyyy").Equals(DateTime.MinValue))
+                    if (!oEP.FechaAlta.ToString("dd/MM/yyyy").Equals("01/01/0001"))
                         oEP.FechaAlta.ToString("dd/MM/yyyy");
                     else
                         oEP.FechaAlta = DateTime.Today;
@@ -233,10 +250,10 @@ namespace EquiposFrontend
                     dgvPersonasEquipo.Rows.Add(new object[] {
                     oEP.Persona.CodPersona,
                     oEP.Persona.Apellido,
-                    oEP.Persona.Nombre,
+                    lstPosiciones.Find(item => oEP.CodPosicion == item.codPosicion).NombrePosicion,                    
                     lstHabilidad.Find(item => oEP.Persona.PiernaHabil == item.codPierna).Habilidad,
                     oEP.Camiseta,
-                    oEP.FechaAlta,
+                    oEP.FechaAlta.ToString("dd/MM/yyyy"),
                     "Quitar" });
                 }
         }
@@ -251,7 +268,7 @@ namespace EquiposFrontend
                     dgvCompromisos.Rows.Add(new object[] {
                         oCompromiso.CodCompromiso,
                         oEquipo.CodEquipo,
-                        lstTC.Find(item => oCompromiso.TipoCompromiso.CodCompromiso == item.CodCompromiso).NombreCompromiso,
+                        lstTipoCompromiso.Find(item => oCompromiso.TipoCompromiso.CodCompromiso == item.CodCompromiso).NombreCompromiso,
                         oCompromiso.ComentariosCompromiso,
                         oCompromiso.FechaCompromiso,
                         "Quitar"});
@@ -260,7 +277,6 @@ namespace EquiposFrontend
 
                 }
         }
-
 
         private void btnAgregarPersona_Click(object sender, EventArgs e)
         {
@@ -296,11 +312,11 @@ namespace EquiposFrontend
 
                 CargarDGVPersonasJugando();
                 CargarDGVPersonasDisponibles();
+                txtCamiseta.Text = "";
+                cmbPosiciones.SelectedIndex = -1;
             }
                 
         }
-
-
 
         private bool ExisteJugadorEnEquipo(int idJugador)
         {
@@ -349,13 +365,13 @@ namespace EquiposFrontend
         {
             if (txtNombreEquipo.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Por favor elija un nombre para su equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor elija un nombre para el equipo.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if(dgvPersonasEquipo.Rows.Count == 0)
             {
-                if (MessageBox.Show("Esta seguro que desea crear un equipo sin jugadores?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (MessageBox.Show("Esta seguro que desea tener un equipo sin jugadores?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     return;
                 }
@@ -363,25 +379,25 @@ namespace EquiposFrontend
 
             if(dgvCompromisos.Rows.Count == 0)
             {
-                if (MessageBox.Show("Esta seguro que desea crear un equipo sin compromisos?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (MessageBox.Show("Esta seguro que desea tener un equipo sin compromisos?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     return;
                 }
             }
             if(cmbLocalidad.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor elija una localidad para su equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor elija una localidad para el equipo.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string datosJSON = JsonConvert.SerializeObject(oEquipo);
+            string datosJSONEquipoFull = JsonConvert.SerializeObject(oEquipo);
             switch (modo)
             {
                 case Accion.Agregar:
                     try
                     {
                         string url = "https://localhost:44381/api/Equipos/crearEquipoFull";
-                        string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
+                        string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSONEquipoFull);
                         MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
                     }
                     catch
@@ -395,7 +411,24 @@ namespace EquiposFrontend
 
                     break;
                 case Accion.Eliminar:
-
+                    if (MessageBox.Show("Esta seguro que desea eliminar el equipo? Va a dar de baja sus compromisos y jugadores.",
+                            "Atención!",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    try
+                    {
+                        string url = "https://localhost:44381/api/Equipos/equipo/" + oEquipo.CodEquipo;
+                        string resultado = await ClienteSingleton.GetInstancia().DeleteAsync(url);
+                        MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error en el cliente al dar de baja!", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     break;
             }
@@ -404,20 +437,79 @@ namespace EquiposFrontend
 
         private void dgvPersonasEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPersonasEquipo.CurrentCell.ColumnIndex == 6)
+            switch (modo)
             {
-                oEquipo.QuitarJugador(Convert.ToInt32(dgvPersonasEquipo.CurrentRow.Cells["idJugador"].Value.ToString()));
-                dgvPersonasEquipo.Rows.Remove(dgvPersonasEquipo.CurrentRow);
+                case Accion.Agregar:
+                    if (dgvPersonasEquipo.CurrentCell.ColumnIndex == 6)
+                    {
+                        oEquipo.QuitarJugador(Convert.ToInt32(dgvPersonasEquipo.CurrentRow.Cells["idJugador"].Value.ToString()));
+                        dgvPersonasEquipo.Rows.Remove(dgvPersonasEquipo.CurrentRow);
+                        dgvPersonasDispo.Rows.Add(new object[] { });
+                        CargarDGVPersonasDisponibles();
+                    }
+
+                    break;
+                case Accion.Modificar:
+                    if (dgvPersonasEquipo.CurrentCell.ColumnIndex == 6)
+                    {
+                        if (MessageBox.Show("Esta seguro que desea quitar al jugador del equipo?",
+                            "Atención!",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.No)
+                        {
+                            return;
+                        }
+                        int codPersonaEliminada = Convert.ToInt32(dgvPersonasEquipo.CurrentRow.Cells["idJugador"].Value.ToString());
+                        if (lstPersonasOriginales.Exists(item => codPersonaEliminada == item.CodPersona))
+                            lstJugadoresEliminados.Add(lstPersonasOriginales.Find(item => codPersonaEliminada == item.CodPersona));
+                        else
+                            lstJugadoresAgregados.RemoveAt(lstJugadoresAgregados.FindIndex(item => codPersonaEliminada == item.CodPersona));
+                        
+                        oEquipo.QuitarJugador(codPersonaEliminada);
+                        dgvPersonasEquipo.Rows.Remove(dgvPersonasEquipo.CurrentRow);
+                    }
+
+
+                    break;
+                case Accion.Eliminar:
+
+                    break;
+
             }
+
+
+
+            
         }
 
         private void dgvCompromisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCompromisos.CurrentCell.ColumnIndex == 5)
+
+            switch (modo)
             {
-                oEquipo.QuitarCompromiso(Convert.ToInt32(dgvCompromisos.CurrentRow.Cells["idCompromiso"].Value.ToString()));
-                dgvCompromisos.Rows.Remove(dgvCompromisos.CurrentRow);
+                case Accion.Agregar:
+                    if (dgvCompromisos.CurrentCell.ColumnIndex == 5)
+                    {
+                        oEquipo.QuitarCompromiso(Convert.ToInt32(dgvCompromisos.CurrentRow.Cells["idCompromiso"].Value.ToString()));
+                        dgvCompromisos.Rows.Remove(dgvCompromisos.CurrentRow);
+                    }
+
+                    break;
+                case Accion.Modificar:
+                    
+
+
+                    break;
+                case Accion.Eliminar:
+                   
+
+
+                    break;
+
             }
+
+
+            
         }
     }
 }

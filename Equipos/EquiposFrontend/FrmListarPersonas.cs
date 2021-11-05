@@ -16,11 +16,13 @@ namespace EquiposFrontend
     public partial class FrmListarPersonas : Form
     {
 
-        List<PiernaHabil> lstHabilidad = new();
-        List<TiposDocumentos> lstTipoDocs = new List<TiposDocumentos>();
+        List<PiernaHabil> lstHabilidad;
+        List<TiposDocumentos> lstTipoDocs;
         public FrmListarPersonas()
         {
             InitializeComponent();
+            lstTipoDocs = new List<TiposDocumentos>();
+            lstHabilidad = new List<PiernaHabil>();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -31,15 +33,20 @@ namespace EquiposFrontend
             }
         }
 
-
-
         private void btnEditarPersona_Click(object sender, EventArgs e)
         {
             if (dgvPersonas.SelectedRows.Count == 1)
             {
-                int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
-                FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Modificar, nroPersona);
-                frmPersonaABM.ShowDialog();
+                if (dgvPersonas.CurrentRow.Cells["fechaBaja"].Value.ToString() != "Activo")
+                {
+                    MessageBox.Show("No se puede editar una persona dada de baja.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+                    int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
+                    FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Modificar, nroPersona);
+                    frmPersonaABM.ShowDialog();
+                
             }
 
         }
@@ -141,6 +148,7 @@ namespace EquiposFrontend
             filtros.Add("@fechaDesde", chbFechaNac.Checked ? dtpFechaNacimientoDesde.Value.ToShortDateString() : DBNull.Value);
             filtros.Add("@fechaHasta", chbFechaNac.Checked ? dtpFechaNacimientoHasta.Value.ToShortDateString() : DBNull.Value);
             filtros.Add("@tipoDoc", chbTipoDoc.Checked ? cmbTipoDni.SelectedValue : DBNull.Value);
+            filtros.Add("@nroDoc", txtNroDoc.Text.Equals("") ? DBNull.Value : txtNroDoc.Text);
             filtros.Add("@estaturaDesde", txtEstaturaDesde.Text.Equals("") ? DBNull.Value : txtEstaturaDesde.Text);
             filtros.Add("@estaturaHasta", txtEstaturaHasta.Text.Equals("") ? DBNull.Value : txtEstaturaHasta.Text);
             filtros.Add("@pesoDesde", txtPesoDesde.Text.Equals("") ? DBNull.Value : txtPesoDesde.Text);
@@ -204,6 +212,9 @@ namespace EquiposFrontend
             cmbPierna.DisplayMember = "Habilidad";
             cmbPierna.ValueMember = "CodPierna";
             cmbPierna.SelectedIndex = -1;
+
+            btnBuscar.PerformClick();
+           
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -227,7 +238,8 @@ namespace EquiposFrontend
             chbPierna.Checked = false;
             cmbPierna.SelectedIndex = -1;
             chbBaja.Checked = false;
-            dgvPersonas.Rows.Clear();
+            txtNroDoc.Text = "";
+            btnBuscar.PerformClick();
         }
 
         private void btnCruz_Click(object sender, EventArgs e)
