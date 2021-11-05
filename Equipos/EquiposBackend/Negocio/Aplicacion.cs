@@ -145,6 +145,12 @@ namespace EquiposBackend.Negocio
         {
             return dao.EditPersona(oPersona);
         }
+
+
+        public bool EditarEquipoPersona(EquipoPersona oEP)
+        {
+            return dao.EditEquipoPersona(oEP);
+        }
         public bool EditarPais(Pais oPais)
         {
             return dao.EditPais(oPais);

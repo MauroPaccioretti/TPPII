@@ -223,9 +223,9 @@ namespace EquiposWebAPI.Controllers
             if (oEP == null)
                 return BadRequest();
             if (app.CrearEquipoPersona(oEP))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se registró exitosamente la inscripción del jugador: ");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo adherir el jugador: ");
         }
 
         //Put
@@ -251,6 +251,20 @@ namespace EquiposWebAPI.Controllers
             else
                 return Ok("No se pudo grabar!");
         }
+
+        [HttpPut("editarEquipoPersona")]
+        public IActionResult PutEquipoPersona(EquipoPersona oEP)
+        {
+            if (oEP == null)
+                return BadRequest();
+            if (app.EditarEquipoPersona(oEP))
+                return Ok("Se registró exitosamente la modificación del jugador: ");
+            else
+                return Ok("No se pudo editar la información del jugador: ");
+        }
+
+
+
 
         [HttpPut("editarPais")]
         public IActionResult PutPais(Pais oPais)
@@ -337,7 +351,10 @@ namespace EquiposWebAPI.Controllers
         {
             if (id == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.QuitarJugadorDelEquipo(id));
+            if(app.QuitarJugadorDelEquipo(id))
+                return Ok("Se dio la baja satisfactoria del jugador: ");
+            else
+                return Ok("Algo falló en la baja del jugador: ");
         }
 
     }

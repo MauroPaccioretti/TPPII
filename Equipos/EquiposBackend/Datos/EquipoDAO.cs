@@ -625,6 +625,23 @@ namespace EquiposBackend.Datos
 
         }
 
+        public bool EditEquipoPersona(EquipoPersona oEP)
+        {
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@codigo", oEP.CodEP);
+            parametros.Add("@cod_persona", oEP.Persona.CodPersona);
+            parametros.Add("@cod_equipo", oEP.CodEquipo);
+            parametros.Add("@cod_posicion", oEP.CodPosicion);
+            parametros.Add("@camiseta", oEP.Camiseta);
+            parametros.Add("@fechaAlta", oEP.FechaAlta);
+            if(oEP.FechaBaja.HasValue)
+                parametros.Add("fechaBaja", oEP.FechaBaja);
+            else
+                parametros.Add("fechaBaja", DBNull.Value);
+
+            return helper.AlterOneElement("SP_EDITAR_EQUIPO_PERSONA_PORDETALLE", parametros);
+        }
+
 
         ////delete
 
