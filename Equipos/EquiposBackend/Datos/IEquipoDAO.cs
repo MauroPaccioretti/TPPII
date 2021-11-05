@@ -1,9 +1,6 @@
 ﻿using EquiposBackend.Dominio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace EquiposBackend.Datos
 {
@@ -16,10 +13,16 @@ namespace EquiposBackend.Datos
         bool CreatePais(Pais oPais);
         bool CreateProvincia(Provincia oProvincia);
         bool CreateLocalidad(Localidad oLocalidad);
+        bool CreateTipoDocumento(TiposDocumentos oTipoDoc);
+        bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso);
+        bool CreateEquipoFull(Equipo oEquipo);
 
 
         //get - read
+        DataTable GetEquiposForDisplay(bool full);
+        DataTable GetCompromisosForDisplay(bool full);
         List<Persona> GetPersonas();
+        List<Persona> GetPersonasFiltered(Dictionary<string, object> filtros);
         List<EquipoPersona> GetEquipoPersona();
         List<Equipo> GetEquipos();
         Equipo GetEquipoByID(int nro);
@@ -31,11 +34,13 @@ namespace EquiposBackend.Datos
         List<TipoCompromisos> GetTiposCompromisos();
         List<Compromiso> GetCompromisos();
         List<Compromiso> GetProximosCompromisos();
+        List<Posicion> GetPosiciones();
 
 
         //update
         bool EditEquipo(Equipo equipo);
         bool EditPersona(Persona oPersona);
+        bool EditEquipoPersona(EquipoPersona oEP);
         bool EditPais(Pais oPais);
         bool EditProvincia(Provincia oProvincia);
         bool EditLocalidad(Localidad oLocalidad);

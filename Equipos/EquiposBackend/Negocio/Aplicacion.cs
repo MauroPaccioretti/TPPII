@@ -1,10 +1,7 @@
 ﻿using EquiposBackend.Datos;
 using EquiposBackend.Dominio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace EquiposBackend.Negocio
 {
@@ -15,7 +12,7 @@ namespace EquiposBackend.Negocio
 
 
         //create
-        
+
         public bool CrearEquipo(Equipo oEquipo)
         {
             return dao.CreateEquipo(oEquipo);
@@ -45,8 +42,34 @@ namespace EquiposBackend.Negocio
             return dao.CreateLocalidad(oLocalidad);
         }
 
-        //get - read
 
+        public bool CrearTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            return dao.CreateTipoDocumento(oTipoDoc);
+        }
+        public bool CrearTipoCompromiso(TipoCompromisos oTipoCompromiso)
+        {
+            return dao.CreateTipoCompromiso(oTipoCompromiso);
+        }
+
+        public bool CrearEquipoFull(Equipo oEquipo)
+        {
+            return dao.CreateEquipoFull(oEquipo);
+        }
+
+
+
+        //get - read
+        public DataTable ConsultarEquiposForDisplay(bool full)
+        {
+            return dao.GetEquiposForDisplay(full);
+        }
+
+        public DataTable ConsultarCompromisosForDisplay(bool full)
+        {
+            return dao.GetCompromisosForDisplay(full);
+
+        }
 
         public List<Pais> ConsultarPaises()
         {
@@ -66,6 +89,11 @@ namespace EquiposBackend.Negocio
         public List<Persona> ConsultarPersonas()
         {
             return dao.GetPersonas();
+        }
+
+        public List<Persona> ConsultarPersonasFiltradas(Dictionary<string, object> filtros)
+        {
+            return dao.GetPersonasFiltered(filtros);
         }
         public List<Equipo> ConsultarEquipos()
         {
@@ -103,7 +131,10 @@ namespace EquiposBackend.Negocio
             return dao.GetProximosCompromisos();
         }
 
-
+        public List<Posicion> ConsultarPosiciones()
+        {
+            return dao.GetPosiciones();
+        }
         //update
 
         public bool EditarEquipo(Equipo oEquipo)
@@ -113,6 +144,12 @@ namespace EquiposBackend.Negocio
         public bool EditarPersona(Persona oPersona)
         {
             return dao.EditPersona(oPersona);
+        }
+
+
+        public bool EditarEquipoPersona(EquipoPersona oEP)
+        {
+            return dao.EditEquipoPersona(oEP);
         }
         public bool EditarPais(Pais oPais)
         {
@@ -160,7 +197,7 @@ namespace EquiposBackend.Negocio
 
         public bool Login(string username, string pass)
         {
-           return usuariosDao.Login(username, pass);
+            return usuariosDao.Login(username, pass);
         }
 
         public string RecoverPassword(string userRequesting)

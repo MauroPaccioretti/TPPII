@@ -73,7 +73,7 @@ namespace EquiposFrontend
                     }
                     else
                     {
-                        MsgErrorIncorrect("Incorrect Username or Password entered. Please try again.");
+                        MsgErrorIncorrect("Usuario o Contraseña incorrecto.");
                         MsgErrorUser("");
                         MsgErrorPass("");
                         textBoxPassword.Clear();
@@ -84,13 +84,13 @@ namespace EquiposFrontend
                 }
                 else
                 {
-                    MsgErrorPass("Please enter Password");
+                    MsgErrorPass("Porfavor ingrese una contraseña");
 
                 }
             }
             else
             {
-                MsgErrorUser("Please enter Username");
+                MsgErrorUser("Porfavor ingrese un usuario");
             }
 
 

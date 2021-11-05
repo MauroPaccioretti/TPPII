@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EquiposBackend.Dominio
 {
@@ -13,12 +10,14 @@ namespace EquiposBackend.Dominio
         public int CodLocalidad { get; set; }
         public DateTime FechaAlta { get; set; }
         public DateTime ?  FechaBaja { get; set; }
-
         public List<EquipoPersona> Jugadores { get; set; }
+        public List<Compromiso> Compromisos { get; set; }
+
 
         public Equipo()
         {
             Jugadores = new List<EquipoPersona>();
+            Compromisos = new List<Compromiso>();
         }
 
         public void AgregarJugador(EquipoPersona jugador)
@@ -28,8 +27,20 @@ namespace EquiposBackend.Dominio
 
         public void QuitarJugador(int nroJugador)
         {
-            Jugadores.RemoveAt(nroJugador);
+            
+            Jugadores.RemoveAt(Jugadores.FindIndex(item => item.Persona.CodPersona == nroJugador));
         }
+
+        public void AgregarCompromiso(Compromiso oCompromiso)
+        {
+            Compromisos.Add(oCompromiso);
+        }
+
+        public void QuitarCompromiso(int codCompromiso)
+        {
+            Compromisos.RemoveAt(Compromisos.FindIndex(item => item.CodCompromiso == codCompromiso));
+        }
+
 
         /*
 

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EquiposFrontend
 {
     public partial class FrmEleccionPaisProv : Form
@@ -89,6 +90,11 @@ namespace EquiposFrontend
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

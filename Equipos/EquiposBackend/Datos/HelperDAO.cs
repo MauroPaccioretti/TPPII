@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EquiposBackend.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -81,14 +82,15 @@ namespace EquiposBackend.Datos
                 {
                     foreach (KeyValuePair<string, object> p in parameters)
                     {
-                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                        cmd.Parameters.AddWithValue(p.Key, p.Value.ToString());
                     }
                 }
                 dt.Load(cmd.ExecuteReader());
             }
-            catch
+            catch (Exception ex)
             {
                 dt = null;
+                string mensaje = ex.Message;
             }
             finally
             {
@@ -122,7 +124,65 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
-        public bool DeleteElementsIn2Tables(int idElemento, string spCommand1, string spCommand2)
+        public bool CrearEquipo(Equipo oEquipo)
+        {
+            bool aux = false;
+            SqlTransaction t =null;
+            try
+            {
+                cnn.Open();
+                cnn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand("SP_INSERTAR_EQUIPO", cnn, t);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombre", oEquipo.Nombre);
+                cmd.Parameters.AddWithValue("@localidad", oEquipo.Nombre);
+                cmd.ExecuteNonQuery();
+                
+                if(oEquipo.Jugadores != null)
+                    foreach(EquipoPersona oEP in oEquipo.Jugadores)
+                    {
+                        SqlCommand cmd2 = new SqlCommand("SP_INSERTAR_EQUIPOS_PERSONAS", cnn, t);
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@cod_persona", oEquipo.Nombre);
+                        cmd2.Parameters.AddWithValue("@cod_equipo", oEquipo.Nombre);
+                        cmd2.Parameters.AddWithValue("@cod_posicion", oEquipo.Nombre);
+                        cmd2.Parameters.AddWithValue("@camiseta", oEquipo.Nombre);
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                if(oEquipo.Compromisos != null)
+                    foreach(Compromiso comp in oEquipo.Compromisos)
+                    {
+                        SqlCommand cmd3 = new SqlCommand("SP_INSERTAR_COMPROMISO", cnn, t);
+                        cmd3.CommandType = CommandType.StoredProcedure;
+                        cmd3.Parameters.AddWithValue("@cod_equipo", oEquipo.CodEquipo);
+                        cmd3.Parameters.AddWithValue("@cod_tipoCompromiso", comp.TipoCompromiso.CodCompromiso);
+                        cmd3.Parameters.AddWithValue("@comentariosCompromiso", comp.ComentariosCompromiso);
+                        cmd3.Parameters.AddWithValue("@fechaCompromiso", comp.FechaCompromiso);
+                        cmd3.ExecuteNonQuery();
+
+                    }
+                aux = true;
+                t.Commit();
+            }
+            catch
+            {
+                aux = false;
+                t.Rollback();
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
+
+
+
+            return aux;
+        }
+
+
+        public bool DeleteElementsIn3Tables(int idElemento, string spCommand1, string spCommand2, string spCommand3 = "")
         {
             bool aux = false;
             SqlTransaction t = null;
@@ -140,9 +200,19 @@ namespace EquiposBackend.Datos
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.AddWithValue("@codigo", idElemento);
                 cmd2.ExecuteNonQuery();
+                
+
+                if (!spCommand3.Equals(""))
+                {
+                    SqlCommand cmd3 = new SqlCommand(spCommand3, cnn, t);
+                    cmd3.CommandType = CommandType.StoredProcedure;
+                    cmd3.Parameters.AddWithValue("@codigo", idElemento);
+                    cmd3.ExecuteNonQuery();
+                    
+                }
+
                 t.Commit();
                 aux = true;
-
             }
             catch
             {
@@ -213,23 +283,23 @@ namespace EquiposBackend.Datos
                     string accountPass = reader.GetString(2);
                     var mailService = new MailServices.SystemSupportEmail();
                     mailService.SendEmail(
-                        subject: "Soporte Soccer: Password recovery request",
-                        body: "Hi, " + userName + "\nYou request to recover your password. \n" +
-                        "Your current password is : " + accountPass,
+                        subject: "Soporte Soccer: Solicitud de recupero de contraseña",
+                        body: "Hola, " + userName + "\nUsted solicito recuperar su contraseña. \n" +
+                        "Su contraseña actual es: " + accountPass,
                         recipientMail: new List<string> { userMail }
                         );
 
-                    aux = "Hi, " + userName + "\nYou requested to recover your password.\n" +
-                        "Please check your email: " + userMail + ", please also check the spam folder.";
+                    aux = "Hola, " + userName + "\nUsted solicito recuperar su contraseña.\n" +
+                        "Porfavor verifique en su email: " + userMail + ", porfavor tambien verifique en la casilla Spam.";
                 }
                 else
                 {
-                    aux = "Sorry, you do not have an account with that email";
+                    aux = "Usted no tiene una cuenta asociada con ese email";
                 }
             }
             catch (Exception)
             {
-                aux = "Error for send email";
+                aux = "Error al enviar";
             }
             return aux;
         }

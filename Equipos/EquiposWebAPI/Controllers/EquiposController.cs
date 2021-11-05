@@ -1,11 +1,7 @@
 ﻿using EquiposBackend.Dominio;
 using EquiposBackend.Negocio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EquiposWebAPI.Controllers
 {
@@ -21,6 +17,20 @@ namespace EquiposWebAPI.Controllers
         }
 
         //get
+
+
+        [HttpGet("equiposForDisplay")]
+        public IActionResult GetEquiposForDisplay(bool full)
+        {
+            return Ok(app.ConsultarEquiposForDisplay(full));
+        }
+
+        [HttpGet("compromisosForDisplay")]
+        public IActionResult GetCompromisosForDisplay(bool full)
+        {
+            return Ok(app.ConsultarCompromisosForDisplay(full));
+        }
+
 
         [HttpGet("paises")]
         public IActionResult GetPaises()
@@ -61,6 +71,7 @@ namespace EquiposWebAPI.Controllers
             return Ok(app.ConsultarPersonas());
         }
 
+
         [HttpGet("equiposPersonas")]
         public IActionResult GetEquiposPersonas()
         {
@@ -78,6 +89,13 @@ namespace EquiposWebAPI.Controllers
         {
             return Ok(app.ConsultarPiernaHabil());
         }
+
+        [HttpGet("posiciones")]
+        public IActionResult GetPosiciones()
+        {
+            return Ok(app.ConsultarPosiciones());
+        }
+
 
         [HttpGet("tipoCompromisos")]
         public IActionResult GetTiposCompromisos()
@@ -99,6 +117,26 @@ namespace EquiposWebAPI.Controllers
 
 
         //post
+
+        [HttpPost("crearEquipoFull")]
+        public IActionResult PostEquipoFull(Equipo oEquipo)
+        {
+            if (oEquipo == null)
+                return BadRequest();
+            if (app.CrearEquipoFull(oEquipo))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+
+        }
+
+        [HttpPost("consultarPersonasConFiltro")]
+        public IActionResult PostGetPersonasFiltradas(Dictionary<string,object> filtros)
+        {
+            return Ok(app.ConsultarPersonasFiltradas(filtros));
+            
+        }
+
 
         [HttpPost("insertarPais")]
         public IActionResult PostPais(Pais oPais)
@@ -126,13 +164,36 @@ namespace EquiposWebAPI.Controllers
         [HttpPost("insertarLocalidad")]
         public IActionResult PostLocalidad(Localidad oLocalidad)
         {
-            if (oLocalidad == null )
+            if (oLocalidad == null)
                 return BadRequest();
             if (app.CrearLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
             else
                 return Ok("No se pudo grabar!");
         }
+
+        [HttpPost("insertarTipoDocumento")]
+        public IActionResult PostTipoDocumento(TiposDocumentos oTipoDoc)
+        {
+            if (oTipoDoc == null)
+                return BadRequest();
+            if (app.CrearTipoDocumento(oTipoDoc))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+        }
+
+        [HttpPost("insertarTipoCompromiso")]
+        public IActionResult PostTipoCompromiso(TipoCompromisos oTipoComp)
+        {
+            if (oTipoComp == null)
+                return BadRequest();
+            if (app.CrearTipoCompromiso(oTipoComp))
+                return Ok("Se registró exitosamente!");
+            else
+                return Ok("No se pudo grabar!");
+        }
+
 
         [HttpPost("insertarPersona")]
         public IActionResult PostPersona(Persona oPersona)
@@ -162,9 +223,9 @@ namespace EquiposWebAPI.Controllers
             if (oEP == null)
                 return BadRequest();
             if (app.CrearEquipoPersona(oEP))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se registró exitosamente la inscripción del jugador: ");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo adherir el jugador: ");
         }
 
         //Put
@@ -186,10 +247,24 @@ namespace EquiposWebAPI.Controllers
             if (oEquipo == null)
                 return BadRequest();
             if (app.EditarEquipo(oEquipo))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se registraron las modificaciones exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo modificar!");
         }
+
+        [HttpPut("editarEquipoPersona")]
+        public IActionResult PutEquipoPersona(EquipoPersona oEP)
+        {
+            if (oEP == null)
+                return BadRequest();
+            if (app.EditarEquipoPersona(oEP))
+                return Ok("Se registró exitosamente la modificación del jugador: ");
+            else
+                return Ok("No se pudo editar la información del jugador: ");
+        }
+
+
+
 
         [HttpPut("editarPais")]
         public IActionResult PutPais(Pais oPais)
@@ -199,7 +274,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarPais(oPais))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
         [HttpPut("editarProvincia")]
@@ -210,7 +285,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarProvincia(oProvincia))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -222,7 +297,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -234,7 +309,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarTipoDocumento(oTipoDoc))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -246,7 +321,7 @@ namespace EquiposWebAPI.Controllers
             if (app.EditarTipoCompromiso(oTC))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se puedo grabar!");
+                return Ok("No se pudo grabar!");
         }
 
 
@@ -265,7 +340,10 @@ namespace EquiposWebAPI.Controllers
         {
             if (id == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.EliminarEquipo(id));
+            if (app.EliminarEquipo(id))
+                return Ok("El equipo se dio de baja satisfactoriamente!");
+            else
+                return Ok("Algo falló en la baja del equipo.");
         }
 
         [HttpDelete("jugador/{id}")]
@@ -273,7 +351,10 @@ namespace EquiposWebAPI.Controllers
         {
             if (id == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.QuitarJugadorDelEquipo(id));
+            if(app.QuitarJugadorDelEquipo(id))
+                return Ok("Se dio la baja satisfactoria del jugador: ");
+            else
+                return Ok("Algo falló en la baja del jugador: ");
         }
 
     }

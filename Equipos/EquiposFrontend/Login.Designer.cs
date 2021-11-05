@@ -53,22 +53,22 @@ namespace EquiposFrontend
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(804, 115);
+            this.label1.Location = new System.Drawing.Point(838, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 46);
+            this.label1.Size = new System.Drawing.Size(239, 46);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome back!";
+            this.label1.Text = "Bienvenido!";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(868, 173);
+            this.label2.Location = new System.Drawing.Point(850, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 25);
+            this.label2.Size = new System.Drawing.Size(227, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Sign in to continue";
+            this.label2.Text = "Ingrese para continuar";
             // 
             // lbl1
             // 
@@ -78,9 +78,9 @@ namespace EquiposFrontend
             this.lbl1.ForeColor = System.Drawing.Color.DimGray;
             this.lbl1.Location = new System.Drawing.Point(804, 294);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(157, 17);
+            this.lbl1.Size = new System.Drawing.Size(128, 17);
             this.lbl1.TabIndex = 2;
-            this.lbl1.Text = "Please enter Username";
+            this.lbl1.Text = "Ingrese un Usuario";
             // 
             // textBoxUsername
             // 
@@ -117,9 +117,9 @@ namespace EquiposFrontend
             this.lbl2.ForeColor = System.Drawing.Color.DimGray;
             this.lbl2.Location = new System.Drawing.Point(804, 405);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(153, 17);
+            this.lbl2.Size = new System.Drawing.Size(160, 17);
             this.lbl2.TabIndex = 5;
-            this.lbl2.Text = "Please enter Password";
+            this.lbl2.Text = "Ingrese una Contraseña";
             // 
             // btnLogin
             // 
@@ -131,7 +131,7 @@ namespace EquiposFrontend
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(157, 48);
             this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.Text = "INGRESO";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
             // 
@@ -165,13 +165,13 @@ namespace EquiposFrontend
             this.linklblOlvidoContra.BackColor = System.Drawing.Color.Transparent;
             this.linklblOlvidoContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linklblOlvidoContra.ForeColor = System.Drawing.Color.DimGray;
-            this.linklblOlvidoContra.LinkColor = System.Drawing.Color.DimGray;
-            this.linklblOlvidoContra.Location = new System.Drawing.Point(985, 483);
+            this.linklblOlvidoContra.LinkColor = System.Drawing.Color.Green;
+            this.linklblOlvidoContra.Location = new System.Drawing.Point(955, 483);
             this.linklblOlvidoContra.Name = "linklblOlvidoContra";
-            this.linklblOlvidoContra.Size = new System.Drawing.Size(137, 16);
+            this.linklblOlvidoContra.Size = new System.Drawing.Size(180, 16);
             this.linklblOlvidoContra.TabIndex = 9;
             this.linklblOlvidoContra.TabStop = true;
-            this.linklblOlvidoContra.Text = "Forgot your pasword?";
+            this.linklblOlvidoContra.Text = "¿No recuerda la contraseña?";
             this.linklblOlvidoContra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblOlvidoContra_LinkClicked);
             // 
             // lblErrorIncorrect
@@ -223,10 +223,10 @@ namespace EquiposFrontend
             this.linkLabelRegister.LinkColor = System.Drawing.Color.Green;
             this.linkLabelRegister.Location = new System.Drawing.Point(1083, 735);
             this.linkLabelRegister.Name = "linkLabelRegister";
-            this.linkLabelRegister.Size = new System.Drawing.Size(52, 16);
+            this.linkLabelRegister.Size = new System.Drawing.Size(58, 16);
             this.linkLabelRegister.TabIndex = 16;
             this.linkLabelRegister.TabStop = true;
-            this.linkLabelRegister.Text = "Sign up";
+            this.linkLabelRegister.Text = "Registro";
             this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
             // 
             // label3
@@ -235,11 +235,11 @@ namespace EquiposFrontend
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(919, 735);
+            this.label3.Location = new System.Drawing.Point(953, 735);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 17);
+            this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Don\'t have an account?";
+            this.label3.Text = "¿No tiene cuenta?";
             // 
             // Login
             // 

@@ -1,5 +1,7 @@
 ﻿using EquiposBackend.Dominio;
+using EquiposFrontend.Cliente;
 using EquiposFrontend.Reportes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EquiposFrontend
 {
     public partial class Inicio : Form
@@ -18,18 +21,42 @@ namespace EquiposFrontend
         public Inicio(Usuario usuario)
         {
             InitializeComponent();
-            oUsuario = usuario; 
+            oUsuario = usuario;
+            lblTitulo.Text = "Bienvenido " + usuario.User;
         }
 
         
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            CargarDgvEquiposAsync();
 
-
-
-                        
         }
+
+        private async void CargarDgvEquiposAsync()
+        {
+            string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
+            string resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
+            List<Equipo> lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
+
+            dgvEquipos.Rows.Clear();
+            if (lstEquipos != null)
+                foreach (Equipo oEquipo in lstEquipos)
+                {
+                    dgvEquipos.Rows.Add(new object[] 
+                    {
+                        oEquipo.CodEquipo,
+                        oEquipo.Nombre,
+                        oEquipo.Jugadores.Exists(item => item.CodPosicion ==12)?
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Apellido + ", " + 
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Nombre : "Sin entrenador",
+                        oEquipo.Jugadores == null? "Equipo sin Jugadores": oEquipo.Jugadores.Count(),
+                        oEquipo.FechaAlta.ToString("dd/MM/yyyy"),
+                        oEquipo.FechaBaja.HasValue? oEquipo.FechaBaja.Value.ToString("dd/MM/yyyy"): "Activo" 
+                    });
+                }
+        }
+
 
         private void Principal_FormClosing(object sender, EventArgs e)
         {
@@ -67,13 +94,6 @@ namespace EquiposFrontend
             frmTablasSoporte.Show();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure to Log Out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
         private void agregarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,9 +135,6 @@ namespace EquiposFrontend
         }
 
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
 
         private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -125,6 +142,84 @@ namespace EquiposFrontend
             reporte1.ShowDialog();
             
 
+        }
+
+
+
+
+        private void btnNvoEquipo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Agregar);
+            frmNvoEquipo.ShowDialog();
+            this.Show();
+            CargarDgvEquiposAsync();
+            
+        }
+
+        private void btnEditarEquipo_Click(object sender, EventArgs e)
+        {
+
+
+            if (dgvEquipos.SelectedRows.Count == 1)
+            {
+                int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                this.Hide();
+                FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar, nroEquipo);
+                frmNvoEquipo.ShowDialog();
+                this.Show();
+                CargarDgvEquiposAsync();
+
+            }
+
+        }
+
+        private void btnBajaEquipo_Click(object sender, EventArgs e)
+        {
+
+            if (dgvEquipos.SelectedRows.Count == 1)
+            {
+                if (dgvEquipos.CurrentRow.Cells["fechaBajaEquipo"].Value.ToString() != "Activo")
+                {
+                    MessageBox.Show("Equipo ya dado de baja!.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                this.Hide();
+                FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Eliminar, nroEquipo);
+                frmNvoEquipo.ShowDialog();
+                this.Show();
+                CargarDgvEquiposAsync();
+
+            }
+
+            
+        }
+
+
+        
+
+        private void btnNvaPersona_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            FrmABM_Persona frmNvaPersona = new FrmABM_Persona(Accion.Agregar);
+            frmNvaPersona.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEditarPersona_Click(object sender, EventArgs e)
+        {
+           // this.Hide();
+            FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
+            frmListarPersonas.ShowDialog();
+            this.Show();
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
