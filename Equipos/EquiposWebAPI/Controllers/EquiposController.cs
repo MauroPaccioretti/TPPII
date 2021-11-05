@@ -247,9 +247,9 @@ namespace EquiposWebAPI.Controllers
             if (oEquipo == null)
                 return BadRequest();
             if (app.EditarEquipo(oEquipo))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se registraron las modificaciones exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo modificar!");
         }
 
         [HttpPut("editarEquipoPersona")]

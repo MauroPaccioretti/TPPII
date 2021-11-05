@@ -398,6 +398,7 @@ namespace EquiposFrontend
                     return;
                 }
             }
+
             if(cmbLocalidad.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor elija una localidad para el equipo.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -410,9 +411,9 @@ namespace EquiposFrontend
                 case Accion.Agregar:
                     try
                     {
-                        string url = "https://localhost:44381/api/Equipos/crearEquipoFull";
-                        string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSONEquipoFull);
-                        MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+                        string urlEquipo = "https://localhost:44381/api/Equipos/crearEquipoFull";
+                        string resultadoEquipo = await ClienteSingleton.GetInstancia().PostAsync(urlEquipo, datosJSONEquipoFull);
+                        MessageBox.Show(resultadoEquipo, "Resultado", MessageBoxButtons.OK);
                     }
                     catch
                     {
@@ -421,8 +422,12 @@ namespace EquiposFrontend
                     }
                     break;
                 case Accion.Modificar:
+                                        
+                    string urlModificarEquipo = "https://localhost:44381/api/Equipos/editarEquipo";
+                    string resultadoModificarEquipo = await ClienteSingleton.GetInstancia().PostAsync(urlModificarEquipo, datosJSONEquipoFull);
+                    MessageBox.Show(resultadoModificarEquipo, "Resultado", MessageBoxButtons.OK);
 
-                    if(lstJugadoresAgregados.Count != 0)
+                    if (lstJugadoresAgregados.Count != 0)
                         foreach (EquipoPersona oEPagregados in lstJugadoresAgregados)
                         {
                             //hacer un insert para cada oEP
@@ -443,6 +448,7 @@ namespace EquiposFrontend
                             MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
 
                         }
+
 
                     break;
                 case Accion.Eliminar:
