@@ -53,6 +53,13 @@ namespace EquiposFrontend
             oEquipo = new Equipo();
             oCompromiso = new Compromiso();
             oEP = new EquipoPersona();
+            lstJugadoresOriginales = new List<EquipoPersona>();
+            lstJugadoresAgregados = new List<EquipoPersona>();
+            lstJugadoresEliminados = new List<EquipoPersona>();
+
+            lstCompromisosOriginales = new List<Compromiso>();
+            lstCompromisosAgregados = new List<Compromiso>();
+            lstCompromisosEliminados = new List<Compromiso>();
 
             switch (modo)
             {
@@ -88,8 +95,7 @@ namespace EquiposFrontend
 
             string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
             var resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
-            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
-            
+            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);            
 
             string urlCompromisos = "https://localhost:44381/api/Equipos/compromisos";
             var resultadoCompromisos = await ClienteSingleton.GetInstancia().GetAsync(urlCompromisos);
@@ -98,8 +104,6 @@ namespace EquiposFrontend
             string urlHabilidad = "https://localhost:44381/api/Equipos/piernaHabil";
             var resultadoHabilidad = await ClienteSingleton.GetInstancia().GetAsync(urlHabilidad);
             lstHabilidad = JsonConvert.DeserializeObject<List<PiernaHabil>>(resultadoHabilidad);
-
-
 
             string urlposiciones = "https://localhost:44381/api/Equipos/posiciones";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlposiciones);
@@ -110,7 +114,6 @@ namespace EquiposFrontend
             cmbPosiciones.ValueMember = "CodPosicion";
             cmbPosiciones.SelectedIndex = -1;
 
-
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
             lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
@@ -120,8 +123,6 @@ namespace EquiposFrontend
             cmbLocalidad.DisplayMember = "Nombre";
             cmbLocalidad.ValueMember = "IDLocalidad";
             cmbLocalidad.SelectedIndex = -1;
-
-
 
             string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
             string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
@@ -145,23 +146,26 @@ namespace EquiposFrontend
             {
                 case Accion.Agregar:
 
+                    //nro de equipo nuevo
                     if (lstEquipos.Count == 0)
                         oEquipo.CodEquipo = 1;
                     else
                         oEquipo.CodEquipo = lstEquipos.Max(t => t.CodEquipo) + 1;
-                    
+
+                    //nro compromiso nuevo
                     if (lstCompromisos.Count == 0)
                         codigoCompromiso = 1;
                     else
                         codigoCompromiso = lstCompromisos.Max(t => t.CodCompromiso) + 1;
 
+                    //fecha alta equipo
                     oEquipo.FechaAlta = DateTime.Today;
 
+                    //codigo Jugador (creo que no hace falta)
                     if (lstEquipoPersonas.Count == 0)
                         codigoEP = 1;
                     else
                         codigoEP = lstEquipoPersonas.Max(t => t.CodEP) + 1;
-
                     
                     CargarDGVPersonasDisponibles();
 
@@ -172,7 +176,15 @@ namespace EquiposFrontend
 
                     break;
                 case Accion.Eliminar:
-
+                    //inhabilitamos toda accion
+                    grbPersonasEquipo.Enabled = false;
+                    grbPersonasDisponibles.Enabled = false;
+                    grbCompromisosActuales.Enabled = false;
+                    grbCompromisosNvos.Enabled = false;
+                    txtNombreEquipo.Enabled = false;
+                    cmbLocalidad.Enabled = false;
+                    btnAgregarLocalidad.Enabled = false;
+                   
                     CargarEquipo();
                     
                     break;
@@ -195,20 +207,22 @@ namespace EquiposFrontend
 
         private void CargarDGVPersonasDisponibles()
         {
-
-           
+           //lista con todas las personas registradas
             List<Persona> lstPersonasDisponibles = new List<Persona>();
             lstPersonasDisponibles.AddRange(lstPersonas);
             
+            //quitamos las personas que estan en el equipo
             if (oEquipo.Jugadores.Count != 0)            
-                foreach (EquipoPersona oEP in oEquipo.Jugadores)               
-                    lstPersonasDisponibles.Remove(oEP.Persona);
+                foreach (EquipoPersona oEPRemov in oEquipo.Jugadores)               
+                    lstPersonasDisponibles.RemoveAll(item => item.CodPersona == oEPRemov.Persona.CodPersona);
             
-
+            //quitamos personas cuyo registro este como dada de baja
             lstPersonasDisponibles.RemoveAll(item => item.FechaBaja.HasValue);
+
 
             dgvPersonasDispo.Rows.Clear();
 
+            //si quedan personas disponibles, cargarlas en el dgv
             if (lstPersonasDisponibles.Count != 0)
                 foreach (Persona oPersona in lstPersonasDisponibles)
                 {
@@ -228,30 +242,43 @@ namespace EquiposFrontend
         private void CargarDGVPersonasJugando()
         {
             dgvPersonasEquipo.Rows.Clear();
-            if (oEquipo.Jugadores != null)
-                foreach (EquipoPersona oEP in oEquipo.Jugadores)
+            //quitamos los jugadores inactivos del equipo
+            List<EquipoPersona> lstJugadoresActivos = new List<EquipoPersona>();
+            lstJugadoresActivos.AddRange(oEquipo.Jugadores);
+            lstJugadoresActivos.RemoveAll(item => item.FechaBaja.HasValue);
+
+            //si el equipo no tiene jugadores, no hace nada, sino los carga
+            if (lstJugadoresActivos != null)
+                foreach (EquipoPersona oEPActivo in lstJugadoresActivos)
                 {
-                    if (!oEP.FechaAlta.ToString("dd/MM/yyyy").Equals("01/01/0001"))
-                        oEP.FechaAlta.ToString("dd/MM/yyyy");
-                    else
-                        oEP.FechaAlta = DateTime.Today;
+                    //este if creo que esta de mas
+                    //if (!oEPActivo.FechaAlta.ToString("dd/MM/yyyy").Equals("01/01/0001"))
+                    //    oEPActivo.FechaAlta.ToString("dd/MM/yyyy");
+                    //else
+                    //    oEPActivo.FechaAlta = DateTime.Today;
 
                     dgvPersonasEquipo.Rows.Add(new object[] {
-                    oEP.Persona.CodPersona,
-                    oEP.Persona.Apellido,
-                    lstPosiciones.Find(item => oEP.CodPosicion == item.codPosicion).NombrePosicion,                    
-                    lstHabilidad.Find(item => oEP.Persona.PiernaHabil == item.codPierna).Habilidad,
-                    oEP.Camiseta,
-                    oEP.FechaAlta.ToString("dd/MM/yyyy"),
+                    oEPActivo.Persona.CodPersona,
+                    oEPActivo.Persona.Apellido,
+                    lstPosiciones.Find(item => oEPActivo.CodPosicion == item.codPosicion).NombrePosicion,                    
+                    lstHabilidad.Find(item => oEPActivo.Persona.PiernaHabil == item.codPierna).Habilidad,
+                    oEPActivo.Camiseta,
+                    oEPActivo.FechaAlta.ToString("dd/MM/yyyy"),
                     "Quitar" });
                 }
         }
 
         private void CargarDGVCompromisos()
         {
+            //quitamos los compromisos dados de baja
+            List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
+            lstCompromisosActivos.AddRange(oEquipo.Compromisos);
+            lstCompromisosActivos.RemoveAll(item => item.FechaBaja.HasValue);
+
             dgvCompromisos.Rows.Clear();
+            //si quedan compromisos, los listamos
             if (oEquipo.Compromisos != null)
-                foreach (Compromiso oCompromiso in oEquipo.Compromisos)
+                foreach (Compromiso oCompromiso in lstCompromisosActivos)
                 {
 
                     dgvCompromisos.Rows.Add(new object[] {
@@ -271,23 +298,30 @@ namespace EquiposFrontend
         {
             if (dgvPersonasDispo.SelectedRows.Count == 1)
             {
-                if (ExisteJugadorEnEquipo(Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString())))
-                {
-                    MessageBox.Show("Jugador ya agregado al Equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //esta validacion no hace falta porque quitamos las personas del DGV de los disponibles
+                //if (ExisteJugadorEnEquipo(Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString())))
+                //{
+                //    MessageBox.Show("Jugador ya agregado al Equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
+
+
+                // asignamos la persona al equipo desde la lista de personas global
                 oEP.Persona = lstPersonas.Find(item => item.CodPersona == Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString()));
                 
+                //Agregamos la posicion de la persona en el equipo
                 if(cmbPosiciones.SelectedIndex == -1)
                 {
                     MessageBox.Show("Por favor seleccione una posición para jugar en el equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
 
                 }
+
                 Posicion oPosi = (Posicion)cmbPosiciones.SelectedItem;
                 oEP.CodPosicion = oPosi.codPosicion;
 
+                //agregamos los datos de la camiseta
                 if (txtCamiseta.Text.Trim().Equals(""))
                 {
                     MessageBox.Show("Por favor ingrese datos de la camiseta.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -295,19 +329,24 @@ namespace EquiposFrontend
                 }
 
                 oEP.Camiseta = txtCamiseta.Text;
+
+                //completamos datos restantes. CodEP creo que es innecesario.
                 oEP.CodEP = codigoEP++;
+                oEP.FechaAlta = DateTime.Today;
+
 
                 switch (modo)
                 {
-                    case Accion.Agregar:
+                    case Accion.Agregar: // cuando es Alta de nuevo equipo, no revisamos que jugador agregamos.
                         oEquipo.AgregarJugador(oEP);
                         CargarDGVPersonasJugando();
                         CargarDGVPersonasDisponibles();
-                        txtCamiseta.Text = "";
-                        cmbPosiciones.SelectedIndex = -1;
+                        LimpiarCamposJugadorNuevo();
 
                         break;
-                    case Accion.Modificar:
+                    case Accion.Modificar:// cuando es Modificacion, Primero miramos si hay jugadores... si no, lo agregamos a una nueva lista.
+                                          // Si hay jugadores, agregamos al jugador a una lista nueva para luego iterarla,
+                                          // pero confirmamos que no haya estado ya cargado en la lista
                         
                         int codJugadorAgregado = Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString());
                         if (lstJugadoresAgregados.Count == 0)
@@ -321,26 +360,33 @@ namespace EquiposFrontend
                                 lstJugadoresAgregados[indiceLstJugadoresAgregados] = oEP;
 
                         }
+                        //finalmente agregamos al jugador al equipo, para mantener la consistencia de los objetos.
                         oEquipo.AgregarJugador(oEP);
 
                         CargarDGVPersonasJugando();
                         CargarDGVPersonasDisponibles();
-
+                        LimpiarCamposJugadorNuevo();
                         break;
 
                 }                               
             }                
         }
 
-        private bool ExisteJugadorEnEquipo(int idJugador)
+        private void LimpiarCamposJugadorNuevo()
         {
-            foreach (DataGridViewRow fila in dgvPersonasEquipo.Rows)
-            {
-                if (fila.Cells["idJugador"].Value.Equals(idJugador))
-                    return true;
-            }
-            return false;
+            txtCamiseta.Text = "";
+            cmbPosiciones.SelectedIndex = -1;
         }
+
+        //private bool ExisteJugadorEnEquipo(int idJugador)
+        //{
+        //    foreach (DataGridViewRow fila in dgvPersonasEquipo.Rows)
+        //    {
+        //        if (fila.Cells["idJugador"].Value.Equals(idJugador))
+        //            return true;
+        //    }
+        //    return false;
+        //}
 
         private void btnAgregarCompromiso_Click(object sender, EventArgs e)
         {
@@ -480,7 +526,7 @@ namespace EquiposFrontend
         {
             switch (modo)
             {
-                case Accion.Agregar:
+                case Accion.Agregar: //Cuando es Alta de equipo, quitamos los jugadores sin problema
                     if (dgvPersonasEquipo.CurrentCell.ColumnIndex == 6)
                     {
                         oEquipo.QuitarJugador(Convert.ToInt32(dgvPersonasEquipo.CurrentRow.Cells["idJugador"].Value.ToString()));
@@ -489,7 +535,7 @@ namespace EquiposFrontend
                     }
 
                     break;
-                case Accion.Modificar:
+                case Accion.Modificar: //Cuando es modificacion de equipo, primero pedimos confirmacion
                     if (dgvPersonasEquipo.CurrentCell.ColumnIndex == 6)
                     {
                         if (MessageBox.Show("Esta seguro que desea quitar al jugador del equipo?",
@@ -499,6 +545,10 @@ namespace EquiposFrontend
                         {
                             return;
                         }
+                        //Tomamos el id del jugador que eliminamos y lo comparamos con la lista de jugadores originales que importamos
+                        //cuando trajimos el equipo.
+                        //Si el jugador esta en la lista original, lo agregamos a una lista para iterar los jugadores q daremos de baja;
+                        //Sino, lo eliminamos de los jugadores que estan en la lista para insertar nuevos jugadores al equipo.
                         int codJugadorEliminado = Convert.ToInt32(dgvPersonasEquipo.CurrentRow.Cells["idJugador"].Value.ToString());
                         if (lstJugadoresOriginales.Exists(item => codJugadorEliminado == item.Persona.CodPersona))
                             lstJugadoresEliminados.Add(lstJugadoresOriginales.Find(item => codJugadorEliminado == item.Persona.CodPersona));
@@ -507,19 +557,10 @@ namespace EquiposFrontend
                         
                         oEquipo.QuitarJugador(codJugadorEliminado);
                         dgvPersonasEquipo.Rows.Remove(dgvPersonasEquipo.CurrentRow);
+                        CargarDGVPersonasDisponibles();
                     }
-
-
                     break;
-                case Accion.Eliminar:
-
-                    break;
-
-            }
-
-
-
-            
+            }            
         }
 
         private void dgvCompromisos_CellContentClick(object sender, DataGridViewCellEventArgs e)

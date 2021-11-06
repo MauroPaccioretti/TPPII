@@ -47,9 +47,9 @@ namespace EquiposFrontend
             this.camiseta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quitarJugador = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbPersonasEquipo = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbPersonasDisponibles = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnNuevaPosicion = new System.Windows.Forms.Button();
             this.txtCamiseta = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@ namespace EquiposFrontend
             this.btnAgregarPersona = new System.Windows.Forms.Button();
             this.cmbTipoCompromiso = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grbCompromisosNvos = new System.Windows.Forms.GroupBox();
             this.dtpCompromiso = new System.Windows.Forms.DateTimePicker();
             this.btnNuevoCompromiso = new System.Windows.Forms.Button();
             this.btnAgregarCompromiso = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@ namespace EquiposFrontend
             this.label4 = new System.Windows.Forms.Label();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grbCompromisosActuales = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
             this.idCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,12 +87,12 @@ namespace EquiposFrontend
             this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grbPersonasEquipo.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbPersonasDisponibles.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.grbCompromisosNvos.SuspendLayout();
+            this.grbCompromisosActuales.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -247,19 +247,19 @@ namespace EquiposFrontend
             this.quitarJugador.Name = "quitarJugador";
             this.quitarJugador.ReadOnly = true;
             // 
-            // groupBox1
+            // grbPersonasEquipo
             // 
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.groupBox1.Location = new System.Drawing.Point(15, 591);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(851, 276);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Personas en el Equipo";
+            this.grbPersonasEquipo.Controls.Add(this.groupBox7);
+            this.grbPersonasEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grbPersonasEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.grbPersonasEquipo.Location = new System.Drawing.Point(15, 591);
+            this.grbPersonasEquipo.Margin = new System.Windows.Forms.Padding(4);
+            this.grbPersonasEquipo.Name = "grbPersonasEquipo";
+            this.grbPersonasEquipo.Padding = new System.Windows.Forms.Padding(4);
+            this.grbPersonasEquipo.Size = new System.Drawing.Size(851, 276);
+            this.grbPersonasEquipo.TabIndex = 2;
+            this.grbPersonasEquipo.TabStop = false;
+            this.grbPersonasEquipo.Text = "Personas en el Equipo";
             // 
             // groupBox7
             // 
@@ -271,24 +271,24 @@ namespace EquiposFrontend
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             // 
-            // groupBox2
+            // grbPersonasDisponibles
             // 
-            this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.btnNuevaPosicion);
-            this.groupBox2.Controls.Add(this.txtCamiseta);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnAgregarPersona);
-            this.groupBox2.Controls.Add(this.cmbPosiciones);
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.groupBox2.Location = new System.Drawing.Point(15, 113);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(851, 470);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personas Disponibles";
+            this.grbPersonasDisponibles.Controls.Add(this.groupBox5);
+            this.grbPersonasDisponibles.Controls.Add(this.btnNuevaPosicion);
+            this.grbPersonasDisponibles.Controls.Add(this.txtCamiseta);
+            this.grbPersonasDisponibles.Controls.Add(this.label6);
+            this.grbPersonasDisponibles.Controls.Add(this.label1);
+            this.grbPersonasDisponibles.Controls.Add(this.btnAgregarPersona);
+            this.grbPersonasDisponibles.Controls.Add(this.cmbPosiciones);
+            this.grbPersonasDisponibles.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.grbPersonasDisponibles.Location = new System.Drawing.Point(15, 113);
+            this.grbPersonasDisponibles.Margin = new System.Windows.Forms.Padding(4);
+            this.grbPersonasDisponibles.Name = "grbPersonasDisponibles";
+            this.grbPersonasDisponibles.Padding = new System.Windows.Forms.Padding(4);
+            this.grbPersonasDisponibles.Size = new System.Drawing.Size(851, 470);
+            this.grbPersonasDisponibles.TabIndex = 3;
+            this.grbPersonasDisponibles.TabStop = false;
+            this.grbPersonasDisponibles.Text = "Personas Disponibles";
             // 
             // groupBox5
             // 
@@ -376,25 +376,25 @@ namespace EquiposFrontend
             this.label2.TabIndex = 4;
             this.label2.Text = "Tipo de Compromiso:";
             // 
-            // groupBox3
+            // grbCompromisosNvos
             // 
-            this.groupBox3.Controls.Add(this.dtpCompromiso);
-            this.groupBox3.Controls.Add(this.btnNuevoCompromiso);
-            this.groupBox3.Controls.Add(this.btnAgregarCompromiso);
-            this.groupBox3.Controls.Add(this.txtCompromiso);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.cmbTipoCompromiso);
-            this.groupBox3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.groupBox3.Location = new System.Drawing.Point(892, 112);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(668, 339);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Compromisos del Equipo";
+            this.grbCompromisosNvos.Controls.Add(this.dtpCompromiso);
+            this.grbCompromisosNvos.Controls.Add(this.btnNuevoCompromiso);
+            this.grbCompromisosNvos.Controls.Add(this.btnAgregarCompromiso);
+            this.grbCompromisosNvos.Controls.Add(this.txtCompromiso);
+            this.grbCompromisosNvos.Controls.Add(this.label7);
+            this.grbCompromisosNvos.Controls.Add(this.label3);
+            this.grbCompromisosNvos.Controls.Add(this.label2);
+            this.grbCompromisosNvos.Controls.Add(this.cmbTipoCompromiso);
+            this.grbCompromisosNvos.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.grbCompromisosNvos.Location = new System.Drawing.Point(892, 112);
+            this.grbCompromisosNvos.Margin = new System.Windows.Forms.Padding(4);
+            this.grbCompromisosNvos.Name = "grbCompromisosNvos";
+            this.grbCompromisosNvos.Padding = new System.Windows.Forms.Padding(4);
+            this.grbCompromisosNvos.Size = new System.Drawing.Size(668, 339);
+            this.grbCompromisosNvos.TabIndex = 5;
+            this.grbCompromisosNvos.TabStop = false;
+            this.grbCompromisosNvos.Text = "Compromisos del Equipo";
             // 
             // dtpCompromiso
             // 
@@ -499,19 +499,19 @@ namespace EquiposFrontend
             this.label5.TabIndex = 4;
             this.label5.Text = "Localidad del equipo:";
             // 
-            // groupBox4
+            // grbCompromisosActuales
             // 
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.groupBox4.Location = new System.Drawing.Point(892, 460);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(668, 356);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Compromisos Actuales";
+            this.grbCompromisosActuales.Controls.Add(this.groupBox6);
+            this.grbCompromisosActuales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.grbCompromisosActuales.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.grbCompromisosActuales.Location = new System.Drawing.Point(892, 460);
+            this.grbCompromisosActuales.Margin = new System.Windows.Forms.Padding(4);
+            this.grbCompromisosActuales.Name = "grbCompromisosActuales";
+            this.grbCompromisosActuales.Padding = new System.Windows.Forms.Padding(4);
+            this.grbCompromisosActuales.Size = new System.Drawing.Size(668, 356);
+            this.grbCompromisosActuales.TabIndex = 9;
+            this.grbCompromisosActuales.TabStop = false;
+            this.grbCompromisosActuales.Text = "Compromisos Actuales";
             // 
             // groupBox6
             // 
@@ -688,16 +688,16 @@ namespace EquiposFrontend
             this.ClientSize = new System.Drawing.Size(1573, 880);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAgregarLocalidad);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.grbCompromisosActuales);
             this.Controls.Add(this.cmbLocalidad);
             this.Controls.Add(this.txtNombreEquipo);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.grbCompromisosNvos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarAccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbPersonasDisponibles);
+            this.Controls.Add(this.grbPersonasEquipo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -708,14 +708,14 @@ namespace EquiposFrontend
             this.Load += new System.EventHandler(this.FrmEquipoNuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.grbPersonasEquipo.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbPersonasDisponibles.ResumeLayout(false);
+            this.grbPersonasDisponibles.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.grbCompromisosNvos.ResumeLayout(false);
+            this.grbCompromisosNvos.PerformLayout();
+            this.grbCompromisosActuales.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -730,12 +730,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.ComboBox cmbPosiciones;
         private System.Windows.Forms.DataGridView dgvPersonasDispo;
         private System.Windows.Forms.DataGridView dgvPersonasEquipo;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbPersonasEquipo;
+        private System.Windows.Forms.GroupBox grbPersonasDisponibles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbTipoCompromiso;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grbCompromisosNvos;
         private System.Windows.Forms.Button btnAgregarCompromiso;
         private System.Windows.Forms.TextBox txtCompromiso;
         private System.Windows.Forms.Label label3;
@@ -746,7 +746,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCamiseta;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grbCompromisosActuales;
         private System.Windows.Forms.DataGridView dgvCompromisos;
         private System.Windows.Forms.Button btnConfirmarAccion;
         private System.Windows.Forms.Button btnCancelar;
