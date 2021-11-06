@@ -82,6 +82,7 @@ namespace EquiposFrontend
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.listadoDeEquiposActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +132,7 @@ namespace EquiposFrontend
             this.tiposDeCompromisosToolStripMenuItem});
             this.soporteToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(208, 60);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(122, 60);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // agregarPaísToolStripMenuItem
@@ -296,7 +297,8 @@ namespace EquiposFrontend
             // 
             this.reportesToolStripMenuItem.AutoSize = false;
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tablaDePosicionesToolStripMenuItem});
+            this.tablaDePosicionesToolStripMenuItem,
+            this.listadoDeEquiposActivosToolStripMenuItem});
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(208, 60);
@@ -616,7 +618,7 @@ namespace EquiposFrontend
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1588, 30);
+            this.panel1.Size = new System.Drawing.Size(1158, 30);
             this.panel1.TabIndex = 7;
             // 
             // lblTitulo
@@ -627,9 +629,17 @@ namespace EquiposFrontend
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblTitulo.Location = new System.Drawing.Point(627, 6);
             this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTitulo.Size = new System.Drawing.Size(57, 20);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
+            // 
+            // listadoDeEquiposActivosToolStripMenuItem
+            // 
+            this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
+            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 28);
+            this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
             // 
             // Inicio
             // 
@@ -637,7 +647,7 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1800, 516);
+            this.ClientSize = new System.Drawing.Size(1370, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -725,5 +735,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
     }
 }
