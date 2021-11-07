@@ -560,7 +560,7 @@ namespace EquiposBackend.Datos
             if (!oPersona.FechaBaja.HasValue)
                 parametros.Add("@fechaBaja", DBNull.Value);
             else
-                parametros.Add("fechaBaja", oPersona.FechaBaja);
+                parametros.Add("@fechaBaja", oPersona.FechaBaja);
 
             return helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
 

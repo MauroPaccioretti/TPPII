@@ -10,7 +10,7 @@ namespace ReportesTPPI.Datos_Reportes
 {
     class DatosDao
     {
-        private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-I4SKB1G\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+        private static SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
         private static SqlCommand cmd;
 
         public static DataTable Cargar_Combo()
