@@ -201,9 +201,9 @@ namespace EquiposWebAPI.Controllers
             if (oPersona == null)
                 return BadRequest();
             if (app.CrearPersona(oPersona))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se registró la persona exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo registrar la persona!");
         }
 
 
@@ -238,7 +238,7 @@ namespace EquiposWebAPI.Controllers
             if (oPersona == null)
                 return BadRequest();
             if (app.EditarPersona(oPersona))
-                return Ok("Se registró exitosamente!");
+                return Ok("Se editó exitosamente!");
             else
                 return Ok("No se pudo editar persona!");
         }

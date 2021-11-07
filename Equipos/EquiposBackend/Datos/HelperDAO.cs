@@ -306,7 +306,7 @@ namespace EquiposBackend.Datos
 
         public bool AlterOneElement( string spCommand, Dictionary<string , object> parametros = null )
         {
-            bool aux = false;
+            bool aux;
             try
             {
                 SqlTransaction t = null;
