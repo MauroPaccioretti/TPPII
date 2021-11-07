@@ -36,7 +36,7 @@ namespace EquiposFrontend
             {
             
                 this.Text = "Elija a que Provincia corresponde su Localidad";
-                lblEleccion.Text = "Elija a que Provincia corresponde su Localidad:";
+                lblEleccion.Text = "Elija a que Provincia\ncorresponde su Localidad:";
             }
     
         }

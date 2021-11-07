@@ -252,10 +252,14 @@ namespace EquiposFrontend
                                 url += "editarLocalidad";
 
                                 Localidad oLoc = new Localidad();
+
+                                oLoc = (Localidad)cmbPPL.SelectedItem;
                                 oLoc.Nombre = txtNombre.Text;
                                 FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
                                 frmProv.ShowDialog();
+                                //Provincia oProv = new Provincia();
                                 oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
+                                //oLoc.Provincia = oProv;
                                 datosJSON = JsonConvert.SerializeObject(oLoc);
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
 
