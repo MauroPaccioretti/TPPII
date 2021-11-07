@@ -116,14 +116,7 @@ namespace EquiposFrontend
                     cmbPPL.ValueMember = "CodCompromiso";
                     break;
             }
-
         }
-
-        private void cmbPPL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -147,16 +140,11 @@ namespace EquiposFrontend
             }
 
             if (MessageBox.Show(mensaje, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                //string nombreFormateado = HttpUtility.UrlPathEncode(txtNombre.Text);
-                string url = "https://localhost:44381/api/Equipos/";
-
-                bool aux = false;
-                string resultado;
-                //object objetoLocacion;
+            {              
+                string url = "https://localhost:44381/api/Equipos/";                                
+                string resultado;              
                 string datosJSON;
 
-                //bool aux = false;
                 switch (accion)
                 {
                     case Accion.Agregar:
@@ -168,23 +156,24 @@ namespace EquiposFrontend
                                 Pais oPais = new Pais();
                                 oPais.Nombre = txtNombre.Text;
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oPais));
-                                //aux = JsonConvert.DeserializeObject<bool>(resultado);
+                                
                                 MessageBox.Show(resultado, "Resultado");
                                 break;
+
                             case TablasSoporte.provincias:
 
                                 url += "insertarProvincia";
 
                                 Provincia oProvincia = new Provincia();
                                 oProvincia.Nombre = txtNombre.Text;
+
                                 FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
                                 frmPais.ShowDialog();
                                 oProvincia.Pais.IDPais = frmPais.IdEleccion;
                                 datosJSON = JsonConvert.SerializeObject(oProvincia);
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
-                                //aux = JsonConvert.DeserializeObject<bool>(resultado);
+                               
                                 MessageBox.Show(resultado, "Resultado");
-
                                 break;
 
                             case TablasSoporte.localidades:
@@ -201,11 +190,10 @@ namespace EquiposFrontend
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 
                                 MessageBox.Show(resultado, "Resultado");
-                                //aux = JsonConvert.DeserializeObject<bool>(resultado);
-
-
                                 break;
+
                             case TablasSoporte.tipoDocumentos:
+
                                 url += "insertarTipoDocumento";
 
                                 TiposDocumentos oTdoc = new TiposDocumentos();
@@ -214,8 +202,8 @@ namespace EquiposFrontend
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
 
                                 MessageBox.Show(resultado, "Resultado");
-
                                 break;
+
                             case TablasSoporte.tipoCompromisos:
 
                                 url += "insertarTipoCompromiso";
@@ -227,31 +215,78 @@ namespace EquiposFrontend
 
                                 MessageBox.Show(resultado, "Resultado");
                                 break;
-
                         }
-
                         break;
+
                     case Accion.Modificar:
                         switch (tabla)
                         {
                             case TablasSoporte.paises:
 
+                                url += "editarPais";
+
+                                Pais oPais = new Pais();
+                                oPais.Nombre = txtNombre.Text;
+                                resultado = await ClienteSingleton.GetInstancia().PutAsync(url, JsonConvert.SerializeObject(oPais));
+                                
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
+
                             case TablasSoporte.provincias:
 
+                                url += "editarProvincia";
+
+                                Provincia oProvincia = new Provincia();
+                                oProvincia.Nombre = txtNombre.Text;
+                                FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
+                                frmPais.ShowDialog();
+                                oProvincia.Pais.IDPais = frmPais.IdEleccion;
+                                datosJSON = JsonConvert.SerializeObject(oProvincia);
+                                resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
+                       
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
+
                             case TablasSoporte.localidades:
 
+                                url += "editarLocalidad";
+
+                                Localidad oLoc = new Localidad();
+                                oLoc.Nombre = txtNombre.Text;
+                                FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
+                                frmProv.ShowDialog();
+                                oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
+                                datosJSON = JsonConvert.SerializeObject(oLoc);
+                                resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
+
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
+
                             case TablasSoporte.tipoDocumentos:
 
+                                url += "editarTipoDocumento";
+
+                                TiposDocumentos oTdoc = new TiposDocumentos();
+                                oTdoc.TipoDoc = txtNombre.Text;
+                                datosJSON = JsonConvert.SerializeObject(oTdoc);
+                                resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
+
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
+
                             case TablasSoporte.tipoCompromisos:
 
+                                url += "editarTipoCompromisos";
+
+                                TipoCompromisos oTC = new TipoCompromisos();
+                                oTC.NombreCompromiso = txtNombre.Text;
+                                datosJSON = JsonConvert.SerializeObject(oTC);
+                                resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
+
+                                MessageBox.Show(resultado, "Resultado");
                                 break;
 
                         }
-
                         break;
                 }
 

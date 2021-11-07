@@ -151,7 +151,7 @@ namespace EquiposFrontend
             this.cmbPPL.Name = "cmbPPL";
             this.cmbPPL.Size = new System.Drawing.Size(300, 24);
             this.cmbPPL.TabIndex = 5;
-            this.cmbPPL.SelectedIndexChanged += new System.EventHandler(this.cmbPPL_SelectedIndexChanged);
+            
             // 
             // lblEleccion
             // 

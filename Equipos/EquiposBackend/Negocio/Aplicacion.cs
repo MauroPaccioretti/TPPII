@@ -192,6 +192,11 @@ namespace EquiposBackend.Negocio
             return dao.RemoveJugadorDelEquipo(codJugador);
         }
 
+        public bool EliminarCompromiso(int idCompromiso)
+        {
+            return dao.DeleteCompromiso(idCompromiso);
+        }
+
 
         // LOGIN
 

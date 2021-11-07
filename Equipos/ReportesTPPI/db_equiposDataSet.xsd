@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_equiposConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_equiposConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReportesTPPI.Properties.Settings.GlobalReference.Default.db_equiposConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_equiposConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_equiposConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReportesTPPI.Properties.Settings.GlobalReference.Default.db_equiposConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CompromisosTableAdapter" GeneratorDataComponentClassName="CompromisosTableAdapter" Name="Compromisos" UserDataComponentName="CompromisosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Compromisos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Compromisos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Compromisos] WHERE (([cod_compromiso] = @Original_cod_compromiso) AND ([cod_equipo] = @Original_cod_equipo) AND ([cod_tipoCompromiso] = @Original_cod_tipoCompromiso) AND ((@IsNull_comentariosCompromiso = 1 AND [comentariosCompromiso] IS NULL) OR ([comentariosCompromiso] = @Original_comentariosCompromiso)) AND ((@IsNull_fechaCompromiso = 1 AND [fechaCompromiso] IS NULL) OR ([fechaCompromiso] = @Original_fechaCompromiso)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)))</CommandText>
@@ -90,7 +90,7 @@ SELECT cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fe
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EquiposTableAdapter" GeneratorDataComponentClassName="EquiposTableAdapter" Name="Equipos" UserDataComponentName="EquiposTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Equipos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Equipos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Equipos] WHERE (([cod_equipo] = @Original_cod_equipo) AND ([cod_localidad] = @Original_cod_localidad) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)))</CommandText>
@@ -159,7 +159,7 @@ SELECT cod_equipo, cod_localidad, nombre, fechaAlta, fechaBaja FROM Equipos WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Equipos_PersonasTableAdapter" GeneratorDataComponentClassName="Equipos_PersonasTableAdapter" Name="Equipos_Personas" UserDataComponentName="Equipos_PersonasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Equipos_Personas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Equipos_Personas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Equipos_Personas] WHERE (([cod_equipoPersona] = @Original_cod_equipoPersona) AND ([cod_persona] = @Original_cod_persona) AND ([cod_equipo] = @Original_cod_equipo) AND ([cod_posicion] = @Original_cod_posicion) AND ((@IsNull_camiseta = 1 AND [camiseta] IS NULL) OR ([camiseta] = @Original_camiseta)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)))</CommandText>
@@ -238,7 +238,7 @@ SELECT cod_equipoPersona, cod_persona, cod_equipo, cod_posicion, camiseta, fecha
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocalidadesTableAdapter" GeneratorDataComponentClassName="LocalidadesTableAdapter" Name="Localidades" UserDataComponentName="LocalidadesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Localidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Localidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Localidades] WHERE (([cod_localidad] = @Original_cod_localidad) AND ((@IsNull_nombre_localidad = 1 AND [nombre_localidad] IS NULL) OR ([nombre_localidad] = @Original_nombre_localidad)) AND ([cod_provincia] = @Original_cod_provincia))</CommandText>
@@ -293,7 +293,7 @@ SELECT cod_localidad, nombre_localidad, cod_provincia FROM Localidades WHERE (co
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaisesTableAdapter" GeneratorDataComponentClassName="PaisesTableAdapter" Name="Paises" UserDataComponentName="PaisesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Paises" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Paises" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Paises] WHERE (([cod_pais] = @Original_cod_pais) AND ((@IsNull_nombre_pais = 1 AND [nombre_pais] IS NULL) OR ([nombre_pais] = @Original_nombre_pais)))</CommandText>
@@ -343,7 +343,7 @@ SELECT cod_pais, nombre_pais FROM Paises WHERE (cod_pais = @cod_pais)</CommandTe
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PersonasTableAdapter" GeneratorDataComponentClassName="PersonasTableAdapter" Name="Personas" UserDataComponentName="PersonasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Personas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Personas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Personas] WHERE (([cod_persona] = @Original_cod_persona) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ([cod_tipoDoc] = @Original_cod_tipoDoc) AND ((@IsNull_numeroDocumento = 1 AND [numeroDocumento] IS NULL) OR ([numeroDocumento] = @Original_numeroDocumento)) AND ((@IsNull_fechaNac = 1 AND [fechaNac] IS NULL) OR ([fechaNac] = @Original_fechaNac)) AND ([cod_piernaHabil] = @Original_cod_piernaHabil) AND ([peso] = @Original_peso) AND ([estatura] = @Original_estatura) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)))</CommandText>
@@ -448,7 +448,7 @@ SELECT cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, co
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PiernasTableAdapter" GeneratorDataComponentClassName="PiernasTableAdapter" Name="Piernas" UserDataComponentName="PiernasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Piernas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Piernas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Piernas] WHERE (([cod_piernaHabil] = @Original_cod_piernaHabil) AND ((@IsNull_habilidad = 1 AND [habilidad] IS NULL) OR ([habilidad] = @Original_habilidad)))</CommandText>
@@ -498,7 +498,7 @@ SELECT cod_piernaHabil, habilidad FROM Piernas WHERE (cod_piernaHabil = @cod_pie
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PosicionesTableAdapter" GeneratorDataComponentClassName="PosicionesTableAdapter" Name="Posiciones" UserDataComponentName="PosicionesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Posiciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Posiciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Posiciones] WHERE (([cod_posicion] = @Original_cod_posicion) AND ((@IsNull_posicion = 1 AND [posicion] IS NULL) OR ([posicion] = @Original_posicion)))</CommandText>
@@ -548,7 +548,7 @@ SELECT cod_posicion, posicion FROM Posiciones WHERE (cod_posicion = @cod_posicio
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProvinciasTableAdapter" GeneratorDataComponentClassName="ProvinciasTableAdapter" Name="Provincias" UserDataComponentName="ProvinciasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Provincias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Provincias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Provincias] WHERE (([cod_provincia] = @Original_cod_provincia) AND ((@IsNull_nombre_provincia = 1 AND [nombre_provincia] IS NULL) OR ([nombre_provincia] = @Original_nombre_provincia)) AND ([cod_pais] = @Original_cod_pais))</CommandText>
@@ -603,7 +603,7 @@ SELECT cod_provincia, nombre_provincia, cod_pais FROM Provincias WHERE (cod_prov
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TiposCompromisosTableAdapter" GeneratorDataComponentClassName="TiposCompromisosTableAdapter" Name="TiposCompromisos" UserDataComponentName="TiposCompromisosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.TiposCompromisos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.TiposCompromisos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TiposCompromisos] WHERE (([cod_tipoCompromiso] = @Original_cod_tipoCompromiso) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)))</CommandText>
@@ -653,7 +653,7 @@ SELECT cod_tipoCompromiso, tipo FROM TiposCompromisos WHERE (cod_tipoCompromiso 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TiposDocsTableAdapter" GeneratorDataComponentClassName="TiposDocsTableAdapter" Name="TiposDocs" UserDataComponentName="TiposDocsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.TiposDocs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.TiposDocs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TiposDocs] WHERE (([cod_tipoDoc] = @Original_cod_tipoDoc) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)))</CommandText>
@@ -703,7 +703,7 @@ SELECT cod_tipoDoc, tipo FROM TiposDocs WHERE (cod_tipoDoc = @cod_tipoDoc)</Comm
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosTableAdapter" GeneratorDataComponentClassName="UsuariosTableAdapter" Name="Usuarios" UserDataComponentName="UsuariosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Usuarios] WHERE (([cod_usuario] = @Original_cod_usuario) AND ((@IsNull_usuario = 1 AND [usuario] IS NULL) OR ([usuario] = @Original_usuario)) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)))</CommandText>
@@ -774,7 +774,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_COMPROMISOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_COMPROMISOSTableAdapter" Name="SP_CONSULTAR_COMPROMISOS" UserDataComponentName="SP_CONSULTAR_COMPROMISOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_COMPROMISOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_COMPROMISOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_COMPROMISOS</CommandText>
@@ -796,29 +796,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASTableAdapter" Name="SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" UserDataComponentName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Nombre del Equipo" DataSetColumn="Nombre del Equipo" />
-              <Mapping SourceColumn="Tipo de compromiso" DataSetColumn="Tipo de compromiso" />
-              <Mapping SourceColumn="Fecha del compromiso" DataSetColumn="Fecha del compromiso" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSTableAdapter" Name="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" UserDataComponentName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS</CommandText>
@@ -842,7 +822,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOSTableAdapter" Name="SP_CONSULTAR_EQUIPOS" UserDataComponentName="SP_CONSULTAR_EQUIPOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_EQUIPOS</CommandText>
@@ -864,7 +844,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_ACTIVOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_ACTIVOSTableAdapter" Name="SP_CONSULTAR_EQUIPOS_ACTIVOS" UserDataComponentName="SP_CONSULTAR_EQUIPOS_ACTIVOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_EQUIPOS_ACTIVOS</CommandText>
@@ -884,12 +864,12 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASTableAdapter" Name="SP_CONSULTAR_EQUIPOS_CON_COLUMNAS" UserDataComponentName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter" Name="SP_CONSULTAR_EQUIPOS_LOCALIDAD" UserDataComponentName="SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_CON_COLUMNAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_LOCALIDAD" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CONSULTAR_EQUIPOS_CON_COLUMNAS</CommandText>
+                    <CommandText>dbo.SP_CONSULTAR_EQUIPOS_LOCALIDAD</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -898,16 +878,16 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Nombre del Equipo" DataSetColumn="Nombre del Equipo" />
-              <Mapping SourceColumn="Nombre Entrenador" DataSetColumn="Nombre Entrenador" />
-              <Mapping SourceColumn="Cantidad de Jugadores" DataSetColumn="Cantidad de Jugadores" />
-              <Mapping SourceColumn="Fecha de Alta" DataSetColumn="Fecha de Alta" />
+              <Mapping SourceColumn="Equipo" DataSetColumn="Equipo" />
+              <Mapping SourceColumn="Localidad" DataSetColumn="Localidad" />
+              <Mapping SourceColumn="Provincia" DataSetColumn="Provincia" />
+              <Mapping SourceColumn="Pais" DataSetColumn="Pais" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_PERSONASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_PERSONASTableAdapter" Name="SP_CONSULTAR_EQUIPOS_PERSONAS" UserDataComponentName="SP_CONSULTAR_EQUIPOS_PERSONASTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_PERSONAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_PERSONAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_EQUIPOS_PERSONAS</CommandText>
@@ -931,7 +911,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSTableAdapter" Name="SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOS" UserDataComponentName="SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOS</CommandText>
@@ -955,7 +935,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_EQUIPOS_POR_IDTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_EQUIPOS_POR_IDTableAdapter" Name="SP_CONSULTAR_EQUIPOS_POR_ID" UserDataComponentName="SP_CONSULTAR_EQUIPOS_POR_IDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_POR_ID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_EQUIPOS_POR_ID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_EQUIPOS_POR_ID</CommandText>
@@ -996,7 +976,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_LOCALIDADESTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_LOCALIDADESTableAdapter" Name="SP_CONSULTAR_LOCALIDADES" UserDataComponentName="SP_CONSULTAR_LOCALIDADESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_LOCALIDADES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_LOCALIDADES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_LOCALIDADES</CommandText>
@@ -1016,7 +996,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PAISESTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PAISESTableAdapter" Name="SP_CONSULTAR_PAISES" UserDataComponentName="SP_CONSULTAR_PAISESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PAISES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PAISES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_PAISES</CommandText>
@@ -1035,7 +1015,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PERSONASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PERSONASTableAdapter" Name="SP_CONSULTAR_PERSONAS" UserDataComponentName="SP_CONSULTAR_PERSONASTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PERSONAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PERSONAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_PERSONAS</CommandText>
@@ -1063,7 +1043,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PERSONAS_ACTIVASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PERSONAS_ACTIVASTableAdapter" Name="SP_CONSULTAR_PERSONAS_ACTIVAS" UserDataComponentName="SP_CONSULTAR_PERSONAS_ACTIVASTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PERSONAS_ACTIVAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PERSONAS_ACTIVAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_PERSONAS_ACTIVAS</CommandText>
@@ -1089,9 +1069,49 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PERSONAS_CONFILTROTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PERSONAS_CONFILTROTableAdapter" Name="SP_CONSULTAR_PERSONAS_CONFILTRO" UserDataComponentName="SP_CONSULTAR_PERSONAS_CONFILTROTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PERSONAS_CONFILTRO" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CONSULTAR_PERSONAS_CONFILTRO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fechaDesde" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fechaHasta" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@tipoDoc" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@nroDoc" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@estaturaDesde" Precision="6" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@estaturaHasta" Precision="6" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@pesoDesde" Precision="5" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@pesoHasta" Precision="5" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@tipoPierna" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@baja" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cod_persona" DataSetColumn="cod_persona" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="cod_tipoDoc" DataSetColumn="cod_tipoDoc" />
+              <Mapping SourceColumn="numeroDocumento" DataSetColumn="numeroDocumento" />
+              <Mapping SourceColumn="fechaNac" DataSetColumn="fechaNac" />
+              <Mapping SourceColumn="cod_piernaHabil" DataSetColumn="cod_piernaHabil" />
+              <Mapping SourceColumn="peso" DataSetColumn="peso" />
+              <Mapping SourceColumn="estatura" DataSetColumn="estatura" />
+              <Mapping SourceColumn="fechaAlta" DataSetColumn="fechaAlta" />
+              <Mapping SourceColumn="fechaBaja" DataSetColumn="fechaBaja" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PIERNASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PIERNASTableAdapter" Name="SP_CONSULTAR_PIERNAS" UserDataComponentName="SP_CONSULTAR_PIERNASTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PIERNAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PIERNAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_PIERNAS</CommandText>
@@ -1110,7 +1130,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_POSICIONESTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_POSICIONESTableAdapter" Name="SP_CONSULTAR_POSICIONES" UserDataComponentName="SP_CONSULTAR_POSICIONESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_POSICIONES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_POSICIONES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_POSICIONES</CommandText>
@@ -1129,7 +1149,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_PROVINCIASTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_PROVINCIASTableAdapter" Name="SP_CONSULTAR_PROVINCIAS" UserDataComponentName="SP_CONSULTAR_PROVINCIASTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PROVINCIAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_PROVINCIAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_PROVINCIAS</CommandText>
@@ -1149,7 +1169,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_TIPOS_COMPROMISOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_TIPOS_COMPROMISOSTableAdapter" Name="SP_CONSULTAR_TIPOS_COMPROMISOS" UserDataComponentName="SP_CONSULTAR_TIPOS_COMPROMISOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_TIPOS_COMPROMISOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_TIPOS_COMPROMISOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_TIPOS_COMPROMISOS</CommandText>
@@ -1168,7 +1188,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_TIPOS_DOCTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_TIPOS_DOCTableAdapter" Name="SP_CONSULTAR_TIPOS_DOC" UserDataComponentName="SP_CONSULTAR_TIPOS_DOCTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_TIPOS_DOC" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_TIPOS_DOC" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_TIPOS_DOC</CommandText>
@@ -1187,7 +1207,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_USUARIOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_USUARIOSTableAdapter" Name="SP_CONSULTAR_USUARIOS" UserDataComponentName="SP_CONSULTAR_USUARIOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_USUARIOS</CommandText>
@@ -1209,7 +1229,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_USUARIOS_ACTIVOSTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_USUARIOS_ACTIVOSTableAdapter" Name="SP_CONSULTAR_USUARIOS_ACTIVOS" UserDataComponentName="SP_CONSULTAR_USUARIOS_ACTIVOSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS_ACTIVOS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_USUARIOS_ACTIVOS</CommandText>
@@ -1231,7 +1251,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CONSULTAR_USUARIOS_LOGINTableAdapter" GeneratorDataComponentClassName="SP_CONSULTAR_USUARIOS_LOGINTableAdapter" Name="SP_CONSULTAR_USUARIOS_LOGIN" UserDataComponentName="SP_CONSULTAR_USUARIOS_LOGINTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS_LOGIN" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_CONSULTAR_USUARIOS_LOGIN" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CONSULTAR_USUARIOS_LOGIN</CommandText>
@@ -1253,9 +1273,28 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_HABILIDADES_PERSONASTableAdapter" GeneratorDataComponentClassName="SP_HABILIDADES_PERSONASTableAdapter" Name="SP_HABILIDADES_PERSONAS" UserDataComponentName="SP_HABILIDADES_PERSONASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_HABILIDADES_PERSONAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_HABILIDADES_PERSONAS</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Habilidad" DataSetColumn="Habilidad" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RECOVERY_PASSWORDTableAdapter" GeneratorDataComponentClassName="SP_RECOVERY_PASSWORDTableAdapter" Name="SP_RECOVERY_PASSWORD" UserDataComponentName="SP_RECOVERY_PASSWORDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_RECOVERY_PASSWORD" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_RECOVERY_PASSWORD" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_RECOVERY_PASSWORD</CommandText>
@@ -1278,7 +1317,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SP_BAJA_COMPROMISO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SP_BAJA_COMPROMISO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_COMPROMISO</CommandText>
@@ -1289,7 +1328,18 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SP_BAJA_EQUIPO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_COMPROMISO_POREQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_COMPROMISO_POREQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_COMPROMISO_POREQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SP_BAJA_COMPROMISO_POREQUIPO">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.SP_BAJA_COMPROMISO_POREQUIPO</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SP_BAJA_EQUIPO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_EQUIPO</CommandText>
@@ -1300,7 +1350,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_PORDETALLE" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_PORDETALLE" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_PORDETALLE" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SP_BAJA_EQUIPO_PERSONA_PORDETALLE">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_PORDETALLE" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_PORDETALLE" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_PORDETALLE" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SP_BAJA_EQUIPO_PERSONA_PORDETALLE">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_EQUIPO_PERSONA_PORDETALLE</CommandText>
@@ -1311,7 +1361,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_POREQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_POREQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_POREQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SP_BAJA_EQUIPO_PERSONA_POREQUIPO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_POREQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_POREQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_POREQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SP_BAJA_EQUIPO_PERSONA_POREQUIPO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_EQUIPO_PERSONA_POREQUIPO</CommandText>
@@ -1322,7 +1372,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_PORPERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_PORPERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_PORPERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SP_BAJA_EQUIPO_PERSONA_PORPERSONA">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_EQUIPO_PERSONA_PORPERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_EQUIPO_PERSONA_PORPERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_EQUIPO_PERSONA_PORPERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SP_BAJA_EQUIPO_PERSONA_PORPERSONA">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_EQUIPO_PERSONA_PORPERSONA</CommandText>
@@ -1333,7 +1383,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SP_BAJA_PERSONA">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_BAJA_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_BAJA_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_BAJA_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SP_BAJA_PERSONA">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_BAJA_PERSONA</CommandText>
@@ -1344,7 +1394,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SP_EDITAR_COMPROMISO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="SP_EDITAR_COMPROMISO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_EDITAR_COMPROMISO</CommandText>
@@ -1361,7 +1411,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="SP_EDITAR_EQUIPO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="SP_EDITAR_EQUIPO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_EDITAR_EQUIPO</CommandText>
@@ -1375,7 +1425,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="SP_EDITAR_EQUIPO_PERSONA_PORDETALLE">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_EDITAR_EQUIPO_PERSONA_PORDETALLE</CommandText>
@@ -1392,7 +1442,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="SP_EDITAR_PERSONA">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="SP_EDITAR_PERSONA">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_EDITAR_PERSONA</CommandText>
@@ -1413,7 +1463,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_USUARIO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_USUARIO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_USUARIO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="SP_EDITAR_USUARIO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_EDITAR_USUARIO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_EDITAR_USUARIO" MethodsParameterType="CLR" Modifier="Public" Name="SP_EDITAR_USUARIO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="SP_EDITAR_USUARIO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_EDITAR_USUARIO</CommandText>
@@ -1427,7 +1477,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="SP_INSERTAR_COMPROMISO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="SP_INSERTAR_COMPROMISO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_COMPROMISO</CommandText>
@@ -1441,7 +1491,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="SP_INSERTAR_EQUIPO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_EQUIPO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_EQUIPO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_EQUIPO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="SP_INSERTAR_EQUIPO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_EQUIPO</CommandText>
@@ -1453,7 +1503,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_EQUIPOS_PERSONAS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_EQUIPOS_PERSONAS" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_EQUIPOS_PERSONAS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="SP_INSERTAR_EQUIPOS_PERSONAS">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_EQUIPOS_PERSONAS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_EQUIPOS_PERSONAS" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_EQUIPOS_PERSONAS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="SP_INSERTAR_EQUIPOS_PERSONAS">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_EQUIPOS_PERSONAS</CommandText>
@@ -1467,7 +1517,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_LOCALIDAD" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_LOCALIDAD" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_LOCALIDAD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="SP_INSERTAR_LOCALIDAD">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_LOCALIDAD" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_LOCALIDAD" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_LOCALIDAD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="SP_INSERTAR_LOCALIDAD">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_LOCALIDAD</CommandText>
@@ -1479,7 +1529,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PAIS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PAIS" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PAIS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="SP_INSERTAR_PAIS">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PAIS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PAIS" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PAIS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="SP_INSERTAR_PAIS">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_PAIS</CommandText>
@@ -1490,7 +1540,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="SP_INSERTAR_PERSONA">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PERSONA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PERSONA" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PERSONA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="SP_INSERTAR_PERSONA">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_PERSONA</CommandText>
@@ -1508,7 +1558,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PROVINCIA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PROVINCIA" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PROVINCIA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="SP_INSERTAR_PROVINCIA">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_PROVINCIA" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_PROVINCIA" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_PROVINCIA" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="SP_INSERTAR_PROVINCIA">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_PROVINCIA</CommandText>
@@ -1520,7 +1570,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_TIPO_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_TIPO_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_TIPO_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="SP_INSERTAR_TIPO_COMPROMISO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_TIPO_COMPROMISO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_TIPO_COMPROMISO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_TIPO_COMPROMISO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy19" UserSourceName="SP_INSERTAR_TIPO_COMPROMISO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_TIPO_COMPROMISO</CommandText>
@@ -1531,7 +1581,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_TIPO_DOC" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_TIPO_DOC" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_TIPO_DOC" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy19" UserSourceName="SP_INSERTAR_TIPO_DOC">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_TIPO_DOC" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_TIPO_DOC" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_TIPO_DOC" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy20" UserSourceName="SP_INSERTAR_TIPO_DOC">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_TIPO_DOC</CommandText>
@@ -1542,7 +1592,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="db_equiposConnectionString (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_USUARIO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_USUARIO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_USUARIO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy20" UserSourceName="SP_INSERTAR_USUARIO">
+          <DbSource ConnectionRef="db_equiposConnectionString1 (Settings)" DbObjectName="db_equipos.dbo.SP_INSERTAR_USUARIO" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SP_INSERTAR_USUARIO" MethodsParameterType="CLR" Modifier="Public" Name="SP_INSERTAR_USUARIO" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy21" UserSourceName="SP_INSERTAR_USUARIO">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.SP_INSERTAR_USUARIO</CommandText>
@@ -1793,27 +1843,6 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" msprop:Generator_TableClassName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" msprop:Generator_TablePropName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" msprop:Generator_RowDeletingName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS" msprop:Generator_RowChangedName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Nombre_x0020_del_x0020_Equipo" msprop:Generator_ColumnVarNameInTable="columnNombre_del_Equipo" msprop:Generator_ColumnPropNameInRow="Nombre_del_Equipo" msprop:Generator_ColumnPropNameInTable="Nombre_del_EquipoColumn" msprop:Generator_UserColumnName="Nombre del Equipo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tipo_x0020_de_x0020_compromiso" msprop:Generator_ColumnVarNameInTable="columnTipo_de_compromiso" msprop:Generator_ColumnPropNameInRow="Tipo_de_compromiso" msprop:Generator_ColumnPropNameInTable="Tipo_de_compromisoColumn" msprop:Generator_UserColumnName="Tipo de compromiso" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Fecha_x0020_del_x0020_compromiso" msprop:Generator_ColumnVarNameInTable="columnFecha_del_compromiso" msprop:Generator_ColumnPropNameInRow="Fecha_del_compromiso" msprop:Generator_ColumnPropNameInTable="Fecha_del_compromisoColumn" msprop:Generator_UserColumnName="Fecha del compromiso" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" msprop:Generator_TableClassName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" msprop:Generator_TablePropName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" msprop:Generator_RowDeletingName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS" msprop:Generator_RowChangedName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRow">
           <xs:complexType>
             <xs:sequence>
@@ -1867,25 +1896,37 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_CONSULTAR_EQUIPOS_CON_COLUMNAS" msprop:Generator_TableClassName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS" msprop:Generator_TablePropName="SP_CONSULTAR_EQUIPOS_CON_COLUMNAS" msprop:Generator_RowDeletingName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_EQUIPOS_CON_COLUMNAS" msprop:Generator_RowChangedName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow">
+        <xs:element name="SP_CONSULTAR_EQUIPOS_LOCALIDAD" msprop:Generator_TableClassName="SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_EQUIPOS_LOCALIDAD" msprop:Generator_TablePropName="SP_CONSULTAR_EQUIPOS_LOCALIDAD" msprop:Generator_RowDeletingName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_EQUIPOS_LOCALIDAD" msprop:Generator_RowChangedName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_EQUIPOS_LOCALIDADRowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_EQUIPOS_LOCALIDADRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Nombre_x0020_del_x0020_Equipo" msprop:Generator_ColumnVarNameInTable="columnNombre_del_Equipo" msprop:Generator_ColumnPropNameInRow="Nombre_del_Equipo" msprop:Generator_ColumnPropNameInTable="Nombre_del_EquipoColumn" msprop:Generator_UserColumnName="Nombre del Equipo" minOccurs="0">
+              <xs:element name="Equipo" msprop:Generator_ColumnVarNameInTable="columnEquipo" msprop:Generator_ColumnPropNameInRow="Equipo" msprop:Generator_ColumnPropNameInTable="EquipoColumn" msprop:Generator_UserColumnName="Equipo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nombre_x0020_Entrenador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombre_Entrenador" msprop:Generator_ColumnPropNameInRow="Nombre_Entrenador" msprop:Generator_ColumnPropNameInTable="Nombre_EntrenadorColumn" msprop:Generator_UserColumnName="Nombre Entrenador" minOccurs="0">
+              <xs:element name="Localidad" msprop:Generator_ColumnVarNameInTable="columnLocalidad" msprop:Generator_ColumnPropNameInRow="Localidad" msprop:Generator_ColumnPropNameInTable="LocalidadColumn" msprop:Generator_UserColumnName="Localidad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="101" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cantidad_x0020_de_x0020_Jugadores" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad_de_Jugadores" msprop:Generator_ColumnPropNameInRow="Cantidad_de_Jugadores" msprop:Generator_ColumnPropNameInTable="Cantidad_de_JugadoresColumn" msprop:Generator_UserColumnName="Cantidad de Jugadores" type="xs:int" minOccurs="0" />
-              <xs:element name="Fecha_x0020_de_x0020_Alta" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFecha_de_Alta" msprop:Generator_ColumnPropNameInRow="Fecha_de_Alta" msprop:Generator_ColumnPropNameInTable="Fecha_de_AltaColumn" msprop:Generator_UserColumnName="Fecha de Alta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Provincia" msprop:Generator_ColumnVarNameInTable="columnProvincia" msprop:Generator_ColumnPropNameInRow="Provincia" msprop:Generator_ColumnPropNameInTable="ProvinciaColumn" msprop:Generator_UserColumnName="Provincia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pais" msprop:Generator_ColumnVarNameInTable="columnPais" msprop:Generator_ColumnPropNameInRow="Pais" msprop:Generator_ColumnPropNameInTable="PaisColumn" msprop:Generator_UserColumnName="Pais" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2039,6 +2080,35 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
           </xs:complexType>
         </xs:element>
         <xs:element name="SP_CONSULTAR_PERSONAS_ACTIVAS" msprop:Generator_TableClassName="SP_CONSULTAR_PERSONAS_ACTIVASDataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_PERSONAS_ACTIVAS" msprop:Generator_TablePropName="SP_CONSULTAR_PERSONAS_ACTIVAS" msprop:Generator_RowDeletingName="SP_CONSULTAR_PERSONAS_ACTIVASRowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_PERSONAS_ACTIVASRowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_PERSONAS_ACTIVASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_PERSONAS_ACTIVASRowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_PERSONAS_ACTIVAS" msprop:Generator_RowChangedName="SP_CONSULTAR_PERSONAS_ACTIVASRowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_PERSONAS_ACTIVASRowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_PERSONAS_ACTIVASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_persona" msprop:Generator_ColumnVarNameInTable="columncod_persona" msprop:Generator_ColumnPropNameInRow="cod_persona" msprop:Generator_ColumnPropNameInTable="cod_personaColumn" msprop:Generator_UserColumnName="cod_persona" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_tipoDoc" msprop:Generator_ColumnVarNameInTable="columncod_tipoDoc" msprop:Generator_ColumnPropNameInRow="cod_tipoDoc" msprop:Generator_ColumnPropNameInTable="cod_tipoDocColumn" msprop:Generator_UserColumnName="cod_tipoDoc" type="xs:int" />
+              <xs:element name="numeroDocumento" msprop:Generator_ColumnVarNameInTable="columnnumeroDocumento" msprop:Generator_ColumnPropNameInRow="numeroDocumento" msprop:Generator_ColumnPropNameInTable="numeroDocumentoColumn" msprop:Generator_UserColumnName="numeroDocumento" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaNac" msprop:Generator_ColumnVarNameInTable="columnfechaNac" msprop:Generator_ColumnPropNameInRow="fechaNac" msprop:Generator_ColumnPropNameInTable="fechaNacColumn" msprop:Generator_UserColumnName="fechaNac" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cod_piernaHabil" msprop:Generator_ColumnVarNameInTable="columncod_piernaHabil" msprop:Generator_ColumnPropNameInRow="cod_piernaHabil" msprop:Generator_ColumnPropNameInTable="cod_piernaHabilColumn" msprop:Generator_UserColumnName="cod_piernaHabil" type="xs:int" />
+              <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" />
+              <xs:element name="estatura" msprop:Generator_ColumnVarNameInTable="columnestatura" msprop:Generator_ColumnPropNameInRow="estatura" msprop:Generator_ColumnPropNameInTable="estaturaColumn" msprop:Generator_UserColumnName="estatura" type="xs:decimal" />
+              <xs:element name="fechaAlta" msprop:Generator_ColumnVarNameInTable="columnfechaAlta" msprop:Generator_ColumnPropNameInRow="fechaAlta" msprop:Generator_ColumnPropNameInTable="fechaAltaColumn" msprop:Generator_UserColumnName="fechaAlta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fechaBaja" msprop:Generator_ColumnVarNameInTable="columnfechaBaja" msprop:Generator_ColumnPropNameInRow="fechaBaja" msprop:Generator_ColumnPropNameInTable="fechaBajaColumn" msprop:Generator_UserColumnName="fechaBaja" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CONSULTAR_PERSONAS_CONFILTRO" msprop:Generator_TableClassName="SP_CONSULTAR_PERSONAS_CONFILTRODataTable" msprop:Generator_TableVarName="tableSP_CONSULTAR_PERSONAS_CONFILTRO" msprop:Generator_TablePropName="SP_CONSULTAR_PERSONAS_CONFILTRO" msprop:Generator_RowDeletingName="SP_CONSULTAR_PERSONAS_CONFILTRORowDeleting" msprop:Generator_RowChangingName="SP_CONSULTAR_PERSONAS_CONFILTRORowChanging" msprop:Generator_RowEvHandlerName="SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CONSULTAR_PERSONAS_CONFILTRORowDeleted" msprop:Generator_UserTableName="SP_CONSULTAR_PERSONAS_CONFILTRO" msprop:Generator_RowChangedName="SP_CONSULTAR_PERSONAS_CONFILTRORowChanged" msprop:Generator_RowEvArgName="SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent" msprop:Generator_RowClassName="SP_CONSULTAR_PERSONAS_CONFILTRORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cod_persona" msprop:Generator_ColumnVarNameInTable="columncod_persona" msprop:Generator_ColumnPropNameInRow="cod_persona" msprop:Generator_ColumnPropNameInTable="cod_personaColumn" msprop:Generator_UserColumnName="cod_persona" type="xs:int" />
@@ -2225,6 +2295,20 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SP_HABILIDADES_PERSONAS" msprop:Generator_TableClassName="SP_HABILIDADES_PERSONASDataTable" msprop:Generator_TableVarName="tableSP_HABILIDADES_PERSONAS" msprop:Generator_TablePropName="SP_HABILIDADES_PERSONAS" msprop:Generator_RowDeletingName="SP_HABILIDADES_PERSONASRowDeleting" msprop:Generator_RowChangingName="SP_HABILIDADES_PERSONASRowChanging" msprop:Generator_RowEvHandlerName="SP_HABILIDADES_PERSONASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_HABILIDADES_PERSONASRowDeleted" msprop:Generator_UserTableName="SP_HABILIDADES_PERSONAS" msprop:Generator_RowChangedName="SP_HABILIDADES_PERSONASRowChanged" msprop:Generator_RowEvArgName="SP_HABILIDADES_PERSONASRowChangeEvent" msprop:Generator_RowClassName="SP_HABILIDADES_PERSONASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Habilidad" msprop:Generator_ColumnVarNameInTable="columnHabilidad" msprop:Generator_ColumnPropNameInRow="Habilidad" msprop:Generator_ColumnPropNameInTable="HabilidadColumn" msprop:Generator_UserColumnName="Habilidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="SP_RECOVERY_PASSWORD" msprop:Generator_TableClassName="SP_RECOVERY_PASSWORDDataTable" msprop:Generator_TableVarName="tableSP_RECOVERY_PASSWORD" msprop:Generator_TablePropName="SP_RECOVERY_PASSWORD" msprop:Generator_RowDeletingName="SP_RECOVERY_PASSWORDRowDeleting" msprop:Generator_RowChangingName="SP_RECOVERY_PASSWORDRowChanging" msprop:Generator_RowEvHandlerName="SP_RECOVERY_PASSWORDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RECOVERY_PASSWORDRowDeleted" msprop:Generator_UserTableName="SP_RECOVERY_PASSWORD" msprop:Generator_RowChangedName="SP_RECOVERY_PASSWORDRowChanged" msprop:Generator_RowEvArgName="SP_RECOVERY_PASSWORDRowChangeEvent" msprop:Generator_RowClassName="SP_RECOVERY_PASSWORDRow">
           <xs:complexType>
             <xs:sequence>
@@ -2348,6 +2432,10 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
     </xs:unique>
     <xs:unique name="SP_CONSULTAR_PERSONAS_ACTIVAS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_CONSULTAR_PERSONAS_ACTIVAS" />
+      <xs:field xpath="mstns:cod_persona" />
+    </xs:unique>
+    <xs:unique name="SP_CONSULTAR_PERSONAS_CONFILTRO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_CONSULTAR_PERSONAS_CONFILTRO" />
       <xs:field xpath="mstns:cod_persona" />
     </xs:unique>
     <xs:unique name="SP_CONSULTAR_PIERNAS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

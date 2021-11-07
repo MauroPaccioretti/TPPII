@@ -52,5 +52,6 @@ namespace EquiposBackend.Datos
         bool DeletePersona(int idPersona);
         bool DeleteEquipo(int idEquipo);
         bool RemoveJugadorDelEquipo(int idJugador);
+        bool DeleteCompromiso(int idCompromiso);
     }
 }

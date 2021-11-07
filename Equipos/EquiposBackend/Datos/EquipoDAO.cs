@@ -647,7 +647,7 @@ namespace EquiposBackend.Datos
 
         public bool DeletePersona(int idPersona)
         {            
-            return helper.DeleteElementsIn3Tables(idPersona, "SP_BAJA_JUGADOR" , "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
+            return helper.DeleteElementsIn3Tables(idPersona, "SP_BAJA_PERSONA", "SP_BAJA_EQUIPO_PERSONA_PORPERSONA");
         }
 
         public bool DeleteEquipo(int idEquipo)
@@ -658,6 +658,11 @@ namespace EquiposBackend.Datos
         public bool RemoveJugadorDelEquipo(int idJugador)
         {
             return helper.DeleteElement(idJugador, "SP_BAJA_EQUIPO_PERSONA_PORDETALLE");
+        }
+
+        public bool DeleteCompromiso(int idCompromiso)
+        {
+            return helper.DeleteElement(idCompromiso, "SP_BAJA_COMPROMISO");
         }
 
     }
