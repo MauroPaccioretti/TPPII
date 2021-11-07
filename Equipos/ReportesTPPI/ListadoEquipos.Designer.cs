@@ -31,8 +31,6 @@ namespace ReportesTPPI
         {
             this.components = new System.ComponentModel.Container();
             this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_equiposDataSet1 = new ReportesTPPI.db_equiposDataSet1();
-            this.SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter = new ReportesTPPI.db_equiposDataSet1TableAdapters.SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.btnFiltro = new System.Windows.Forms.Button();
@@ -43,23 +41,18 @@ namespace ReportesTPPI
             this.lblColumna = new System.Windows.Forms.Label();
             this.lblTituloEquiposActivos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_equiposDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRespuesta)).BeginInit();
             this.SuspendLayout();
             // 
             // SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource
             // 
             this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource.DataMember = "SP_CONSULTAR_EQUIPOS_LOCALIDAD";
-            this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource.DataSource = this.db_equiposDataSet1;
             // 
             // db_equiposDataSet1
             // 
-            this.db_equiposDataSet1.DataSetName = "db_equiposDataSet1";
-            this.db_equiposDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter
             // 
-            this.SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter.ClearBeforeFill = true;
             // 
             // lblFiltrar
             // 
@@ -172,9 +165,7 @@ namespace ReportesTPPI
             this.Name = "ListadoEquipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Equipos";
-            this.Load += new System.EventHandler(this.ListadoEquipos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_equiposDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRespuesta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,8 +174,6 @@ namespace ReportesTPPI
 
         #endregion
         private System.Windows.Forms.BindingSource SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource;
-        private db_equiposDataSet1 db_equiposDataSet1;
-        private db_equiposDataSet1TableAdapters.SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter;
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.ComboBox cboBusqueda;
         private System.Windows.Forms.Button btnFiltro;

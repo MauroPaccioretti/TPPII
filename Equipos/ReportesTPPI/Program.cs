@@ -16,7 +16,7 @@ namespace ReportesTPPI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListadoEquipos());
+            Application.Run(new GráficoXX());
         }
     }
 }

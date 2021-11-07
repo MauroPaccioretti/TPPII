@@ -65,15 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos Reportes\DatosDao.cs" />
-    <Compile Include="db_equiposDataSet.Designer.cs">
+    <Compile Include="db_equiposDataSetUNICO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>db_equiposDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_equiposDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_equiposDataSet1.xsd</DependentUpon>
+      <DependentUpon>db_equiposDataSetUNICO.xsd</DependentUpon>
     </Compile>
     <Compile Include="GráficoXX.cs">
       <SubType>Form</SubType>
@@ -105,29 +100,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reportes\ListadoEquipos.rdlc" />
     <EmbeddedResource Include="Reportes\PersonasXHabilidad.rdlc" />
-    <None Include="db_equiposDataSet.xsc">
-      <DependentUpon>db_equiposDataSet.xsd</DependentUpon>
+    <None Include="db_equiposDataSetUNICO.xsc">
+      <DependentUpon>db_equiposDataSetUNICO.xsd</DependentUpon>
     </None>
-    <None Include="db_equiposDataSet.xsd">
+    <None Include="db_equiposDataSetUNICO.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_equiposDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>db_equiposDataSetUNICO.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="db_equiposDataSet.xss">
-      <DependentUpon>db_equiposDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="db_equiposDataSet1.xsc">
-      <DependentUpon>db_equiposDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="db_equiposDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_equiposDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_equiposDataSet1.xss">
-      <DependentUpon>db_equiposDataSet1.xsd</DependentUpon>
+    <None Include="db_equiposDataSetUNICO.xss">
+      <DependentUpon>db_equiposDataSetUNICO.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -596,11 +596,26 @@ go
 go
 create proc SP_CONSULTAR_EQUIPOS_LOCALIDAD
 as
+BEGIN
 select e.nombre 'Equipo', l.nombre_localidad 'Localidad', pr.nombre_provincia 'Provincia', p.nombre_pais 'Pais'
 from Equipos e join Localidades l on e.cod_localidad = l.cod_localidad
 join Provincias pr on pr.cod_provincia = l.cod_provincia
 join Paises p on p.cod_pais = pr.cod_pais
+END
 go
+
+
+go 
+create procedure SP_HABILIDADES_PERSONAS
+AS
+BEGIN
+select p.habilidad 'Habilidad', count(pe.cod_persona) 'Cantidad'
+from personas pe join piernas p on p.cod_piernaHabil = pe.cod_piernaHabil
+group by p.habilidad
+END
+go
+
+exec SP_HABILIDADES_PERSONAS
 
 ------------------------------------------------------------------------------
 ------------SP_BAJA-----------------------------------------------------------
