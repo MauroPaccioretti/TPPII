@@ -55,6 +55,12 @@ namespace EquiposBackend.Negocio
         bool EliminarEquipo(int nroEquipo);
         bool QuitarJugadorDelEquipo(int idJugador);
 
+        bool EliminarCompromiso(int idCompromiso);
+
+
+
+        //USUARIOS
+
         bool Login(string username, string pass);
         string RecoverPassword(string userRequesting);
         bool CreateUsuario(Usuario usuario);

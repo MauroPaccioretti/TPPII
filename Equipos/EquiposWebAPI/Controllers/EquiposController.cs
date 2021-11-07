@@ -206,6 +206,7 @@ namespace EquiposWebAPI.Controllers
                 return Ok("No se pudo grabar!");
         }
 
+
         [HttpPost("insertarEquipo")]
         public IActionResult PostEquipo(Equipo oEquipo)
         {
@@ -216,6 +217,7 @@ namespace EquiposWebAPI.Controllers
             else
                 return Ok("No se pudo grabar!");
         }
+
 
         [HttpPost("insertarEquipoPersona")]
         public IActionResult PostEquipoPersona(EquipoPersona oEP)
@@ -264,64 +266,59 @@ namespace EquiposWebAPI.Controllers
         }
 
 
-
-
         [HttpPut("editarPais")]
         public IActionResult PutPais(Pais oPais)
         {
             if (oPais == null)
-                return BadRequest();
+                return BadRequest("Hace falta editar un país!");
             if (app.EditarPais(oPais))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo editar!");
         }
 
         [HttpPut("editarProvincia")]
         public IActionResult PutProvincia(Provincia oProvincia)
         {
             if (oProvincia == null)
-                return BadRequest();
+                return BadRequest("Hace falta editar una provincia!");
             if (app.EditarProvincia(oProvincia))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo editar!");
         }
-
 
         [HttpPut("editarLocalidad")]
         public IActionResult PutLocalidad(Localidad oLocalidad)
         {
             if (oLocalidad == null)
-                return BadRequest();
+                return BadRequest("Hace falta editar una localidad!");
             if (app.EditarLocalidad(oLocalidad))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo editar!");
         }
-
 
         [HttpPut("editarTipoDocumento")]
         public IActionResult PutTipoDocumento(TiposDocumentos oTipoDoc)
         {
             if (oTipoDoc == null)
-                return BadRequest();
+                return BadRequest("Hace falta editar un Tipo de Documento");
             if (app.EditarTipoDocumento(oTipoDoc))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo editar!");
         }
-
 
         [HttpPut("editarTipoCompromisos")]
         public IActionResult PutTipoCompromisos(TipoCompromisos oTC)
         {
             if (oTC == null)
-                return BadRequest();
+                return BadRequest("Hace falta editar un Tipo de Compromiso!");
             if (app.EditarTipoCompromiso(oTC))
                 return Ok("Se registró exitosamente!");
             else
-                return Ok("No se pudo grabar!");
+                return Ok("No se pudo editar!");
         }
 
 
@@ -356,6 +353,17 @@ namespace EquiposWebAPI.Controllers
             else
                 return Ok("Algo falló en la baja del jugador: ");
         }
+
+        [HttpDelete("compromiso/{id}")]
+        public IActionResult DeleteCompromiso(int idCompromiso)
+        {
+           return Ok(app.EliminarCompromiso(idCompromiso));
+             
+        }
+
+
+
+
 
     }
 }

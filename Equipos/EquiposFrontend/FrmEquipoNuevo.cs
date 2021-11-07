@@ -577,16 +577,15 @@ namespace EquiposFrontend
 
                     break;
                 case Accion.Modificar:
-                    
+                    //confirmar que queremos eliminar el compromiso
+                    //chequear que el compromiso que eliminamos sea uno original del equipo
+                    //si es uno de los originales entonces agrergar el compromiso eliminado
+                    //a una lista para iterar y darlos de baja
+                    //si no es original, entonces darlo de baja de la lista de alta
 
 
                     break;
-                case Accion.Eliminar:
-                   
-
-
-                    break;
-
+                
             }
 
 

@@ -51,6 +51,7 @@ namespace EquiposFrontend
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaDePosicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeEquiposActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
@@ -82,7 +83,6 @@ namespace EquiposFrontend
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.listadoDeEquiposActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -132,7 +132,7 @@ namespace EquiposFrontend
             this.tiposDeCompromisosToolStripMenuItem});
             this.soporteToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(122, 60);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(208, 60);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // agregarPaísToolStripMenuItem
@@ -314,6 +314,13 @@ namespace EquiposFrontend
             this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
             this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
             // 
+            // listadoDeEquiposActivosToolStripMenuItem
+            // 
+            this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
+            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 28);
+            this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
+            // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.AutoSize = false;
@@ -396,6 +403,7 @@ namespace EquiposFrontend
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCompromisos);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox1.Location = new System.Drawing.Point(1176, 46);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
@@ -411,6 +419,7 @@ namespace EquiposFrontend
             this.groupBox2.Controls.Add(this.btnEditarEquipo);
             this.groupBox2.Controls.Add(this.dgvEquipos);
             this.groupBox2.Controls.Add(this.btnNvoEquipo);
+            this.groupBox2.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox2.Location = new System.Drawing.Point(235, 46);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
@@ -422,6 +431,7 @@ namespace EquiposFrontend
             // 
             // btnBajaEquipo
             // 
+            this.btnBajaEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnBajaEquipo.Location = new System.Drawing.Point(604, 287);
             this.btnBajaEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBajaEquipo.Name = "btnBajaEquipo";
@@ -433,6 +443,7 @@ namespace EquiposFrontend
             // 
             // btnEditarEquipo
             // 
+            this.btnEditarEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEditarEquipo.Location = new System.Drawing.Point(318, 287);
             this.btnEditarEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarEquipo.Name = "btnEditarEquipo";
@@ -504,6 +515,7 @@ namespace EquiposFrontend
             // 
             // btnNvoEquipo
             // 
+            this.btnNvoEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnNvoEquipo.Location = new System.Drawing.Point(31, 287);
             this.btnNvoEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNvoEquipo.Name = "btnNvoEquipo";
@@ -519,6 +531,7 @@ namespace EquiposFrontend
             this.groupBox3.Controls.Add(this.btnNvaPersona);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox3.Location = new System.Drawing.Point(235, 386);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
@@ -530,6 +543,7 @@ namespace EquiposFrontend
             // 
             // btnEditarPersona
             // 
+            this.btnEditarPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEditarPersona.Location = new System.Drawing.Point(318, 33);
             this.btnEditarPersona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarPersona.Name = "btnEditarPersona";
@@ -618,7 +632,7 @@ namespace EquiposFrontend
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 30);
+            this.panel1.Size = new System.Drawing.Size(1552, 30);
             this.panel1.TabIndex = 7;
             // 
             // lblTitulo
@@ -634,20 +648,13 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
-            // listadoDeEquiposActivosToolStripMenuItem
-            // 
-            this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
-            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 28);
-            this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1370, 516);
+            this.ClientSize = new System.Drawing.Size(1764, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
