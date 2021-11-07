@@ -10,10 +10,14 @@ namespace ReportesTPPI.Datos_Reportes
 {
     class DatosDao
     {
+<<<<<<< HEAD
+        private static SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+=======
         //Cambiar cadena para quien presente.
         //private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-I4SKB1G\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
         private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-59VKSU4\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
 
+>>>>>>> b26a4661f732f369c9f7c82e5fc406f14e00dc23
         private static SqlCommand cmd;
 
         

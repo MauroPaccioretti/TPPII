@@ -30,6 +30,7 @@ namespace EquiposFrontend
             switch (modo)
             {
                 case Accion.Agregar:
+                    oPersona = new Persona();
                     lblTitulo.Text = "Registrar Persona";
                     btnConfirmarAccion.Text = "Registrar Persona";
                     break;
@@ -127,6 +128,7 @@ namespace EquiposFrontend
 
         private async void btnConfirmarAccion_Click(object sender, EventArgs e)
         {
+            
 
             if (txtNombre.Text.Trim().Equals(""))
             {

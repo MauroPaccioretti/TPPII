@@ -546,6 +546,8 @@ namespace EquiposBackend.Datos
 
         public bool EditPersona(Persona oPersona)
         {
+            bool aux;
+
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@codigo", oPersona.CodPersona);
             parametros.Add("@nombre", oPersona.Nombre);
@@ -557,12 +559,14 @@ namespace EquiposBackend.Datos
             parametros.Add("@peso", oPersona.Peso);
             parametros.Add("@estatura", oPersona.Estatura);
             parametros.Add("@fechaAlta", oPersona.FechaAlta);
-            if (!oPersona.FechaBaja.HasValue)
-                parametros.Add("@fechaBaja", DBNull.Value);
-            else
-                parametros.Add("fechaBaja", oPersona.FechaBaja);
+            //if (!oPersona.FechaBaja.HasValue)
+            //    parametros.Add("@fechaBaja", DBNull.Value);
+            //else
+            //    parametros.Add("@fechaBaja", oPersona.FechaBaja);
 
-            return helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
+            aux = helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
+
+            return aux;
 
         }
 
