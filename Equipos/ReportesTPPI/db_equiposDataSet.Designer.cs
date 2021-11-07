@@ -20,9 +20,9 @@ namespace ReportesTPPI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("db_equiposDataSetUNICO")]
+    [global::System.Xml.Serialization.XmlRootAttribute("db_equiposDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class db_equiposDataSetUNICO : global::System.Data.DataSet {
+    public partial class db_equiposDataSet : global::System.Data.DataSet {
         
         private CompromisosDataTable tableCompromisos;
         
@@ -50,15 +50,11 @@ namespace ReportesTPPI {
         
         private SP_CONSULTAR_COMPROMISOSDataTable tableSP_CONSULTAR_COMPROMISOS;
         
-        private SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS;
-        
         private SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS;
         
         private SP_CONSULTAR_EQUIPOSDataTable tableSP_CONSULTAR_EQUIPOS;
         
         private SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable tableSP_CONSULTAR_EQUIPOS_ACTIVOS;
-        
-        private SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS;
         
         private SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable tableSP_CONSULTAR_EQUIPOS_LOCALIDAD;
         
@@ -75,6 +71,8 @@ namespace ReportesTPPI {
         private SP_CONSULTAR_PERSONASDataTable tableSP_CONSULTAR_PERSONAS;
         
         private SP_CONSULTAR_PERSONAS_ACTIVASDataTable tableSP_CONSULTAR_PERSONAS_ACTIVAS;
+        
+        private SP_CONSULTAR_PERSONAS_CONFILTRODataTable tableSP_CONSULTAR_PERSONAS_CONFILTRO;
         
         private SP_CONSULTAR_PIERNASDataTable tableSP_CONSULTAR_PIERNAS;
         
@@ -120,7 +118,7 @@ namespace ReportesTPPI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public db_equiposDataSetUNICO() {
+        public db_equiposDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -131,7 +129,7 @@ namespace ReportesTPPI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected db_equiposDataSetUNICO(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected db_equiposDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -183,9 +181,6 @@ namespace ReportesTPPI {
                 if ((ds.Tables["SP_CONSULTAR_COMPROMISOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_COMPROMISOSDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS"]));
                 }
-                if ((ds.Tables["SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS"] != null)) {
-                    base.Tables.Add(new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS"]));
-                }
                 if ((ds.Tables["SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS"]));
                 }
@@ -194,9 +189,6 @@ namespace ReportesTPPI {
                 }
                 if ((ds.Tables["SP_CONSULTAR_EQUIPOS_ACTIVOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_ACTIVOS"]));
-                }
-                if ((ds.Tables["SP_CONSULTAR_EQUIPOS_CON_COLUMNAS"] != null)) {
-                    base.Tables.Add(new SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_CON_COLUMNAS"]));
                 }
                 if ((ds.Tables["SP_CONSULTAR_EQUIPOS_LOCALIDAD"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_LOCALIDAD"]));
@@ -221,6 +213,9 @@ namespace ReportesTPPI {
                 }
                 if ((ds.Tables["SP_CONSULTAR_PERSONAS_ACTIVAS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_PERSONAS_ACTIVASDataTable(ds.Tables["SP_CONSULTAR_PERSONAS_ACTIVAS"]));
+                }
+                if ((ds.Tables["SP_CONSULTAR_PERSONAS_CONFILTRO"] != null)) {
+                    base.Tables.Add(new SP_CONSULTAR_PERSONAS_CONFILTRODataTable(ds.Tables["SP_CONSULTAR_PERSONAS_CONFILTRO"]));
                 }
                 if ((ds.Tables["SP_CONSULTAR_PIERNAS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_PIERNASDataTable(ds.Tables["SP_CONSULTAR_PIERNAS"]));
@@ -404,16 +399,6 @@ namespace ReportesTPPI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS {
-            get {
-                return this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS {
             get {
                 return this.tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS;
@@ -437,16 +422,6 @@ namespace ReportesTPPI {
         public SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable SP_CONSULTAR_EQUIPOS_ACTIVOS {
             get {
                 return this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable SP_CONSULTAR_EQUIPOS_CON_COLUMNAS {
-            get {
-                return this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS;
             }
         }
         
@@ -527,6 +502,16 @@ namespace ReportesTPPI {
         public SP_CONSULTAR_PERSONAS_ACTIVASDataTable SP_CONSULTAR_PERSONAS_ACTIVAS {
             get {
                 return this.tableSP_CONSULTAR_PERSONAS_ACTIVAS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_CONSULTAR_PERSONAS_CONFILTRODataTable SP_CONSULTAR_PERSONAS_CONFILTRO {
+            get {
+                return this.tableSP_CONSULTAR_PERSONAS_CONFILTRO;
             }
         }
         
@@ -672,7 +657,7 @@ namespace ReportesTPPI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            db_equiposDataSetUNICO cln = ((db_equiposDataSetUNICO)(base.Clone()));
+            db_equiposDataSet cln = ((db_equiposDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -736,9 +721,6 @@ namespace ReportesTPPI {
                 if ((ds.Tables["SP_CONSULTAR_COMPROMISOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_COMPROMISOSDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS"]));
                 }
-                if ((ds.Tables["SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS"] != null)) {
-                    base.Tables.Add(new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS"]));
-                }
                 if ((ds.Tables["SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable(ds.Tables["SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS"]));
                 }
@@ -747,9 +729,6 @@ namespace ReportesTPPI {
                 }
                 if ((ds.Tables["SP_CONSULTAR_EQUIPOS_ACTIVOS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_ACTIVOS"]));
-                }
-                if ((ds.Tables["SP_CONSULTAR_EQUIPOS_CON_COLUMNAS"] != null)) {
-                    base.Tables.Add(new SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_CON_COLUMNAS"]));
                 }
                 if ((ds.Tables["SP_CONSULTAR_EQUIPOS_LOCALIDAD"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable(ds.Tables["SP_CONSULTAR_EQUIPOS_LOCALIDAD"]));
@@ -774,6 +753,9 @@ namespace ReportesTPPI {
                 }
                 if ((ds.Tables["SP_CONSULTAR_PERSONAS_ACTIVAS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_PERSONAS_ACTIVASDataTable(ds.Tables["SP_CONSULTAR_PERSONAS_ACTIVAS"]));
+                }
+                if ((ds.Tables["SP_CONSULTAR_PERSONAS_CONFILTRO"] != null)) {
+                    base.Tables.Add(new SP_CONSULTAR_PERSONAS_CONFILTRODataTable(ds.Tables["SP_CONSULTAR_PERSONAS_CONFILTRO"]));
                 }
                 if ((ds.Tables["SP_CONSULTAR_PIERNAS"] != null)) {
                     base.Tables.Add(new SP_CONSULTAR_PIERNASDataTable(ds.Tables["SP_CONSULTAR_PIERNAS"]));
@@ -916,12 +898,6 @@ namespace ReportesTPPI {
                     this.tableSP_CONSULTAR_COMPROMISOS.InitVars();
                 }
             }
-            this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS = ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable)(base.Tables["SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS != null)) {
-                    this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.InitVars();
-                }
-            }
             this.tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS = ((SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable)(base.Tables["SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS"]));
             if ((initTable == true)) {
                 if ((this.tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS != null)) {
@@ -938,12 +914,6 @@ namespace ReportesTPPI {
             if ((initTable == true)) {
                 if ((this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS != null)) {
                     this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS.InitVars();
-                }
-            }
-            this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS = ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable)(base.Tables["SP_CONSULTAR_EQUIPOS_CON_COLUMNAS"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS != null)) {
-                    this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.InitVars();
                 }
             }
             this.tableSP_CONSULTAR_EQUIPOS_LOCALIDAD = ((SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable)(base.Tables["SP_CONSULTAR_EQUIPOS_LOCALIDAD"]));
@@ -992,6 +962,12 @@ namespace ReportesTPPI {
             if ((initTable == true)) {
                 if ((this.tableSP_CONSULTAR_PERSONAS_ACTIVAS != null)) {
                     this.tableSP_CONSULTAR_PERSONAS_ACTIVAS.InitVars();
+                }
+            }
+            this.tableSP_CONSULTAR_PERSONAS_CONFILTRO = ((SP_CONSULTAR_PERSONAS_CONFILTRODataTable)(base.Tables["SP_CONSULTAR_PERSONAS_CONFILTRO"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_CONSULTAR_PERSONAS_CONFILTRO != null)) {
+                    this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.InitVars();
                 }
             }
             this.tableSP_CONSULTAR_PIERNAS = ((SP_CONSULTAR_PIERNASDataTable)(base.Tables["SP_CONSULTAR_PIERNAS"]));
@@ -1069,9 +1045,9 @@ namespace ReportesTPPI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "db_equiposDataSetUNICO";
+            this.DataSetName = "db_equiposDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/db_equiposDataSetUNICO.xsd";
+            this.Namespace = "http://tempuri.org/db_equiposDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCompromisos = new CompromisosDataTable();
@@ -1100,16 +1076,12 @@ namespace ReportesTPPI {
             base.Tables.Add(this.tableUsuarios);
             this.tableSP_CONSULTAR_COMPROMISOS = new SP_CONSULTAR_COMPROMISOSDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_COMPROMISOS);
-            this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS = new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable();
-            base.Tables.Add(this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS);
             this.tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS = new SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS);
             this.tableSP_CONSULTAR_EQUIPOS = new SP_CONSULTAR_EQUIPOSDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_EQUIPOS);
             this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS = new SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS);
-            this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS = new SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable();
-            base.Tables.Add(this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS);
             this.tableSP_CONSULTAR_EQUIPOS_LOCALIDAD = new SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_EQUIPOS_LOCALIDAD);
             this.tableSP_CONSULTAR_EQUIPOS_PERSONAS = new SP_CONSULTAR_EQUIPOS_PERSONASDataTable();
@@ -1126,6 +1098,8 @@ namespace ReportesTPPI {
             base.Tables.Add(this.tableSP_CONSULTAR_PERSONAS);
             this.tableSP_CONSULTAR_PERSONAS_ACTIVAS = new SP_CONSULTAR_PERSONAS_ACTIVASDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_PERSONAS_ACTIVAS);
+            this.tableSP_CONSULTAR_PERSONAS_CONFILTRO = new SP_CONSULTAR_PERSONAS_CONFILTRODataTable();
+            base.Tables.Add(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO);
             this.tableSP_CONSULTAR_PIERNAS = new SP_CONSULTAR_PIERNASDataTable();
             base.Tables.Add(this.tableSP_CONSULTAR_PIERNAS);
             this.tableSP_CONSULTAR_POSICIONES = new SP_CONSULTAR_POSICIONESDataTable();
@@ -1268,12 +1242,6 @@ namespace ReportesTPPI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS() {
             return false;
         }
@@ -1287,12 +1255,6 @@ namespace ReportesTPPI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_CONSULTAR_EQUIPOS_ACTIVOS() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_CONSULTAR_EQUIPOS_CON_COLUMNAS() {
             return false;
         }
         
@@ -1341,6 +1303,12 @@ namespace ReportesTPPI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_CONSULTAR_PERSONAS_ACTIVAS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_CONSULTAR_PERSONAS_CONFILTRO() {
             return false;
         }
         
@@ -1415,7 +1383,7 @@ namespace ReportesTPPI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+            db_equiposDataSet ds = new db_equiposDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1499,9 +1467,6 @@ namespace ReportesTPPI {
         public delegate void SP_CONSULTAR_COMPROMISOSRowChangeEventHandler(object sender, SP_CONSULTAR_COMPROMISOSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler(object sender, SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChangeEventHandler(object sender, SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1509,9 +1474,6 @@ namespace ReportesTPPI {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_CONSULTAR_EQUIPOS_ACTIVOSRowChangeEventHandler(object sender, SP_CONSULTAR_EQUIPOS_ACTIVOSRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler(object sender, SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_CONSULTAR_EQUIPOS_LOCALIDADRowChangeEventHandler(object sender, SP_CONSULTAR_EQUIPOS_LOCALIDADRowChangeEvent e);
@@ -1536,6 +1498,9 @@ namespace ReportesTPPI {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_CONSULTAR_PERSONAS_ACTIVASRowChangeEventHandler(object sender, SP_CONSULTAR_PERSONAS_ACTIVASRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler(object sender, SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_CONSULTAR_PIERNASRowChangeEventHandler(object sender, SP_CONSULTAR_PIERNASRowChangeEvent e);
@@ -1859,7 +1824,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2178,7 +2143,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2533,7 +2498,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2824,7 +2789,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3097,7 +3062,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3507,7 +3472,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3780,7 +3745,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4053,7 +4018,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4344,7 +4309,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4617,7 +4582,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4890,7 +4855,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5207,7 +5172,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5552,7 +5517,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5571,283 +5536,6 @@ namespace ReportesTPPI {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_CONSULTAR_COMPROMISOSDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable : global::System.Data.TypedTableBase<SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow> {
-            
-            private global::System.Data.DataColumn columnNombre_del_Equipo;
-            
-            private global::System.Data.DataColumn columnTipo_de_compromiso;
-            
-            private global::System.Data.DataColumn columnFecha_del_compromiso;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable() {
-                this.TableName = "SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Nombre_del_EquipoColumn {
-                get {
-                    return this.columnNombre_del_Equipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Tipo_de_compromisoColumn {
-                get {
-                    return this.columnTipo_de_compromiso;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Fecha_del_compromisoColumn {
-                get {
-                    return this.columnFecha_del_compromiso;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow this[int index] {
-                get {
-                    return ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow(SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow AddSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow(string Nombre_del_Equipo, string Tipo_de_compromiso, System.DateTime Fecha_del_compromiso) {
-                SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow rowSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow = ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Nombre_del_Equipo,
-                        Tipo_de_compromiso,
-                        Fecha_del_compromiso};
-                rowSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow);
-                return rowSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable cln = ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnNombre_del_Equipo = base.Columns["Nombre del Equipo"];
-                this.columnTipo_de_compromiso = base.Columns["Tipo de compromiso"];
-                this.columnFecha_del_compromiso = base.Columns["Fecha del compromiso"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnNombre_del_Equipo = new global::System.Data.DataColumn("Nombre del Equipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_del_Equipo);
-                this.columnTipo_de_compromiso = new global::System.Data.DataColumn("Tipo de compromiso", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipo_de_compromiso);
-                this.columnFecha_del_compromiso = new global::System.Data.DataColumn("Fecha del compromiso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_del_compromiso);
-                this.columnNombre_del_Equipo.MaxLength = 50;
-                this.columnTipo_de_compromiso.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow NewSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow() {
-                return ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanged != null)) {
-                    this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanged(this, new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanging != null)) {
-                    this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChanging(this, new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleted != null)) {
-                    this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleted(this, new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleting != null)) {
-                    this.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowDeleting(this, new SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow(SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6174,7 +5862,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6490,7 +6178,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6806,7 +6494,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6825,300 +6513,6 @@ namespace ReportesTPPI {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable : global::System.Data.TypedTableBase<SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow> {
-            
-            private global::System.Data.DataColumn columnNombre_del_Equipo;
-            
-            private global::System.Data.DataColumn columnNombre_Entrenador;
-            
-            private global::System.Data.DataColumn columnCantidad_de_Jugadores;
-            
-            private global::System.Data.DataColumn columnFecha_de_Alta;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable() {
-                this.TableName = "SP_CONSULTAR_EQUIPOS_CON_COLUMNAS";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Nombre_del_EquipoColumn {
-                get {
-                    return this.columnNombre_del_Equipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Nombre_EntrenadorColumn {
-                get {
-                    return this.columnNombre_Entrenador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Cantidad_de_JugadoresColumn {
-                get {
-                    return this.columnCantidad_de_Jugadores;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Fecha_de_AltaColumn {
-                get {
-                    return this.columnFecha_de_Alta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow this[int index] {
-                get {
-                    return ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEventHandler SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow(SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow AddSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow(string Nombre_del_Equipo, string Nombre_Entrenador, int Cantidad_de_Jugadores, System.DateTime Fecha_de_Alta) {
-                SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow rowSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow = ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Nombre_del_Equipo,
-                        Nombre_Entrenador,
-                        Cantidad_de_Jugadores,
-                        Fecha_de_Alta};
-                rowSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow);
-                return rowSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable cln = ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnNombre_del_Equipo = base.Columns["Nombre del Equipo"];
-                this.columnNombre_Entrenador = base.Columns["Nombre Entrenador"];
-                this.columnCantidad_de_Jugadores = base.Columns["Cantidad de Jugadores"];
-                this.columnFecha_de_Alta = base.Columns["Fecha de Alta"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnNombre_del_Equipo = new global::System.Data.DataColumn("Nombre del Equipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_del_Equipo);
-                this.columnNombre_Entrenador = new global::System.Data.DataColumn("Nombre Entrenador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_Entrenador);
-                this.columnCantidad_de_Jugadores = new global::System.Data.DataColumn("Cantidad de Jugadores", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad_de_Jugadores);
-                this.columnFecha_de_Alta = new global::System.Data.DataColumn("Fecha de Alta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_de_Alta);
-                this.columnNombre_del_Equipo.MaxLength = 50;
-                this.columnNombre_Entrenador.ReadOnly = true;
-                this.columnNombre_Entrenador.MaxLength = 101;
-                this.columnCantidad_de_Jugadores.ReadOnly = true;
-                this.columnFecha_de_Alta.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow NewSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow() {
-                return ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanged != null)) {
-                    this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanged(this, new SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanging != null)) {
-                    this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChanging(this, new SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleted != null)) {
-                    this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleted(this, new SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleting != null)) {
-                    this.SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowDeleting(this, new SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent(((SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_CONSULTAR_EQUIPOS_CON_COLUMNASRow(SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7393,7 +6787,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7739,7 +7133,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8085,7 +7479,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8691,7 +8085,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8979,7 +8373,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9252,7 +8646,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9656,7 +9050,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10060,7 +9454,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10079,6 +9473,410 @@ namespace ReportesTPPI {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_CONSULTAR_PERSONAS_ACTIVASDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_CONSULTAR_PERSONAS_CONFILTRODataTable : global::System.Data.TypedTableBase<SP_CONSULTAR_PERSONAS_CONFILTRORow> {
+            
+            private global::System.Data.DataColumn columncod_persona;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnapellido;
+            
+            private global::System.Data.DataColumn columncod_tipoDoc;
+            
+            private global::System.Data.DataColumn columnnumeroDocumento;
+            
+            private global::System.Data.DataColumn columnfechaNac;
+            
+            private global::System.Data.DataColumn columncod_piernaHabil;
+            
+            private global::System.Data.DataColumn columnpeso;
+            
+            private global::System.Data.DataColumn columnestatura;
+            
+            private global::System.Data.DataColumn columnfechaAlta;
+            
+            private global::System.Data.DataColumn columnfechaBaja;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRODataTable() {
+                this.TableName = "SP_CONSULTAR_PERSONAS_CONFILTRO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_CONSULTAR_PERSONAS_CONFILTRODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_CONSULTAR_PERSONAS_CONFILTRODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cod_personaColumn {
+                get {
+                    return this.columncod_persona;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn apellidoColumn {
+                get {
+                    return this.columnapellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cod_tipoDocColumn {
+                get {
+                    return this.columncod_tipoDoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numeroDocumentoColumn {
+                get {
+                    return this.columnnumeroDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaNacColumn {
+                get {
+                    return this.columnfechaNac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cod_piernaHabilColumn {
+                get {
+                    return this.columncod_piernaHabil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pesoColumn {
+                get {
+                    return this.columnpeso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn estaturaColumn {
+                get {
+                    return this.columnestatura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaAltaColumn {
+                get {
+                    return this.columnfechaAlta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaBajaColumn {
+                get {
+                    return this.columnfechaBaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORow this[int index] {
+                get {
+                    return ((SP_CONSULTAR_PERSONAS_CONFILTRORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler SP_CONSULTAR_PERSONAS_CONFILTRORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler SP_CONSULTAR_PERSONAS_CONFILTRORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler SP_CONSULTAR_PERSONAS_CONFILTRORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEventHandler SP_CONSULTAR_PERSONAS_CONFILTRORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_CONSULTAR_PERSONAS_CONFILTRORow(SP_CONSULTAR_PERSONAS_CONFILTRORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORow AddSP_CONSULTAR_PERSONAS_CONFILTRORow(int cod_persona, string nombre, string apellido, int cod_tipoDoc, int numeroDocumento, System.DateTime fechaNac, int cod_piernaHabil, decimal peso, decimal estatura, System.DateTime fechaAlta, System.DateTime fechaBaja) {
+                SP_CONSULTAR_PERSONAS_CONFILTRORow rowSP_CONSULTAR_PERSONAS_CONFILTRORow = ((SP_CONSULTAR_PERSONAS_CONFILTRORow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        cod_persona,
+                        nombre,
+                        apellido,
+                        cod_tipoDoc,
+                        numeroDocumento,
+                        fechaNac,
+                        cod_piernaHabil,
+                        peso,
+                        estatura,
+                        fechaAlta,
+                        fechaBaja};
+                rowSP_CONSULTAR_PERSONAS_CONFILTRORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_CONSULTAR_PERSONAS_CONFILTRORow);
+                return rowSP_CONSULTAR_PERSONAS_CONFILTRORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORow FindBycod_persona(int cod_persona) {
+                return ((SP_CONSULTAR_PERSONAS_CONFILTRORow)(this.Rows.Find(new object[] {
+                            cod_persona})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_CONSULTAR_PERSONAS_CONFILTRODataTable cln = ((SP_CONSULTAR_PERSONAS_CONFILTRODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_CONSULTAR_PERSONAS_CONFILTRODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columncod_persona = base.Columns["cod_persona"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnapellido = base.Columns["apellido"];
+                this.columncod_tipoDoc = base.Columns["cod_tipoDoc"];
+                this.columnnumeroDocumento = base.Columns["numeroDocumento"];
+                this.columnfechaNac = base.Columns["fechaNac"];
+                this.columncod_piernaHabil = base.Columns["cod_piernaHabil"];
+                this.columnpeso = base.Columns["peso"];
+                this.columnestatura = base.Columns["estatura"];
+                this.columnfechaAlta = base.Columns["fechaAlta"];
+                this.columnfechaBaja = base.Columns["fechaBaja"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columncod_persona = new global::System.Data.DataColumn("cod_persona", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncod_persona);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnapellido = new global::System.Data.DataColumn("apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnapellido);
+                this.columncod_tipoDoc = new global::System.Data.DataColumn("cod_tipoDoc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncod_tipoDoc);
+                this.columnnumeroDocumento = new global::System.Data.DataColumn("numeroDocumento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroDocumento);
+                this.columnfechaNac = new global::System.Data.DataColumn("fechaNac", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaNac);
+                this.columncod_piernaHabil = new global::System.Data.DataColumn("cod_piernaHabil", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncod_piernaHabil);
+                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso);
+                this.columnestatura = new global::System.Data.DataColumn("estatura", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestatura);
+                this.columnfechaAlta = new global::System.Data.DataColumn("fechaAlta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaAlta);
+                this.columnfechaBaja = new global::System.Data.DataColumn("fechaBaja", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaBaja);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncod_persona}, true));
+                this.columncod_persona.AllowDBNull = false;
+                this.columncod_persona.Unique = true;
+                this.columnnombre.MaxLength = 50;
+                this.columnapellido.MaxLength = 50;
+                this.columncod_tipoDoc.AllowDBNull = false;
+                this.columncod_piernaHabil.AllowDBNull = false;
+                this.columnpeso.AllowDBNull = false;
+                this.columnestatura.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORow NewSP_CONSULTAR_PERSONAS_CONFILTRORow() {
+                return ((SP_CONSULTAR_PERSONAS_CONFILTRORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_CONSULTAR_PERSONAS_CONFILTRORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_CONSULTAR_PERSONAS_CONFILTRORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_CONSULTAR_PERSONAS_CONFILTRORowChanged != null)) {
+                    this.SP_CONSULTAR_PERSONAS_CONFILTRORowChanged(this, new SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent(((SP_CONSULTAR_PERSONAS_CONFILTRORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_CONSULTAR_PERSONAS_CONFILTRORowChanging != null)) {
+                    this.SP_CONSULTAR_PERSONAS_CONFILTRORowChanging(this, new SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent(((SP_CONSULTAR_PERSONAS_CONFILTRORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_CONSULTAR_PERSONAS_CONFILTRORowDeleted != null)) {
+                    this.SP_CONSULTAR_PERSONAS_CONFILTRORowDeleted(this, new SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent(((SP_CONSULTAR_PERSONAS_CONFILTRORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_CONSULTAR_PERSONAS_CONFILTRORowDeleting != null)) {
+                    this.SP_CONSULTAR_PERSONAS_CONFILTRORowDeleting(this, new SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent(((SP_CONSULTAR_PERSONAS_CONFILTRORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_CONSULTAR_PERSONAS_CONFILTRORow(SP_CONSULTAR_PERSONAS_CONFILTRORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                db_equiposDataSet ds = new db_equiposDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_CONSULTAR_PERSONAS_CONFILTRODataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -10333,7 +10131,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10606,7 +10404,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10894,7 +10692,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11167,7 +10965,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11440,7 +11238,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11757,7 +11555,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12074,7 +11872,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12391,7 +12189,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12654,7 +12452,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12971,7 +12769,7 @@ namespace ReportesTPPI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                db_equiposDataSetUNICO ds = new db_equiposDataSetUNICO();
+                db_equiposDataSet ds = new db_equiposDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -14618,108 +14416,6 @@ namespace ReportesTPPI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow : global::System.Data.DataRow {
-            
-            private SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS = ((SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nombre_del_Equipo {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Nombre_del_EquipoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre del Equipo\' de la tabla \'SP_CONSULTAR_COMPROMISOS_" +
-                                "CON_COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Nombre_del_EquipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Tipo_de_compromiso {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Tipo_de_compromisoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Tipo de compromiso\' de la tabla \'SP_CONSULTAR_COMPROMISOS" +
-                                "_CON_COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Tipo_de_compromisoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Fecha_del_compromiso {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Fecha_del_compromisoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha del compromiso\' de la tabla \'SP_CONSULTAR_COMPROMIS" +
-                                "OS_CON_COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Fecha_del_compromisoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombre_del_EquipoNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Nombre_del_EquipoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombre_del_EquipoNull() {
-                this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Nombre_del_EquipoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTipo_de_compromisoNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Tipo_de_compromisoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTipo_de_compromisoNull() {
-                this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Tipo_de_compromisoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFecha_del_compromisoNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Fecha_del_compromisoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFecha_del_compromisoNull() {
-                this[this.tableSP_CONSULTAR_COMPROMISOS_CON_COLUMNAS.Fecha_del_compromisoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRow : global::System.Data.DataRow {
             
             private SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable tableSP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOS;
@@ -15123,137 +14819,6 @@ namespace ReportesTPPI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaBajaNull() {
                 this[this.tableSP_CONSULTAR_EQUIPOS_ACTIVOS.fechaBajaColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow : global::System.Data.DataRow {
-            
-            private SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS = ((SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nombre_del_Equipo {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_del_EquipoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre del Equipo\' de la tabla \'SP_CONSULTAR_EQUIPOS_CON_" +
-                                "COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_del_EquipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nombre_Entrenador {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_EntrenadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre Entrenador\' de la tabla \'SP_CONSULTAR_EQUIPOS_CON_" +
-                                "COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_EntrenadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Cantidad_de_Jugadores {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Cantidad_de_JugadoresColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad de Jugadores\' de la tabla \'SP_CONSULTAR_EQUIPOS_" +
-                                "CON_COLUMNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Cantidad_de_JugadoresColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Fecha_de_Alta {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Fecha_de_AltaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha de Alta\' de la tabla \'SP_CONSULTAR_EQUIPOS_CON_COLU" +
-                                "MNAS\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Fecha_de_AltaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombre_del_EquipoNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_del_EquipoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombre_del_EquipoNull() {
-                this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_del_EquipoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombre_EntrenadorNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_EntrenadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombre_EntrenadorNull() {
-                this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Nombre_EntrenadorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCantidad_de_JugadoresNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Cantidad_de_JugadoresColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCantidad_de_JugadoresNull() {
-                this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Cantidad_de_JugadoresColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFecha_de_AltaNull() {
-                return this.IsNull(this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Fecha_de_AltaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFecha_de_AltaNull() {
-                this[this.tableSP_CONSULTAR_EQUIPOS_CON_COLUMNAS.Fecha_de_AltaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16773,6 +16338,250 @@ namespace ReportesTPPI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class SP_CONSULTAR_PERSONAS_CONFILTRORow : global::System.Data.DataRow {
+            
+            private SP_CONSULTAR_PERSONAS_CONFILTRODataTable tableSP_CONSULTAR_PERSONAS_CONFILTRO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_CONSULTAR_PERSONAS_CONFILTRORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_CONSULTAR_PERSONAS_CONFILTRO = ((SP_CONSULTAR_PERSONAS_CONFILTRODataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cod_persona {
+                get {
+                    return ((int)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_personaColumn]));
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_personaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFILTRO\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string apellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.apellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'apellido\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFILTRO\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.apellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cod_tipoDoc {
+                get {
+                    return ((int)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_tipoDocColumn]));
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_tipoDocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numeroDocumento {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.numeroDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numeroDocumento\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFI" +
+                                "LTRO\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.numeroDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fechaNac {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaNacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaNac\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFILTRO\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaNacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cod_piernaHabil {
+                get {
+                    return ((int)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_piernaHabilColumn]));
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.cod_piernaHabilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso {
+                get {
+                    return ((decimal)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.pesoColumn]));
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.pesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal estatura {
+                get {
+                    return ((decimal)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.estaturaColumn]));
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.estaturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fechaAlta {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaAltaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaAlta\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFILTRO\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaAltaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fechaBaja {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaBajaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaBaja\' de la tabla \'SP_CONSULTAR_PERSONAS_CONFILTRO\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaBajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsapellidoNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.apellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetapellidoNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.apellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnumeroDocumentoNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.numeroDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnumeroDocumentoNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.numeroDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfechaNacNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaNacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfechaNacNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaNacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfechaAltaNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaAltaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfechaAltaNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaAltaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfechaBajaNull() {
+                return this.IsNull(this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaBajaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfechaBajaNull() {
+                this[this.tableSP_CONSULTAR_PERSONAS_CONFILTRO.fechaBajaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class SP_CONSULTAR_PIERNASRow : global::System.Data.DataRow {
             
             private SP_CONSULTAR_PIERNASDataTable tableSP_CONSULTAR_PIERNAS;
@@ -18134,40 +17943,6 @@ namespace ReportesTPPI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent : global::System.EventArgs {
-            
-            private SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRowChangeEvent(SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRowChangeEvent : global::System.EventArgs {
             
             private SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSRow eventRow;
@@ -18252,40 +18027,6 @@ namespace ReportesTPPI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_CONSULTAR_EQUIPOS_ACTIVOSRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent : global::System.EventArgs {
-            
-            private SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASRowChangeEvent(SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_CONSULTAR_EQUIPOS_CON_COLUMNASRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -18558,6 +18299,40 @@ namespace ReportesTPPI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_CONSULTAR_PERSONAS_ACTIVASRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent : global::System.EventArgs {
+            
+            private SP_CONSULTAR_PERSONAS_CONFILTRORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORowChangeEvent(SP_CONSULTAR_PERSONAS_CONFILTRORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_CONSULTAR_PERSONAS_CONFILTRORow Row {
                 get {
                     return this.eventRow;
                 }
@@ -18913,7 +18688,7 @@ namespace ReportesTPPI {
         }
     }
 }
-namespace ReportesTPPI.db_equiposDataSetUNICOTableAdapters {
+namespace ReportesTPPI.db_equiposDataSetTableAdapters {
     
     
     /// <summary>
@@ -19101,7 +18876,7 @@ SELECT cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19119,7 +18894,7 @@ SELECT cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.CompromisosDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.CompromisosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19132,9 +18907,9 @@ SELECT cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.CompromisosDataTable GetData() {
+        public virtual db_equiposDataSet.CompromisosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.CompromisosDataTable dataTable = new db_equiposDataSetUNICO.CompromisosDataTable();
+            db_equiposDataSet.CompromisosDataTable dataTable = new db_equiposDataSet.CompromisosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19142,14 +18917,14 @@ SELECT cod_compromiso, cod_equipo, cod_tipoCompromiso, comentariosCompromiso, fe
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.CompromisosDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.CompromisosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Compromisos");
         }
         
@@ -19537,7 +19312,7 @@ SELECT cod_equipo, cod_localidad, nombre, fechaAlta, fechaBaja FROM Equipos WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19554,7 +19329,7 @@ SELECT cod_equipo, cod_localidad, nombre, fechaAlta, fechaBaja FROM Equipos WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.EquiposDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.EquiposDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19567,9 +19342,9 @@ SELECT cod_equipo, cod_localidad, nombre, fechaAlta, fechaBaja FROM Equipos WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.EquiposDataTable GetData() {
+        public virtual db_equiposDataSet.EquiposDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.EquiposDataTable dataTable = new db_equiposDataSetUNICO.EquiposDataTable();
+            db_equiposDataSet.EquiposDataTable dataTable = new db_equiposDataSet.EquiposDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19577,14 +19352,14 @@ SELECT cod_equipo, cod_localidad, nombre, fechaAlta, fechaBaja FROM Equipos WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.EquiposDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.EquiposDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Equipos");
         }
         
@@ -19950,7 +19725,7 @@ SELECT cod_equipoPersona, cod_persona, cod_equipo, cod_posicion, camiseta, fecha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19968,7 +19743,7 @@ SELECT cod_equipoPersona, cod_persona, cod_equipo, cod_posicion, camiseta, fecha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.Equipos_PersonasDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.Equipos_PersonasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19981,9 +19756,9 @@ SELECT cod_equipoPersona, cod_persona, cod_equipo, cod_posicion, camiseta, fecha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.Equipos_PersonasDataTable GetData() {
+        public virtual db_equiposDataSet.Equipos_PersonasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.Equipos_PersonasDataTable dataTable = new db_equiposDataSetUNICO.Equipos_PersonasDataTable();
+            db_equiposDataSet.Equipos_PersonasDataTable dataTable = new db_equiposDataSet.Equipos_PersonasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19991,14 +19766,14 @@ SELECT cod_equipoPersona, cod_persona, cod_equipo, cod_posicion, camiseta, fecha
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.Equipos_PersonasDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.Equipos_PersonasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Equipos_Personas");
         }
         
@@ -20351,7 +20126,7 @@ SELECT cod_localidad, nombre_localidad, cod_provincia FROM Localidades WHERE (co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20368,7 +20143,7 @@ SELECT cod_localidad, nombre_localidad, cod_provincia FROM Localidades WHERE (co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.LocalidadesDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.LocalidadesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20381,9 +20156,9 @@ SELECT cod_localidad, nombre_localidad, cod_provincia FROM Localidades WHERE (co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.LocalidadesDataTable GetData() {
+        public virtual db_equiposDataSet.LocalidadesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.LocalidadesDataTable dataTable = new db_equiposDataSetUNICO.LocalidadesDataTable();
+            db_equiposDataSet.LocalidadesDataTable dataTable = new db_equiposDataSet.LocalidadesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20391,14 +20166,14 @@ SELECT cod_localidad, nombre_localidad, cod_provincia FROM Localidades WHERE (co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.LocalidadesDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.LocalidadesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Localidades");
         }
         
@@ -20681,7 +20456,7 @@ SELECT cod_pais, nombre_pais FROM Paises WHERE (cod_pais = @cod_pais)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20698,7 +20473,7 @@ SELECT cod_pais, nombre_pais FROM Paises WHERE (cod_pais = @cod_pais)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.PaisesDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.PaisesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20711,9 +20486,9 @@ SELECT cod_pais, nombre_pais FROM Paises WHERE (cod_pais = @cod_pais)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.PaisesDataTable GetData() {
+        public virtual db_equiposDataSet.PaisesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.PaisesDataTable dataTable = new db_equiposDataSetUNICO.PaisesDataTable();
+            db_equiposDataSet.PaisesDataTable dataTable = new db_equiposDataSet.PaisesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20721,14 +20496,14 @@ SELECT cod_pais, nombre_pais FROM Paises WHERE (cod_pais = @cod_pais)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.PaisesDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.PaisesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Paises");
         }
         
@@ -21060,7 +20835,7 @@ SELECT cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21078,7 +20853,7 @@ SELECT cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.PersonasDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.PersonasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21091,9 +20866,9 @@ SELECT cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.PersonasDataTable GetData() {
+        public virtual db_equiposDataSet.PersonasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.PersonasDataTable dataTable = new db_equiposDataSetUNICO.PersonasDataTable();
+            db_equiposDataSet.PersonasDataTable dataTable = new db_equiposDataSet.PersonasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21101,14 +20876,14 @@ SELECT cod_persona, nombre, apellido, cod_tipoDoc, numeroDocumento, fechaNac, co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.PersonasDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.PersonasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Personas");
         }
         
@@ -21587,7 +21362,7 @@ SELECT cod_piernaHabil, habilidad FROM Piernas WHERE (cod_piernaHabil = @cod_pie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21604,7 +21379,7 @@ SELECT cod_piernaHabil, habilidad FROM Piernas WHERE (cod_piernaHabil = @cod_pie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.PiernasDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.PiernasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21617,9 +21392,9 @@ SELECT cod_piernaHabil, habilidad FROM Piernas WHERE (cod_piernaHabil = @cod_pie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.PiernasDataTable GetData() {
+        public virtual db_equiposDataSet.PiernasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.PiernasDataTable dataTable = new db_equiposDataSetUNICO.PiernasDataTable();
+            db_equiposDataSet.PiernasDataTable dataTable = new db_equiposDataSet.PiernasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21627,14 +21402,14 @@ SELECT cod_piernaHabil, habilidad FROM Piernas WHERE (cod_piernaHabil = @cod_pie
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.PiernasDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.PiernasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Piernas");
         }
         
@@ -21914,7 +21689,7 @@ SELECT cod_posicion, posicion FROM Posiciones WHERE (cod_posicion = @cod_posicio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21931,7 +21706,7 @@ SELECT cod_posicion, posicion FROM Posiciones WHERE (cod_posicion = @cod_posicio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.PosicionesDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.PosicionesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21944,9 +21719,9 @@ SELECT cod_posicion, posicion FROM Posiciones WHERE (cod_posicion = @cod_posicio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.PosicionesDataTable GetData() {
+        public virtual db_equiposDataSet.PosicionesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.PosicionesDataTable dataTable = new db_equiposDataSetUNICO.PosicionesDataTable();
+            db_equiposDataSet.PosicionesDataTable dataTable = new db_equiposDataSet.PosicionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21954,14 +21729,14 @@ SELECT cod_posicion, posicion FROM Posiciones WHERE (cod_posicion = @cod_posicio
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.PosicionesDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.PosicionesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Posiciones");
         }
         
@@ -22247,7 +22022,7 @@ SELECT cod_provincia, nombre_provincia, cod_pais FROM Provincias WHERE (cod_prov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22264,7 +22039,7 @@ SELECT cod_provincia, nombre_provincia, cod_pais FROM Provincias WHERE (cod_prov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.ProvinciasDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.ProvinciasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22277,9 +22052,9 @@ SELECT cod_provincia, nombre_provincia, cod_pais FROM Provincias WHERE (cod_prov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.ProvinciasDataTable GetData() {
+        public virtual db_equiposDataSet.ProvinciasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.ProvinciasDataTable dataTable = new db_equiposDataSetUNICO.ProvinciasDataTable();
+            db_equiposDataSet.ProvinciasDataTable dataTable = new db_equiposDataSet.ProvinciasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22287,14 +22062,14 @@ SELECT cod_provincia, nombre_provincia, cod_pais FROM Provincias WHERE (cod_prov
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.ProvinciasDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.ProvinciasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Provincias");
         }
         
@@ -22578,7 +22353,7 @@ SELECT cod_tipoCompromiso, tipo FROM TiposCompromisos WHERE (cod_tipoCompromiso 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22595,7 +22370,7 @@ SELECT cod_tipoCompromiso, tipo FROM TiposCompromisos WHERE (cod_tipoCompromiso 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.TiposCompromisosDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.TiposCompromisosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22608,9 +22383,9 @@ SELECT cod_tipoCompromiso, tipo FROM TiposCompromisos WHERE (cod_tipoCompromiso 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.TiposCompromisosDataTable GetData() {
+        public virtual db_equiposDataSet.TiposCompromisosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.TiposCompromisosDataTable dataTable = new db_equiposDataSetUNICO.TiposCompromisosDataTable();
+            db_equiposDataSet.TiposCompromisosDataTable dataTable = new db_equiposDataSet.TiposCompromisosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22618,14 +22393,14 @@ SELECT cod_tipoCompromiso, tipo FROM TiposCompromisos WHERE (cod_tipoCompromiso 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.TiposCompromisosDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.TiposCompromisosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TiposCompromisos");
         }
         
@@ -22903,7 +22678,7 @@ SELECT cod_tipoDoc, tipo FROM TiposDocs WHERE (cod_tipoDoc = @cod_tipoDoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22920,7 +22695,7 @@ SELECT cod_tipoDoc, tipo FROM TiposDocs WHERE (cod_tipoDoc = @cod_tipoDoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.TiposDocsDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.TiposDocsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22933,9 +22708,9 @@ SELECT cod_tipoDoc, tipo FROM TiposDocs WHERE (cod_tipoDoc = @cod_tipoDoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.TiposDocsDataTable GetData() {
+        public virtual db_equiposDataSet.TiposDocsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.TiposDocsDataTable dataTable = new db_equiposDataSetUNICO.TiposDocsDataTable();
+            db_equiposDataSet.TiposDocsDataTable dataTable = new db_equiposDataSet.TiposDocsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22943,14 +22718,14 @@ SELECT cod_tipoDoc, tipo FROM TiposDocs WHERE (cod_tipoDoc = @cod_tipoDoc)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.TiposDocsDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.TiposDocsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TiposDocs");
         }
         
@@ -23250,7 +23025,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23267,7 +23042,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.UsuariosDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23280,9 +23055,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.UsuariosDataTable GetData() {
+        public virtual db_equiposDataSet.UsuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.UsuariosDataTable dataTable = new db_equiposDataSetUNICO.UsuariosDataTable();
+            db_equiposDataSet.UsuariosDataTable dataTable = new db_equiposDataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23290,14 +23065,14 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO.UsuariosDataTable dataTable) {
+        public virtual int Update(db_equiposDataSet.UsuariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(db_equiposDataSetUNICO dataSet) {
+        public virtual int Update(db_equiposDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Usuarios");
         }
         
@@ -23639,7 +23414,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23657,7 +23432,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_COMPROMISOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23670,179 +23445,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_COMPROMISOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOSDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_CONSULTAR_COMPROMISOS_CON_COLUMNASTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_CONSULTAR_COMPROMISOS_CON_COLUMNASTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS";
-            tableMapping.ColumnMappings.Add("Nombre del Equipo", "Nombre del Equipo");
-            tableMapping.ColumnMappings.Add("Tipo de compromiso", "Tipo de compromiso");
-            tableMapping.ColumnMappings.Add("Fecha del compromiso", "Fecha del compromiso");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_CONSULTAR_COMPROMISOS_CON_COLUMNAS";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_CON_COLUMNASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_COMPROMISOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_COMPROMISOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23983,7 +23588,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24001,7 +23606,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24014,9 +23619,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_COMPROMISOS_FUTUROS_ACTIVOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24155,7 +23760,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24173,7 +23778,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24186,9 +23791,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24327,7 +23932,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24345,7 +23950,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24358,180 +23963,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_CONSULTAR_EQUIPOS_CON_COLUMNASTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_CONSULTAR_EQUIPOS_CON_COLUMNASTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_CONSULTAR_EQUIPOS_CON_COLUMNAS";
-            tableMapping.ColumnMappings.Add("Nombre del Equipo", "Nombre del Equipo");
-            tableMapping.ColumnMappings.Add("Nombre Entrenador", "Nombre Entrenador");
-            tableMapping.ColumnMappings.Add("Cantidad de Jugadores", "Cantidad de Jugadores");
-            tableMapping.ColumnMappings.Add("Fecha de Alta", "Fecha de Alta");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_CONSULTAR_EQUIPOS_CON_COLUMNAS";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_CON_COLUMNASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOS_ACTIVOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24669,7 +24103,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24687,7 +24121,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24700,9 +24134,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOS_LOCALIDADDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24843,7 +24277,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24861,7 +24295,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24874,9 +24308,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONASDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25017,7 +24451,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25035,7 +24469,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25048,9 +24482,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOS_PERSONAS_ACTIVOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25207,7 +24641,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25226,7 +24660,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_POR_IDDataTable dataTable, global::System.Nullable<int> codigo) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_EQUIPOS_POR_IDDataTable dataTable, global::System.Nullable<int> codigo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((codigo.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigo.Value));
@@ -25245,7 +24679,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_POR_IDDataTable GetData(global::System.Nullable<int> codigo) {
+        public virtual db_equiposDataSet.SP_CONSULTAR_EQUIPOS_POR_IDDataTable GetData(global::System.Nullable<int> codigo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((codigo.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(codigo.Value));
@@ -25253,7 +24687,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_POR_IDDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_EQUIPOS_POR_IDDataTable();
+            db_equiposDataSet.SP_CONSULTAR_EQUIPOS_POR_IDDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_EQUIPOS_POR_IDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25390,7 +24824,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25408,7 +24842,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_LOCALIDADESDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_LOCALIDADESDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25421,9 +24855,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_LOCALIDADESDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_LOCALIDADESDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_LOCALIDADESDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_LOCALIDADESDataTable();
+            db_equiposDataSet.SP_CONSULTAR_LOCALIDADESDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_LOCALIDADESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25559,7 +24993,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25577,7 +25011,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_PAISESDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PAISESDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25590,9 +25024,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_PAISESDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_PAISESDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_PAISESDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_PAISESDataTable();
+            db_equiposDataSet.SP_CONSULTAR_PAISESDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PAISESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25737,7 +25171,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25755,7 +25189,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_PERSONASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PERSONASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25768,9 +25202,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_PERSONASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_PERSONASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_PERSONASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_PERSONASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_PERSONASDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PERSONASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25915,7 +25349,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25933,7 +25367,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_PERSONAS_ACTIVASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PERSONAS_ACTIVASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25946,9 +25380,343 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_PERSONAS_ACTIVASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_PERSONAS_ACTIVASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_PERSONAS_ACTIVASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_PERSONAS_ACTIVASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_PERSONAS_ACTIVASDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PERSONAS_ACTIVASDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_CONSULTAR_PERSONAS_CONFILTROTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_CONSULTAR_PERSONAS_CONFILTROTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_CONSULTAR_PERSONAS_CONFILTRO";
+            tableMapping.ColumnMappings.Add("cod_persona", "cod_persona");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("apellido", "apellido");
+            tableMapping.ColumnMappings.Add("cod_tipoDoc", "cod_tipoDoc");
+            tableMapping.ColumnMappings.Add("numeroDocumento", "numeroDocumento");
+            tableMapping.ColumnMappings.Add("fechaNac", "fechaNac");
+            tableMapping.ColumnMappings.Add("cod_piernaHabil", "cod_piernaHabil");
+            tableMapping.ColumnMappings.Add("peso", "peso");
+            tableMapping.ColumnMappings.Add("estatura", "estatura");
+            tableMapping.ColumnMappings.Add("fechaAlta", "fechaAlta");
+            tableMapping.ColumnMappings.Add("fechaBaja", "fechaBaja");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SP_CONSULTAR_PERSONAS_CONFILTRO";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaDesde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nroDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estaturaDesde", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 6, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estaturaHasta", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 6, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pesoDesde", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pesoHasta", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoPierna", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@baja", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PERSONAS_CONFILTRODataTable dataTable, string nombre, string apellido, global::System.Nullable<global::System.DateTime> fechaDesde, global::System.Nullable<global::System.DateTime> fechaHasta, global::System.Nullable<int> tipoDoc, global::System.Nullable<int> nroDoc, global::System.Nullable<decimal> estaturaDesde, global::System.Nullable<decimal> estaturaHasta, global::System.Nullable<decimal> pesoDesde, global::System.Nullable<decimal> pesoHasta, global::System.Nullable<int> tipoPierna, global::System.Nullable<bool> baja) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(nombre));
+            }
+            if ((apellido == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(apellido));
+            }
+            if ((fechaDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(fechaDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((fechaHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(fechaHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((tipoDoc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(tipoDoc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((nroDoc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((int)(nroDoc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((estaturaDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((decimal)(estaturaDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((estaturaHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((decimal)(estaturaHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((pesoDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((decimal)(pesoDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((pesoHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[10].Value = ((decimal)(pesoHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((tipoPierna.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[11].Value = ((int)(tipoPierna.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((baja.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[12].Value = ((bool)(baja.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual db_equiposDataSet.SP_CONSULTAR_PERSONAS_CONFILTRODataTable GetData(string nombre, string apellido, global::System.Nullable<global::System.DateTime> fechaDesde, global::System.Nullable<global::System.DateTime> fechaHasta, global::System.Nullable<int> tipoDoc, global::System.Nullable<int> nroDoc, global::System.Nullable<decimal> estaturaDesde, global::System.Nullable<decimal> estaturaHasta, global::System.Nullable<decimal> pesoDesde, global::System.Nullable<decimal> pesoHasta, global::System.Nullable<int> tipoPierna, global::System.Nullable<bool> baja) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(nombre));
+            }
+            if ((apellido == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(apellido));
+            }
+            if ((fechaDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(fechaDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((fechaHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(fechaHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((tipoDoc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(tipoDoc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((nroDoc.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((int)(nroDoc.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((estaturaDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((decimal)(estaturaDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((estaturaHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((decimal)(estaturaHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((pesoDesde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((decimal)(pesoDesde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((pesoHasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[10].Value = ((decimal)(pesoHasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((tipoPierna.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[11].Value = ((int)(tipoPierna.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((baja.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[12].Value = ((bool)(baja.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            db_equiposDataSet.SP_CONSULTAR_PERSONAS_CONFILTRODataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PERSONAS_CONFILTRODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26084,7 +25852,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26102,7 +25870,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_PIERNASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PIERNASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26115,9 +25883,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_PIERNASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_PIERNASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_PIERNASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_PIERNASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_PIERNASDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PIERNASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26253,7 +26021,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26271,7 +26039,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_POSICIONESDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_POSICIONESDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26284,9 +26052,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_POSICIONESDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_POSICIONESDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_POSICIONESDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_POSICIONESDataTable();
+            db_equiposDataSet.SP_CONSULTAR_POSICIONESDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_POSICIONESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26423,7 +26191,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26441,7 +26209,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_PROVINCIASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_PROVINCIASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26454,9 +26222,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_PROVINCIASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_PROVINCIASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_PROVINCIASDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_PROVINCIASDataTable();
+            db_equiposDataSet.SP_CONSULTAR_PROVINCIASDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_PROVINCIASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26592,7 +26360,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26610,7 +26378,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26623,9 +26391,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_TIPOS_COMPROMISOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26761,7 +26529,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26779,7 +26547,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_DOCDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_TIPOS_DOCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26792,9 +26560,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_DOCDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_TIPOS_DOCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_DOCDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_TIPOS_DOCDataTable();
+            db_equiposDataSet.SP_CONSULTAR_TIPOS_DOCDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_TIPOS_DOCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26933,7 +26701,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26951,7 +26719,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_USUARIOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26964,9 +26732,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_USUARIOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_USUARIOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_USUARIOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27105,7 +26873,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27123,7 +26891,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -27136,9 +26904,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable GetData() {
+        public virtual db_equiposDataSet.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable();
+            db_equiposDataSet.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_USUARIOS_ACTIVOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27277,7 +27045,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27297,7 +27065,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_LOGINDataTable dataTable, string user, string pass) {
+        public virtual int Fill(db_equiposDataSet.SP_CONSULTAR_USUARIOS_LOGINDataTable dataTable, string user, string pass) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((user == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -27322,7 +27090,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_LOGINDataTable GetData(string user, string pass) {
+        public virtual db_equiposDataSet.SP_CONSULTAR_USUARIOS_LOGINDataTable GetData(string user, string pass) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((user == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -27336,7 +27104,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pass));
             }
-            db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_LOGINDataTable dataTable = new db_equiposDataSetUNICO.SP_CONSULTAR_USUARIOS_LOGINDataTable();
+            db_equiposDataSet.SP_CONSULTAR_USUARIOS_LOGINDataTable dataTable = new db_equiposDataSet.SP_CONSULTAR_USUARIOS_LOGINDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27472,7 +27240,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27490,7 +27258,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_HABILIDADES_PERSONASDataTable dataTable) {
+        public virtual int Fill(db_equiposDataSet.SP_HABILIDADES_PERSONASDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -27503,9 +27271,9 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_HABILIDADES_PERSONASDataTable GetData() {
+        public virtual db_equiposDataSet.SP_HABILIDADES_PERSONASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_equiposDataSetUNICO.SP_HABILIDADES_PERSONASDataTable dataTable = new db_equiposDataSetUNICO.SP_HABILIDADES_PERSONASDataTable();
+            db_equiposDataSet.SP_HABILIDADES_PERSONASDataTable dataTable = new db_equiposDataSet.SP_HABILIDADES_PERSONASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27644,7 +27412,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString;
+            this._connection.ConnectionString = global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27663,7 +27431,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_equiposDataSetUNICO.SP_RECOVERY_PASSWORDDataTable dataTable, string email) {
+        public virtual int Fill(db_equiposDataSet.SP_RECOVERY_PASSWORDDataTable dataTable, string email) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((email == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -27682,7 +27450,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_equiposDataSetUNICO.SP_RECOVERY_PASSWORDDataTable GetData(string email) {
+        public virtual db_equiposDataSet.SP_RECOVERY_PASSWORDDataTable GetData(string email) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((email == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -27690,7 +27458,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(email));
             }
-            db_equiposDataSetUNICO.SP_RECOVERY_PASSWORDDataTable dataTable = new db_equiposDataSetUNICO.SP_RECOVERY_PASSWORDDataTable();
+            db_equiposDataSet.SP_RECOVERY_PASSWORDDataTable dataTable = new db_equiposDataSet.SP_RECOVERY_PASSWORDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27723,178 +27491,184 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[21];
+            this._commandCollection = new global::System.Data.IDbCommand[22];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.SP_BAJA_COMPROMISO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.SP_BAJA_EQUIPO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.SP_BAJA_COMPROMISO_POREQUIPO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_PORDETALLE";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandText = "dbo.SP_BAJA_EQUIPO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_POREQUIPO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_PORDETALLE";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_PORPERSONA";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_POREQUIPO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "dbo.SP_BAJA_PERSONA";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "dbo.SP_BAJA_EQUIPO_PERSONA_PORPERSONA";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandText = "dbo.SP_EDITAR_COMPROMISO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandText = "dbo.SP_BAJA_PERSONA";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoCompromiso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comentariosCompromiso", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaCompromiso", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAlta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).CommandText = "dbo.SP_EDITAR_EQUIPO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).CommandText = "dbo.SP_EDITAR_COMPROMISO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoCompromiso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comentariosCompromiso", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaCompromiso", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAlta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).CommandText = "dbo.SP_EDITAR_EQUIPO_PERSONA_PORDETALLE";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).CommandText = "dbo.SP_EDITAR_EQUIPO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_persona", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_posicion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camiseta", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAlta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).CommandText = "dbo.SP_EDITAR_PERSONA";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).CommandText = "dbo.SP_EDITAR_EQUIPO_PERSONA_PORDETALLE";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDocumento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaNac", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@piernaHabil", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatura", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_persona", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_posicion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camiseta", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAlta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).CommandText = "dbo.SP_EDITAR_USUARIO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).CommandText = "dbo.SP_EDITAR_PERSONA";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDocumento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaNac", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@piernaHabil", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatura", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAlta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandText = "dbo.SP_INSERTAR_COMPROMISO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandText = "dbo.SP_EDITAR_USUARIO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoCompromiso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comentariosCompromiso", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaCompromiso", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandText = "dbo.SP_INSERTAR_EQUIPO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandText = "dbo.SP_INSERTAR_COMPROMISO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@localidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoCompromiso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comentariosCompromiso", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaCompromiso", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandText = "dbo.SP_INSERTAR_EQUIPOS_PERSONAS";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandText = "dbo.SP_INSERTAR_EQUIPO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_persona", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_posicion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camiseta", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@localidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).CommandText = "dbo.SP_INSERTAR_LOCALIDAD";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).CommandText = "dbo.SP_INSERTAR_EQUIPOS_PERSONAS";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_localidad", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_provincia", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_persona", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_equipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_posicion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[14])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camiseta", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).CommandText = "dbo.SP_INSERTAR_PAIS";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).CommandText = "dbo.SP_INSERTAR_LOCALIDAD";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_pais", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_localidad", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[15])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_provincia", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[16] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).CommandText = "dbo.SP_INSERTAR_PERSONA";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).CommandText = "dbo.SP_INSERTAR_PAIS";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDocumento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaNac", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@piernaHabil", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatura", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[16])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_pais", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[17] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).CommandText = "dbo.SP_INSERTAR_PROVINCIA";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).CommandText = "dbo.SP_INSERTAR_PERSONA";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_provincia", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_pais", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_tipoDoc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroDocumento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaNac", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@piernaHabil", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[17])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatura", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[18] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).CommandText = "dbo.SP_INSERTAR_TIPO_COMPROMISO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).CommandText = "dbo.SP_INSERTAR_PROVINCIA";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_provincia", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[18])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cod_pais", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[19] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).CommandText = "dbo.SP_INSERTAR_TIPO_DOC";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).CommandText = "dbo.SP_INSERTAR_TIPO_COMPROMISO";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoDoc", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[20] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).CommandText = "dbo.SP_INSERTAR_USUARIO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).CommandText = "dbo.SP_INSERTAR_TIPO_DOC";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[20])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoDoc", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[21] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).Connection = new global::System.Data.SqlClient.SqlConnection(global::ReportesTPPI.Properties.Settings.Default.db_equiposConnectionString1);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).CommandText = "dbo.SP_INSERTAR_USUARIO";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[21])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27928,7 +27702,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_BAJA_EQUIPO(global::System.Nullable<int> codigo) {
+        public virtual int SP_BAJA_COMPROMISO_POREQUIPO(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[1]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
@@ -27956,7 +27730,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_BAJA_EQUIPO_PERSONA_PORDETALLE(global::System.Nullable<int> codigo) {
+        public virtual int SP_BAJA_EQUIPO(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[2]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
@@ -27984,7 +27758,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_BAJA_EQUIPO_PERSONA_POREQUIPO(global::System.Nullable<int> codigo) {
+        public virtual int SP_BAJA_EQUIPO_PERSONA_PORDETALLE(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[3]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
@@ -28012,7 +27786,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_BAJA_EQUIPO_PERSONA_PORPERSONA(global::System.Nullable<int> codigo) {
+        public virtual int SP_BAJA_EQUIPO_PERSONA_POREQUIPO(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[4]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
@@ -28040,7 +27814,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_BAJA_PERSONA(global::System.Nullable<int> codigo) {
+        public virtual int SP_BAJA_EQUIPO_PERSONA_PORPERSONA(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[5]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
@@ -28068,8 +27842,36 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int SP_EDITAR_COMPROMISO(global::System.Nullable<int> codigo, global::System.Nullable<int> cod_equipo, global::System.Nullable<int> cod_tipoCompromiso, string comentariosCompromiso, global::System.Nullable<global::System.DateTime> fechaCompromiso, global::System.Nullable<global::System.DateTime> fechaAlta, global::System.Nullable<global::System.DateTime> fechaBaja) {
+        public virtual int SP_BAJA_PERSONA(global::System.Nullable<int> codigo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[6]));
+            if ((codigo.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(codigo.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int SP_EDITAR_COMPROMISO(global::System.Nullable<int> codigo, global::System.Nullable<int> cod_equipo, global::System.Nullable<int> cod_tipoCompromiso, string comentariosCompromiso, global::System.Nullable<global::System.DateTime> fechaCompromiso, global::System.Nullable<global::System.DateTime> fechaAlta, global::System.Nullable<global::System.DateTime> fechaBaja) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[7]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
             }
@@ -28133,7 +27935,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_EDITAR_EQUIPO(global::System.Nullable<int> codigo, string nombre, global::System.Nullable<global::System.DateTime> fechaAlta, global::System.Nullable<global::System.DateTime> fechaBaja) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[7]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[8]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
             }
@@ -28179,7 +27981,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_EDITAR_EQUIPO_PERSONA_PORDETALLE(global::System.Nullable<int> codigo, global::System.Nullable<int> cod_persona, global::System.Nullable<int> cod_equipo, global::System.Nullable<int> cod_posicion, string camiseta, global::System.Nullable<global::System.DateTime> fechaAlta, global::System.Nullable<global::System.DateTime> fechaBaja) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[8]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[9]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
             }
@@ -28243,7 +28045,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_EDITAR_PERSONA(global::System.Nullable<int> codigo, string nombre, string apellido, global::System.Nullable<int> cod_tipoDoc, global::System.Nullable<int> numeroDocumento, global::System.Nullable<global::System.DateTime> fechaNac, global::System.Nullable<int> piernaHabil, global::System.Nullable<decimal> peso, global::System.Nullable<decimal> estatura, global::System.Nullable<global::System.DateTime> fechaAlta, global::System.Nullable<global::System.DateTime> fechaBaja) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[9]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[10]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
             }
@@ -28331,7 +28133,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_EDITAR_USUARIO(global::System.Nullable<int> codigo, string nombre, string pass, global::System.Nullable<global::System.DateTime> fechaBaja) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[10]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[11]));
             if ((codigo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(codigo.Value));
             }
@@ -28377,7 +28179,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_COMPROMISO(global::System.Nullable<int> cod_equipo, global::System.Nullable<int> cod_tipoCompromiso, string comentariosCompromiso, global::System.Nullable<global::System.DateTime> fechaCompromiso) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[11]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[12]));
             if ((cod_equipo.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(cod_equipo.Value));
             }
@@ -28423,7 +28225,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_EQUIPO(string nombre, global::System.Nullable<int> localidad) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[12]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[13]));
             if ((nombre == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28457,7 +28259,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_EQUIPOS_PERSONAS(global::System.Nullable<int> cod_persona, global::System.Nullable<int> cod_equipo, global::System.Nullable<int> cod_posicion, string camiseta) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[13]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[14]));
             if ((cod_persona.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(cod_persona.Value));
             }
@@ -28503,7 +28305,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_LOCALIDAD(string nombre_localidad, global::System.Nullable<int> cod_provincia) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[14]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[15]));
             if ((nombre_localidad == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28537,7 +28339,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_PAIS(string nombre_pais) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[15]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[16]));
             if ((nombre_pais == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28565,7 +28367,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_PERSONA(string nombre, string apellido, global::System.Nullable<int> cod_tipoDoc, global::System.Nullable<int> numeroDocumento, global::System.Nullable<global::System.DateTime> fechaNac, global::System.Nullable<int> piernaHabil, global::System.Nullable<decimal> peso, global::System.Nullable<decimal> estatura) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[16]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[17]));
             if ((nombre == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28635,7 +28437,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_PROVINCIA(string nombre_provincia, global::System.Nullable<int> cod_pais) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[17]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[18]));
             if ((nombre_provincia == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28669,7 +28471,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_TIPO_COMPROMISO(string tipo) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[18]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[19]));
             if ((tipo == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28697,7 +28499,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_TIPO_DOC(string tipoDoc) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[19]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[20]));
             if ((tipoDoc == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -28725,7 +28527,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int SP_INSERTAR_USUARIO(string usuario, string pass) {
-            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[20]));
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[21]));
             if ((usuario == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -29100,7 +28902,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(db_equiposDataSetUNICO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(db_equiposDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._paisesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Paises.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -29218,7 +29020,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(db_equiposDataSetUNICO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(db_equiposDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._paisesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Paises.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -29324,7 +29126,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(db_equiposDataSetUNICO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(db_equiposDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._equipos_PersonasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Equipos_Personas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -29454,7 +29256,7 @@ SELECT cod_usuario, usuario, pass, fechaBaja, email FROM Usuarios WHERE (cod_usu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(db_equiposDataSetUNICO dataSet) {
+        public virtual int UpdateAll(db_equiposDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

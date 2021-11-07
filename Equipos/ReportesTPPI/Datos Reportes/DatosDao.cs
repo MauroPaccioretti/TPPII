@@ -11,7 +11,9 @@ namespace ReportesTPPI.Datos_Reportes
     class DatosDao
     {
         //Cambiar cadena para quien presente.
-        private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-I4SKB1G\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+        //private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-I4SKB1G\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+        private static SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-59VKSU4\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Security=True");
+
         private static SqlCommand cmd;
 
         

@@ -48,12 +48,6 @@ namespace ReportesTPPI
             // 
             this.SP_CONSULTAR_EQUIPOS_LOCALIDADBindingSource.DataMember = "SP_CONSULTAR_EQUIPOS_LOCALIDAD";
             // 
-            // db_equiposDataSet1
-            // 
-            // 
-            // SP_CONSULTAR_EQUIPOS_LOCALIDADTableAdapter
-            // 
-            // 
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
@@ -162,6 +156,7 @@ namespace ReportesTPPI
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.cboBusqueda);
             this.Controls.Add(this.lblFiltrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListadoEquipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Equipos";

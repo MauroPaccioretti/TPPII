@@ -33,5 +33,16 @@ namespace ReportesTPPI.Properties {
                 return ((string)(this["db_equiposConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-59VKSU4\\SQLEXPRESS;Initial Catalog=db_equipos;Integrated Secu" +
+            "rity=True")]
+        public string db_equiposConnectionString1 {
+            get {
+                return ((string)(this["db_equiposConnectionString1"]));
+            }
+        }
     }
 }
