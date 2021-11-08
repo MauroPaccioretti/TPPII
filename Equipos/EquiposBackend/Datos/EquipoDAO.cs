@@ -559,10 +559,10 @@ namespace EquiposBackend.Datos
             parametros.Add("@peso", oPersona.Peso);
             parametros.Add("@estatura", oPersona.Estatura);
             parametros.Add("@fechaAlta", oPersona.FechaAlta);
-            //if (!oPersona.FechaBaja.HasValue)
-            //    parametros.Add("@fechaBaja", DBNull.Value);
-            //else
-            //    parametros.Add("@fechaBaja", oPersona.FechaBaja);
+            if (!oPersona.FechaBaja.HasValue)
+                parametros.Add("@fechaBaja", DBNull.Value);
+            else
+                parametros.Add("@fechaBaja", oPersona.FechaBaja);
 
             aux = helper.AlterOneElement("SP_EDITAR_PERSONA", parametros);
 

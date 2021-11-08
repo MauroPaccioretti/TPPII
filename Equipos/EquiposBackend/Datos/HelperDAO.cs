@@ -350,7 +350,10 @@ namespace EquiposBackend.Datos
                 if(parametros != null)
                     foreach(KeyValuePair<string, object> p in parametros)
                     {
-                        cmd.Parameters.AddWithValue(p.Key, p.Value.ToString());
+                        if (p.Value == null || p.Value.ToString() == "")
+                            cmd.Parameters.AddWithValue(p.Key, DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue(p.Key, p.Value);
                     }
                 int resultado = cmd.ExecuteNonQuery();
                 if (resultado == 1)
@@ -365,8 +368,9 @@ namespace EquiposBackend.Datos
                 }
                 
             }
-            catch
+            catch (Exception ex)
             {
+                string m = ex.Message;
                 t.Rollback();
                 aux = false;
 
