@@ -244,6 +244,7 @@ namespace EquiposFrontend
             dgvPersonasEquipo.Rows.Clear();
             //quitamos los jugadores inactivos del equipo
             List<EquipoPersona> lstJugadoresActivos = new List<EquipoPersona>();
+            lstJugadoresActivos.Clear();
             lstJugadoresActivos.AddRange(oEquipo.Jugadores);
             lstJugadoresActivos.RemoveAll(item => item.FechaBaja.HasValue);
 
@@ -308,6 +309,7 @@ namespace EquiposFrontend
 
 
                 // asignamos la persona al equipo desde la lista de personas global
+                oEP = new EquipoPersona();
                 oEP.Persona = lstPersonas.Find(item => item.CodPersona == Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString()));
                 
                 //Agregamos la posicion de la persona en el equipo
