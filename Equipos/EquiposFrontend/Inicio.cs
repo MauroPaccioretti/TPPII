@@ -215,11 +215,19 @@ namespace EquiposFrontend
             this.Show();
         }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            if (MessageBox.Show("Are you sure to Exit application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }

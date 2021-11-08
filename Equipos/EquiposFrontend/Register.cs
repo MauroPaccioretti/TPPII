@@ -70,15 +70,16 @@ namespace EquiposFrontend
 
                         usuarios.Add(usuario);
 
-                        string datosJSON = JsonConvert.SerializeObject(usuarios);
+                        string datosJSON = JsonConvert.SerializeObject(usuario);
                         string url = "https://localhost:44381/api/Usuarios/register";
-                        await ClienteSingleton.GetInstancia().PutAsync(url,datosJSON);
+                        await ClienteSingleton.GetInstancia().PostAsync(url,datosJSON);
 
                         if (usuarios.Count > 0)
                         {
                             DialogResult result = MessageBox.Show("Registrado con nombre de usuario: " + usuario.User.ToString());
                             if (result == DialogResult.OK)
                             {
+                                
                                 Hide();
                             }
                         }

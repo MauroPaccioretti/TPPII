@@ -36,8 +36,8 @@ namespace EquiposWebAPI.Controllers
         //        return Ok("No se puedo grabar!");
         //}
 
-        [HttpPut("register")]
-        public IActionResult PutUsuario(Usuario usuario)
+        [HttpPost("register")]
+        public IActionResult PostUsuario(Usuario usuario)
         {
             if (usuario == null)
                 return BadRequest();

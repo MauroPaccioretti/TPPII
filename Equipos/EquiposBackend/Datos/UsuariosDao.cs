@@ -33,7 +33,7 @@ namespace EquiposBackend.Datos
         public bool CreateUsuario(Usuario usuario)
         {
             bool aux;
-            Dictionary<string, Object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@usuario", usuario.User);
             parameters.Add("@pass", usuario.Pass);
             parameters.Add("@email", usuario.Email);

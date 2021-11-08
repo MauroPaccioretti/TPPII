@@ -451,6 +451,12 @@ namespace EquiposFrontend
                 return;
             }
 
+            if (cmbPosiciones.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor elija una posicion.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string datosJSONEquipoFull = JsonConvert.SerializeObject(oEquipo);
             switch (modo)
             {
@@ -590,6 +596,11 @@ namespace EquiposFrontend
 
 
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

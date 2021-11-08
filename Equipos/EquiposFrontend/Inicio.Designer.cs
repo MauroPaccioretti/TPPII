@@ -77,12 +77,13 @@ namespace EquiposFrontend
             this.btnEditarPersona = new System.Windows.Forms.Button();
             this.btnNvaPersona = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -576,13 +577,6 @@ namespace EquiposFrontend
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 0;
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrarSesion.TabIndex = 0;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(0, 0);
@@ -622,11 +616,11 @@ namespace EquiposFrontend
             this.button1.Size = new System.Drawing.Size(26, 22);
             this.button1.TabIndex = 15;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -634,6 +628,20 @@ namespace EquiposFrontend
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1552, 30);
             this.panel1.TabIndex = 7;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1523, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(26, 22);
+            this.btnCerrar.TabIndex = 19;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblTitulo
             // 
@@ -648,6 +656,22 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(-21, 442);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(233, 41);
+            this.btnCerrarSesion.TabIndex = 2;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -655,6 +679,7 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1764, 516);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -731,7 +756,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónGeneralToolStripMenuItem;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MenuStrip menuStrip2;
@@ -743,5 +767,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

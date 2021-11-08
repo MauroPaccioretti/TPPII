@@ -365,7 +365,8 @@ go
 go
 create proc SP_INSERTAR_USUARIO
 @usuario nvarchar (100),
-@pass nvarchar (50)
+@pass nvarchar (50),
+@email nvarchar (50)
 as
 begin
 declare @cod_usuario int
@@ -373,8 +374,8 @@ if exists (select * from Usuarios)
 	set @cod_usuario = (SELECT max(cod_usuario)+1 FROM Usuarios)
 else
 	set @cod_usuario = 1
-insert into Usuarios (cod_usuario, usuario, pass)
-	values (@cod_usuario, @usuario, @pass)
+insert into Usuarios (cod_usuario, usuario, pass,email)
+	values (@cod_usuario, @usuario, @pass, @email)
 end
 go
 
