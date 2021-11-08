@@ -50,7 +50,7 @@ namespace EquiposFrontend
 
 
 
-        private async void Modificar_PPL_Frm_Load(object sender, EventArgs e)
+        private void Modificar_PPL_Frm_Load(object sender, EventArgs e)
         {
             switch (accion)
             {
@@ -62,9 +62,12 @@ namespace EquiposFrontend
                     break;
             }
 
+            CargarComboAsync();
+                        
+        }
 
-
-
+        private async void CargarComboAsync()
+        {
             string url = "https://localhost:44381/api/Equipos/" + tabla.ToString();
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             IEnumerable<object> lista;
@@ -118,6 +121,7 @@ namespace EquiposFrontend
             }
         }
 
+
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Trim().Equals(""))
@@ -158,6 +162,7 @@ namespace EquiposFrontend
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, JsonConvert.SerializeObject(oPais));
                                 
                                 MessageBox.Show(resultado, "Resultado");
+                                
                                 break;
 
                             case TablasSoporte.provincias:
@@ -227,6 +232,7 @@ namespace EquiposFrontend
 
                                 Pais oPais = new Pais();
                                 oPais.Nombre = txtNombre.Text;
+                                oPais.IDPais = (int)cmbPPL.SelectedValue;
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, JsonConvert.SerializeObject(oPais));
                                 
                                 MessageBox.Show(resultado, "Resultado");
@@ -272,6 +278,7 @@ namespace EquiposFrontend
 
                                 TiposDocumentos oTdoc = new TiposDocumentos();
                                 oTdoc.TipoDoc = txtNombre.Text;
+                                oTdoc.CodTipoDoc = (int)cmbPPL.SelectedValue;
                                 datosJSON = JsonConvert.SerializeObject(oTdoc);
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
 
@@ -284,6 +291,7 @@ namespace EquiposFrontend
 
                                 TipoCompromisos oTC = new TipoCompromisos();
                                 oTC.NombreCompromiso = txtNombre.Text;
+                                oTC.CodCompromiso = (int)cmbPPL.SelectedValue;
                                 datosJSON = JsonConvert.SerializeObject(oTC);
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
 
@@ -295,7 +303,10 @@ namespace EquiposFrontend
                 }
 
             }
+            CargarComboAsync();
+            txtNombre.Text = "";
         }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

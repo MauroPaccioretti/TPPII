@@ -131,7 +131,7 @@ namespace EquiposBackend.Datos
             try
             {
                 cnn.Open();
-                cnn.BeginTransaction();
+                t = cnn.BeginTransaction();
                 SqlCommand cmd = new SqlCommand("SP_INSERTAR_EQUIPO", cnn, t);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre", oEquipo.Nombre);
@@ -190,7 +190,7 @@ namespace EquiposBackend.Datos
             {
                 
                 cnn.Open();
-                cnn.BeginTransaction();
+                t = cnn.BeginTransaction();
                 SqlCommand cmd1 = new SqlCommand(spCommand1, cnn, t);
                 cmd1.CommandType = CommandType.StoredProcedure;
                 cmd1.Parameters.AddWithValue("@codigo", idElemento);
@@ -304,23 +304,56 @@ namespace EquiposBackend.Datos
             return aux;
         }
 
+
+        public bool UpdateElement(string spCommand, Dictionary<string, object> parametros = null)
+        {
+            bool aux = false;
+            try
+            {
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(spCommand, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (parametros != null)
+                    foreach (KeyValuePair<string, object> p in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(p.Key, p.Value.ToString());
+                    }
+                cmd.ExecuteNonQuery();
+
+                aux = true;
+            }
+            catch
+            {
+                aux = false;
+            }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+            return aux;
+
+
+        }
+
+
         public bool AlterOneElement( string spCommand, Dictionary<string , object> parametros = null )
         {
+            SqlTransaction t = null;
             bool aux;
             try
             {
-                SqlTransaction t = null;
+                
                 cnn.Open();
-                SqlCommand cmd = new SqlCommand(spCommand, cnn, t);
-                cnn.BeginTransaction();
+                t = cnn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand(spCommand, cnn, t);                
                 cmd.CommandType = CommandType.StoredProcedure;
                 if(parametros != null)
                     foreach(KeyValuePair<string, object> p in parametros)
                     {
-                        cmd.Parameters.AddWithValue(p.Key, p.Value);
+                        cmd.Parameters.AddWithValue(p.Key, p.Value.ToString());
                     }
-
-                if (cmd.ExecuteNonQuery() == 1)
+                int resultado = cmd.ExecuteNonQuery();
+                if (resultado == 1)
                 {
                     t.Commit();
                     aux = true;
@@ -334,6 +367,7 @@ namespace EquiposBackend.Datos
             }
             catch
             {
+                t.Rollback();
                 aux = false;
 
             }

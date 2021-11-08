@@ -1,6 +1,7 @@
 ﻿using EquiposBackend.Dominio;
 using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace EquiposFrontend
             InitializeComponent();
             this.modo = modo;
             this.idPersona = IdPersona;
-
+            oPersona = new Persona();
             switch (modo)
             {
                 case Accion.Agregar:
@@ -238,6 +239,16 @@ namespace EquiposFrontend
             oPersona.FechaNac = dtpFechaNacimiento.Value;
 
             string datosJSON = JsonConvert.SerializeObject(oPersona);
+
+            /*
+            string datos1JSON = JsonConvert.SerializeObject(oPersona , 
+                new IsoDateTimeConverter() {DateTimeFormat = "dd-MM-yyyy" });
+
+            string datos2Json = JsonConvert.SerializeObject(oPersona, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            JsonSerializer jsonWriter = new JsonSerializer { NullValueHandling = NullValueHandling.Ignore };
+            var formatting = new JsonSerializerSettings { DateFormatString = "dd-MM-yyyy", NullValueHandling = NullValueHandling.Ignore};
+            string datos3Json = JsonConvert.SerializeObject(oPersona, formatting);
+            */
             switch (modo)
             {
                 case Accion.Agregar:
