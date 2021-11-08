@@ -112,7 +112,7 @@ namespace EquiposFrontend
             cmbPosiciones.DataSource = lstPosiciones;
             cmbPosiciones.DisplayMember = "NombrePosicion";
             cmbPosiciones.ValueMember = "CodPosicion";
-            cmbPosiciones.SelectedIndex = 0;
+            cmbPosiciones.SelectedIndex = -1;
 
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
@@ -430,6 +430,10 @@ namespace EquiposFrontend
                 MessageBox.Show("Por favor elija un nombre para el equipo.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else
+            {
+                oEquipo.Nombre = txtNombreEquipo.Text;
+            }
 
             if(dgvPersonasEquipo.Rows.Count == 0)
             {
@@ -452,11 +456,9 @@ namespace EquiposFrontend
                 MessageBox.Show("Por favor elija una localidad para el equipo.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            if (cmbPosiciones.SelectedIndex == -1)
+            else
             {
-                MessageBox.Show("Por favor elija una posicion.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                oEquipo.CodLocalidad = cmbLocalidad.SelectedIndex + 1;
             }
 
             string datosJSONEquipoFull = JsonConvert.SerializeObject(oEquipo);

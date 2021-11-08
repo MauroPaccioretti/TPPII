@@ -135,7 +135,7 @@ namespace EquiposBackend.Datos
                 SqlCommand cmd = new SqlCommand("SP_INSERTAR_EQUIPO", cnn, t);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre", oEquipo.Nombre);
-                cmd.Parameters.AddWithValue("@localidad", oEquipo.Nombre);
+                cmd.Parameters.AddWithValue("@localidad", oEquipo.CodLocalidad);
                 cmd.ExecuteNonQuery();
                 
                 if(oEquipo.Jugadores != null)
@@ -143,10 +143,10 @@ namespace EquiposBackend.Datos
                     {
                         SqlCommand cmd2 = new SqlCommand("SP_INSERTAR_EQUIPOS_PERSONAS", cnn, t);
                         cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@cod_persona", oEquipo.Nombre);
-                        cmd2.Parameters.AddWithValue("@cod_equipo", oEquipo.Nombre);
-                        cmd2.Parameters.AddWithValue("@cod_posicion", oEquipo.Nombre);
-                        cmd2.Parameters.AddWithValue("@camiseta", oEquipo.Nombre);
+                        cmd2.Parameters.AddWithValue("@cod_persona", oEP.Persona.CodPersona);
+                        cmd2.Parameters.AddWithValue("@cod_equipo", oEquipo.CodEquipo);
+                        cmd2.Parameters.AddWithValue("@cod_posicion", oEP.CodPosicion);
+                        cmd2.Parameters.AddWithValue("@camiseta", oEP.Camiseta);
                         cmd2.ExecuteNonQuery();
                     }
 
