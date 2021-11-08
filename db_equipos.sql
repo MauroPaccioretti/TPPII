@@ -702,7 +702,7 @@ end
 ------------SP_EDITAR---------------------------------------------------------
 ------------------------------------------------------------------------------
 go
-create proc SP_EDITAR_PERSONA
+create or alter proc SP_EDITAR_PERSONA
 @codigo int,
 @nombre nvarchar (50),
 @apellido nvarchar (50),
@@ -713,7 +713,7 @@ create proc SP_EDITAR_PERSONA
 @peso numeric (5,2),
 @estatura numeric (5,2),
 @fechaAlta datetime,
-@fechaBaja datetime
+@fechaBaja datetime = NULL
 as
 begin
 update Personas
@@ -731,11 +731,11 @@ where cod_persona=@codigo
 end
 go
 go
-create proc SP_EDITAR_EQUIPO
+create or alter proc SP_EDITAR_EQUIPO
 @codigo int, 
 @nombre nvarchar (50), 
 @fechaAlta datetime, 
-@fechaBaja datetime
+@fechaBaja datetime = NULL
 as
 begin
 update Equipos
@@ -745,14 +745,14 @@ set nombre = @nombre,
 where cod_equipo = @codigo
 end
 go
-create proc SP_EDITAR_COMPROMISO
+create or alter proc SP_EDITAR_COMPROMISO
 @codigo int,
 @cod_equipo int,
 @cod_tipoCompromiso int,
 @comentariosCompromiso nvarchar (250),
 @fechaCompromiso datetime,
 @fechaAlta datetime,
-@fechaBaja datetime
+@fechaBaja datetime = NULL
 as
 begin
 update Compromisos
@@ -767,14 +767,14 @@ end
 go
 
 
-create proc SP_EDITAR_EQUIPO_PERSONA_PORDETALLE
+create or alter proc SP_EDITAR_EQUIPO_PERSONA_PORDETALLE
 @codigo int,
 @cod_persona int,
 @cod_equipo int,
 @cod_posicion int,
 @camiseta nvarchar (100),
 @fechaAlta datetime,
-@fechaBaja datetime
+@fechaBaja datetime = NULL
 as
 begin
 update Equipos_Personas
@@ -789,11 +789,11 @@ end
 
 go
 
-create proc SP_EDITAR_USUARIO
+create or alter proc SP_EDITAR_USUARIO
 @codigo int, 
 @nombre nvarchar (100), 
 @pass nvarchar (50),
-@fechaBaja datetime
+@fechaBaja datetime  = NULL
 as
 begin
 update Usuarios
@@ -810,9 +810,9 @@ create proc SP_EDITAR_PAIS
 as
 begin
 update Paises
-set nombre_paies = @nombre
+set nombre_pais = @nombre
 where cod_pais = @codigo
-
+end
 
 
 go
@@ -824,7 +824,7 @@ begin
 update Provincias
 set nombre_provincia = @nombre
 where cod_provincia = @codigo
-
+end
 
 
 go
@@ -836,7 +836,7 @@ begin
 update Localidades 
 set nombre_localidad = @nombre
 where cod_localidad = @codigo
-
+end
 
 
 go
@@ -848,7 +848,7 @@ begin
 update TiposCompromisos 
 set tipo = @nombre
 where cod_tipoCompromiso = @codigo
-
+end
 
 
 go
@@ -860,8 +860,9 @@ begin
 update TiposDocs 
 set tipo = @nombre
 where cod_tipoDoc = @codigo
+end
 
-
+exec SP_EDITAR_TIPO_DOCUMENTOS 1, 'D.N.I.'
 
 go
 create proc SP_EDITAR_POSICION
