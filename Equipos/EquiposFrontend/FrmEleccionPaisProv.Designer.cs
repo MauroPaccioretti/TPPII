@@ -42,6 +42,7 @@ namespace EquiposFrontend
             // 
             // cbxPaises
             // 
+            this.cbxPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPaises.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxPaises.FormattingEnabled = true;
             this.cbxPaises.Location = new System.Drawing.Point(43, 115);

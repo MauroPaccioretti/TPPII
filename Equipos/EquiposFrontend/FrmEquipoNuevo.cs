@@ -112,7 +112,7 @@ namespace EquiposFrontend
             cmbPosiciones.DataSource = lstPosiciones;
             cmbPosiciones.DisplayMember = "NombrePosicion";
             cmbPosiciones.ValueMember = "CodPosicion";
-            cmbPosiciones.SelectedIndex = -1;
+            cmbPosiciones.SelectedIndex = 0;
 
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);

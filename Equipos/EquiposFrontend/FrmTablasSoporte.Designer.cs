@@ -145,13 +145,13 @@ namespace EquiposFrontend
             // 
             // cmbPPL
             // 
+            this.cmbPPL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPPL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbPPL.FormattingEnabled = true;
             this.cmbPPL.Location = new System.Drawing.Point(68, 88);
             this.cmbPPL.Name = "cmbPPL";
             this.cmbPPL.Size = new System.Drawing.Size(300, 24);
             this.cmbPPL.TabIndex = 5;
-            
             // 
             // lblEleccion
             // 

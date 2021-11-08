@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +24,14 @@ namespace EquiposFrontend
             Modificar,
             Eliminar
         }
-   
+
+        public enum Posiciones
+        {
+            [Description("Arquero")] Arquero = 1,
+            [Description("Defensa Central")] DefensaCentral = 2,
+            [Description("Lateral")] Lateral = 3,
+            [Description("Mediocampista")] Mediocampista = 4,
+            [Description("Delantero")] Delantero = 5
+        }
+
 }

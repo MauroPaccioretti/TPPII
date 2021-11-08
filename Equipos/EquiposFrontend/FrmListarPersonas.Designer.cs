@@ -186,6 +186,7 @@ namespace EquiposFrontend
             // 
             // cmbPierna
             // 
+            this.cmbPierna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPierna.FormattingEnabled = true;
             this.cmbPierna.Location = new System.Drawing.Point(867, 159);
             this.cmbPierna.Margin = new System.Windows.Forms.Padding(4);
@@ -195,6 +196,7 @@ namespace EquiposFrontend
             // 
             // cmbTipoDni
             // 
+            this.cmbTipoDni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDni.FormattingEnabled = true;
             this.cmbTipoDni.Location = new System.Drawing.Point(355, 159);
             this.cmbTipoDni.Margin = new System.Windows.Forms.Padding(4);

@@ -100,6 +100,7 @@ namespace EquiposFrontend
             // 
             // cmbPosiciones
             // 
+            this.cmbPosiciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPosiciones.FormattingEnabled = true;
             this.cmbPosiciones.Location = new System.Drawing.Point(8, 305);
             this.cmbPosiciones.Margin = new System.Windows.Forms.Padding(4);
@@ -359,6 +360,7 @@ namespace EquiposFrontend
             // 
             // cmbTipoCompromiso
             // 
+            this.cmbTipoCompromiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCompromiso.FormattingEnabled = true;
             this.cmbTipoCompromiso.Location = new System.Drawing.Point(8, 49);
             this.cmbTipoCompromiso.Margin = new System.Windows.Forms.Padding(4);
@@ -482,6 +484,7 @@ namespace EquiposFrontend
             // 
             // cmbLocalidad
             // 
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(1045, 54);
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);

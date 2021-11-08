@@ -160,21 +160,29 @@ insert into Personas (cod_persona, nombre, apellido, cod_tipoDoc, numeroDocument
 
 
 
+INSERT INTO Posiciones (cod_posicion, posicion)
+VALUES (1,'Arquero'),
+(2,'Defensa Central'),
+(3,'Lateral'),
+(4,'Mediocampista'),
+(5,'Delantero'),
+(6,'Entrenador')
+
 exec SP_INSERTAR_EQUIPO 'Altos del aire', 1
 
 
-exec SP_INSERTAR_POSICIONES 'Arquero'
-exec SP_INSERTAR_POSICIONES 'Defensor Central'
-exec SP_INSERTAR_POSICIONES 'Defensor Lateral Izquierda'
-exec SP_INSERTAR_POSICIONES 'Defensor Lateral Derecha'
-exec SP_INSERTAR_POSICIONES 'Defensor Central'
-exec SP_INSERTAR_POSICIONES 'Mediocampista 1'
-exec SP_INSERTAR_POSICIONES 'Mediocampista 2'
-exec SP_INSERTAR_POSICIONES 'Mediapunta 1'
-exec SP_INSERTAR_POSICIONES 'Mediapunta 2'
-exec SP_INSERTAR_POSICIONES 'Delantero 1'
-exec SP_INSERTAR_POSICIONES 'Delantero 2'
-exec SP_INSERTAR_POSICIONES 'Entrenador'
+--exec SP_INSERTAR_POSICIONES 'Arquero'
+--exec SP_INSERTAR_POSICIONES 'Defensor Central'
+--exec SP_INSERTAR_POSICIONES 'Defensor Lateral Izquierda'
+--exec SP_INSERTAR_POSICIONES 'Defensor Lateral Derecha'
+--exec SP_INSERTAR_POSICIONES 'Defensor Central'
+--exec SP_INSERTAR_POSICIONES 'Mediocampista 1'
+--exec SP_INSERTAR_POSICIONES 'Mediocampista 2'
+--exec SP_INSERTAR_POSICIONES 'Mediapunta 1'
+--exec SP_INSERTAR_POSICIONES 'Mediapunta 2'
+--exec SP_INSERTAR_POSICIONES 'Delantero 1'
+--exec SP_INSERTAR_POSICIONES 'Delantero 2'
+--exec SP_INSERTAR_POSICIONES 'Entrenador'
 
 
 
