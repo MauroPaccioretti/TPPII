@@ -470,6 +470,10 @@ namespace EquiposFrontend
                         string urlEquipo = "https://localhost:44381/api/Equipos/crearEquipoFull";
                         string resultadoEquipo = await ClienteSingleton.GetInstancia().PostAsync(urlEquipo, datosJSONEquipoFull);
                         MessageBox.Show(resultadoEquipo, "Resultado", MessageBoxButtons.OK);
+                        dgvPersonasEquipo.Rows.Clear();
+                        txtNombreEquipo.Text = string.Empty;
+                        cmbLocalidad.SelectedIndex = -1;
+                        dgvCompromisos.Rows.Clear();
                     }
                     catch
                     {
@@ -570,7 +574,8 @@ namespace EquiposFrontend
                         CargarDGVPersonasDisponibles();
                     }
                     break;
-            }            
+            }
+
         }
 
         private void dgvCompromisos_CellContentClick(object sender, DataGridViewCellEventArgs e)

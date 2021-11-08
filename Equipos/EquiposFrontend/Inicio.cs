@@ -47,9 +47,9 @@ namespace EquiposFrontend
                     {
                         oEquipo.CodEquipo,
                         oEquipo.Nombre,
-                        oEquipo.Jugadores.Exists(item => item.CodPosicion ==12)?
-                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Apellido + ", " + 
-                            oEquipo.Jugadores.Find(item => item.CodPosicion == 12).Persona.Nombre : "Sin entrenador",
+                        oEquipo.Jugadores.Exists(item => item.CodPosicion ==6)?
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Apellido + ", " + 
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Nombre : "Sin entrenador",
                         oEquipo.Jugadores == null? "Equipo sin Jugadores": oEquipo.Jugadores.Count(),
                         oEquipo.FechaAlta.ToString("dd/MM/yyyy"),
                         oEquipo.FechaBaja.HasValue? oEquipo.FechaBaja.Value.ToString("dd/MM/yyyy"): "Activo" 
