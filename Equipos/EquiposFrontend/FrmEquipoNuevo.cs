@@ -188,8 +188,6 @@ namespace EquiposFrontend
                     CargarEquipo();
                     
                     break;
-
-
             }
         }
 
@@ -281,7 +279,6 @@ namespace EquiposFrontend
             if (oEquipo.Compromisos != null)
                 foreach (Compromiso oCompromiso in lstCompromisosActivos)
                 {
-
                     dgvCompromisos.Rows.Add(new object[] {
                         oCompromiso.CodCompromiso,
                         oEquipo.CodEquipo,
@@ -289,9 +286,6 @@ namespace EquiposFrontend
                         oCompromiso.ComentariosCompromiso,
                         oCompromiso.FechaCompromiso,
                         "Quitar"});
-
-
-
                 }
         }
 
@@ -412,15 +406,37 @@ namespace EquiposFrontend
                 MessageBox.Show("Por favor elija un tipo de compromiso.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            TipoCompromisos oTC = new TipoCompromisos();
+            oCompromiso = new Compromiso();
             oCompromiso.CodCompromiso = codigoCompromiso++;
             oCompromiso.CodEquipo = oEquipo.CodEquipo;
             oCompromiso.ComentariosCompromiso = txtCompromiso.Text;
             oCompromiso.FechaCompromiso = dtpCompromiso.Value;
-            TipoCompromisos oTC = new TipoCompromisos();
+            oCompromiso.FechaAlta = DateTime.Today;
             oTC = (TipoCompromisos)cmbTipoCompromiso.SelectedItem;
             oCompromiso.TipoCompromiso = oTC;
             oEquipo.AgregarCompromiso(oCompromiso);
             CargarDGVCompromisos();
+
+
+
+            switch (modo)
+            {
+                case Accion.Agregar:
+                                        
+
+                    break;
+                case Accion.Modificar:
+                    
+                    lstCompromisosAgregados.Add(oCompromiso);
+                    
+                    break;
+                
+            }
+
+
+            
         }
 
         private async void btnConfirmarAccion_Click(object sender, EventArgs e)
@@ -508,6 +524,25 @@ namespace EquiposFrontend
                             MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
 
                         }
+                    if(lstCompromisosAgregados.Count != 0)                    
+                        foreach(Compromiso oCompAdd in lstCompromisosAgregados)
+                        {
+                            string datosJsonNuevosCompromisos = JsonConvert.SerializeObject(oCompAdd);
+                            string url = "https://localhost:44381/api/Equipos/insertarCompromiso";
+                            string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJsonNuevosCompromisos);
+
+                           // MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+                        }
+                    if (lstCompromisosEliminados.Count != 0)
+                        foreach (Compromiso oComprElim in lstCompromisosEliminados)
+                        {
+                            //hacer baja para cada Compromiso
+                            string url = "https://localhost:44381/api/Equipos/compromiso/" + oComprElim.CodCompromiso;
+                            string resultado = await ClienteSingleton.GetInstancia().DeleteAsync(url);
+                            
+                           // MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+
+                        }
 
 
                     break;
@@ -592,7 +627,29 @@ namespace EquiposFrontend
 
                     break;
                 case Accion.Modificar:
-                    //confirmar que queremos eliminar el compromiso
+
+                    if (dgvCompromisos.CurrentCell.ColumnIndex == 5)
+                    {
+                        //confirmar que queremos eliminar el compromiso
+                        if (MessageBox.Show("Esta seguro que desea quitar el compromiso del equipo?",
+                            "Atención!",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.No)
+                        {
+                            return;
+                        }
+
+                        int codCompromisoEliminado = Convert.ToInt32(dgvCompromisos.CurrentRow.Cells["idCompromiso"].Value.ToString());
+                        if (lstCompromisosOriginales.Exists(item => codCompromisoEliminado == item.CodCompromiso))
+                            lstCompromisosEliminados.Add(lstCompromisosOriginales.Find(item => codCompromisoEliminado == item.CodCompromiso));
+                        else
+                            lstCompromisosAgregados.RemoveAt(lstCompromisosAgregados.FindIndex(item => codCompromisoEliminado == item.CodCompromiso));
+
+                        oEquipo.QuitarCompromiso(Convert.ToInt32(dgvCompromisos.CurrentRow.Cells["idCompromiso"].Value.ToString()));
+                        dgvCompromisos.Rows.Remove(dgvCompromisos.CurrentRow);
+                    }
+
+                    
                     //chequear que el compromiso que eliminamos sea uno original del equipo
                     //si es uno de los originales entonces agrergar el compromiso eliminado
                     //a una lista para iterar y darlos de baja
