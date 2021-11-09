@@ -458,7 +458,7 @@ namespace EquiposFrontend
             }
             else
             {
-                oEquipo.CodLocalidad = cmbLocalidad.SelectedIndex + 1;
+                oEquipo.CodLocalidad = (int)cmbLocalidad.SelectedValue;
             }
 
             string datosJSONEquipoFull = JsonConvert.SerializeObject(oEquipo);

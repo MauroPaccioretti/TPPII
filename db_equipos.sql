@@ -742,7 +742,8 @@ go
 go
 create or alter proc SP_EDITAR_EQUIPO
 @codigo int, 
-@nombre nvarchar (50), 
+@nombre nvarchar (50),
+@loc int,
 @fechaAlta datetime, 
 @fechaBaja datetime = NULL
 as
