@@ -349,14 +349,14 @@ namespace EquiposFrontend
                     case Accion.Modificar:// cuando es Modificacion, Primero miramos si hay jugadores... si no, lo agregamos a una nueva lista.
                                           // Si hay jugadores, agregamos al jugador a una lista nueva para luego iterarla,
                                           // pero confirmamos que no haya estado ya cargado en la lista
-                        
+                        oEP.CodEquipo = oEquipo.CodEquipo;
                         int codJugadorAgregado = Convert.ToInt32(dgvPersonasDispo.CurrentRow.Cells["idPersona"].Value.ToString());
                         if (lstJugadoresAgregados.Count == 0)
                             lstJugadoresAgregados.Add(oEP);
                         else
                         {
                             int indiceLstJugadoresAgregados = lstJugadoresAgregados.FindIndex(item => item.Persona.CodPersona == codJugadorAgregado);
-                            if (indiceLstJugadoresAgregados != -1)
+                            if (indiceLstJugadoresAgregados == -1)
                                 lstJugadoresAgregados.Add(oEP);
                             else
                                 lstJugadoresAgregados[indiceLstJugadoresAgregados] = oEP;
@@ -484,7 +484,7 @@ namespace EquiposFrontend
                 case Accion.Modificar:
                                         
                     string urlModificarEquipo = "https://localhost:44381/api/Equipos/editarEquipo";
-                    string resultadoModificarEquipo = await ClienteSingleton.GetInstancia().PostAsync(urlModificarEquipo, datosJSONEquipoFull);
+                    string resultadoModificarEquipo = await ClienteSingleton.GetInstancia().PutAsync(urlModificarEquipo, datosJSONEquipoFull);
                     MessageBox.Show(resultadoModificarEquipo, "Resultado", MessageBoxButtons.OK);
 
                     if (lstJugadoresAgregados.Count != 0)
@@ -493,7 +493,7 @@ namespace EquiposFrontend
                             //hacer un insert para cada oEP
                             string datosJsonNuevosJugadores = JsonConvert.SerializeObject(oEPagregados);
                             string url = "https://localhost:44381/api/Equipos/insertarEquipoPersona";
-                            string resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJsonNuevosJugadores);
+                            string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJsonNuevosJugadores);
                             resultado += oEPagregados.Persona.Apellido;
                             MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
                         }
