@@ -3,6 +3,7 @@ using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -320,5 +321,36 @@ namespace EquiposFrontend
         {
             Dispose();
         }
+
+        // para mover el form manteniendo click derecho
+        private Size? _mouseGrabOffset;
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _mouseGrabOffset = new Size(e.Location);
+
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _mouseGrabOffset = null;
+
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (_mouseGrabOffset.HasValue)
+            {
+                this.Location = Cursor.Position - _mouseGrabOffset.Value;
+            }
+
+            base.OnMouseMove(e);
+        }
+
+
+
+
     }
 }

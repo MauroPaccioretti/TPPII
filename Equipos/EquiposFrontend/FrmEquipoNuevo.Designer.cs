@@ -51,7 +51,6 @@ namespace EquiposFrontend
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.grbPersonasDisponibles = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnNuevaPosicion = new System.Windows.Forms.Button();
             this.txtCamiseta = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,7 +101,7 @@ namespace EquiposFrontend
             // 
             this.cmbPosiciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPosiciones.FormattingEnabled = true;
-            this.cmbPosiciones.Location = new System.Drawing.Point(8, 305);
+            this.cmbPosiciones.Location = new System.Drawing.Point(57, 342);
             this.cmbPosiciones.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPosiciones.Name = "cmbPosiciones";
             this.cmbPosiciones.Size = new System.Drawing.Size(306, 28);
@@ -130,7 +129,7 @@ namespace EquiposFrontend
             this.dgvPersonasDispo.ReadOnly = true;
             this.dgvPersonasDispo.RowTemplate.Height = 25;
             this.dgvPersonasDispo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 223);
+            this.dgvPersonasDispo.Size = new System.Drawing.Size(823, 258);
             this.dgvPersonasDispo.TabIndex = 3;
             // 
             // idPersona
@@ -275,7 +274,6 @@ namespace EquiposFrontend
             // grbPersonasDisponibles
             // 
             this.grbPersonasDisponibles.Controls.Add(this.groupBox5);
-            this.grbPersonasDisponibles.Controls.Add(this.btnNuevaPosicion);
             this.grbPersonasDisponibles.Controls.Add(this.txtCamiseta);
             this.grbPersonasDisponibles.Controls.Add(this.label6);
             this.grbPersonasDisponibles.Controls.Add(this.label1);
@@ -297,27 +295,13 @@ namespace EquiposFrontend
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox5.Location = new System.Drawing.Point(8, 24);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(836, 243);
+            this.groupBox5.Size = new System.Drawing.Size(836, 280);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             // 
-            // btnNuevaPosicion
-            // 
-            this.btnNuevaPosicion.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNuevaPosicion.FlatAppearance.BorderSize = 0;
-            this.btnNuevaPosicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNuevaPosicion.Location = new System.Drawing.Point(322, 305);
-            this.btnNuevaPosicion.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNuevaPosicion.Name = "btnNuevaPosicion";
-            this.btnNuevaPosicion.Size = new System.Drawing.Size(228, 28);
-            this.btnNuevaPosicion.TabIndex = 8;
-            this.btnNuevaPosicion.Text = "Agregar Nueva Posicion";
-            this.btnNuevaPosicion.UseVisualStyleBackColor = false;
-            // 
             // txtCamiseta
             // 
-            this.txtCamiseta.Location = new System.Drawing.Point(96, 347);
+            this.txtCamiseta.Location = new System.Drawing.Point(476, 342);
             this.txtCamiseta.Margin = new System.Windows.Forms.Padding(4);
             this.txtCamiseta.Name = "txtCamiseta";
             this.txtCamiseta.Size = new System.Drawing.Size(306, 26);
@@ -326,7 +310,7 @@ namespace EquiposFrontend
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 347);
+            this.label6.Location = new System.Drawing.Point(476, 318);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 20);
@@ -336,7 +320,7 @@ namespace EquiposFrontend
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 281);
+            this.label1.Location = new System.Drawing.Point(57, 318);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 20);
@@ -419,6 +403,7 @@ namespace EquiposFrontend
             this.btnNuevoCompromiso.TabIndex = 5;
             this.btnNuevoCompromiso.Text = "Nuevo Tipo de Compromiso";
             this.btnNuevoCompromiso.UseVisualStyleBackColor = false;
+            this.btnNuevoCompromiso.Click += new System.EventHandler(this.btnNuevoCompromiso_Click);
             // 
             // btnAgregarCompromiso
             // 
@@ -632,6 +617,7 @@ namespace EquiposFrontend
             this.btnAgregarLocalidad.TabIndex = 2;
             this.btnAgregarLocalidad.Text = "Nueva Localidad";
             this.btnAgregarLocalidad.UseVisualStyleBackColor = false;
+            this.btnAgregarLocalidad.Click += new System.EventHandler(this.btnAgregarLocalidad_Click);
             // 
             // panel1
             // 
@@ -754,7 +740,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridView dgvCompromisos;
         private System.Windows.Forms.Button btnConfirmarAccion;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnNuevaPosicion;
         private System.Windows.Forms.Button btnNuevoCompromiso;
         private System.Windows.Forms.Button btnAgregarLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPersona;

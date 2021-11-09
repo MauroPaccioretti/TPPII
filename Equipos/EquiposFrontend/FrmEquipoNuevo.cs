@@ -90,8 +90,41 @@ namespace EquiposFrontend
             }
         }
 
-        private void FrmEquipoNuevo_Load(object sender, EventArgs e)
+        private async void FrmEquipoNuevo_Load(object sender, EventArgs e)
         {
+
+            string urlHabilidad = "https://localhost:44381/api/Equipos/piernaHabil";
+            var resultadoHabilidad = await ClienteSingleton.GetInstancia().GetAsync(urlHabilidad);
+            lstHabilidad = JsonConvert.DeserializeObject<List<PiernaHabil>>(resultadoHabilidad);
+
+            string urlposiciones = "https://localhost:44381/api/Equipos/posiciones";
+            var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlposiciones);
+            lstPosiciones = JsonConvert.DeserializeObject<List<Posicion>>(resultado);
+
+            cmbPosiciones.DataSource = lstPosiciones;
+            cmbPosiciones.DisplayMember = "NombrePosicion";
+            cmbPosiciones.ValueMember = "CodPosicion";
+
+
+            string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
+            var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
+            lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
+
+            //cmbLocalidad.Items.AddRange(lstLocalidades.ToArray());
+            cmbLocalidad.DataSource = lstLocalidades;
+            cmbLocalidad.DisplayMember = "Nombre";
+            cmbLocalidad.ValueMember = "IDLocalidad";
+
+
+
+            string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
+            string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
+            lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);
+
+            cmbTipoCompromiso.DataSource = lstTipoCompromiso;
+            cmbTipoCompromiso.DisplayMember = "NombreCompromiso";
+            cmbTipoCompromiso.ValueMember = "CodCompromiso";
+
             LoadFormAsync();
         }
 
@@ -106,38 +139,6 @@ namespace EquiposFrontend
             var resultadoCompromisos = await ClienteSingleton.GetInstancia().GetAsync(urlCompromisos);
             lstCompromisos = JsonConvert.DeserializeObject<List<Compromiso>>(resultadoCompromisos);
 
-            string urlHabilidad = "https://localhost:44381/api/Equipos/piernaHabil";
-            var resultadoHabilidad = await ClienteSingleton.GetInstancia().GetAsync(urlHabilidad);
-            lstHabilidad = JsonConvert.DeserializeObject<List<PiernaHabil>>(resultadoHabilidad);
-
-            string urlposiciones = "https://localhost:44381/api/Equipos/posiciones";
-            var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlposiciones);
-            lstPosiciones = JsonConvert.DeserializeObject<List<Posicion>>(resultado);
-
-            cmbPosiciones.DataSource = lstPosiciones;
-            cmbPosiciones.DisplayMember = "NombrePosicion";
-            cmbPosiciones.ValueMember = "CodPosicion";
-            cmbPosiciones.SelectedIndex = -1;
-
-            string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
-            var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
-            lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
-
-            //cmbLocalidad.Items.AddRange(lstLocalidades.ToArray());
-            cmbLocalidad.DataSource = lstLocalidades;
-            cmbLocalidad.DisplayMember = "Nombre";
-            cmbLocalidad.ValueMember = "IDLocalidad";
-            cmbLocalidad.SelectedIndex = -1;
-
-            string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
-            string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
-            lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);
-
-            cmbTipoCompromiso.DataSource = lstTipoCompromiso;
-            cmbTipoCompromiso.DisplayMember = "NombreCompromiso";
-            cmbTipoCompromiso.ValueMember = "CodCompromiso";
-            cmbTipoCompromiso.SelectedIndex = -1;
-
             string urlpersonas = "https://localhost:44381/api/Equipos/personas";
             string resultado4 = await ClienteSingleton.GetInstancia().GetAsync(urlpersonas);
             lstPersonas = JsonConvert.DeserializeObject<List<Persona>>(resultado4);
@@ -145,6 +146,13 @@ namespace EquiposFrontend
             string urlEquipoPersonas = "https://localhost:44381/api/Equipos/equiposPersonas";
             string resultadoEP = await ClienteSingleton.GetInstancia().GetAsync(urlEquipoPersonas);
             lstEquipoPersonas = JsonConvert.DeserializeObject<List<EquipoPersona>>(resultadoEP);
+
+
+            cmbPosiciones.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
+            cmbTipoCompromiso.SelectedIndex = -1;
+
+            
 
 
             switch (modo)
@@ -697,6 +705,38 @@ namespace EquiposFrontend
         private void button1_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+
+        private async void btnAgregarLocalidad_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Agregar);
+            frmTablasSoporte.Show();
+            string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
+            var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
+            lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
+
+            //cmbLocalidad.Items.AddRange(lstLocalidades.ToArray());
+            cmbLocalidad.DataSource = lstLocalidades;
+            cmbLocalidad.DisplayMember = "Nombre";
+            cmbLocalidad.ValueMember = "IDLocalidad";
+            cmbLocalidad.SelectedIndex = -1;
+
+        }
+
+        private async void btnNuevoCompromiso_Click(object sender, EventArgs e)
+        {
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Modificar);
+            frmTablasSoporte.Show();
+            string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
+            string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
+            lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);
+
+            cmbTipoCompromiso.DataSource = lstTipoCompromiso;
+            cmbTipoCompromiso.DisplayMember = "NombreCompromiso";
+            cmbTipoCompromiso.ValueMember = "CodCompromiso";
+            cmbTipoCompromiso.SelectedIndex = -1;
+
         }
     }
 }

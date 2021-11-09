@@ -43,10 +43,11 @@ namespace EquiposFrontend
                     return;
 
                 }
-                    int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
-                    FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Modificar, nroPersona);
-                    frmPersonaABM.ShowDialog();
-                
+                int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
+                FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Modificar, nroPersona);
+                frmPersonaABM.ShowDialog();
+
+                LimpiarCampos();
             }
 
         }
@@ -63,6 +64,7 @@ namespace EquiposFrontend
                 int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
                 FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Eliminar, nroPersona);
                 frmPersonaABM.ShowDialog();
+                LimpiarCampos();
             }
 
         }
@@ -72,6 +74,7 @@ namespace EquiposFrontend
 
             FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Agregar);
             frmPersonaABM.ShowDialog();
+            LimpiarCampos();
 
         }
 
@@ -246,5 +249,35 @@ namespace EquiposFrontend
         {
             Dispose();
         }
+
+        // para mover el form manteniendo click derecho
+        private Size? _mouseGrabOffset;
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _mouseGrabOffset = new Size(e.Location);
+
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _mouseGrabOffset = null;
+
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (_mouseGrabOffset.HasValue)
+            {
+                this.Location = Cursor.Position - _mouseGrabOffset.Value;
+            }
+
+            base.OnMouseMove(e);
+        }
+
+
+
     }
 }

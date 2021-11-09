@@ -55,12 +55,6 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
-            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
@@ -84,6 +78,12 @@ namespace EquiposFrontend
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -363,44 +363,6 @@ namespace EquiposFrontend
             this.dgvCompromisos.Size = new System.Drawing.Size(567, 407);
             this.dgvCompromisos.TabIndex = 3;
             // 
-            // idEquipoCompromiso
-            // 
-            this.idEquipoCompromiso.HeaderText = "idEquipo";
-            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
-            this.idEquipoCompromiso.ReadOnly = true;
-            this.idEquipoCompromiso.Visible = false;
-            // 
-            // codCompromiso
-            // 
-            this.codCompromiso.HeaderText = "codCompromiso";
-            this.codCompromiso.Name = "codCompromiso";
-            this.codCompromiso.ReadOnly = true;
-            this.codCompromiso.Visible = false;
-            // 
-            // nombreEquipoCompromiso
-            // 
-            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
-            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
-            this.nombreEquipoCompromiso.ReadOnly = true;
-            // 
-            // tipoCompromiso
-            // 
-            this.tipoCompromiso.HeaderText = "Compromiso";
-            this.tipoCompromiso.Name = "tipoCompromiso";
-            this.tipoCompromiso.ReadOnly = true;
-            // 
-            // fechaCompromiso
-            // 
-            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
-            this.fechaCompromiso.Name = "fechaCompromiso";
-            this.fechaCompromiso.ReadOnly = true;
-            // 
-            // fechaBajaCompromiso
-            // 
-            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
-            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
-            this.fechaBajaCompromiso.ReadOnly = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCompromisos);
@@ -476,6 +438,7 @@ namespace EquiposFrontend
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.Size = new System.Drawing.Size(907, 258);
             this.dgvEquipos.TabIndex = 0;
+            this.dgvEquipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipos_CellContentClick);
             // 
             // idEquipo
             // 
@@ -672,6 +635,45 @@ namespace EquiposFrontend
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
+            // idEquipoCompromiso
+            // 
+            this.idEquipoCompromiso.HeaderText = "idEquipo";
+            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
+            this.idEquipoCompromiso.ReadOnly = true;
+            this.idEquipoCompromiso.Visible = false;
+            // 
+            // codCompromiso
+            // 
+            this.codCompromiso.HeaderText = "codCompromiso";
+            this.codCompromiso.Name = "codCompromiso";
+            this.codCompromiso.ReadOnly = true;
+            this.codCompromiso.Visible = false;
+            // 
+            // nombreEquipoCompromiso
+            // 
+            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
+            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
+            this.nombreEquipoCompromiso.ReadOnly = true;
+            // 
+            // tipoCompromiso
+            // 
+            this.tipoCompromiso.HeaderText = "Compromiso";
+            this.tipoCompromiso.Name = "tipoCompromiso";
+            this.tipoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
+            // 
+            // fechaBajaCompromiso
+            // 
+            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
+            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
+            this.fechaBajaCompromiso.ReadOnly = true;
+            this.fechaBajaCompromiso.Visible = false;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -736,8 +738,6 @@ namespace EquiposFrontend
 
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEntrenador;
@@ -761,13 +761,15 @@ namespace EquiposFrontend
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
     }
 }

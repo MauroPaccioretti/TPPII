@@ -17,20 +17,35 @@ namespace EquiposFrontend
 {
     public partial class Inicio : Form
     {
-        Usuario oUsuario;
+        private Usuario oUsuario;
+        private List<Equipo> lstEquipos;
+        private List<Compromiso> lstCompromisosFuturos;
         public Inicio(Usuario usuario)
         {
             InitializeComponent();
             oUsuario = usuario;
             lblTitulo.Text = "Bienvenido " + usuario.User;
+            this.BringToFront();
+            
+
         }
 
         
 
-        private void Inicio_Load(object sender, EventArgs e)
+        private async void Inicio_Load(object sender, EventArgs e)
         {
-            CargarDgvEquiposAsync();
 
+            string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
+            var resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
+            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
+
+            string urlProximosCompromisos = "https://localhost:44381/api/Equipos/proximosCompromisos";
+            var resultadoProximosCompromisos = await ClienteSingleton.GetInstancia().GetAsync(urlProximosCompromisos);
+            lstCompromisosFuturos = JsonConvert.DeserializeObject<List<Compromiso>>(resultadoProximosCompromisos);
+
+
+            CargarDgvEquiposAsync();
+            
         }
 
         private async void CargarDgvEquiposAsync()
@@ -228,6 +243,69 @@ namespace EquiposFrontend
             this.Dispose();
             Login login = new Login();
             login.ShowDialog();
+        }
+
+
+
+        private Size? _mouseGrabOffset;
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _mouseGrabOffset = new Size(e.Location);
+
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _mouseGrabOffset = null;
+
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (_mouseGrabOffset.HasValue)
+            {
+                this.Location = Cursor.Position - _mouseGrabOffset.Value;
+            }
+
+            base.OnMouseMove(e);
+        }
+
+        private void dgvEquipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvEquipos.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dgvCompromisos.Rows)
+                {
+                    if (dgvCompromisos.CurrentRow.Selected)
+                    {
+                        int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                        List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
+                        lstCompromisosActivos.AddRange(lstEquipos.Find(item => item.CodEquipo == nroEquipo).Compromisos);
+                        dgvCompromisos.Rows.Clear();
+
+                        if (lstCompromisosActivos.Count != 0)
+                            foreach (Compromiso oCompromiso in lstCompromisosActivos)
+                            {
+                                dgvCompromisos.Rows.Add(new object[] {
+                                    oCompromiso.CodEquipo,
+                                    oCompromiso.CodCompromiso,
+                                    lstEquipos.Find(item => oCompromiso.CodEquipo == item.CodEquipo).Nombre,
+                                    oCompromiso.TipoCompromiso.NombreCompromiso,
+                                    oCompromiso.FechaCompromiso.ToShortDateString(),
+                                    oCompromiso.FechaBaja.Value.ToShortDateString()});
+                            }
+
+
+                    }
+
+                }
+                
+
+            }
+            
         }
     }
 }

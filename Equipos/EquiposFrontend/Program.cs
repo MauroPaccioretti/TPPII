@@ -18,8 +18,9 @@ namespace EquiposFrontend
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            
-            Application.Run(new Login());
+            Principal frmPrincipal = new Principal();
+         
+            Application.Run(frmPrincipal);
 
         }
     }

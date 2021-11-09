@@ -69,7 +69,9 @@ namespace EquiposFrontend
                         Inicio mainMenu = new Inicio(usuario);
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
+                        mainMenu.Owner = null;
                         this.Hide();
+                        mainMenu.BringToFront();
                     }
                     else
                     {
@@ -140,6 +142,38 @@ namespace EquiposFrontend
             Register register = new Register();
             register.ShowDialog();
         }
+
+        // para mover el form manteniendo click derecho
+        private Size? _mouseGrabOffset;
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _mouseGrabOffset = new Size(e.Location);
+
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _mouseGrabOffset = null;
+
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (_mouseGrabOffset.HasValue)
+            {
+                this.Location = Cursor.Position - _mouseGrabOffset.Value;
+            }
+
+            base.OnMouseMove(e);
+        }
+
+
+
+
+
 
     }
 }

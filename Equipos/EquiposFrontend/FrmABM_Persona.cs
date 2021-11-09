@@ -272,7 +272,8 @@ namespace EquiposFrontend
 
                         string url = "https://localhost:44381/api/Equipos/editarPersona";
                         string resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
-                        MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+                        MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);                        
+                        this.Close();
                     }
                     catch
                     {
@@ -310,10 +311,52 @@ namespace EquiposFrontend
             Dispose();
         }
 
-        private void btnAgregarTipoDni_Click_1(object sender, EventArgs e)
+        private async void btnAgregarTipoDni_Click_1(object sender, EventArgs e)
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
             frmTablasSoporte.Show();
+
+            string url = "https://localhost:44381/api/Equipos/tipoDocumentos";
+            var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+            List<TiposDocumentos> lstTipoDNI = JsonConvert.DeserializeObject<List<TiposDocumentos>>(resultado);
+            cmbTipoDni.DataSource = lstTipoDNI;
+            cmbTipoDni.DisplayMember = "TipoDoc";
+            cmbTipoDni.ValueMember = "CodTipoDoc";
+            cmbTipoDni.SelectedIndex = -1;
+
+
         }
+
+        // para mover el form manteniendo click derecho
+        private Size? _mouseGrabOffset;
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _mouseGrabOffset = new Size(e.Location);
+
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _mouseGrabOffset = null;
+
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (_mouseGrabOffset.HasValue)
+            {
+                this.Location = Cursor.Position - _mouseGrabOffset.Value;
+            }
+
+            base.OnMouseMove(e);
+        }
+
+
+
+
+
     }
 }
