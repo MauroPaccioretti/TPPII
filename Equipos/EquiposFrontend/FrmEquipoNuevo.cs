@@ -20,7 +20,7 @@ namespace EquiposFrontend
         List<Posicion> lstPosiciones;
         List<Localidad> lstLocalidades;
         List<TipoCompromisos> lstTipoCompromiso;
-        
+
         List<Equipo> lstEquipos;
         List<Persona> lstPersonas;
         List<Compromiso> lstCompromisos;
@@ -37,7 +37,7 @@ namespace EquiposFrontend
         List<Compromiso> lstCompromisosAgregados;
         List<Compromiso> lstCompromisosEliminados;
 
-        List<EquipoPersona> lstJugadoresOriginales;        
+        List<EquipoPersona> lstJugadoresOriginales;
         List<EquipoPersona> lstJugadoresAgregados;
         List<EquipoPersona> lstJugadoresEliminados;
 
@@ -77,7 +77,7 @@ namespace EquiposFrontend
                     this.btnConfirmarAccion.Text = "Eliminar Equipo";
 
                     break;
-                
+
             }
 
         }
@@ -90,17 +90,22 @@ namespace EquiposFrontend
             }
         }
 
-        private async void FrmEquipoNuevo_Load(object sender, EventArgs e)
+        private void FrmEquipoNuevo_Load(object sender, EventArgs e)
+        {
+            LoadFormAsync();
+        }
+
+        private async void LoadFormAsync()
         {
 
             string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
             var resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
-            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);            
+            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
 
             string urlCompromisos = "https://localhost:44381/api/Equipos/compromisos";
             var resultadoCompromisos = await ClienteSingleton.GetInstancia().GetAsync(urlCompromisos);
             lstCompromisos = JsonConvert.DeserializeObject<List<Compromiso>>(resultadoCompromisos);
-          
+
             string urlHabilidad = "https://localhost:44381/api/Equipos/piernaHabil";
             var resultadoHabilidad = await ClienteSingleton.GetInstancia().GetAsync(urlHabilidad);
             lstHabilidad = JsonConvert.DeserializeObject<List<PiernaHabil>>(resultadoHabilidad);
@@ -108,7 +113,7 @@ namespace EquiposFrontend
             string urlposiciones = "https://localhost:44381/api/Equipos/posiciones";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlposiciones);
             lstPosiciones = JsonConvert.DeserializeObject<List<Posicion>>(resultado);
-         
+
             cmbPosiciones.DataSource = lstPosiciones;
             cmbPosiciones.DisplayMember = "NombrePosicion";
             cmbPosiciones.ValueMember = "CodPosicion";
@@ -117,7 +122,7 @@ namespace EquiposFrontend
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
             lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
-            
+
             //cmbLocalidad.Items.AddRange(lstLocalidades.ToArray());
             cmbLocalidad.DataSource = lstLocalidades;
             cmbLocalidad.DisplayMember = "Nombre";
@@ -127,7 +132,7 @@ namespace EquiposFrontend
             string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
             string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
             lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);
-            
+
             cmbTipoCompromiso.DataSource = lstTipoCompromiso;
             cmbTipoCompromiso.DisplayMember = "NombreCompromiso";
             cmbTipoCompromiso.ValueMember = "CodCompromiso";
@@ -145,7 +150,7 @@ namespace EquiposFrontend
             switch (modo)
             {
                 case Accion.Agregar:
-
+                    txtNombreEquipo.Text = "";
                     //nro de equipo nuevo
                     if (lstEquipos.Count == 0)
                         oEquipo.CodEquipo = 1;
@@ -166,7 +171,7 @@ namespace EquiposFrontend
                         codigoEP = 1;
                     else
                         codigoEP = lstEquipoPersonas.Max(t => t.CodEP) + 1;
-                    
+
                     CargarDGVPersonasDisponibles();
 
                     break;
@@ -184,12 +189,15 @@ namespace EquiposFrontend
                     txtNombreEquipo.Enabled = false;
                     cmbLocalidad.Enabled = false;
                     btnAgregarLocalidad.Enabled = false;
-                   
+
                     CargarEquipo();
-                    
+
                     break;
             }
+            LimpiarCamposCompromisos();
         }
+
+
 
         private void CargarEquipo()
         {
@@ -284,7 +292,7 @@ namespace EquiposFrontend
                         oEquipo.CodEquipo,
                         lstTipoCompromiso.Find(item => oCompromiso.TipoCompromiso.CodCompromiso == item.CodCompromiso).NombreCompromiso,
                         oCompromiso.ComentariosCompromiso,
-                        oCompromiso.FechaCompromiso,
+                        oCompromiso.FechaCompromiso.ToShortDateString(),
                         "Quitar"});
                 }
         }
@@ -400,8 +408,17 @@ namespace EquiposFrontend
                 }
 
             }
+            if (dtpCompromiso.Value.Date < DateTime.Today)
+            {
+                if (MessageBox.Show("Esta seguro que desea agregar un compromiso en una fecha pasada?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    return;
+                }
 
-            if(cmbTipoCompromiso.SelectedIndex == -1)
+            }
+
+
+            if (cmbTipoCompromiso.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor elija un tipo de compromiso.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -435,8 +452,16 @@ namespace EquiposFrontend
                 
             }
 
+            LimpiarCamposCompromisos();
 
-            
+
+        }
+
+        private void LimpiarCamposCompromisos()
+        {
+            cmbTipoCompromiso.SelectedIndex = -1;
+            txtCompromiso.Text = "";
+            dtpCompromiso.Value = DateTime.Today;
         }
 
         private async void btnConfirmarAccion_Click(object sender, EventArgs e)
@@ -568,7 +593,12 @@ namespace EquiposFrontend
 
                     break;
             }
-
+            LoadFormAsync();
+            
+            LimpiarCamposJugadorNuevo();
+            txtNombreEquipo.Text = "";
+            cmbLocalidad.SelectedIndex = -1;
+            CargarDGVPersonasDisponibles();
         }
 
         private void dgvPersonasEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)

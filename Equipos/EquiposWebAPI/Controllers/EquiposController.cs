@@ -366,9 +366,9 @@ namespace EquiposWebAPI.Controllers
         }
 
         [HttpDelete("compromiso/{id}")]
-        public IActionResult DeleteCompromiso(int idCompromiso)
+        public IActionResult DeleteCompromiso(int id)
         {
-           return Ok(app.EliminarCompromiso(idCompromiso));
+           return Ok(app.EliminarCompromiso(id));
              
         }
 
