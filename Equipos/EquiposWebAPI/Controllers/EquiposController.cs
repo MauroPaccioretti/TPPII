@@ -194,6 +194,17 @@ namespace EquiposWebAPI.Controllers
                 return Ok("No se pudo grabar!");
         }
 
+        [HttpPost("insertarCompromiso")]
+        public IActionResult PostInsertCompromiso(Compromiso oCompromiso)
+        {
+            if (oCompromiso == null)
+                return BadRequest();
+            if (app.CreateCompromiso(oCompromiso))
+                return Ok("Se registró exitosamente el compromiso!");
+            else
+                return Ok("No se pudo grabar el compromiso!");
+        }
+
 
         [HttpPost("insertarPersona")]
         public IActionResult PostPersona(Persona oPersona)

@@ -123,6 +123,22 @@ namespace EquiposBackend.Datos
 
         }
 
+        public bool CreateCompromiso(Compromiso compromiso)
+        {
+            bool aux;
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@cod_equipo", compromiso.CodEquipo);
+            parameters.Add("@cod_tipoCompromiso", compromiso.TipoCompromiso);
+            parameters.Add("@comentariosCompromiso", compromiso.ComentariosCompromiso);
+            parameters.Add("@fechaCompromiso", compromiso.FechaCompromiso);
+
+
+            aux = helper.addObject("SP_INSERTAR_COMPROMISO", parameters);
+
+            return aux;
+        }
+
         public bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso)
         {
             bool aux;
@@ -668,6 +684,7 @@ namespace EquiposBackend.Datos
         {
             return helper.DeleteElement(idCompromiso, "SP_BAJA_COMPROMISO");
         }
+
 
     }
 }

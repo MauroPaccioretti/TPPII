@@ -52,6 +52,11 @@ namespace EquiposBackend.Negocio
             return dao.CreateTipoCompromiso(oTipoCompromiso);
         }
 
+        public bool CreateCompromiso(Compromiso compromiso)
+        {
+            return dao.CreateCompromiso(compromiso);
+        }
+
         public bool CrearEquipoFull(Equipo oEquipo)
         {
             return dao.CreateEquipoFull(oEquipo);
@@ -214,5 +219,7 @@ namespace EquiposBackend.Negocio
         {
             return usuariosDao.CreateUsuario(usuario);
         }
+
+
     }
 }

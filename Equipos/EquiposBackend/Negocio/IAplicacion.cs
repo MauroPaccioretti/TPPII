@@ -15,6 +15,7 @@ namespace EquiposBackend.Negocio
         bool CrearLocalidad(Localidad oLocalidad);
         bool CrearTipoDocumento(TiposDocumentos oTipoDoc);
         bool CrearTipoCompromiso(TipoCompromisos oTipoCompromiso);
+        bool CreateCompromiso(Compromiso compromiso);
         bool CrearEquipoFull(Equipo oEquipo);
 
         //get - read

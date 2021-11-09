@@ -16,6 +16,7 @@ namespace EquiposBackend.Datos
         bool CreateTipoDocumento(TiposDocumentos oTipoDoc);
         bool CreateTipoCompromiso(TipoCompromisos oTipoCompromiso);
         bool CreateEquipoFull(Equipo oEquipo);
+        bool CreateCompromiso(Compromiso compromiso);
 
 
         //get - read
