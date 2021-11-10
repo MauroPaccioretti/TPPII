@@ -328,11 +328,6 @@ namespace EquiposFrontend
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
         private async void btnAgregarTipoDni_Click_1(object sender, EventArgs e)
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
@@ -378,9 +373,9 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

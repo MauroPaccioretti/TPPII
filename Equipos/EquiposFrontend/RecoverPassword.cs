@@ -77,11 +77,10 @@ namespace EquiposFrontend
                 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            return;            
-            
+            return;
         }
     }
 }

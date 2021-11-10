@@ -250,11 +250,6 @@ namespace EquiposFrontend
             btnBuscar.PerformClick();
         }
 
-        private void btnCruz_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
         // para mover el form manteniendo click derecho
         private Size? _mouseGrabOffset;
         protected override void OnMouseDown(MouseEventArgs e)
@@ -282,7 +277,9 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

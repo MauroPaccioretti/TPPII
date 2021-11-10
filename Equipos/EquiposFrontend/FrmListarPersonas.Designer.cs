@@ -29,6 +29,7 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListarPersonas));
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
             this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,14 +81,12 @@ namespace EquiposFrontend
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnCruz = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPersonas
@@ -610,38 +609,28 @@ namespace EquiposFrontend
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             // 
-            // btnCruz
+            // button2
             // 
-            this.btnCruz.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.btnCruz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCruz.FlatAppearance.BorderSize = 0;
-            this.btnCruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCruz.ForeColor = System.Drawing.Color.White;
-            this.btnCruz.Location = new System.Drawing.Point(1576, 3);
-            this.btnCruz.Name = "btnCruz";
-            this.btnCruz.Size = new System.Drawing.Size(26, 22);
-            this.btnCruz.TabIndex = 15;
-            this.btnCruz.UseVisualStyleBackColor = true;
-            this.btnCruz.Click += new System.EventHandler(this.btnCruz_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.btnCruz);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1602, 30);
-            this.panel1.TabIndex = 25;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(1563, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 27);
+            this.button2.TabIndex = 22;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 8);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTitulo.Location = new System.Drawing.Point(754, 15);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(138, 17);
             this.lblTitulo.TabIndex = 17;
@@ -653,8 +642,9 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1602, 843);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnRegistrarNuevaPersona);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox2);
@@ -671,9 +661,8 @@ namespace EquiposFrontend
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -730,9 +719,8 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnCruz;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.CheckBox chbFechaNac;
+        private System.Windows.Forms.Button button2;
     }
 }

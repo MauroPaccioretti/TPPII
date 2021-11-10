@@ -49,11 +49,8 @@ namespace EquiposFrontend
             this.btnConfirmarAccion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnAgregarTipoDni = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -252,51 +249,27 @@ namespace EquiposFrontend
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 8);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTitulo.Location = new System.Drawing.Point(281, 16);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(116, 17);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "Agregar Persona";
             // 
-            // button6
+            // button2
             // 
-            this.button6.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1576, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 22);
-            this.button6.TabIndex = 15;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(658, 30);
-            this.panel1.TabIndex = 26;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(629, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 22);
-            this.btnCerrar.TabIndex = 18;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.button1_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(619, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 27);
+            this.button2.TabIndex = 28;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAgregarTipoDni
             // 
@@ -317,8 +290,9 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(658, 520);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAgregarTipoDni);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarAccion);
             this.Controls.Add(this.cmbPierna);
@@ -346,8 +320,6 @@ namespace EquiposFrontend
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Persona";
             this.Load += new System.EventHandler(this.FrmABM_Persona_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +351,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button button2;
 
         //private System.Windows.Forms.Button button6;
         //private System.Windows.Forms.Panel panel1;

@@ -37,15 +37,13 @@ namespace EquiposFrontend
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.lbl2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExitLogin = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.linklblOlvidoContra = new System.Windows.Forms.LinkLabel();
             this.lblErrorIncorrect = new System.Windows.Forms.Label();
             this.lblErrorUsername = new System.Windows.Forms.Label();
             this.lblErrorPass = new System.Windows.Forms.Label();
             this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -135,28 +133,21 @@ namespace EquiposFrontend
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
             // 
-            // panel1
+            // btnCerrar
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnExitLogin);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 28);
-            this.panel1.TabIndex = 8;
-            // 
-            // btnExitLogin
-            // 
-            this.btnExitLogin.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.btnExitLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExitLogin.FlatAppearance.BorderSize = 0;
-            this.btnExitLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitLogin.Location = new System.Drawing.Point(1235, 2);
-            this.btnExitLogin.Name = "btnExitLogin";
-            this.btnExitLogin.Size = new System.Drawing.Size(26, 22);
-            this.btnExitLogin.TabIndex = 0;
-            this.btnExitLogin.UseVisualStyleBackColor = true;
-            this.btnExitLogin.Click += new System.EventHandler(this.btnExitLogin_Click);
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Location = new System.Drawing.Point(1225, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(27, 27);
+            this.btnCerrar.TabIndex = 31;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // linklblOlvidoContra
             // 
@@ -248,13 +239,13 @@ namespace EquiposFrontend
             this.BackgroundImage = global::EquiposFrontend.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabelRegister);
             this.Controls.Add(this.lblErrorPass);
             this.Controls.Add(this.lblErrorUsername);
             this.Controls.Add(this.lblErrorIncorrect);
             this.Controls.Add(this.linklblOlvidoContra);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.lbl2);
@@ -269,7 +260,6 @@ namespace EquiposFrontend
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,13 +274,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExitLogin;
         private System.Windows.Forms.LinkLabel linklblOlvidoContra;
         private System.Windows.Forms.Label lblErrorIncorrect;
         private System.Windows.Forms.Label lblErrorUsername;
         private System.Windows.Forms.Label lblErrorPass;
         private System.Windows.Forms.LinkLabel linkLabelRegister;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

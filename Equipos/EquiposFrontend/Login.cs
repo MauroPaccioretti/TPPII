@@ -29,14 +29,6 @@ namespace EquiposFrontend
 
         }
 
-        private void btnExitLogin_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
 
 
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
@@ -173,10 +165,12 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
-
-
-
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

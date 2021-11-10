@@ -40,6 +40,13 @@ namespace EquiposFrontend
             this.Estatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPersonasEquipo = new System.Windows.Forms.DataGridView();
+            this.idJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Habilidad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.camiseta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quitarJugador = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbPersonasEquipo = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.grbPersonasDisponibles = new System.Windows.Forms.GroupBox();
@@ -73,17 +80,8 @@ namespace EquiposFrontend
             this.btnConfirmarAccion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregarLocalidad = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.idJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Habilidad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.camiseta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quitarJugador = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).BeginInit();
             this.grbPersonasEquipo.SuspendLayout();
@@ -94,7 +92,6 @@ namespace EquiposFrontend
             this.grbCompromisosActuales.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbPosiciones
@@ -197,6 +194,55 @@ namespace EquiposFrontend
             this.dgvPersonasEquipo.Size = new System.Drawing.Size(823, 231);
             this.dgvPersonasEquipo.TabIndex = 1;
             this.dgvPersonasEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonasEquipo_CellContentClick);
+            // 
+            // idJugador
+            // 
+            this.idJugador.HeaderText = "idJugador";
+            this.idJugador.Name = "idJugador";
+            this.idJugador.ReadOnly = true;
+            this.idJugador.Visible = false;
+            // 
+            // Apellido1
+            // 
+            this.Apellido1.HeaderText = "Apellido";
+            this.Apellido1.Name = "Apellido1";
+            this.Apellido1.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol en el Equipo";
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // Habilidad1
+            // 
+            this.Habilidad1.HeaderText = "Habilidad";
+            this.Habilidad1.Name = "Habilidad1";
+            this.Habilidad1.ReadOnly = true;
+            this.Habilidad1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Habilidad1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // camiseta
+            // 
+            this.camiseta.HeaderText = "Apodo";
+            this.camiseta.Name = "camiseta";
+            this.camiseta.ReadOnly = true;
+            this.camiseta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.camiseta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha Incorporación";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            this.fechaAlta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fechaAlta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // quitarJugador
+            // 
+            this.quitarJugador.HeaderText = "Quitar";
+            this.quitarJugador.Name = "quitarJugador";
+            this.quitarJugador.ReadOnly = true;
             // 
             // grbPersonasEquipo
             // 
@@ -564,105 +610,32 @@ namespace EquiposFrontend
             this.btnAgregarLocalidad.UseVisualStyleBackColor = false;
             this.btnAgregarLocalidad.Click += new System.EventHandler(this.btnAgregarLocalidad_Click);
             // 
-            // panel1
+            // button2
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1573, 30);
-            this.panel1.TabIndex = 26;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1535, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 22);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(1534, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 27);
+            this.button2.TabIndex = 23;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 8);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTitulo.Location = new System.Drawing.Point(714, 15);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(152, 17);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "Agregar Nuevo Equipo";
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1576, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 22);
-            this.button6.TabIndex = 15;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // idJugador
-            // 
-            this.idJugador.HeaderText = "idJugador";
-            this.idJugador.Name = "idJugador";
-            this.idJugador.ReadOnly = true;
-            this.idJugador.Visible = false;
-            // 
-            // Apellido1
-            // 
-            this.Apellido1.HeaderText = "Apellido";
-            this.Apellido1.Name = "Apellido1";
-            this.Apellido1.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol en el Equipo";
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // Habilidad1
-            // 
-            this.Habilidad1.HeaderText = "Habilidad";
-            this.Habilidad1.Name = "Habilidad1";
-            this.Habilidad1.ReadOnly = true;
-            this.Habilidad1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Habilidad1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // camiseta
-            // 
-            this.camiseta.HeaderText = "Apodo";
-            this.camiseta.Name = "camiseta";
-            this.camiseta.ReadOnly = true;
-            this.camiseta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.camiseta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "Fecha Incorporación";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
-            this.fechaAlta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.fechaAlta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // quitarJugador
-            // 
-            this.quitarJugador.HeaderText = "Quitar";
-            this.quitarJugador.Name = "quitarJugador";
-            this.quitarJugador.ReadOnly = true;
             // 
             // FrmEquipoNuevo
             // 
@@ -670,7 +643,8 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1573, 880);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAgregarLocalidad);
             this.Controls.Add(this.grbCompromisosActuales);
             this.Controls.Add(this.cmbLocalidad);
@@ -703,8 +677,6 @@ namespace EquiposFrontend
             this.grbCompromisosActuales.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -753,10 +725,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewButtonColumn quitarComp;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -767,5 +736,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn camiseta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewButtonColumn quitarJugador;
+        private System.Windows.Forms.Button button2;
     }
 }

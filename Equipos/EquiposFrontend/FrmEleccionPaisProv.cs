@@ -94,11 +94,6 @@ namespace EquiposFrontend
             this.Dispose();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
 
         // para mover el form manteniendo click derecho
         private Size? _mouseGrabOffset;
@@ -127,7 +122,9 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

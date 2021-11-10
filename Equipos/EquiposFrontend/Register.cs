@@ -22,11 +22,6 @@ namespace EquiposFrontend
             InitializeComponent();
         }
 
-        private void btnExitLogin_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void MsgErrorUser(string msg)
         {
             lblErrorUsername.Text = msg;
@@ -120,6 +115,11 @@ namespace EquiposFrontend
             else
                 return false;
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

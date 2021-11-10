@@ -30,6 +30,7 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,19 +68,6 @@ namespace EquiposFrontend
             this.btnBajaEquipo = new System.Windows.Forms.Button();
             this.btnEditarEquipo = new System.Windows.Forms.Button();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
-            this.btnNvoEquipo = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEditarPersona = new System.Windows.Forms.Button();
-            this.btnNvaPersona = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
             this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,14 +75,21 @@ namespace EquiposFrontend
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaBajaEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.verCompromisos = new System.Windows.Forms.DataGridViewButtonColumn();
->>>>>>> 84f53a034d6e2d397c2df7e95d3e2dfc22ce4356
+            this.btnNvoEquipo = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditarPersona = new System.Windows.Forms.Button();
+            this.btnNvaPersona = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -500,6 +495,49 @@ namespace EquiposFrontend
             this.dgvEquipos.TabIndex = 0;
             this.dgvEquipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipos_CellContentClick);
             // 
+            // idEquipo
+            // 
+            this.idEquipo.HeaderText = "idEquipo";
+            this.idEquipo.Name = "idEquipo";
+            this.idEquipo.ReadOnly = true;
+            this.idEquipo.Visible = false;
+            // 
+            // nombreEquipo
+            // 
+            this.nombreEquipo.HeaderText = "Nombre del Equipo";
+            this.nombreEquipo.Name = "nombreEquipo";
+            this.nombreEquipo.ReadOnly = true;
+            // 
+            // nombreEntrenador
+            // 
+            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
+            this.nombreEntrenador.Name = "nombreEntrenador";
+            this.nombreEntrenador.ReadOnly = true;
+            // 
+            // cantidadJugadores
+            // 
+            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
+            this.cantidadJugadores.Name = "cantidadJugadores";
+            this.cantidadJugadores.ReadOnly = true;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha de Alta";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            // 
+            // fechaBajaEquipo
+            // 
+            this.fechaBajaEquipo.HeaderText = "Fecha de Baja";
+            this.fechaBajaEquipo.Name = "fechaBajaEquipo";
+            this.fechaBajaEquipo.ReadOnly = true;
+            // 
+            // verCompromisos
+            // 
+            this.verCompromisos.HeaderText = "Compromisos";
+            this.verCompromisos.Name = "verCompromisos";
+            this.verCompromisos.ReadOnly = true;
+            // 
             // btnNvoEquipo
             // 
             this.btnNvoEquipo.BackColor = System.Drawing.Color.Gainsboro;
@@ -513,6 +551,19 @@ namespace EquiposFrontend
             this.btnNvoEquipo.Text = "Inscribir Nuevo Equipo";
             this.btnNvoEquipo.UseVisualStyleBackColor = false;
             this.btnNvoEquipo.Click += new System.EventHandler(this.btnNvoEquipo_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTitulo.Location = new System.Drawing.Point(839, 6);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTitulo.Size = new System.Drawing.Size(70, 25);
+            this.lblTitulo.TabIndex = 17;
+            this.lblTitulo.Text = "label1";
             // 
             // groupBox3
             // 
@@ -593,104 +644,21 @@ namespace EquiposFrontend
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip1";
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1550, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 22);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(212, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1552, 30);
-            this.panel1.TabIndex = 7;
-            // 
             // btnCerrar
             // 
-            this.btnCerrar.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1523, 3);
+            this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Location = new System.Drawing.Point(1731, 8);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 22);
+            this.btnCerrar.Size = new System.Drawing.Size(27, 27);
             this.btnCerrar.TabIndex = 19;
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblTitulo.Location = new System.Drawing.Point(627, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitulo.Size = new System.Drawing.Size(70, 25);
-            this.lblTitulo.TabIndex = 17;
-            this.lblTitulo.Text = "label1";
-            // 
-<<<<<<< HEAD
-=======
-            // idEquipo
-            // 
-            this.idEquipo.HeaderText = "idEquipo";
-            this.idEquipo.Name = "idEquipo";
-            this.idEquipo.ReadOnly = true;
-            this.idEquipo.Visible = false;
-            // 
-            // nombreEquipo
-            // 
-            this.nombreEquipo.HeaderText = "Nombre del Equipo";
-            this.nombreEquipo.Name = "nombreEquipo";
-            this.nombreEquipo.ReadOnly = true;
-            // 
-            // nombreEntrenador
-            // 
-            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
-            this.nombreEntrenador.Name = "nombreEntrenador";
-            this.nombreEntrenador.ReadOnly = true;
-            // 
-            // cantidadJugadores
-            // 
-            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
-            this.cantidadJugadores.Name = "cantidadJugadores";
-            this.cantidadJugadores.ReadOnly = true;
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "Fecha de Alta";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
-            // 
-            // fechaBajaEquipo
-            // 
-            this.fechaBajaEquipo.HeaderText = "Fecha de Baja";
-            this.fechaBajaEquipo.Name = "fechaBajaEquipo";
-            this.fechaBajaEquipo.ReadOnly = true;
-            // 
-            // verCompromisos
-            // 
-            this.verCompromisos.HeaderText = "Compromisos";
-            this.verCompromisos.Name = "verCompromisos";
-            this.verCompromisos.ReadOnly = true;
-            // 
->>>>>>> 84f53a034d6e2d397c2df7e95d3e2dfc22ce4356
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -698,13 +666,15 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1764, 516);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(220, 35);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -720,8 +690,6 @@ namespace EquiposFrontend
             this.groupBox3.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -759,7 +727,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button btnNvoEquipo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnEditarPersona;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNvaPersona;
 
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
@@ -770,10 +737,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
@@ -788,5 +752,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.DataGridViewButtonColumn verCompromisos;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
