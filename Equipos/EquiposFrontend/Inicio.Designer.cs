@@ -655,7 +655,7 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1370, 516);
+            this.ClientSize = new System.Drawing.Size(1774, 516);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.groupBox3);

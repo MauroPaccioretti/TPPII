@@ -2,6 +2,7 @@
 using EquiposFrontend.Cliente;
 using EquiposFrontend.Reportes;
 using Newtonsoft.Json;
+using ReportesTPPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -194,10 +195,15 @@ namespace EquiposFrontend
         private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Dashboard reporteDasboard = new Dashboard();
+            reporteDasboard.ShowDialog();
+            this.Show();
+            /*
+            this.Hide();
             ReporteTablasPosiciones reporte1 = new ReporteTablasPosiciones();
             reporte1.ShowDialog();
             this.Show();
-
+            */
         }
 
 

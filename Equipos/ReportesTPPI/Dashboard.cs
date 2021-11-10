@@ -179,7 +179,13 @@ namespace ReportesTPPI
             }
         }
 
-        
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea cerrar?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+        }
     }
 
 

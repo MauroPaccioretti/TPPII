@@ -73,6 +73,7 @@ namespace ReportesTPPI
             this.btnFiltro = new System.Windows.Forms.Button();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chtHabilidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRespuesta)).BeginInit();
             this.panel1.SuspendLayout();
@@ -559,12 +560,23 @@ namespace ReportesTPPI
             this.lblFiltrar.TabIndex = 34;
             this.lblFiltrar.Text = "Filtrar:";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(1348, 47);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(28, 24);
+            this.btnCerrar.TabIndex = 41;
+            this.btnCerrar.Text = "X";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1386, 420);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblColumna);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtFiltro);
@@ -663,5 +675,6 @@ namespace ReportesTPPI
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.ComboBox cboBusqueda;
         private System.Windows.Forms.Label lblFiltrar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

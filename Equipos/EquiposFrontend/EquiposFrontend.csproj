@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Maikebing.System.Windows.Forms.DataVisualization" Version="5.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.14" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EquiposBackend\EquiposBackend.csproj" />
     <ProjectReference Include="..\EquiposWebAPI\EquiposWebAPI.csproj" />
+    <ProjectReference Include="..\ReportesTPPI\ReportesTPPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
