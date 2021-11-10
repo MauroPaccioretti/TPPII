@@ -290,7 +290,7 @@ namespace EquiposBackend.Datos
                         );
 
                     aux = "Hola, " + userName + "\nUsted solicito recuperar su contraseña.\n" +
-                        "Porfavor verifique en su email: " + userMail + ",\nporfavor tambien verifique en la casilla Spam.";
+                        "Por favor verifique en su email: " + userMail + ",\nporfavor tambien verifique en la casilla Spam.";
                 }
                 else
                 {

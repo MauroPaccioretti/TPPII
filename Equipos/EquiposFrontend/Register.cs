@@ -92,20 +92,20 @@ namespace EquiposFrontend
                     }
                     else
                     {
-                        MsgErrorEmail("Porfavor ingrese un email valido");
+                        MsgErrorEmail("Por favor, ingrese un email valido");
                         textBoxEmail.Focus();
                     }
                 }
                 else
                 {
-                    MsgErrorPass("Porfavor ingrese una contraseña");
+                    MsgErrorPass("Por favor, ingrese una contraseña");
                     textBoxPass.Focus();
 
                 }
             }
             else
             {
-                MsgErrorUser("Porfavor ingrese un Usuario");
+                MsgErrorUser("Por favor, ingrese un Usuario");
                 textBoxUsername.Focus();
             }
         }

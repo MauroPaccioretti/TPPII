@@ -129,7 +129,7 @@ namespace EquiposBackend.Datos
 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@cod_equipo", compromiso.CodEquipo);
-            parameters.Add("@cod_tipoCompromiso", compromiso.TipoCompromiso);
+            parameters.Add("@cod_tipoCompromiso", compromiso.TipoCompromiso.CodCompromiso);
             parameters.Add("@comentariosCompromiso", compromiso.ComentariosCompromiso);
             parameters.Add("@fechaCompromiso", compromiso.FechaCompromiso);
 
