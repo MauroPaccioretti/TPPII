@@ -133,9 +133,10 @@ namespace EquiposFrontend
 
         private void linklblOlvidoContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this.Opacity = 0.5;
+            this.Opacity = 0.3;
             var recoverPassword = new RecoverPassword();
             recoverPassword.ShowDialog();
+            this.Opacity = 1;
             
         }
 

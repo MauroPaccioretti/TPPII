@@ -56,6 +56,12 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
+            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreTipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
@@ -78,12 +84,6 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreTipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -375,6 +375,45 @@ namespace EquiposFrontend
             this.dgvCompromisos.Size = new System.Drawing.Size(567, 407);
             this.dgvCompromisos.TabIndex = 3;
             // 
+            // idEquipoCompromiso
+            // 
+            this.idEquipoCompromiso.HeaderText = "idEquipo";
+            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
+            this.idEquipoCompromiso.ReadOnly = true;
+            this.idEquipoCompromiso.Visible = false;
+            // 
+            // codCompromiso
+            // 
+            this.codCompromiso.HeaderText = "codCompromiso";
+            this.codCompromiso.Name = "codCompromiso";
+            this.codCompromiso.ReadOnly = true;
+            this.codCompromiso.Visible = false;
+            // 
+            // nombreTipoCompromiso
+            // 
+            this.nombreTipoCompromiso.HeaderText = "Tipo de Compromiso";
+            this.nombreTipoCompromiso.Name = "nombreTipoCompromiso";
+            this.nombreTipoCompromiso.ReadOnly = true;
+            // 
+            // textoCompromiso
+            // 
+            this.textoCompromiso.HeaderText = "Compromiso";
+            this.textoCompromiso.Name = "textoCompromiso";
+            this.textoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
+            // 
+            // fechaBajaCompromiso
+            // 
+            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
+            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
+            this.fechaBajaCompromiso.ReadOnly = true;
+            this.fechaBajaCompromiso.Visible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCompromisos);
@@ -601,7 +640,7 @@ namespace EquiposFrontend
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.button1);
@@ -629,53 +668,14 @@ namespace EquiposFrontend
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(627, 6);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTitulo.Location = new System.Drawing.Point(627, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitulo.Size = new System.Drawing.Size(57, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(70, 25);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
-            // 
-            // idEquipoCompromiso
-            // 
-            this.idEquipoCompromiso.HeaderText = "idEquipo";
-            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
-            this.idEquipoCompromiso.ReadOnly = true;
-            this.idEquipoCompromiso.Visible = false;
-            // 
-            // codCompromiso
-            // 
-            this.codCompromiso.HeaderText = "codCompromiso";
-            this.codCompromiso.Name = "codCompromiso";
-            this.codCompromiso.ReadOnly = true;
-            this.codCompromiso.Visible = false;
-            // 
-            // nombreTipoCompromiso
-            // 
-            this.nombreTipoCompromiso.HeaderText = "Tipo de Compromiso";
-            this.nombreTipoCompromiso.Name = "nombreTipoCompromiso";
-            this.nombreTipoCompromiso.ReadOnly = true;
-            // 
-            // textoCompromiso
-            // 
-            this.textoCompromiso.HeaderText = "Compromiso";
-            this.textoCompromiso.Name = "textoCompromiso";
-            this.textoCompromiso.ReadOnly = true;
-            // 
-            // fechaCompromiso
-            // 
-            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
-            this.fechaCompromiso.Name = "fechaCompromiso";
-            this.fechaCompromiso.ReadOnly = true;
-            // 
-            // fechaBajaCompromiso
-            // 
-            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
-            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
-            this.fechaBajaCompromiso.ReadOnly = true;
-            this.fechaBajaCompromiso.Visible = false;
             // 
             // Inicio
             // 
