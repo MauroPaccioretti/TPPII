@@ -53,7 +53,6 @@ namespace EquiposFrontend
             this.modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaDePosicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeEquiposActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
@@ -307,8 +306,7 @@ namespace EquiposFrontend
             // 
             this.reportesToolStripMenuItem.AutoSize = false;
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tablaDePosicionesToolStripMenuItem,
-            this.listadoDeEquiposActivosToolStripMenuItem});
+            this.tablaDePosicionesToolStripMenuItem});
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(208, 60);
@@ -321,16 +319,8 @@ namespace EquiposFrontend
             this.tablaDePosicionesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.tablaDePosicionesToolStripMenuItem.Name = "tablaDePosicionesToolStripMenuItem";
             this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(276, 40);
-            this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
+            this.tablaDePosicionesToolStripMenuItem.Text = "Dashboard";
             this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
-            // 
-            // listadoDeEquiposActivosToolStripMenuItem
-            // 
-            this.listadoDeEquiposActivosToolStripMenuItem.AutoSize = false;
-            this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
-            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 40);
-            this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -665,7 +655,7 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1764, 516);
+            this.ClientSize = new System.Drawing.Size(1370, 516);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.groupBox3);
@@ -737,7 +727,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;

@@ -178,6 +178,8 @@ namespace ReportesTPPI
                 dgvRespuesta.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
             }
         }
+
+        
     }
 
 

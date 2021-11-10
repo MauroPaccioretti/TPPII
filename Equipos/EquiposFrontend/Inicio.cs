@@ -389,5 +389,7 @@ namespace EquiposFrontend
             infoGeneral.ShowDialog();
             this.Show();
         }
+
+        
     }
 }
