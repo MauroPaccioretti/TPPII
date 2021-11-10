@@ -84,10 +84,6 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-=======
->>>>>>> 638510a5ccf98f8f4ecbbbbaf53c8b8073f4d258
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -325,15 +321,16 @@ namespace EquiposFrontend
             this.tablaDePosicionesToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.tablaDePosicionesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.tablaDePosicionesToolStripMenuItem.Name = "tablaDePosicionesToolStripMenuItem";
-            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(250, 40);
+            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(276, 40);
             this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
             this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
             // 
             // listadoDeEquiposActivosToolStripMenuItem
             // 
+            this.listadoDeEquiposActivosToolStripMenuItem.AutoSize = false;
             this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
-            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 28);
+            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 40);
             this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
             // 
             // acercaDeToolStripMenuItem
@@ -354,6 +351,7 @@ namespace EquiposFrontend
             this.informaciónGeneralToolStripMenuItem.Name = "informaciónGeneralToolStripMenuItem";
             this.informaciónGeneralToolStripMenuItem.Size = new System.Drawing.Size(247, 40);
             this.informaciónGeneralToolStripMenuItem.Text = "Información general";
+            this.informaciónGeneralToolStripMenuItem.Click += new System.EventHandler(this.informaciónGeneralToolStripMenuItem_Click);
             // 
             // dgvCompromisos
             // 
@@ -679,25 +677,6 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
-<<<<<<< HEAD
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(-21, 442);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(233, 41);
-            this.btnCerrarSesion.TabIndex = 2;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-=======
->>>>>>> 638510a5ccf98f8f4ecbbbbaf53c8b8073f4d258
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);

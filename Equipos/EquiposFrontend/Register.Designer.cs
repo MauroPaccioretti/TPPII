@@ -54,7 +54,7 @@ namespace EquiposFrontend
             this.lblErrorPass.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrorPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorPass.Location = new System.Drawing.Point(313, 357);
+            this.lblErrorPass.Location = new System.Drawing.Point(394, 355);
             this.lblErrorPass.Name = "lblErrorPass";
             this.lblErrorPass.Size = new System.Drawing.Size(101, 16);
             this.lblErrorPass.TabIndex = 24;
@@ -67,7 +67,7 @@ namespace EquiposFrontend
             this.lblErrorUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrorUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorUsername.Location = new System.Drawing.Point(313, 264);
+            this.lblErrorUsername.Location = new System.Drawing.Point(394, 262);
             this.lblErrorUsername.Name = "lblErrorUsername";
             this.lblErrorUsername.Size = new System.Drawing.Size(101, 16);
             this.lblErrorUsername.TabIndex = 23;
@@ -117,7 +117,7 @@ namespace EquiposFrontend
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl2.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl2.Location = new System.Drawing.Point(132, 357);
+            this.lbl2.Location = new System.Drawing.Point(100, 355);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(160, 17);
             this.lbl2.TabIndex = 18;
@@ -129,7 +129,7 @@ namespace EquiposFrontend
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl1.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl1.Location = new System.Drawing.Point(132, 264);
+            this.lbl1.Location = new System.Drawing.Point(100, 262);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(128, 17);
             this.lbl1.TabIndex = 17;
@@ -139,10 +139,10 @@ namespace EquiposFrontend
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(150, 179);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(197, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 25);
+            this.label2.Size = new System.Drawing.Size(209, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "Registrar para continuar";
             // 
@@ -151,7 +151,7 @@ namespace EquiposFrontend
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(132, 123);
+            this.label1.Location = new System.Drawing.Point(170, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 46);
             this.label1.TabIndex = 15;
@@ -164,10 +164,10 @@ namespace EquiposFrontend
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxUsername.Location = new System.Drawing.Point(132, 293);
+            this.textBoxUsername.Location = new System.Drawing.Point(100, 291);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(331, 38);
+            this.textBoxUsername.Size = new System.Drawing.Size(395, 38);
             this.textBoxUsername.TabIndex = 25;
             // 
             // textBoxPass
@@ -177,11 +177,11 @@ namespace EquiposFrontend
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPass.Location = new System.Drawing.Point(132, 387);
+            this.textBoxPass.Location = new System.Drawing.Point(100, 385);
             this.textBoxPass.Multiline = true;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.PasswordChar = '●';
-            this.textBoxPass.Size = new System.Drawing.Size(331, 38);
+            this.textBoxPass.Size = new System.Drawing.Size(395, 38);
             this.textBoxPass.TabIndex = 26;
             // 
             // textBoxEmail
@@ -191,10 +191,10 @@ namespace EquiposFrontend
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxEmail.Location = new System.Drawing.Point(132, 480);
+            this.textBoxEmail.Location = new System.Drawing.Point(100, 478);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(331, 38);
+            this.textBoxEmail.Size = new System.Drawing.Size(395, 38);
             this.textBoxEmail.TabIndex = 29;
             // 
             // lblErrorEmail
@@ -203,7 +203,7 @@ namespace EquiposFrontend
             this.lblErrorEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrorEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorEmail.Location = new System.Drawing.Point(313, 450);
+            this.lblErrorEmail.Location = new System.Drawing.Point(394, 448);
             this.lblErrorEmail.Name = "lblErrorEmail";
             this.lblErrorEmail.Size = new System.Drawing.Size(101, 16);
             this.lblErrorEmail.TabIndex = 28;
@@ -216,7 +216,7 @@ namespace EquiposFrontend
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(132, 450);
+            this.label4.Location = new System.Drawing.Point(100, 448);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 27;

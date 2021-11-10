@@ -53,7 +53,7 @@ namespace EquiposFrontend
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(838, 118);
+            this.label1.Location = new System.Drawing.Point(838, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 46);
             this.label1.TabIndex = 0;
@@ -63,10 +63,10 @@ namespace EquiposFrontend
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(850, 175);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(859, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 25);
+            this.label2.Size = new System.Drawing.Size(198, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ingrese para continuar";
             // 
@@ -193,7 +193,7 @@ namespace EquiposFrontend
             this.lblErrorUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrorUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorUsername.Location = new System.Drawing.Point(985, 294);
+            this.lblErrorUsername.Location = new System.Drawing.Point(1034, 294);
             this.lblErrorUsername.Name = "lblErrorUsername";
             this.lblErrorUsername.Size = new System.Drawing.Size(101, 16);
             this.lblErrorUsername.TabIndex = 13;
@@ -206,7 +206,7 @@ namespace EquiposFrontend
             this.lblErrorPass.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrorPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorPass.Location = new System.Drawing.Point(985, 405);
+            this.lblErrorPass.Location = new System.Drawing.Point(1034, 405);
             this.lblErrorPass.Name = "lblErrorPass";
             this.lblErrorPass.Size = new System.Drawing.Size(101, 16);
             this.lblErrorPass.TabIndex = 14;
@@ -221,7 +221,7 @@ namespace EquiposFrontend
             this.linkLabelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabelRegister.ForeColor = System.Drawing.Color.Green;
             this.linkLabelRegister.LinkColor = System.Drawing.Color.Green;
-            this.linkLabelRegister.Location = new System.Drawing.Point(1083, 735);
+            this.linkLabelRegister.Location = new System.Drawing.Point(999, 736);
             this.linkLabelRegister.Name = "linkLabelRegister";
             this.linkLabelRegister.Size = new System.Drawing.Size(58, 16);
             this.linkLabelRegister.TabIndex = 16;
@@ -235,7 +235,7 @@ namespace EquiposFrontend
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(953, 735);
+            this.label3.Location = new System.Drawing.Point(869, 736);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 17;
