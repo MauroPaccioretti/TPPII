@@ -190,13 +190,21 @@ namespace EquiposFrontend
                     break;
                 case Accion.Eliminar:
                     //inhabilitamos toda accion
-                    grbPersonasEquipo.Enabled = false;
-                    grbPersonasDisponibles.Enabled = false;
-                    grbCompromisosActuales.Enabled = false;
-                    grbCompromisosNvos.Enabled = false;
-                    txtNombreEquipo.Enabled = false;
+                    dgvPersonasDispo.Enabled = false;
+                    cmbPosiciones.Enabled = false;
+                    txtCamiseta.Enabled = false;
+                    btnAgregarPersona.Enabled = false;
+                    dgvPersonasEquipo.Enabled = false;
+                    cmbTipoCompromiso.Enabled = false;
+                    btnNuevoCompromiso.Enabled = false;
+                    dtpCompromiso.Enabled = false;
+                    txtCompromiso.Enabled = false;
+                    btnAgregarCompromiso.Enabled = false;
+                    dgvCompromisos.Enabled = false;
+                    btnAgregarLocalidad.Enabled = false;
                     cmbLocalidad.Enabled = false;
                     btnAgregarLocalidad.Enabled = false;
+                    txtNombreEquipo.Enabled = false;
 
                     CargarEquipo();
 

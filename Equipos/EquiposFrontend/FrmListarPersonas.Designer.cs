@@ -401,7 +401,6 @@ namespace EquiposFrontend
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -430,16 +429,22 @@ namespace EquiposFrontend
             // 
             // btnBajaPersona
             // 
+            this.btnBajaPersona.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnBajaPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBajaPersona.Location = new System.Drawing.Point(34, 88);
             this.btnBajaPersona.Name = "btnBajaPersona";
             this.btnBajaPersona.Size = new System.Drawing.Size(353, 53);
             this.btnBajaPersona.TabIndex = 16;
             this.btnBajaPersona.Text = "Dar de Baja";
-            this.btnBajaPersona.UseVisualStyleBackColor = true;
+            this.btnBajaPersona.UseVisualStyleBackColor = false;
             this.btnBajaPersona.Click += new System.EventHandler(this.btnBajaPersona_Click);
             // 
             // btnEditarPersona
             // 
+            this.btnEditarPersona.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEditarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditarPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEditarPersona.Location = new System.Drawing.Point(34, 30);
             this.btnEditarPersona.Margin = new System.Windows.Forms.Padding(2);
@@ -447,18 +452,21 @@ namespace EquiposFrontend
             this.btnEditarPersona.Size = new System.Drawing.Size(353, 53);
             this.btnEditarPersona.TabIndex = 15;
             this.btnEditarPersona.Text = "Editar";
-            this.btnEditarPersona.UseVisualStyleBackColor = true;
+            this.btnEditarPersona.UseVisualStyleBackColor = false;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
             // 
             // btnRegistrarNuevaPersona
             // 
+            this.btnRegistrarNuevaPersona.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRegistrarNuevaPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarNuevaPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRegistrarNuevaPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnRegistrarNuevaPersona.Location = new System.Drawing.Point(1209, 700);
             this.btnRegistrarNuevaPersona.Name = "btnRegistrarNuevaPersona";
             this.btnRegistrarNuevaPersona.Size = new System.Drawing.Size(353, 53);
             this.btnRegistrarNuevaPersona.TabIndex = 17;
             this.btnRegistrarNuevaPersona.Text = "Registrar Nueva Persona";
-            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = true;
+            this.btnRegistrarNuevaPersona.UseVisualStyleBackColor = false;
             this.btnRegistrarNuevaPersona.Click += new System.EventHandler(this.btnRegistrarNuevaPersona_Click);
             // 
             // groupBox2
@@ -554,7 +562,6 @@ namespace EquiposFrontend
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLimpiar.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -580,7 +587,6 @@ namespace EquiposFrontend
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -589,7 +595,7 @@ namespace EquiposFrontend
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(353, 53);
             this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "Cancelar";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -657,6 +663,7 @@ namespace EquiposFrontend
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListarPersonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Personas";
             this.Load += new System.EventHandler(this.FrmListarPersonas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();

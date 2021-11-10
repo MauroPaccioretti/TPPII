@@ -53,7 +53,6 @@ namespace EquiposFrontend
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -68,7 +67,6 @@ namespace EquiposFrontend
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -180,6 +178,7 @@ namespace EquiposFrontend
             this.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTablasSoporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_PPL_Frm";
             this.Load += new System.EventHandler(this.Modificar_PPL_Frm_Load);
             this.panel1.ResumeLayout(false);

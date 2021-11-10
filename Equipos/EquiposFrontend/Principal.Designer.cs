@@ -33,12 +33,14 @@ namespace EquiposFrontend
             this.pnl_Titulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.pnl_Titulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Titulo
             // 
             this.pnl_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.pnl_Titulo.Controls.Add(this.linkLogin);
             this.pnl_Titulo.Controls.Add(this.btnCerrar);
             this.pnl_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Titulo.Location = new System.Drawing.Point(0, 0);
@@ -72,6 +74,21 @@ namespace EquiposFrontend
             this.panelCentral.Size = new System.Drawing.Size(1248, 687);
             this.panelCentral.TabIndex = 2;
             // 
+            // linkLogin
+            // 
+            this.linkLogin.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLogin.AutoSize = true;
+            this.linkLogin.BackColor = System.Drawing.Color.Transparent;
+            this.linkLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLogin.LinkColor = System.Drawing.Color.White;
+            this.linkLogin.Location = new System.Drawing.Point(13, 7);
+            this.linkLogin.Name = "linkLogin";
+            this.linkLogin.Size = new System.Drawing.Size(48, 20);
+            this.linkLogin.TabIndex = 21;
+            this.linkLogin.TabStop = true;
+            this.linkLogin.Text = "Login";
+            this.linkLogin.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -90,6 +107,7 @@ namespace EquiposFrontend
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
             this.pnl_Titulo.ResumeLayout(false);
+            this.pnl_Titulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -99,6 +117,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Panel pnl_Titulo;
         private System.Windows.Forms.Panel panelCentral;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.LinkLabel linkLogin;
     }
 }
 

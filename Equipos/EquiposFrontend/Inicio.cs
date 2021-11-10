@@ -25,8 +25,7 @@ namespace EquiposFrontend
             InitializeComponent();
             oUsuario = usuario;
             lblTitulo.Text = "Bienvenido " + usuario.User;
-            this.BringToFront();
-            
+                     
 
         }
 
@@ -81,68 +80,88 @@ namespace EquiposFrontend
 
         private void editarNombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.paises, Accion.Modificar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void cambiarNombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.provincias, Accion.Modificar);
-            frmTablasSoporte.Show();
+            this.Hide();
+            FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.provincias, Accion.Modificar);            
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void cambiarNombreToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Modificar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void cambiarNombreToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Modificar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void modificarElNombreDeUnTipoDeCompromisoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Modificar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
 
         private void agregarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.paises, Accion.Agregar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void agregarNuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.provincias, Accion.Agregar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void agregarNuevaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Agregar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void agregarNuevoTipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void agregarTipoDeCompromisoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Agregar);
-            frmTablasSoporte.Show();
+            frmTablasSoporte.ShowDialog();
+            this.Show();
         }
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to Exit application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -153,9 +172,10 @@ namespace EquiposFrontend
 
         private void tablaDePosicionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ReporteTablasPosiciones reporte1 = new ReporteTablasPosiciones();
             reporte1.ShowDialog();
-            
+            this.Show();
 
         }
 
@@ -216,7 +236,7 @@ namespace EquiposFrontend
 
         private void btnNvaPersona_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
             FrmABM_Persona frmNvaPersona = new FrmABM_Persona(Accion.Agregar);
             frmNvaPersona.ShowDialog();
             this.Show();
@@ -224,7 +244,7 @@ namespace EquiposFrontend
 
         private void btnEditarPersona_Click(object sender, EventArgs e)
         {
-           // this.Hide();
+            this.Hide();
             FrmListarPersonas frmListarPersonas = new FrmListarPersonas();
             frmListarPersonas.ShowDialog();
             this.Show();
@@ -232,19 +252,11 @@ namespace EquiposFrontend
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to Exit application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Login login = new Login();
-            login.ShowDialog();
-        }
-
 
 
         private Size? _mouseGrabOffset;
@@ -306,6 +318,17 @@ namespace EquiposFrontend
 
             }
             
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Dispose();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+
         }
     }
 }
