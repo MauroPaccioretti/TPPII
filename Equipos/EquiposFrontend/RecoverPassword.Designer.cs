@@ -37,11 +37,13 @@ namespace EquiposFrontend
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // btnSendEmailRecover
             // 
-            this.btnSendEmailRecover.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSendEmailRecover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.btnSendEmailRecover.FlatAppearance.BorderSize = 0;
             this.btnSendEmailRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendEmailRecover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -105,7 +107,7 @@ namespace EquiposFrontend
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -116,6 +118,7 @@ namespace EquiposFrontend
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "ATRAS";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnCerrar
             // 
@@ -133,6 +136,17 @@ namespace EquiposFrontend
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(513, 270);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(155, 23);
+            this.progressBar1.TabIndex = 33;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);            // 
             // RecoverPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -140,6 +154,7 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(680, 434);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
@@ -165,5 +180,7 @@ namespace EquiposFrontend
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

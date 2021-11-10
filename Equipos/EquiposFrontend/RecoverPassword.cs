@@ -12,6 +12,7 @@ using EquiposBackend.Negocio;
 using System.Text.RegularExpressions;
 using EquiposFrontend.Cliente;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace EquiposFrontend
 {
@@ -25,22 +26,38 @@ namespace EquiposFrontend
             InitializeComponent();
             //service = new ImpFactoryAplicacion().CrearService();
             lblResultado.Text = "";
+            progressBar1.Visible = false;
+        }
+
+        public async Task<string> SendEmailAsync()
+        {
+            //lblResultado.Text = "";
+            //user.Email = textBoxUserRequest.Text;
+            string url = "https://localhost:44381/api/Usuarios/recoverPass?userRequesting=" + textBoxUserRequest.Text;
+            string resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+            return resultado;
+            //lblResultado.Text = resultado;
         }
 
         private async void btnSendEmailRecover_Click(object sender, EventArgs e)
         {
             if (ValidateEmail())
             {
-                lblResultado.Text = "";
-                //user.Email = textBoxUserRequest.Text;
-                string url = "https://localhost:44381/api/Usuarios/recoverPass?userRequesting=" + textBoxUserRequest.Text;
-                var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+                string resultado = await SendEmailAsync();
                 //string mensaje = JsonConvert.DeserializeObject<string>(resultado);
 
                 //var result = service.RecoverPassword(user.Email);
 
                 //lblResultado.Text = result;
-                lblResultado.Text = resultado;
+                backgroundWorker1.RunWorkerAsync();
+                progressBar1.Show();
+
+                
+                if (resultado != null)
+                {
+                    lblResultado.Text = resultado;
+                }
+
             }
             else
             {
@@ -81,6 +98,33 @@ namespace EquiposFrontend
         {
             this.Dispose();
             return;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            return;
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                Thread.Sleep(10);
+                backgroundWorker1.WorkerReportsProgress = true;
+                backgroundWorker1.ReportProgress(i);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+            if (e.ProgressPercentage == 100)
+            {
+                btnSendEmailRecover.Text = "ENVIADO!!";
+                textBoxUserRequest.Clear();
+                textBoxUserRequest.Focus();
+            }
         }
     }
 }
