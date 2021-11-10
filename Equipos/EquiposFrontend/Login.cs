@@ -31,7 +31,10 @@ namespace EquiposFrontend
 
         private void btnExitLogin_Click(object sender, EventArgs e)
         {
-            Dispose();
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
 

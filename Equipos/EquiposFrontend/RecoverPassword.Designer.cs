@@ -65,6 +65,8 @@ namespace EquiposFrontend
             this.textBoxUserRequest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUserRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxUserRequest.Location = new System.Drawing.Point(12, 225);
+            this.textBoxUserRequest.MaximumSize = new System.Drawing.Size(495, 38);
+            this.textBoxUserRequest.MinimumSize = new System.Drawing.Size(495, 38);
             this.textBoxUserRequest.Multiline = true;
             this.textBoxUserRequest.Name = "textBoxUserRequest";
             this.textBoxUserRequest.Size = new System.Drawing.Size(495, 38);
@@ -146,7 +148,7 @@ namespace EquiposFrontend
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(513, 364);
+            this.btnBack.Location = new System.Drawing.Point(513, 384);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(155, 38);
             this.btnBack.TabIndex = 21;
@@ -160,7 +162,7 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(680, 414);
+            this.ClientSize = new System.Drawing.Size(680, 434);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblResultado);

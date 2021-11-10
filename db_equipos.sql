@@ -624,7 +624,24 @@ group by p.habilidad
 END
 go
 
-exec SP_HABILIDADES_PERSONAS
+exec SP_HABILIDADES_PERSONAS;
+
+create procedure SP_DASHBOARD
+@resEquipos int output         ,
+@resEquiposAct int output	   ,
+@resJugadores    int output	   ,
+@resJugadoresAct int output	   ,
+@resComprom		 int output	   ,
+@resCompromAct	 int output
+as
+begin
+set @resEquipos = ( select count(cod_equipo)     'Cantidad Equipos' from Equipos																			 )
+set @resEquiposAct = ( select count(cod_equipo)     'Cantidad Equipos Activos' from Equipos where fechaBaja is null											 )
+set @resJugadores = ( select count(cod_persona)    'Cantidad Jugadores' from Personas																		 )
+set @resJugadoresAct = ( select count(cod_persona)    'Cantidad Jugadores Activos' from Personas where fechaBaja is null									 )
+set @resComprom	= ( select count(cod_compromiso) 'Cantidad Compromisos' from Compromisos																	 )
+set @resCompromAct = ( select count(cod_compromiso) 'Cantidad Compromisos Futuros' from Compromisos where fechaBaja is null and fechaCompromiso >= getdate() )
+end
 
 ------------------------------------------------------------------------------
 ------------SP_BAJA-----------------------------------------------------------

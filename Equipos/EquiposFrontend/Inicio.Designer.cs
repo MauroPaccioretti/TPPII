@@ -321,15 +321,16 @@ namespace EquiposFrontend
             this.tablaDePosicionesToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.tablaDePosicionesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.tablaDePosicionesToolStripMenuItem.Name = "tablaDePosicionesToolStripMenuItem";
-            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(250, 40);
+            this.tablaDePosicionesToolStripMenuItem.Size = new System.Drawing.Size(276, 40);
             this.tablaDePosicionesToolStripMenuItem.Text = "Tabla de posiciones";
             this.tablaDePosicionesToolStripMenuItem.Click += new System.EventHandler(this.tablaDePosicionesToolStripMenuItem_Click);
             // 
             // listadoDeEquiposActivosToolStripMenuItem
             // 
+            this.listadoDeEquiposActivosToolStripMenuItem.AutoSize = false;
             this.listadoDeEquiposActivosToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.listadoDeEquiposActivosToolStripMenuItem.Name = "listadoDeEquiposActivosToolStripMenuItem";
-            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 28);
+            this.listadoDeEquiposActivosToolStripMenuItem.Size = new System.Drawing.Size(301, 40);
             this.listadoDeEquiposActivosToolStripMenuItem.Text = "Listado de equipos activos";
             // 
             // acercaDeToolStripMenuItem
@@ -350,6 +351,7 @@ namespace EquiposFrontend
             this.informaciónGeneralToolStripMenuItem.Name = "informaciónGeneralToolStripMenuItem";
             this.informaciónGeneralToolStripMenuItem.Size = new System.Drawing.Size(247, 40);
             this.informaciónGeneralToolStripMenuItem.Text = "Información general";
+            this.informaciónGeneralToolStripMenuItem.Click += new System.EventHandler(this.informaciónGeneralToolStripMenuItem_Click);
             // 
             // dgvCompromisos
             // 

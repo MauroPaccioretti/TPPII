@@ -25,8 +25,6 @@ namespace EquiposFrontend
             InitializeComponent();
             oUsuario = usuario;
             lblTitulo.Text = "Bienvenido " + usuario.User;
-                     
-
         }
 
         
@@ -331,6 +329,14 @@ namespace EquiposFrontend
                 login.ShowDialog();
             }
 
+        }
+
+        private void informaciónGeneralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InfoGeneral infoGeneral = new InfoGeneral();
+            infoGeneral.ShowDialog();
+            this.Show();
         }
     }
 }
