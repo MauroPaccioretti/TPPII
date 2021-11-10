@@ -16,7 +16,7 @@ namespace ReportesTPPI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CantidadXHabilidad());
+            Application.Run(new Dashboard());
         }
     }
 }
