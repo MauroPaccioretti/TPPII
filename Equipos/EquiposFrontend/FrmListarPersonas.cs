@@ -180,10 +180,12 @@ namespace EquiposFrontend
 
 
             dgvPersonas.Rows.Clear();
-            foreach (Persona oPersona in lst)
+            if(lst.Count != 0)
             {
-                dgvPersonas.Rows.Add(new object[] {
-                    oPersona.CodPersona,                    
+                foreach (Persona oPersona in lst)
+                {
+                    dgvPersonas.Rows.Add(new object[] {
+                    oPersona.CodPersona,
                     oPersona.Apellido,
                     oPersona.Nombre,
                     lstTipoDocs.Find(item => oPersona.TipoDoc == item.CodTipoDoc).TipoDoc,
@@ -196,7 +198,12 @@ namespace EquiposFrontend
                     oPersona.FechaBaja.HasValue ? oPersona.FechaBaja.Value.ToString("dd/MM/yyyy") : "Activo"
 
                 });
+                }
+
+                dgvPersonas.Sort(dgvPersonas.Columns[1], ListSortDirection.Ascending);
+
             }
+            
         }
 
         private async void FrmListarPersonas_Load(object sender, EventArgs e)

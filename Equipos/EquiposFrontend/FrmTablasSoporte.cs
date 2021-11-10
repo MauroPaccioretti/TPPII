@@ -23,8 +23,8 @@ namespace EquiposFrontend
             InitializeComponent();
             this.tabla = tabla;
             this.accion = accion;
-            this.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
-            lblTitulo.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
+            //this.Text = accion.ToString() + " Nombre de " + EnumATexto(tabla);
+            lblTitulo.Text = accion.ToString() + " elemento en la lista de " + EnumATexto(tabla);
             modoString = EnumATexto(tabla);
             btnAceptar.Text = accion.ToString();
 
@@ -174,7 +174,9 @@ namespace EquiposFrontend
                                 oProvincia.Nombre = txtNombre.Text;
 
                                 FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
+                                this.Opacity = 0.3;
                                 frmPais.ShowDialog();
+                                this.Opacity = 1;
                                 oProvincia.Pais.IDPais = frmPais.IdEleccion;
                                 datosJSON = JsonConvert.SerializeObject(oProvincia);
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
@@ -190,7 +192,9 @@ namespace EquiposFrontend
                                 oLoc.Nombre = txtNombre.Text;
 
                                 FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
+                                this.Opacity = 0.3;
                                 frmProv.ShowDialog();
+                                this.Opacity = 1;
                                 oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
                                 datosJSON = JsonConvert.SerializeObject(oLoc);
                                 resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
@@ -244,10 +248,14 @@ namespace EquiposFrontend
                                 url += "editarProvincia";
 
                                 Provincia oProvincia = new Provincia();
+                                oProvincia = (Provincia)cmbPPL.SelectedItem;
                                 oProvincia.Nombre = txtNombre.Text;
-                                FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
-                                frmPais.ShowDialog();
-                                oProvincia.Pais.IDPais = frmPais.IdEleccion;
+                                
+                                //FrmEleccionPaisProv frmPais = new FrmEleccionPaisProv(TablasSoporte.provincias);
+                                //this.Opacity = 0.3;
+                                //frmPais.ShowDialog();
+                                //this.Opacity = 1;
+                                //oProvincia.Pais.IDPais = frmPais.IdEleccion;
                                 datosJSON = JsonConvert.SerializeObject(oProvincia);
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);
                        
@@ -262,10 +270,12 @@ namespace EquiposFrontend
 
                                 oLoc = (Localidad)cmbPPL.SelectedItem;
                                 oLoc.Nombre = txtNombre.Text;
-                                FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
-                                frmProv.ShowDialog();
+                                //FrmEleccionPaisProv frmProv = new FrmEleccionPaisProv(TablasSoporte.localidades);
+                                //this.Opacity = 0.3;
+                                //frmProv.ShowDialog();
+                                //this.Opacity = 1;
                                 //Provincia oProv = new Provincia();
-                                oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
+                                //oLoc.Provincia.IDProvincia = frmProv.IdEleccion;
                                 //oLoc.Provincia = oProv;
                                 datosJSON = JsonConvert.SerializeObject(oLoc);
                                 resultado = await ClienteSingleton.GetInstancia().PutAsync(url, datosJSON);

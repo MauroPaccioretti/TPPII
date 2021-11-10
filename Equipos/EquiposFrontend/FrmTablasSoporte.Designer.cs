@@ -55,7 +55,7 @@ namespace EquiposFrontend
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAceptar.Location = new System.Drawing.Point(87, 199);
+            this.btnAceptar.Location = new System.Drawing.Point(161, 196);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(123, 38);
             this.btnAceptar.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace EquiposFrontend
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCancelar.Location = new System.Drawing.Point(216, 199);
+            this.btnCancelar.Location = new System.Drawing.Point(290, 196);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 38);
             this.btnCancelar.TabIndex = 1;
@@ -86,15 +86,16 @@ namespace EquiposFrontend
             // 
             // lblTitulo
             // 
-            this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitulo.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblTitulo.Location = new System.Drawing.Point(216, 14);
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(46, 17);
+            this.lblTitulo.Size = new System.Drawing.Size(572, 17);
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // button2
             // 
@@ -127,7 +128,7 @@ namespace EquiposFrontend
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNombre.Location = new System.Drawing.Point(68, 157);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 23);
+            this.txtNombre.Size = new System.Drawing.Size(431, 23);
             this.txtNombre.TabIndex = 4;
             // 
             // cmbPPL
@@ -137,7 +138,7 @@ namespace EquiposFrontend
             this.cmbPPL.FormattingEnabled = true;
             this.cmbPPL.Location = new System.Drawing.Point(68, 88);
             this.cmbPPL.Name = "cmbPPL";
-            this.cmbPPL.Size = new System.Drawing.Size(300, 24);
+            this.cmbPPL.Size = new System.Drawing.Size(431, 24);
             this.cmbPPL.TabIndex = 5;
             // 
             // lblEleccion
@@ -157,8 +158,8 @@ namespace EquiposFrontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(572, 263);
-            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblEleccion);
             this.Controls.Add(this.cmbPPL);
             this.Controls.Add(this.txtNombre);

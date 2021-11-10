@@ -26,15 +26,15 @@ namespace EquiposFrontend
 
             if (tabla == TablasSoporte.provincias) 
             {
-              
-                
+
+                lblTitulo.Text = "";
                 this.Text = "Elija a que Pais corresponde su Provincia";
-                lblEleccion.Text = "Elija a que Pais corresponde su Provincia:"; 
+                lblEleccion.Text = "Elija a que País corresponde\nsu Provincia:"; 
 
             }
             if (tabla == TablasSoporte.localidades)
             {
-            
+                lblTitulo.Text = "";
                 this.Text = "Elija a que Provincia corresponde su Localidad";
                 lblEleccion.Text = "Elija a que Provincia\ncorresponde su Localidad:";
             }

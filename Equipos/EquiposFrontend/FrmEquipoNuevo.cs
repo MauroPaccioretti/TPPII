@@ -64,16 +64,16 @@ namespace EquiposFrontend
             switch (modo)
             {
                 case Accion.Agregar:
-                    this.Text = "Agregar nuevo equipo";
+                    this.lblTitulo.Text = "Agregar nuevo equipo";
                     this.btnConfirmarAccion.Text = "Agregar Equipo";
                     break;
                 case Accion.Modificar:
-                    this.Text = "Modificar equipo";
+                    this.lblTitulo.Text = "Modificar el equipo";
                     this.btnConfirmarAccion.Text = "Modificar Equipo";
 
                     break;
                 case Accion.Eliminar:
-                    this.Text = "Eliminar equipo";
+                    this.lblTitulo.Text = "Dar de Baja al equipo";
                     this.btnConfirmarAccion.Text = "Eliminar Equipo";
 
                     break;

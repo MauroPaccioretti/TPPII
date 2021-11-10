@@ -324,6 +324,7 @@ namespace EquiposFrontend
                     List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
                     lstCompromisosActivos.AddRange(lstEquipos.Find(item => item.CodEquipo == nroEquipo).Compromisos);
                     lstCompromisosActivos.RemoveAll(item => item.FechaBaja.HasValue);
+                    lstCompromisosActivos.RemoveAll(item => item.FechaCompromiso < DateTime.Today);
 
                     if (lstCompromisosActivos.Count != 0)
                     {
