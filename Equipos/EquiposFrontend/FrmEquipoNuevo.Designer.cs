@@ -330,7 +330,6 @@ namespace EquiposFrontend
             // btnAgregarPersona
             // 
             this.btnAgregarPersona.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAgregarPersona.FlatAppearance.BorderSize = 0;
             this.btnAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarPersona.Location = new System.Drawing.Point(119, 404);
@@ -393,7 +392,6 @@ namespace EquiposFrontend
             // btnNuevoCompromiso
             // 
             this.btnNuevoCompromiso.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNuevoCompromiso.FlatAppearance.BorderSize = 0;
             this.btnNuevoCompromiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoCompromiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNuevoCompromiso.Location = new System.Drawing.Point(424, 49);
@@ -408,7 +406,6 @@ namespace EquiposFrontend
             // btnAgregarCompromiso
             // 
             this.btnAgregarCompromiso.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAgregarCompromiso.FlatAppearance.BorderSize = 0;
             this.btnAgregarCompromiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCompromiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarCompromiso.Location = new System.Drawing.Point(9, 283);
@@ -577,7 +574,6 @@ namespace EquiposFrontend
             // btnConfirmarAccion
             // 
             this.btnConfirmarAccion.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnConfirmarAccion.FlatAppearance.BorderSize = 0;
             this.btnConfirmarAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnConfirmarAccion.Location = new System.Drawing.Point(944, 824);
@@ -592,7 +588,6 @@ namespace EquiposFrontend
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.Location = new System.Drawing.Point(1209, 824);
@@ -607,7 +602,6 @@ namespace EquiposFrontend
             // btnAgregarLocalidad
             // 
             this.btnAgregarLocalidad.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAgregarLocalidad.FlatAppearance.BorderSize = 0;
             this.btnAgregarLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarLocalidad.Location = new System.Drawing.Point(1379, 54);
@@ -694,6 +688,7 @@ namespace EquiposFrontend
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmEquipoNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Equipo";
             this.Load += new System.EventHandler(this.FrmEquipoNuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).EndInit();

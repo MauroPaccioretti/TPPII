@@ -67,11 +67,10 @@ namespace EquiposFrontend
                     if (validLogIn == true || forcedLogin)
                     {                        
                         Inicio mainMenu = new Inicio(usuario);
+                        mainMenu.TopMost = true;
                         mainMenu.Show();
                         mainMenu.FormClosed += Logout;
-                        mainMenu.Owner = null;
                         this.Hide();
-                        mainMenu.BringToFront();
                     }
                     else
                     {

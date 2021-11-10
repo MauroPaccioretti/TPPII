@@ -32,6 +32,7 @@ namespace EquiposFrontend
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarPaísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,12 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
+            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
@@ -77,13 +84,6 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,13 +104,23 @@ namespace EquiposFrontend
             // 
             this.aToolStripMenuItem.AutoSize = false;
             this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesionToolStripMenuItem,
             this.salirToolStripMenuItem1});
             this.aToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.aToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.aToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
             this.aToolStripMenuItem.Size = new System.Drawing.Size(208, 60);
             this.aToolStripMenuItem.Text = "Archivo";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.AutoSize = false;
+            this.cerrarSesionToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.cerrarSesionToolStripMenuItem.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 40);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem1
             // 
@@ -363,6 +373,45 @@ namespace EquiposFrontend
             this.dgvCompromisos.Size = new System.Drawing.Size(567, 407);
             this.dgvCompromisos.TabIndex = 3;
             // 
+            // idEquipoCompromiso
+            // 
+            this.idEquipoCompromiso.HeaderText = "idEquipo";
+            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
+            this.idEquipoCompromiso.ReadOnly = true;
+            this.idEquipoCompromiso.Visible = false;
+            // 
+            // codCompromiso
+            // 
+            this.codCompromiso.HeaderText = "codCompromiso";
+            this.codCompromiso.Name = "codCompromiso";
+            this.codCompromiso.ReadOnly = true;
+            this.codCompromiso.Visible = false;
+            // 
+            // nombreEquipoCompromiso
+            // 
+            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
+            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
+            this.nombreEquipoCompromiso.ReadOnly = true;
+            // 
+            // tipoCompromiso
+            // 
+            this.tipoCompromiso.HeaderText = "Compromiso";
+            this.tipoCompromiso.Name = "tipoCompromiso";
+            this.tipoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
+            // 
+            // fechaBajaCompromiso
+            // 
+            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
+            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
+            this.fechaBajaCompromiso.ReadOnly = true;
+            this.fechaBajaCompromiso.Visible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCompromisos);
@@ -394,6 +443,8 @@ namespace EquiposFrontend
             // 
             // btnBajaEquipo
             // 
+            this.btnBajaEquipo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnBajaEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajaEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnBajaEquipo.Location = new System.Drawing.Point(604, 287);
             this.btnBajaEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -401,11 +452,13 @@ namespace EquiposFrontend
             this.btnBajaEquipo.Size = new System.Drawing.Size(279, 41);
             this.btnBajaEquipo.TabIndex = 1;
             this.btnBajaEquipo.Text = "Baja de un Equipo Inscripto";
-            this.btnBajaEquipo.UseVisualStyleBackColor = true;
+            this.btnBajaEquipo.UseVisualStyleBackColor = false;
             this.btnBajaEquipo.Click += new System.EventHandler(this.btnBajaEquipo_Click);
             // 
             // btnEditarEquipo
             // 
+            this.btnEditarEquipo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEditarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEditarEquipo.Location = new System.Drawing.Point(318, 287);
             this.btnEditarEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -413,7 +466,7 @@ namespace EquiposFrontend
             this.btnEditarEquipo.Size = new System.Drawing.Size(279, 41);
             this.btnEditarEquipo.TabIndex = 1;
             this.btnEditarEquipo.Text = "Editar Datos de un Equipo";
-            this.btnEditarEquipo.UseVisualStyleBackColor = true;
+            this.btnEditarEquipo.UseVisualStyleBackColor = false;
             this.btnEditarEquipo.Click += new System.EventHandler(this.btnEditarEquipo_Click);
             // 
             // dgvEquipos
@@ -479,6 +532,8 @@ namespace EquiposFrontend
             // 
             // btnNvoEquipo
             // 
+            this.btnNvoEquipo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNvoEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNvoEquipo.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnNvoEquipo.Location = new System.Drawing.Point(31, 287);
             this.btnNvoEquipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -486,7 +541,7 @@ namespace EquiposFrontend
             this.btnNvoEquipo.Size = new System.Drawing.Size(279, 41);
             this.btnNvoEquipo.TabIndex = 1;
             this.btnNvoEquipo.Text = "Inscribir Nuevo Equipo";
-            this.btnNvoEquipo.UseVisualStyleBackColor = true;
+            this.btnNvoEquipo.UseVisualStyleBackColor = false;
             this.btnNvoEquipo.Click += new System.EventHandler(this.btnNvoEquipo_Click);
             // 
             // groupBox3
@@ -507,6 +562,8 @@ namespace EquiposFrontend
             // 
             // btnEditarPersona
             // 
+            this.btnEditarPersona.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEditarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnEditarPersona.Location = new System.Drawing.Point(318, 33);
             this.btnEditarPersona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -514,13 +571,12 @@ namespace EquiposFrontend
             this.btnEditarPersona.Size = new System.Drawing.Size(565, 41);
             this.btnEditarPersona.TabIndex = 1;
             this.btnEditarPersona.Text = "Listar Datos de una Persona / Buscar Personas";
-            this.btnEditarPersona.UseVisualStyleBackColor = true;
+            this.btnEditarPersona.UseVisualStyleBackColor = false;
             this.btnEditarPersona.Click += new System.EventHandler(this.btnEditarPersona_Click);
             // 
             // btnNvaPersona
             // 
             this.btnNvaPersona.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNvaPersona.FlatAppearance.BorderSize = 0;
             this.btnNvaPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNvaPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNvaPersona.ForeColor = System.Drawing.Color.DarkGoldenrod;
@@ -530,7 +586,7 @@ namespace EquiposFrontend
             this.btnNvaPersona.Size = new System.Drawing.Size(279, 41);
             this.btnNvaPersona.TabIndex = 1;
             this.btnNvaPersona.Text = "Inscribir Nueva Persona";
-            this.btnNvaPersona.UseVisualStyleBackColor = true;
+            this.btnNvaPersona.UseVisualStyleBackColor = false;
             this.btnNvaPersona.Click += new System.EventHandler(this.btnNvaPersona_Click);
             // 
             // button6
@@ -619,61 +675,6 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(-21, 442);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(233, 41);
-            this.btnCerrarSesion.TabIndex = 2;
-            this.btnCerrarSesion.Text = "Cerrar Sesion";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // idEquipoCompromiso
-            // 
-            this.idEquipoCompromiso.HeaderText = "idEquipo";
-            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
-            this.idEquipoCompromiso.ReadOnly = true;
-            this.idEquipoCompromiso.Visible = false;
-            // 
-            // codCompromiso
-            // 
-            this.codCompromiso.HeaderText = "codCompromiso";
-            this.codCompromiso.Name = "codCompromiso";
-            this.codCompromiso.ReadOnly = true;
-            this.codCompromiso.Visible = false;
-            // 
-            // nombreEquipoCompromiso
-            // 
-            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
-            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
-            this.nombreEquipoCompromiso.ReadOnly = true;
-            // 
-            // tipoCompromiso
-            // 
-            this.tipoCompromiso.HeaderText = "Compromiso";
-            this.tipoCompromiso.Name = "tipoCompromiso";
-            this.tipoCompromiso.ReadOnly = true;
-            // 
-            // fechaCompromiso
-            // 
-            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
-            this.fechaCompromiso.Name = "fechaCompromiso";
-            this.fechaCompromiso.ReadOnly = true;
-            // 
-            // fechaBajaCompromiso
-            // 
-            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
-            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
-            this.fechaBajaCompromiso.ReadOnly = true;
-            this.fechaBajaCompromiso.Visible = false;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -681,7 +682,6 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1764, 516);
-            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -764,12 +764,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }
