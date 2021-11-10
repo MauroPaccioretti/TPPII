@@ -234,7 +234,7 @@ namespace EquiposFrontend
                 return;
             }
 
-            if (oPersona.Peso > 10 || oPersona.Peso < 330)
+            if (oPersona.Peso > 330 || oPersona.Peso < 20)
             {
                 MessageBox.Show("Por favor verifique que el peso sea correcto (separador decimal es coma).", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEstatura.Focus();

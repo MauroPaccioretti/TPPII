@@ -301,6 +301,11 @@ namespace EquiposBackend.Datos
             {
                 aux = "Error al enviar";
             }
+            finally
+            {
+                CloseConnection(cnn);
+            }
+
             return aux;
         }
 
