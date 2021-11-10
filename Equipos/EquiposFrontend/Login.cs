@@ -31,7 +31,7 @@ namespace EquiposFrontend
 
         private void btnExitLogin_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -88,13 +88,13 @@ namespace EquiposFrontend
                 }
                 else
                 {
-                    MsgErrorPass("Porfavor ingrese una contraseña");
+                    MsgErrorPass("Por favor, ingrese una contraseña");
 
                 }
             }
             else
             {
-                MsgErrorUser("Porfavor ingrese un usuario");
+                MsgErrorUser("Por favor, ingrese un usuario");
             }
 
 

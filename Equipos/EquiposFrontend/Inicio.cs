@@ -43,14 +43,29 @@ namespace EquiposFrontend
 
             CargarDgvEquiposAsync();
             
+            foreach(DataGridViewColumn columna in dgvEquipos.Columns)
+            {
+                if(columna.Index != 6)
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+            dgvEquipos.Columns[1].Width = 180;
+            dgvEquipos.Columns[2].Width = 180;
+            dgvEquipos.Columns[3].Width = 130;
+            dgvEquipos.Columns[4].Width = 120;
+            dgvEquipos.Columns[5].Width = 120;
+            
+            dgvEquipos.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
         }
 
         private async void CargarDgvEquiposAsync()
         {
+            
             string urlEquipos = "https://localhost:44381/api/Equipos/equipos";
             string resultadoEquipos = await ClienteSingleton.GetInstancia().GetAsync(urlEquipos);
-            List<Equipo> lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
-
+            lstEquipos = JsonConvert.DeserializeObject<List<Equipo>>(resultadoEquipos);
+            dgvCompromisos.Rows.Clear();
             dgvEquipos.Rows.Clear();
             if (lstEquipos != null)
                 foreach (Equipo oEquipo in lstEquipos)
@@ -64,7 +79,8 @@ namespace EquiposFrontend
                             oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Nombre : "Sin entrenador",
                         oEquipo.Jugadores == null? "Equipo sin Jugadores": oEquipo.Jugadores.Count(),
                         oEquipo.FechaAlta.ToString("dd/MM/yyyy"),
-                        oEquipo.FechaBaja.HasValue? oEquipo.FechaBaja.Value.ToString("dd/MM/yyyy"): "Activo" 
+                        oEquipo.FechaBaja.HasValue? oEquipo.FechaBaja.Value.ToString("dd/MM/yyyy"): "Activo",
+                        "Ver"
                     });
                 }
         }
@@ -159,7 +175,7 @@ namespace EquiposFrontend
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -185,8 +201,9 @@ namespace EquiposFrontend
             this.Hide();
             FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Agregar);
             frmNvoEquipo.ShowDialog();
-            this.Show();
             CargarDgvEquiposAsync();
+            this.Show();
+            
             
         }
 
@@ -203,8 +220,9 @@ namespace EquiposFrontend
                 this.Hide();
                 FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar, nroEquipo);
                 frmNvoEquipo.ShowDialog();
-                this.Show();
                 CargarDgvEquiposAsync();
+                this.Show();
+                
 
             }
 
@@ -253,7 +271,7 @@ namespace EquiposFrontend
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la applicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -291,7 +309,31 @@ namespace EquiposFrontend
 
             if (dgvEquipos.SelectedRows.Count == 1)
             {
-                dgvCompromisos.Rows.Clear();
+                if (dgvEquipos.CurrentCell.ColumnIndex == 6)
+                {
+                    dgvCompromisos.Rows.Clear();
+
+                    int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                    List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
+                    lstCompromisosActivos.AddRange(lstEquipos.Find(item => item.CodEquipo == nroEquipo).Compromisos);
+                    lstCompromisosActivos.RemoveAll(item => item.FechaBaja.HasValue);
+
+                    if (lstCompromisosActivos.Count != 0)
+                        foreach (Compromiso oCompromiso in lstCompromisosActivos)
+                        {
+                            dgvCompromisos.Rows.Add(new object[] {
+                                    oCompromiso.CodEquipo,
+                                    oCompromiso.CodCompromiso,
+                                    oCompromiso.TipoCompromiso.NombreCompromiso,
+                                    oCompromiso.ComentariosCompromiso,
+                                    oCompromiso.FechaCompromiso.ToShortDateString(),
+                                    oCompromiso.FechaBaja.HasValue? oCompromiso.FechaBaja.Value.ToShortDateString() : "Activo"});
+                        }
+
+
+
+                }
+                /*    
                 foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
                 {
                     int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
@@ -315,14 +357,14 @@ namespace EquiposFrontend
 
                 }
 
-
+                */
             }
 
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea cerrar sesión?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Dispose();
                 Login login = new Login();

@@ -94,6 +94,12 @@
     <value>True</value>
   </metadata>
   <metadata name="fechaBajaEquipo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+<<<<<<< HEAD
+=======
+    <value>True</value>
+  </metadata>
+  <metadata name="verCompromisos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+>>>>>>> 84f53a034d6e2d397c2df7e95d3e2dfc22ce4356
     <value>True</value>
   </metadata>
   <metadata name="menuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

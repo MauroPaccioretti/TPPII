@@ -67,12 +67,6 @@ namespace EquiposFrontend
             this.btnBajaEquipo = new System.Windows.Forms.Button();
             this.btnEditarEquipo = new System.Windows.Forms.Button();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
-            this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBajaEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNvoEquipo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnEditarPersona = new System.Windows.Forms.Button();
@@ -84,6 +78,16 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEntrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verCompromisos = new System.Windows.Forms.DataGridViewButtonColumn();
+>>>>>>> 84f53a034d6e2d397c2df7e95d3e2dfc22ce4356
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -484,7 +488,8 @@ namespace EquiposFrontend
             this.nombreEntrenador,
             this.cantidadJugadores,
             this.fechaAlta,
-            this.fechaBajaEquipo});
+            this.fechaBajaEquipo,
+            this.verCompromisos});
             this.dgvEquipos.Location = new System.Drawing.Point(8, 22);
             this.dgvEquipos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvEquipos.Name = "dgvEquipos";
@@ -494,43 +499,6 @@ namespace EquiposFrontend
             this.dgvEquipos.Size = new System.Drawing.Size(907, 258);
             this.dgvEquipos.TabIndex = 0;
             this.dgvEquipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipos_CellContentClick);
-            // 
-            // idEquipo
-            // 
-            this.idEquipo.HeaderText = "idEquipo";
-            this.idEquipo.Name = "idEquipo";
-            this.idEquipo.ReadOnly = true;
-            this.idEquipo.Visible = false;
-            // 
-            // nombreEquipo
-            // 
-            this.nombreEquipo.HeaderText = "Nombre del Equipo";
-            this.nombreEquipo.Name = "nombreEquipo";
-            this.nombreEquipo.ReadOnly = true;
-            // 
-            // nombreEntrenador
-            // 
-            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
-            this.nombreEntrenador.Name = "nombreEntrenador";
-            this.nombreEntrenador.ReadOnly = true;
-            // 
-            // cantidadJugadores
-            // 
-            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
-            this.cantidadJugadores.Name = "cantidadJugadores";
-            this.cantidadJugadores.ReadOnly = true;
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "Fecha de Alta";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
-            // 
-            // fechaBajaEquipo
-            // 
-            this.fechaBajaEquipo.HeaderText = "Fecha de Baja";
-            this.fechaBajaEquipo.Name = "fechaBajaEquipo";
-            this.fechaBajaEquipo.ReadOnly = true;
             // 
             // btnNvoEquipo
             // 
@@ -677,6 +645,52 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
+<<<<<<< HEAD
+=======
+            // idEquipo
+            // 
+            this.idEquipo.HeaderText = "idEquipo";
+            this.idEquipo.Name = "idEquipo";
+            this.idEquipo.ReadOnly = true;
+            this.idEquipo.Visible = false;
+            // 
+            // nombreEquipo
+            // 
+            this.nombreEquipo.HeaderText = "Nombre del Equipo";
+            this.nombreEquipo.Name = "nombreEquipo";
+            this.nombreEquipo.ReadOnly = true;
+            // 
+            // nombreEntrenador
+            // 
+            this.nombreEntrenador.HeaderText = "Nombre del Entrenador";
+            this.nombreEntrenador.Name = "nombreEntrenador";
+            this.nombreEntrenador.ReadOnly = true;
+            // 
+            // cantidadJugadores
+            // 
+            this.cantidadJugadores.HeaderText = "Cantidad de Jugadores";
+            this.cantidadJugadores.Name = "cantidadJugadores";
+            this.cantidadJugadores.ReadOnly = true;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha de Alta";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            // 
+            // fechaBajaEquipo
+            // 
+            this.fechaBajaEquipo.HeaderText = "Fecha de Baja";
+            this.fechaBajaEquipo.Name = "fechaBajaEquipo";
+            this.fechaBajaEquipo.ReadOnly = true;
+            // 
+            // verCompromisos
+            // 
+            this.verCompromisos.HeaderText = "Compromisos";
+            this.verCompromisos.Name = "verCompromisos";
+            this.verCompromisos.ReadOnly = true;
+            // 
+>>>>>>> 84f53a034d6e2d397c2df7e95d3e2dfc22ce4356
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -740,11 +754,6 @@ namespace EquiposFrontend
 
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEntrenador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadJugadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.Button btnBajaEquipo;
         private System.Windows.Forms.Button btnEditarEquipo;
         private System.Windows.Forms.Button btnNvoEquipo;
@@ -763,7 +772,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
@@ -773,5 +781,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn textoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEntrenador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadJugadores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
+        private System.Windows.Forms.DataGridViewButtonColumn verCompromisos;
     }
 }
