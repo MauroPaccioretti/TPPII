@@ -258,6 +258,7 @@ namespace EquiposFrontend
                     oPersona.FechaNac.ToString("dd/MM/yyyy")
                     });
                 }
+            dgvPersonasDispo.Sort(dgvPersonasDispo.Columns[1], ListSortDirection.Ascending);
         }
 
 
@@ -272,6 +273,7 @@ namespace EquiposFrontend
 
             //si el equipo no tiene jugadores, no hace nada, sino los carga
             if (lstJugadoresActivos != null)
+            {
                 foreach (EquipoPersona oEPActivo in lstJugadoresActivos)
                 {
                     //este if creo que esta de mas
@@ -283,12 +285,15 @@ namespace EquiposFrontend
                     dgvPersonasEquipo.Rows.Add(new object[] {
                     oEPActivo.Persona.CodPersona,
                     oEPActivo.Persona.Apellido,
-                    lstPosiciones.Find(item => oEPActivo.CodPosicion == item.codPosicion).NombrePosicion,                    
+                    lstPosiciones.Find(item => oEPActivo.CodPosicion == item.codPosicion).NombrePosicion,
                     lstHabilidad.Find(item => oEPActivo.Persona.PiernaHabil == item.codPierna).Habilidad,
                     oEPActivo.Camiseta,
                     oEPActivo.FechaAlta.ToString("dd/MM/yyyy"),
                     "Quitar" });
                 }
+                dgvPersonasDispo.Sort(dgvPersonasDispo.Columns[1], ListSortDirection.Ascending);
+            }
+                
         }
 
         private void CargarDGVCompromisos()
@@ -301,6 +306,7 @@ namespace EquiposFrontend
             dgvCompromisos.Rows.Clear();
             //si quedan compromisos, los listamos
             if (oEquipo.Compromisos != null)
+            {
                 foreach (Compromiso oCompromiso in lstCompromisosActivos)
                 {
                     dgvCompromisos.Rows.Add(new object[] {
@@ -308,9 +314,12 @@ namespace EquiposFrontend
                         oEquipo.CodEquipo,
                         lstTipoCompromiso.Find(item => oCompromiso.TipoCompromiso.CodCompromiso == item.CodCompromiso).NombreCompromiso,
                         oCompromiso.ComentariosCompromiso,
-                        oCompromiso.FechaCompromiso.ToShortDateString(),
+                        oCompromiso.FechaCompromiso.ToString("dd/MM/yyyy"), // ToShortDateString(),
                         "Quitar"});
                 }
+                dgvCompromisos.Sort(dgvCompromisos.Columns[4], ListSortDirection.Ascending);
+            }
+
         }
 
         private void btnAgregarPersona_Click(object sender, EventArgs e)

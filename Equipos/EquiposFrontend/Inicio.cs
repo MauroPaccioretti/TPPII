@@ -56,6 +56,8 @@ namespace EquiposFrontend
             
             dgvEquipos.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
+            dgvCompromisos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvCompromisos.Columns[4].Width = 110;
 
         }
 
@@ -68,14 +70,15 @@ namespace EquiposFrontend
             dgvCompromisos.Rows.Clear();
             dgvEquipos.Rows.Clear();
             if (lstEquipos != null)
+            {
                 foreach (Equipo oEquipo in lstEquipos)
                 {
-                    dgvEquipos.Rows.Add(new object[] 
+                    dgvEquipos.Rows.Add(new object[]
                     {
                         oEquipo.CodEquipo,
                         oEquipo.Nombre,
                         oEquipo.Jugadores.Exists(item => item.CodPosicion ==6)?
-                            oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Apellido + ", " + 
+                            oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Apellido + ", " +
                             oEquipo.Jugadores.Find(item => item.CodPosicion == 6).Persona.Nombre : "Sin entrenador",
                         oEquipo.Jugadores == null? "Equipo sin Jugadores": oEquipo.Jugadores.Count(),
                         oEquipo.FechaAlta.ToString("dd/MM/yyyy"),
@@ -83,6 +86,10 @@ namespace EquiposFrontend
                         "Ver"
                     });
                 }
+                dgvEquipos.Sort(dgvEquipos.Columns[1], ListSortDirection.Ascending);
+
+            }
+                
         }
 
 
@@ -319,6 +326,7 @@ namespace EquiposFrontend
                     lstCompromisosActivos.RemoveAll(item => item.FechaBaja.HasValue);
 
                     if (lstCompromisosActivos.Count != 0)
+                    {
                         foreach (Compromiso oCompromiso in lstCompromisosActivos)
                         {
                             dgvCompromisos.Rows.Add(new object[] {
@@ -326,12 +334,12 @@ namespace EquiposFrontend
                                     oCompromiso.CodCompromiso,
                                     oCompromiso.TipoCompromiso.NombreCompromiso,
                                     oCompromiso.ComentariosCompromiso,
-                                    oCompromiso.FechaCompromiso.ToShortDateString(),
+                                    oCompromiso.FechaCompromiso.ToString("dd/MM/yyyy"), // ToShortDateString(),
                                     oCompromiso.FechaBaja.HasValue? oCompromiso.FechaBaja.Value.ToShortDateString() : "Activo"});
                         }
-
-
-
+                        dgvCompromisos.Sort(dgvCompromisos.Columns[4], ListSortDirection.Ascending);
+                    }
+                        
                 }
                 /*    
                 foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
