@@ -29,14 +29,6 @@ namespace EquiposFrontend
 
         }
 
-        private void btnExitLogin_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
 
 
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
@@ -133,9 +125,10 @@ namespace EquiposFrontend
 
         private void linklblOlvidoContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this.Opacity = 0.5;
+            this.Opacity = 0.3;
             var recoverPassword = new RecoverPassword();
             recoverPassword.ShowDialog();
+            this.Opacity = 1;
             
         }
 
@@ -172,10 +165,12 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
-
-
-
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar la aplicación?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

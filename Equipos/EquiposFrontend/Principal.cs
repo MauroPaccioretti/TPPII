@@ -10,14 +10,6 @@ namespace EquiposFrontend
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Esta seguro que desea salir de la aplicación?", "Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void Principal_Load (object sender, EventArgs e)
         {
             

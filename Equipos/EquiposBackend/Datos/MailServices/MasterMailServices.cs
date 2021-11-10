@@ -43,7 +43,7 @@ namespace EquiposBackend.Datos.MailServices
                 mailMessage.Priority = MailPriority.Normal;
                 SmtpClient.Send(mailMessage);               
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             finally 

@@ -29,16 +29,14 @@ namespace EquiposFrontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecoverPassword));
             this.btnSendEmailRecover = new System.Windows.Forms.Button();
             this.textBoxUserRequest = new System.Windows.Forms.TextBox();
-            this.btnExitLogin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSendEmailRecover
@@ -71,42 +69,6 @@ namespace EquiposFrontend
             this.textBoxUserRequest.Name = "textBoxUserRequest";
             this.textBoxUserRequest.Size = new System.Drawing.Size(495, 38);
             this.textBoxUserRequest.TabIndex = 11;
-            // 
-            // btnExitLogin
-            // 
-            this.btnExitLogin.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.btnExitLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExitLogin.FlatAppearance.BorderSize = 0;
-            this.btnExitLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitLogin.Location = new System.Drawing.Point(1235, 2);
-            this.btnExitLogin.Name = "btnExitLogin";
-            this.btnExitLogin.Size = new System.Drawing.Size(26, 22);
-            this.btnExitLogin.TabIndex = 0;
-            this.btnExitLogin.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnExitLogin);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(680, 28);
-            this.panel1.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::EquiposFrontend.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(651, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 22);
-            this.button1.TabIndex = 13;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -154,7 +116,22 @@ namespace EquiposFrontend
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "ATRAS";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Location = new System.Drawing.Point(641, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(27, 27);
+            this.btnCerrar.TabIndex = 32;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // RecoverPassword
             // 
@@ -163,11 +140,11 @@ namespace EquiposFrontend
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(680, 434);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxUserRequest);
             this.Controls.Add(this.btnSendEmailRecover);
             this.DoubleBuffered = true;
@@ -175,7 +152,6 @@ namespace EquiposFrontend
             this.Name = "RecoverPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecoverPassword";
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,12 +160,10 @@ namespace EquiposFrontend
         #endregion
         private System.Windows.Forms.Button btnSendEmailRecover;
         private System.Windows.Forms.TextBox textBoxUserRequest;
-        private System.Windows.Forms.Button btnExitLogin;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

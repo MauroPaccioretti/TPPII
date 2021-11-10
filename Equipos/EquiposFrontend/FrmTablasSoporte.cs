@@ -349,8 +349,9 @@ namespace EquiposFrontend
             base.OnMouseMove(e);
         }
 
-
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

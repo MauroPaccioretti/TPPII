@@ -718,11 +718,6 @@ namespace EquiposFrontend
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
 
         private async void btnAgregarLocalidad_Click(object sender, EventArgs e)
         {
@@ -757,6 +752,11 @@ namespace EquiposFrontend
             cmbTipoCompromiso.ValueMember = "CodCompromiso";
             cmbTipoCompromiso.SelectedIndex = -1;
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
