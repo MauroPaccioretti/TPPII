@@ -531,6 +531,10 @@ namespace EquiposFrontend
                         txtNombreEquipo.Text = string.Empty;
                         cmbLocalidad.SelectedIndex = -1;
                         dgvCompromisos.Rows.Clear();
+
+                        oEquipo = new Equipo();
+
+
                     }
                     catch
                     {
@@ -585,7 +589,6 @@ namespace EquiposFrontend
 
                         }
 
-
                     break;
                 case Accion.Eliminar:
                     if (MessageBox.Show("Esta seguro que desea eliminar el equipo? Va a dar de baja sus compromisos y jugadores.",
@@ -606,7 +609,7 @@ namespace EquiposFrontend
                         MessageBox.Show("Error en el cliente al dar de baja!", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
+                    this.Close();
                     break;
             }
             LoadFormAsync();
@@ -701,12 +704,8 @@ namespace EquiposFrontend
                     //a una lista para iterar y darlos de baja
                     //si no es original, entonces darlo de baja de la lista de alta
 
-
-                    break;
-                
+                    break;                
             }
-
-
             
         }
 
@@ -719,7 +718,9 @@ namespace EquiposFrontend
         private async void btnAgregarLocalidad_Click(object sender, EventArgs e)
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.localidades, Accion.Agregar);
-            frmTablasSoporte.Show();
+            this.Opacity = 0.3;
+            frmTablasSoporte.ShowDialog();
+            this.Opacity = 1;
             string urllocalidades = "https://localhost:44381/api/Equipos/localidades";
             var resultado2 = await ClienteSingleton.GetInstancia().GetAsync(urllocalidades);
             lstLocalidades = JsonConvert.DeserializeObject<List<Localidad>>(resultado2);
@@ -735,7 +736,9 @@ namespace EquiposFrontend
         private async void btnNuevoCompromiso_Click(object sender, EventArgs e)
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoCompromisos, Accion.Modificar);
-            frmTablasSoporte.Show();
+            this.Opacity = 0.3;
+            frmTablasSoporte.ShowDialog();
+            this.Opacity = 1;
             string urltipoCompromisos = "https://localhost:44381/api/Equipos/tipoCompromisos";
             string resultado3 = await ClienteSingleton.GetInstancia().GetAsync(urltipoCompromisos);
             lstTipoCompromiso = JsonConvert.DeserializeObject<List<TipoCompromisos>>(resultado3);

@@ -40,13 +40,6 @@ namespace EquiposFrontend
             this.Estatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPersonasEquipo = new System.Windows.Forms.DataGridView();
-            this.idJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Habilidad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.camiseta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quitarJugador = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbPersonasEquipo = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.grbPersonasDisponibles = new System.Windows.Forms.GroupBox();
@@ -84,6 +77,13 @@ namespace EquiposFrontend
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.idJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Habilidad1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.camiseta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quitarJugador = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasDispo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonasEquipo)).BeginInit();
             this.grbPersonasEquipo.SuspendLayout();
@@ -198,55 +198,6 @@ namespace EquiposFrontend
             this.dgvPersonasEquipo.TabIndex = 1;
             this.dgvPersonasEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonasEquipo_CellContentClick);
             // 
-            // idJugador
-            // 
-            this.idJugador.HeaderText = "idJugador";
-            this.idJugador.Name = "idJugador";
-            this.idJugador.ReadOnly = true;
-            this.idJugador.Visible = false;
-            // 
-            // Apellido1
-            // 
-            this.Apellido1.HeaderText = "Apellido";
-            this.Apellido1.Name = "Apellido1";
-            this.Apellido1.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol en el Equipo";
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // Habilidad1
-            // 
-            this.Habilidad1.HeaderText = "Habilidad";
-            this.Habilidad1.Name = "Habilidad1";
-            this.Habilidad1.ReadOnly = true;
-            this.Habilidad1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Habilidad1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // camiseta
-            // 
-            this.camiseta.HeaderText = "Camiseta";
-            this.camiseta.Name = "camiseta";
-            this.camiseta.ReadOnly = true;
-            this.camiseta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.camiseta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // fechaAlta
-            // 
-            this.fechaAlta.HeaderText = "Fecha Incorporación";
-            this.fechaAlta.Name = "fechaAlta";
-            this.fechaAlta.ReadOnly = true;
-            this.fechaAlta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.fechaAlta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // quitarJugador
-            // 
-            this.quitarJugador.HeaderText = "Quitar";
-            this.quitarJugador.Name = "quitarJugador";
-            this.quitarJugador.ReadOnly = true;
-            // 
             // grbPersonasEquipo
             // 
             this.grbPersonasEquipo.Controls.Add(this.groupBox7);
@@ -313,9 +264,9 @@ namespace EquiposFrontend
             this.label6.Location = new System.Drawing.Point(476, 318);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Camiseta:";
+            this.label6.Text = "Apodo:";
             // 
             // label1
             // 
@@ -664,6 +615,55 @@ namespace EquiposFrontend
             this.button6.TabIndex = 15;
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // idJugador
+            // 
+            this.idJugador.HeaderText = "idJugador";
+            this.idJugador.Name = "idJugador";
+            this.idJugador.ReadOnly = true;
+            this.idJugador.Visible = false;
+            // 
+            // Apellido1
+            // 
+            this.Apellido1.HeaderText = "Apellido";
+            this.Apellido1.Name = "Apellido1";
+            this.Apellido1.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol en el Equipo";
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // Habilidad1
+            // 
+            this.Habilidad1.HeaderText = "Habilidad";
+            this.Habilidad1.Name = "Habilidad1";
+            this.Habilidad1.ReadOnly = true;
+            this.Habilidad1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Habilidad1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // camiseta
+            // 
+            this.camiseta.HeaderText = "Apodo";
+            this.camiseta.Name = "camiseta";
+            this.camiseta.ReadOnly = true;
+            this.camiseta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.camiseta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fechaAlta
+            // 
+            this.fechaAlta.HeaderText = "Fecha Incorporación";
+            this.fechaAlta.Name = "fechaAlta";
+            this.fechaAlta.ReadOnly = true;
+            this.fechaAlta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fechaAlta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // quitarJugador
+            // 
+            this.quitarJugador.HeaderText = "Quitar";
+            this.quitarJugador.Name = "quitarJugador";
+            this.quitarJugador.ReadOnly = true;
+            // 
             // FrmEquipoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -744,13 +744,6 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idJugador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Habilidad1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn camiseta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
-        private System.Windows.Forms.DataGridViewButtonColumn quitarJugador;
         private System.Windows.Forms.DataGridViewTextBoxColumn codEquipo;
         private System.Windows.Forms.DateTimePicker dtpCompromiso;
         private System.Windows.Forms.Label label7;
@@ -767,5 +760,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idJugador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Habilidad1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn camiseta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
+        private System.Windows.Forms.DataGridViewButtonColumn quitarJugador;
     }
 }

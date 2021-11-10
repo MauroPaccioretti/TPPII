@@ -56,12 +56,6 @@ namespace EquiposFrontend
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCompromisos = new System.Windows.Forms.DataGridView();
-            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
@@ -84,6 +78,12 @@ namespace EquiposFrontend
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.idEquipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreTipoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaBajaCompromiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompromisos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -361,8 +361,8 @@ namespace EquiposFrontend
             this.dgvCompromisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idEquipoCompromiso,
             this.codCompromiso,
-            this.nombreEquipoCompromiso,
-            this.tipoCompromiso,
+            this.nombreTipoCompromiso,
+            this.textoCompromiso,
             this.fechaCompromiso,
             this.fechaBajaCompromiso});
             this.dgvCompromisos.Location = new System.Drawing.Point(8, 23);
@@ -372,45 +372,6 @@ namespace EquiposFrontend
             this.dgvCompromisos.RowTemplate.Height = 25;
             this.dgvCompromisos.Size = new System.Drawing.Size(567, 407);
             this.dgvCompromisos.TabIndex = 3;
-            // 
-            // idEquipoCompromiso
-            // 
-            this.idEquipoCompromiso.HeaderText = "idEquipo";
-            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
-            this.idEquipoCompromiso.ReadOnly = true;
-            this.idEquipoCompromiso.Visible = false;
-            // 
-            // codCompromiso
-            // 
-            this.codCompromiso.HeaderText = "codCompromiso";
-            this.codCompromiso.Name = "codCompromiso";
-            this.codCompromiso.ReadOnly = true;
-            this.codCompromiso.Visible = false;
-            // 
-            // nombreEquipoCompromiso
-            // 
-            this.nombreEquipoCompromiso.HeaderText = "Nombre del Equipo";
-            this.nombreEquipoCompromiso.Name = "nombreEquipoCompromiso";
-            this.nombreEquipoCompromiso.ReadOnly = true;
-            // 
-            // tipoCompromiso
-            // 
-            this.tipoCompromiso.HeaderText = "Compromiso";
-            this.tipoCompromiso.Name = "tipoCompromiso";
-            this.tipoCompromiso.ReadOnly = true;
-            // 
-            // fechaCompromiso
-            // 
-            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
-            this.fechaCompromiso.Name = "fechaCompromiso";
-            this.fechaCompromiso.ReadOnly = true;
-            // 
-            // fechaBajaCompromiso
-            // 
-            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
-            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
-            this.fechaBajaCompromiso.ReadOnly = true;
-            this.fechaBajaCompromiso.Visible = false;
             // 
             // groupBox1
             // 
@@ -675,6 +636,45 @@ namespace EquiposFrontend
             this.lblTitulo.TabIndex = 17;
             this.lblTitulo.Text = "label1";
             // 
+            // idEquipoCompromiso
+            // 
+            this.idEquipoCompromiso.HeaderText = "idEquipo";
+            this.idEquipoCompromiso.Name = "idEquipoCompromiso";
+            this.idEquipoCompromiso.ReadOnly = true;
+            this.idEquipoCompromiso.Visible = false;
+            // 
+            // codCompromiso
+            // 
+            this.codCompromiso.HeaderText = "codCompromiso";
+            this.codCompromiso.Name = "codCompromiso";
+            this.codCompromiso.ReadOnly = true;
+            this.codCompromiso.Visible = false;
+            // 
+            // nombreTipoCompromiso
+            // 
+            this.nombreTipoCompromiso.HeaderText = "Tipo de Compromiso";
+            this.nombreTipoCompromiso.Name = "nombreTipoCompromiso";
+            this.nombreTipoCompromiso.ReadOnly = true;
+            // 
+            // textoCompromiso
+            // 
+            this.textoCompromiso.HeaderText = "Compromiso";
+            this.textoCompromiso.Name = "textoCompromiso";
+            this.textoCompromiso.ReadOnly = true;
+            // 
+            // fechaCompromiso
+            // 
+            this.fechaCompromiso.HeaderText = "Fecha del Compromiso";
+            this.fechaCompromiso.Name = "fechaCompromiso";
+            this.fechaCompromiso.ReadOnly = true;
+            // 
+            // fechaBajaCompromiso
+            // 
+            this.fechaBajaCompromiso.HeaderText = "Fecha Baja Compromiso";
+            this.fechaBajaCompromiso.Name = "fechaBajaCompromiso";
+            this.fechaBajaCompromiso.ReadOnly = true;
+            this.fechaBajaCompromiso.Visible = false;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -764,12 +764,12 @@ namespace EquiposFrontend
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaEquipo;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEquiposActivosToolStripMenuItem;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEquipoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoCompromiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoCompromiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn textoCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompromiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaCompromiso;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }

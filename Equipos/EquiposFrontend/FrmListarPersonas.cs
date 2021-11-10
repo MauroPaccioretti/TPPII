@@ -45,8 +45,9 @@ namespace EquiposFrontend
                 }
                 int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
                 FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Modificar, nroPersona);
+                this.Opacity = 0.3;
                 frmPersonaABM.ShowDialog();
-
+                this.Opacity = 1;
                 LimpiarCampos();
             }
 
@@ -63,7 +64,9 @@ namespace EquiposFrontend
                 }
                 int nroPersona = Convert.ToInt32(dgvPersonas.CurrentRow.Cells["idPersona"].Value.ToString());
                 FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Eliminar, nroPersona);
+                this.Opacity = 0.3;
                 frmPersonaABM.ShowDialog();
+                this.Opacity = 1;
                 LimpiarCampos();
             }
 
@@ -73,7 +76,9 @@ namespace EquiposFrontend
         {
 
             FrmABM_Persona frmPersonaABM = new FrmABM_Persona(Accion.Agregar);
+            this.Opacity = 0.3;
             frmPersonaABM.ShowDialog();
+            this.Opacity = 1;
             LimpiarCampos();
 
         }

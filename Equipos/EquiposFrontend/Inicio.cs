@@ -194,10 +194,13 @@ namespace EquiposFrontend
 
         private void btnEditarEquipo_Click(object sender, EventArgs e)
         {
-
-
             if (dgvEquipos.SelectedRows.Count == 1)
             {
+                if (dgvEquipos.CurrentRow.Cells["fechaBajaEquipo"].Value.ToString() != "Activo")
+                {
+                    MessageBox.Show("Equipo dado de baja. No se puede editar!.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
                 this.Hide();
                 FrmEquipoNuevo frmNvoEquipo = new FrmEquipoNuevo(Accion.Modificar, nroEquipo);
@@ -287,37 +290,36 @@ namespace EquiposFrontend
 
         private void dgvEquipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEquipos.SelectedRows.Count > 0)
-            {
-                foreach(DataGridViewRow row in dgvCompromisos.Rows)
-                {
-                    if (dgvCompromisos.CurrentRow.Selected)
-                    {
-                        int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
-                        List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
-                        lstCompromisosActivos.AddRange(lstEquipos.Find(item => item.CodEquipo == nroEquipo).Compromisos);
-                        dgvCompromisos.Rows.Clear();
 
-                        if (lstCompromisosActivos.Count != 0)
-                            foreach (Compromiso oCompromiso in lstCompromisosActivos)
-                            {
-                                dgvCompromisos.Rows.Add(new object[] {
+            if (dgvEquipos.SelectedRows.Count == 1)
+            {
+                dgvCompromisos.Rows.Clear();
+                foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
+                {
+                    int nroEquipo = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["idEquipo"].Value.ToString());
+                    List<Compromiso> lstCompromisosActivos = new List<Compromiso>();
+                    lstCompromisosActivos.AddRange(lstEquipos.Find(item => item.CodEquipo == nroEquipo).Compromisos);
+                    lstCompromisosActivos.RemoveAll(item => item.FechaBaja.HasValue);
+
+                    if (lstCompromisosActivos.Count != 0)
+                        foreach (Compromiso oCompromiso in lstCompromisosActivos)
+                        {
+                            dgvCompromisos.Rows.Add(new object[] {
                                     oCompromiso.CodEquipo,
                                     oCompromiso.CodCompromiso,
-                                    lstEquipos.Find(item => oCompromiso.CodEquipo == item.CodEquipo).Nombre,
                                     oCompromiso.TipoCompromiso.NombreCompromiso,
+                                    oCompromiso.ComentariosCompromiso,                                    
                                     oCompromiso.FechaCompromiso.ToShortDateString(),
-                                    oCompromiso.FechaBaja.Value.ToShortDateString()});
-                            }
+                                    oCompromiso.FechaBaja.HasValue? oCompromiso.FechaBaja.Value.ToShortDateString() : "Activo"});
+                        }
 
 
-                    }
 
                 }
-                
+
 
             }
-            
+
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)

@@ -602,8 +602,8 @@ namespace EquiposFrontend
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvPersonas);
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox3.Location = new System.Drawing.Point(6, 44);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1584, 484);

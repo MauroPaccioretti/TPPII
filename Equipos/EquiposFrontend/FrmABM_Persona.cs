@@ -116,7 +116,18 @@ namespace EquiposFrontend
 
         }
 
-
+        private void LimpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEstatura.Text = "";
+            txtNroDoc.Text = "";
+            txtPeso.Text = "";
+            dtpFechaNacimiento.Value = DateTime.Today;
+            cmbPierna.SelectedIndex = -1;
+            cmbTipoDni.SelectedIndex = -1;
+           
+        }
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -182,7 +193,7 @@ namespace EquiposFrontend
 
             try
             {
-                oPersona.Estatura = Convert.ToInt32(txtEstatura.Text);
+                oPersona.Estatura = Convert.ToDouble(txtEstatura.Text);
             }
             catch
             {
@@ -223,6 +234,14 @@ namespace EquiposFrontend
                 return;
             }
 
+            if (oPersona.Peso > 10 || oPersona.Peso < 330)
+            {
+                MessageBox.Show("Por favor verifique que el peso sea correcto (separador decimal es coma).", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEstatura.Focus();
+                return;
+            }
+
+
             if (dtpFechaNacimiento.Value.Equals(DateTime.Today))
             {
                 MessageBox.Show("Por favor ingrese una fecha de nacimiento válida.", "Verificacion!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -258,6 +277,8 @@ namespace EquiposFrontend
                         string url = "https://localhost:44381/api/Equipos/insertarPersona";
                         string resultado = await ClienteSingleton.GetInstancia().PostAsync(url, datosJSON);
                         MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
+                        LimpiarCampos();
+                        oPersona = new Persona();
                     }
                     catch
                     {
@@ -290,7 +311,7 @@ namespace EquiposFrontend
                         try
                         {
 
-                            string url = "https://localhost:44381/api/Equipos/persona" + oPersona.CodPersona;
+                            string url = "https://localhost:44381/api/Equipos/persona/" + oPersona.CodPersona;
                             string resultado = await ClienteSingleton.GetInstancia().DeleteAsync(url);
                             MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK);
                         }
@@ -299,6 +320,7 @@ namespace EquiposFrontend
                             MessageBox.Show("Error al dar de baja", "Resultado", MessageBoxButtons.OK);
                             return;
                         }
+                        this.Close();
                     }
 
                     break;
@@ -314,8 +336,10 @@ namespace EquiposFrontend
         private async void btnAgregarTipoDni_Click_1(object sender, EventArgs e)
         {
             FrmTablasSoporte frmTablasSoporte = new FrmTablasSoporte(TablasSoporte.tipoDocumentos, Accion.Agregar);
-            frmTablasSoporte.Show();
-
+            this.Opacity = 0.3;
+            frmTablasSoporte.ShowDialog();
+            
+            this.Opacity = 1;
             string url = "https://localhost:44381/api/Equipos/tipoDocumentos";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             List<TiposDocumentos> lstTipoDNI = JsonConvert.DeserializeObject<List<TiposDocumentos>>(resultado);
